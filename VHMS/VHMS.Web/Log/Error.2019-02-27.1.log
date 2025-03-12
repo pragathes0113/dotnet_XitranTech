@@ -1,0 +1,273 @@
+----------------------------------------
+Timestamp local:F Tuesday, April 3, 2018 6:41:14 AM
+Message: BaseConfigPage_Load | UserID Session Expired|
+Category: General
+
+Priority: -1
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: SIVAKUMAR-PC
+
+App Domain: /LM/W3SVC/22/ROOT-1-131671914570726787
+
+ProcessId: 8436
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:2940
+
+Extended Properties: BaseConfigPage_Load | UserID Session Expired
+----------------------------------------
+----------------------------------------
+Timestamp local:F Tuesday, April 3, 2018 6:54:40 AM
+Message: VHMS.DataAccess.Admission AddAdmission | System.Data.SqlClient.SqlException (0x80131904): Admission_A_01
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(DbCommand command, DbTransaction transaction)
+   at VHMS.DataAccess.Discharge.Admission.AddAdmission(Database oDb, Admission objAdmission, DbTransaction oTrans) in g:\Projects\Vijaya HMS\Source Code\VHMS\VHMS.DataAccess\Discharge\Admission.cs:line 176
+ClientConnectionId:4666e6e5-7316-4149-8cfb-1a430e1fe3c8
+Error Number:50000,State:1,Class:16|
+Category: General
+
+Priority: -1
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: SIVAKUMAR-PC
+
+App Domain: /LM/W3SVC/22/ROOT-1-131671914570726787
+
+ProcessId: 8436
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:3056
+
+Extended Properties: VHMS.DataAccess.Admission AddAdmission | System.Data.SqlClient.SqlException (0x80131904): Admission_A_01
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(DbCommand command, DbTransaction transaction)
+   at VHMS.DataAccess.Discharge.Admission.AddAdmission(Database oDb, Admission objAdmission, DbTransaction oTrans) in g:\Projects\Vijaya HMS\Source Code\VHMS\VHMS.DataAccess\Discharge\Admission.cs:line 176
+ClientConnectionId:4666e6e5-7316-4149-8cfb-1a430e1fe3c8
+Error Number:50000,State:1,Class:16
+----------------------------------------
+----------------------------------------
+Timestamp local:F Tuesday, April 3, 2018 6:54:40 AM
+Message: VHMSService.DischargeEntry AddDischargeEntry |Admission_A_01|
+Category: General
+
+Priority: -1
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: SIVAKUMAR-PC
+
+App Domain: /LM/W3SVC/22/ROOT-1-131671914570726787
+
+ProcessId: 8436
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:3056
+
+Extended Properties: VHMSService.DischargeEntry AddDischargeEntry |Admission_A_01
+----------------------------------------
+----------------------------------------
+Timestamp local:F Tuesday, April 3, 2018 6:54:44 AM
+Message: VHMS.DataAccess.Admission AddAdmission | System.Data.SqlClient.SqlException (0x80131904): Admission_A_01
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(DbCommand command, DbTransaction transaction)
+   at VHMS.DataAccess.Discharge.Admission.AddAdmission(Database oDb, Admission objAdmission, DbTransaction oTrans) in g:\Projects\Vijaya HMS\Source Code\VHMS\VHMS.DataAccess\Discharge\Admission.cs:line 176
+ClientConnectionId:4666e6e5-7316-4149-8cfb-1a430e1fe3c8
+Error Number:50000,State:1,Class:16|
+Category: General
+
+Priority: -1
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: SIVAKUMAR-PC
+
+App Domain: /LM/W3SVC/22/ROOT-1-131671914570726787
+
+ProcessId: 8436
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:3056
+
+Extended Properties: VHMS.DataAccess.Admission AddAdmission | System.Data.SqlClient.SqlException (0x80131904): Admission_A_01
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(DbCommand command, DbTransaction transaction)
+   at VHMS.DataAccess.Discharge.Admission.AddAdmission(Database oDb, Admission objAdmission, DbTransaction oTrans) in g:\Projects\Vijaya HMS\Source Code\VHMS\VHMS.DataAccess\Discharge\Admission.cs:line 176
+ClientConnectionId:4666e6e5-7316-4149-8cfb-1a430e1fe3c8
+Error Number:50000,State:1,Class:16
+----------------------------------------
+----------------------------------------
+Timestamp local:F Tuesday, April 3, 2018 6:54:44 AM
+Message: VHMSService.DischargeEntry AddDischargeEntry |Admission_A_01|
+Category: General
+
+Priority: -1
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: SIVAKUMAR-PC
+
+App Domain: /LM/W3SVC/22/ROOT-1-131671914570726787
+
+ProcessId: 8436
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:3056
+
+Extended Properties: VHMSService.DischargeEntry AddDischargeEntry |Admission_A_01
+----------------------------------------
+----------------------------------------
+Timestamp local:F Tuesday, April 3, 2018 6:57:16 AM
+Message: VHMS.DataAccess.Admission UpdateAdmission | System.Data.SqlClient.SqlException (0x80131904): Admission_U_01
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(DbCommand command)
+   at VHMS.DataAccess.Discharge.Admission.UpdateAdmission(Database oDb, Admission objAdmission, DbTransaction oTrans) in g:\Projects\Vijaya HMS\Source Code\VHMS\VHMS.DataAccess\Discharge\Admission.cs:line 240
+ClientConnectionId:eb41ff21-f979-4529-8e04-72b5d414dcd8
+Error Number:50000,State:1,Class:16|
+Category: General
+
+Priority: -1
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: SIVAKUMAR-PC
+
+App Domain: /LM/W3SVC/22/ROOT-1-131671914570726787
+
+ProcessId: 8436
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:3056
+
+Extended Properties: VHMS.DataAccess.Admission UpdateAdmission | System.Data.SqlClient.SqlException (0x80131904): Admission_U_01
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(DbCommand command)
+   at VHMS.DataAccess.Discharge.Admission.UpdateAdmission(Database oDb, Admission objAdmission, DbTransaction oTrans) in g:\Projects\Vijaya HMS\Source Code\VHMS\VHMS.DataAccess\Discharge\Admission.cs:line 240
+ClientConnectionId:eb41ff21-f979-4529-8e04-72b5d414dcd8
+Error Number:50000,State:1,Class:16
+----------------------------------------
+----------------------------------------
+Timestamp local:F Tuesday, April 3, 2018 6:57:16 AM
+Message: VHMSService.DischargeEntry UpdateDischargeEntry |Admission_U_01|
+Category: General
+
+Priority: -1
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: SIVAKUMAR-PC
+
+App Domain: /LM/W3SVC/22/ROOT-1-131671914570726787
+
+ProcessId: 8436
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:3056
+
+Extended Properties: VHMSService.DischargeEntry UpdateDischargeEntry |Admission_U_01
+----------------------------------------

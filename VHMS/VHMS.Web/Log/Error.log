@@ -1,0 +1,118 @@
+----------------------------------------
+Timestamp local:F Tuesday, April 9, 2019 6:33:02 PM
+Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 22
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.frmpatientdetailsreport_aspx.ProcessRequest(HttpContext context) in c:\Users\Binaryclouds-PC\AppData\Local\Temp\Temporary ASP.NET Files\vs\8f32aff9\b13cd28\App_Web_dtapsl1v.38.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
+Category: General
+
+Priority: -1
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: DESKTOP-5TS16T6
+
+App Domain: /LM/W3SVC/2/ROOT-4-131992885689164436
+
+ProcessId: 9684
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:15984
+
+Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 22
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.frmpatientdetailsreport_aspx.ProcessRequest(HttpContext context) in c:\Users\Binaryclouds-PC\AppData\Local\Temp\Temporary ASP.NET Files\vs\8f32aff9\b13cd28\App_Web_dtapsl1v.38.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+----------------------------------------
+----------------------------------------
+Timestamp local:F Tuesday, April 9, 2019 6:59:03 PM
+Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 22
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.frmpatientdetailsreport_aspx.ProcessRequest(HttpContext context) in c:\Users\Binaryclouds-PC\AppData\Local\Temp\Temporary ASP.NET Files\vs\8f32aff9\b13cd28\App_Web_hwk4xhgp.38.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
+Category: General
+
+Priority: -1
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: DESKTOP-5TS16T6
+
+App Domain: /LM/W3SVC/2/ROOT-4-131992885689164436
+
+ProcessId: 9684
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:3208
+
+Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 22
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.frmpatientdetailsreport_aspx.ProcessRequest(HttpContext context) in c:\Users\Binaryclouds-PC\AppData\Local\Temp\Temporary ASP.NET Files\vs\8f32aff9\b13cd28\App_Web_hwk4xhgp.38.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+----------------------------------------

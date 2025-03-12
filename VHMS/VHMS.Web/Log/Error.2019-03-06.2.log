@@ -1,0 +1,108 @@
+----------------------------------------
+Timestamp local:F Wednesday, March 6, 2019 12:03:19 PM
+Message: BaseConfigPage_Load | UserID Session Expired|
+Category: General
+
+Priority: -1
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: DESKTOP-5TS16T6
+
+App Domain: /LM/W3SVC/2/ROOT-1-131963275875812414
+
+ProcessId: 10116
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:3896
+
+Extended Properties: BaseConfigPage_Load | UserID Session Expired
+----------------------------------------
+----------------------------------------
+Timestamp local:F Wednesday, March 6, 2019 12:07:02 PM
+Message: BaseConfigPage_Load | UserID Session Expired|
+Category: General
+
+Priority: -1
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: DESKTOP-5TS16T6
+
+App Domain: /LM/W3SVC/2/ROOT-1-131963275875812414
+
+ProcessId: 10116
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:15640
+
+Extended Properties: BaseConfigPage_Load | UserID Session Expired
+----------------------------------------
+----------------------------------------
+Timestamp local:F Wednesday, March 6, 2019 12:33:35 PM
+Message: BaseConfigPage_Load | UserID Session Expired|
+Category: General
+
+Priority: -1
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: DESKTOP-5TS16T6
+
+App Domain: /LM/W3SVC/2/ROOT-1-131963294019417178
+
+ProcessId: 9984
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:15140
+
+Extended Properties: BaseConfigPage_Load | UserID Session Expired
+----------------------------------------
+----------------------------------------
+Timestamp local:F Wednesday, March 6, 2019 12:42:19 PM
+Message: ValidateSession | UserID Session Expired|
+Category: General
+
+Priority: -1
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: DESKTOP-5TS16T6
+
+App Domain: /LM/W3SVC/2/ROOT-1-131963294019417178
+
+ProcessId: 9984
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:972
+
+Extended Properties: ValidateSession | UserID Session Expired
+----------------------------------------

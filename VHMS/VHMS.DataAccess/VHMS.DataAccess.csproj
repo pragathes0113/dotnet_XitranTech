@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VHMS.DataAccess</RootNamespace>
+    <AssemblyName>VHMS.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonMethods">
+      <HintPath>..\..\..\..\Components\CommonMethods.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\..\..\Components\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Billing\Expense.cs" />
+    <Compile Include="Billing\Payment.cs" />
+    <Compile Include="Billing\PurchaseReturn.cs" />
+    <Compile Include="Billing\Receipt.cs" />
+    <Compile Include="Billing\SalesEntry.cs" />
+    <Compile Include="Billing\Purchase.cs" />
+    <Compile Include="Billing\Category.cs" />
+    <Compile Include="Billing\Quotation.cs" />
+    <Compile Include="Billing\SalesOrder.cs" />
+    <Compile Include="Billing\SalesReturn.cs" />
+    <Compile Include="Billing\Supplier.cs" />
+    <Compile Include="Billing\Tax.cs" />
+    <Compile Include="Billing\Unit.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="Discharge\Admission.cs" />
+    <Compile Include="Discharge\DischargeEntry.cs" />
+    <Compile Include="Discharge\DischargeReport.cs" />
+    <Compile Include="Discharge\DoctorType.cs" />
+    <Compile Include="Discharge\Department.cs" />
+    <Compile Include="Discharge\Diagonsis.cs" />
+    <Compile Include="Discharge\Doctor.cs" />
+    <Compile Include="Discharge\Dosage.cs" />
+    <Compile Include="Discharge\Drug.cs" />
+    <Compile Include="Discharge\Duration.cs" />
+    <Compile Include="Discharge\Frequency.cs" />
+    <Compile Include="Discharge\HipReplacement.cs" />
+    <Compile Include="Discharge\KneeReplacement.cs" />
+    <Compile Include="Discharge\OtherProcedure.cs" />
+    <Compile Include="Discharge\OtherSurgery.cs" />
+    <Compile Include="Discharge\PatientOwnDrug.cs" />
+    <Compile Include="Discharge\Prescription.cs" />
+    <Compile Include="Discharge\Specialization.cs" />
+    <Compile Include="Framework.cs" />
+    <Compile Include="Master\Country.cs" />
+    <Compile Include="Master\Employee.cs" />
+    <Compile Include="Master\Dashboard.cs" />
+    <Compile Include="Master\Ledger.cs" />
+    <Compile Include="Master\LedgerType.cs" />
+    <Compile Include="Master\Customer.cs" />
+    <Compile Include="Master\Product.cs" />
+    <Compile Include="Master\State.cs" />
+    <Compile Include="Master\Stock.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Service.cs" />
+    <Compile Include="Service\ServiceDC.cs" />
+    <Compile Include="Service\ServiceInward.cs" />
+    <Compile Include="StringExtension.cs" />
+    <Compile Include="UserAccounts\Role.cs" />
+    <Compile Include="UserAccounts\Settings.cs" />
+    <Compile Include="UserAccounts\SMSLog.cs" />
+    <Compile Include="UserAccounts\User.cs" />
+    <Compile Include="VHMSReports.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VHMS.Entity\VHMS.Entity.csproj">
+      <Project>{DCC9F862-A6E4-4188-9793-95219643C283}</Project>
+      <Name>VHMS.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VHMS.Log\VHMS.Log.csproj">
+      <Project>{C4BE300C-5A9D-446E-A03E-8C18EC6210A1}</Project>
+      <Name>VHMS.Log</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ReportDatestNew\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

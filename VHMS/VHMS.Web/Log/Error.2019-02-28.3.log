@@ -1,0 +1,27 @@
+----------------------------------------
+Timestamp local:F Thursday, February 28, 2019 3:58:48 PM
+Message: BaseConfigPage_Load | UserID Session Expired|
+Category: General
+
+Priority: -1
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: DESKTOP-5TS16T6
+
+App Domain: /LM/W3SVC/2/ROOT-1-131958233251640923
+
+ProcessId: 10612
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:8204
+
+Extended Properties: BaseConfigPage_Load | UserID Session Expired
+----------------------------------------

@@ -1,0 +1,81 @@
+----------------------------------------
+Timestamp local:F Friday, February 23, 2018 4:50:53 PM
+Message: BaseConfigPage_Load | UserID Session Expired|
+Category: General
+
+Priority: -1
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: SIVAKUMAR-PC
+
+App Domain: /LM/W3SVC/22/ROOT-1-131638584261188185
+
+ProcessId: 3416
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:4532
+
+Extended Properties: BaseConfigPage_Load | UserID Session Expired
+----------------------------------------
+----------------------------------------
+Timestamp local:F Friday, February 23, 2018 4:55:52 PM
+Message: BaseConfigPage_Load | UserID Session Expired|
+Category: General
+
+Priority: -1
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: SIVAKUMAR-PC
+
+App Domain: /LM/W3SVC/22/ROOT-1-131638587254591309
+
+ProcessId: 8064
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:13236
+
+Extended Properties: BaseConfigPage_Load | UserID Session Expired
+----------------------------------------
+----------------------------------------
+Timestamp local:F Friday, February 23, 2018 5:03:39 PM
+Message: BaseConfigPage_Load | UserID Session Expired|
+Category: General
+
+Priority: -1
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: SIVAKUMAR-PC
+
+App Domain: /LM/W3SVC/22/ROOT-2-131638592078710957
+
+ProcessId: 8064
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:12456
+
+Extended Properties: BaseConfigPage_Load | UserID Session Expired
+----------------------------------------
