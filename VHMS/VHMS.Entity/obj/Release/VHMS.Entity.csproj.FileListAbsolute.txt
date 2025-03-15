@@ -239,3 +239,10 @@ D:\WEB\Files\dotnet_VRS\VHMS\VHMS.Entity\obj\Release\VHMS.Entity.csproj.CoreComp
 D:\WEB\Files\dotnet_VRS\VHMS\VHMS.Entity\obj\Release\VHMS.Ent.EE1E71EC.Up2Date
 D:\WEB\Files\dotnet_VRS\VHMS\VHMS.Entity\obj\Release\VHMS.Entity.dll
 D:\WEB\Files\dotnet_VRS\VHMS\VHMS.Entity\obj\Release\VHMS.Entity.pdb
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Entity\bin\Release\VHMS.Entity.dll
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Entity\bin\Release\VHMS.Entity.pdb
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Entity\obj\Release\VHMS.Entity.csproj.AssemblyReference.cache
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Entity\obj\Release\VHMS.Entity.csproj.CoreCompileInputs.cache
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Entity\obj\Release\VHMS.Ent.EE1E71EC.Up2Date
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Entity\obj\Release\VHMS.Entity.dll
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Entity\obj\Release\VHMS.Entity.pdb

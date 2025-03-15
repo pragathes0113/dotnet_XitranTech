@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Welcome to  VRS Tools</title>
+    <title>Welcome to <%= Session["CompanyName"].ToString().ToUpper()%></title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
@@ -51,8 +51,8 @@
                     <div class="navbar-header">
                         <%--    <a href="frmDefault.aspx" class="navbar-brand">
                              <img src="images/default_user.png" class="user-image" style="margin-top: -10px; width: 40px; height: 40px;" alt="User Image" /></a>
-                        <a href="frmDefault.aspx" class="navbar-brand" style="display: none;"><b> VRS Tools</b></a>--%>
-                        <a href="frmDefault.aspx" class="navbar-brand">&nbsp;<b> VRS Tools</b></a>
+                        <a href="frmDefault.aspx" class="navbar-brand" style="display: none;"><b> <%= Session["CompanyName"].ToString().ToUpper()%></b></a>--%>
+                        <a href="frmDefault.aspx" class="navbar-brand">&nbsp;<b> <%= Session["CompanyName"].ToString().ToUpper()%></b></a>
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                             <i class="fa fa-bars"></i>
                         </button>

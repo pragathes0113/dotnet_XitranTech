@@ -116,10 +116,8 @@
                                 <asp:BoundField HeaderText="InvoiceDate" ReadOnly="true" DataField="InvoiceDate" DataFormatString="{0:dd/MM/yyyy}" />
                                 <asp:BoundField HeaderText="CustomerName" ReadOnly="true" DataField="CustomerName" />
                                 <asp:BoundField HeaderText="Phone No" ReadOnly="true" DataField="MobileNo" />
-                                <asp:BoundField HeaderText="CustomerCode" ReadOnly="true" DataField="CustomerCode" />
                                 <asp:BoundField HeaderText="Total Quantity " ReadOnly="true" DataField="TotalQuantity" />
                                 <asp:BoundField HeaderText="Discount Amount" ReadOnly="true" DataField="DiscountAmount" />
-                                <asp:BoundField HeaderText="Tax Amount" ReadOnly="true" DataField="TaxAmount" />
                                 <asp:BoundField HeaderText="Other Charges" ReadOnly="true" DataField="OtherCharges" />
                                 <asp:TemplateField HeaderText="InvoiceAmount">
                                     <ItemTemplate>
@@ -127,7 +125,6 @@
                                         </asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField HeaderText="Profit" ReadOnly="true" DataField="ProfitLossAmount" />
                             </Columns>
                             <PagerStyle CssClass="cssPager" HorizontalAlign="Center" />
                         </asp:GridView>

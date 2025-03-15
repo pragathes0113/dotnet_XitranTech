@@ -422,3 +422,15 @@ D:\WEB\Files\dotnet_VRS\VHMS\VHMS.DataAccess\obj\Release\VHMS.DataAccess.csproj.
 D:\WEB\Files\dotnet_VRS\VHMS\VHMS.DataAccess\obj\Release\VHMS.Dat.88D7A412.Up2Date
 D:\WEB\Files\dotnet_VRS\VHMS\VHMS.DataAccess\obj\Release\VHMS.DataAccess.dll
 D:\WEB\Files\dotnet_VRS\VHMS\VHMS.DataAccess\obj\Release\VHMS.DataAccess.pdb
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.DataAccess\bin\Release\VHMS.DataAccess.dll
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.DataAccess\bin\Release\VHMS.DataAccess.pdb
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.DataAccess\bin\Release\VHMS.Entity.dll
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.DataAccess\bin\Release\VHMS.Log.dll
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.DataAccess\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.DataAccess\bin\Release\VHMS.Entity.pdb
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.DataAccess\bin\Release\VHMS.Log.pdb
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.DataAccess\obj\Release\VHMS.DataAccess.csproj.AssemblyReference.cache
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.DataAccess\obj\Release\VHMS.DataAccess.csproj.CoreCompileInputs.cache
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.DataAccess\obj\Release\VHMS.Dat.88D7A412.Up2Date
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.DataAccess\obj\Release\VHMS.DataAccess.dll
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.DataAccess\obj\Release\VHMS.DataAccess.pdb

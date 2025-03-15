@@ -18,7 +18,7 @@ public partial class VHMSReportPage : System.Web.UI.MasterPage
             Assembly assembly = Assembly.Load("App_Code");
             string version = assembly.GetName().Version.ToString();
 
-            divFooterLeft.InnerHtml = "Copyright <b><a target='_blank'>KVA Tech</a></b> &copy; " + DateTime.Now.Year.ToString() + " , <strong><a> VRS Tools</a></strong> v" + version;
+            divFooterLeft.InnerHtml = "Copyright <b><a target='_blank'>KVA Tech</a></b> &copy; "+ DateTime.Now.Year.ToString()+ " , <strong><a>"+ Session["CompanyName"].ToString().ToUpper()+ "</a></strong> v" + version;
             //divFooterLeft.InnerHtml = "Copyright &copy; " + DateTime.Now.Year.ToString() + " , <strong><a>Vijaya HMS</a></strong> v" + version;
             divLatestUpdate.InnerHtml = "Last Updated on " + GetAssemblyDate();
             //Session["UserName"] = "Jai Sankar";

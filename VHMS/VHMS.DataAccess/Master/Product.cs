@@ -273,8 +273,6 @@ namespace VHMS.DataAccess.Master
                         objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
                         objProduct.CreatedOn = Convert.ToDateTime(drData["CreatedOn"]);
                         objProduct.sCreatedOn = objProduct.CreatedOn.ToString("dd/MM/yyyy");
-                        objProduct.PurchasePrice = Convert.ToDecimal(drData["PurchasePrice"]);
-                        objProduct.SalesPrice = Convert.ToDecimal(drData["SalesPrice"]);
                         objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
                         objList.Add(objProduct);
                     }

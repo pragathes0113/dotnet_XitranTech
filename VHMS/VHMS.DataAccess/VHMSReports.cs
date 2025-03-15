@@ -2124,6 +2124,30 @@ namespace VHMS.DataAccess
             }
             return dsReportData;
         }
+        public static DataSet PrintSalesEntry(int SalesID = 0, string iDatefrom = "", string iDateto = "", string iCustomer = "", string iCompany = "")
+        {
+            string sException = string.Empty;
+            Database db;
+            DataSet dsReportData = null;
+            try
+            {
+                db = Entity.DBConnection.dbCon;
+                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.RPT_SELECT_SALESENTRY);
+                db.AddInParameter(cmd, "@PK_SalesEntryID", DbType.Int32, SalesID);
+                db.AddInParameter(cmd, "@DateFrom", DbType.String, iDatefrom);
+                db.AddInParameter(cmd, "@FK_CompanyID", DbType.String, iCompany);
+                db.AddInParameter(cmd, "@DateTo", DbType.String, iDateto);
+                db.AddInParameter(cmd, "@FK_CustomerID", DbType.String, iCustomer);
+                dsReportData = db.ExecuteDataSet(cmd);
+            }
+            catch (Exception ex)
+            {
+                sException = "VHMS.DataAccess.VHMSReports PrintSales | " + ex.ToString();
+                Log.Write(sException);
+                throw;
+            }
+            return dsReportData;
+        }
 
         public static DataSet PrintSalesReturnGST(string iDatefrom = "", string iDateto = "", string iType = "")
         {

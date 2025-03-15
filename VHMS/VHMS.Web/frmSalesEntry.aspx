@@ -230,12 +230,12 @@
                                     <input type="text" class="form-control TRSearch" id="txtRate" placeholder="Rate"
                                         maxlength="12" tabindex="9" onkeypress="return IsNumeric(event)" autocomplete="off" />
                                 </div>
-                                <div class="form-group col-md-1" id="divTaxTrans" style="margin-left: -21px;display:none">
+                                <div class="form-group col-md-1" id="divTaxTrans" style="margin-left: -21px; display: none">
                                     <label>
                                         Tax</label><span class="text-danger">*</span>
                                     <select id="ddlTax" class="form-control select2" data-placeholder="Select Tax " tabindex="10"></select>
                                 </div>
-                                <div class="form-group col-md-1" id="divTaxAmt"  style="margin-left: -21px;display:none">
+                                <div class="form-group col-md-1" id="divTaxAmt" style="margin-left: -21px; display: none">
                                     <label>
                                         Tax Amt</label>
                                     <input type="text" class="form-control TRSearch" id="txtTaxAmt" placeholder="Tax. Amt"
@@ -281,12 +281,12 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-md-9"></div>
-                        <div class="form-group col-md-1" style="display:none">
+                        <div class="form-group col-md-1" style="display: none">
                             <label>
                                 Discount %</label>
                             <span class="text-danger">*</span>
                         </div>
-                        <div class="form-group col-md-1" id="divDiscountPercent" style="display:none">
+                        <div class="form-group col-md-1" id="divDiscountPercent" style="display: none">
                             <input type="text" class="form-control" id="txtDiscountPercent" placeholder="Discount Percent"
                                 maxlength="15" tabindex="14" value="0" onkeypress="return IsNumeric(event)" autocomplete="off" />
                         </div>
@@ -318,7 +318,7 @@
                                 maxlength="15" tabindex="15" value="0" onkeypress="return IsNumeric(event)" />
                         </div>
                     </div>
-                    <div class="row" style="display:none">
+                    <div class="row" style="display: none">
                         <div class="form-group col-md-7"></div>
                         <div class="form-group col-md-2" style="display: none;">
                             <input type="checkbox" id="chk" value="value" />
@@ -359,7 +359,7 @@
                                 maxlength="15" tabindex="-1" readonly="true" value="0" onkeypress="return IsNumeric(event)" />
                         </div>
                     </div>
-                    <div class="row"style="display:none">
+                    <div class="row" style="display: none">
                         <div class="form-group col-md-9">
                         </div>
 
@@ -395,11 +395,11 @@
                     <div class="row">
                         <div class="form-group col-md-9">
                         </div>
-                        <div class="form-group col-md-1" style="display:none">
+                        <div class="form-group col-md-1" style="display: none">
                             <label>
                                 IGST</label>
                         </div>
-                        <div class="form-group col-md-1" id="divIGST" style="display:none">
+                        <div class="form-group col-md-1" id="divIGST" style="display: none">
                             <input type="text" class="form-control" id="txtIGST" placeholder="SGST"
                                 maxlength="15" tabindex="-1" readonly="true" value="0" onkeypress="return IsNumeric(event)" />
                         </div>
@@ -808,7 +808,7 @@
                                         <select id="ddlProduct" class="form-control select2" data-placeholder="Select Product Name" tabindex="39"></select>
                                     </div>
                                 </div>
-                              <%--  <div class="form-group col-md-4" id="divPurchasePrice">
+                                <%--  <div class="form-group col-md-4" id="divPurchasePrice">
                                     <label>
                                         Purchase Price</label><span class="text-danger">*</span>
                                     <input type="text" class="form-control TRSearch" id="txtPurchaseRate" placeholder="Purchase Price"
@@ -855,8 +855,87 @@
                     </div>
                 </div>
             </div>
+
+            <div class="box box-solid box-primary" id="divCustomerinfo">
+                <div class="box-header with-border">
+                    <div class="box-title">
+                        <i class="fa fa-user"></i>&nbsp;&nbsp;Customer
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="form-group col-md-4" id="divCustomerName">
+                            <label>
+                                Customer</label><span class="text-danger">*</span>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                <input type="text" class="form-control" id="txtName" style="text-transform: uppercase" placeholder="Please enter Customer Name"
+                                    maxlength="150" tabindex="1" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4" id="divPhoneNo1">
+                            <label>
+                                Mobile No</label><span class="text-danger">*</span>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+                                <input type="text" class="form-control" id="txtPhoneNo1" placeholder="Phone No" maxlength="10"
+                                    tabindex="3" onkeypress="return IsNumeric(event)" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4" id="divAlternateNo">
+                            <label>
+                                Alternate No</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-whatsapp"></i></div>
+                                <input type="text" class="form-control" id="txtAlternateNo" placeholder="Please enter Alternate No"
+                                    maxlength="10" tabindex="5" onkeypress="return isNumberKey(event)" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6" id="divCustomerAddress">
+                            <label>
+                                Address</label>
+                            <textarea id="txtCustomerAddress" class="form-control" maxlength="255" tabindex="4" rows="4" aria-autocomplete="none"></textarea>
+                        </div>
+                        <div class="form-group col-md-3" id="divState">
+                            <label>
+                                State</label><span class="text-danger">*</span>
+                            <select id="ddlState" class="form-control select2" data-placeholder="Select State" tabindex="7">
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3" id="divPincode">
+                            <label>
+                                Pincode</label>
+                            <input type="text" class="form-control" id="txtPincode" placeholder="Pincode"
+                                maxlength="6" tabindex="11" onkeypress="return IsNumeric(event)" autocomplete="off" />
+                        </div>
+                        <div class="form-group col-md-3" id="divFax">
+                            <label>
+                                GST No</label>
+                            <input type="text" class="form-control" id="txtFax" placeholder="GST No" maxlength="20"
+                                tabindex="13" autocomplete="off" />
+                        </div>
+                        <div class="form-group col-md-3" id="divEmail">
+                            <label>
+                                Email</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                                <input type="text" class="form-control" id="txtEmail" placeholder="Email" maxlength="50" tabindex="14" autocomplete="off" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer clearfix">
+                    <button type="button" class="btn btn-danger pull-left" id="btnCustomerClose" tabindex="63">
+                        <i class="fa fa-times"></i>&nbsp;&nbsp;Close</button>
+                    <button type="button" class="btn btn-info pull-right" id="btnCustomerSave" tabindex="61">
+                        <i class="fa fa-save"></i>&nbsp;&nbsp;Save</button>
+                    <button type="button" class="btn btn-info pull-right" id="btnCustomerUpdate" tabindex="62">
+                        <i class="fa fa-edit"></i>&nbsp;&nbsp;Update</button>
+                </div>
+            </div>
         </section>
     </div>
+    <input type="hidden" id="hdnCustomerID" />
     <input type="hidden" id="hdnSalesEntryID" />
     <input type="hidden" id="hdnSalesID" />
     <input type="hidden" id="hdnLastinvoiceDate" />
@@ -919,7 +998,7 @@
                 source: function (request, response) {
                     $.ajax({
                         url: '<%=ResolveUrl("~/frmBarcode.aspx/GetBarcodeCode") %>',
-                        data: "{ 'prefix': '" + request.term + "','SupplierID':0,'IsAll':'A'}",
+                        data: "{ 'prefix': '" + request.term + "','CustomerID':0,'IsAll':'A'}",
                         dataType: "json",
                         type: "POST",
                         contentType: "application/json; charset=utf-8",

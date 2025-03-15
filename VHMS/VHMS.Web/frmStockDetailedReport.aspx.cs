@@ -82,20 +82,20 @@ public partial class frmStockDetailedReport : System.Web.UI.Page
     }
     protected void btnAddNew_Click(object sender, EventArgs e)
     {
-        Response.ClearContent();
-        Response.AppendHeader("content-disposition", "attachment; filename=StockDetailed.xls");
-        Response.ContentType = "application/excel";
-
-        StringWriter stringwriter = new StringWriter();
-        HtmlTextWriter htmltextwriter = new HtmlTextWriter(stringwriter);
-
-        gvProductMas.HeaderRow.Style.Add("background-color", "#FFFFFF");
-
+        Response.Clear();
+        Response.Buffer = true;
+        Response.ContentType = "application/vnd.ms-excel";
+        Response.AddHeader("content-disposition", "attachment;filename=StockDetailed.xls");
+        Response.Charset = "";
+        Response.ContentEncoding = System.Text.Encoding.UTF8;
+        Response.Cache.SetCacheability(HttpCacheability.NoCache);
+        StringWriter stringWriter = new StringWriter();
+        HtmlTextWriter htmlTextWriter = new HtmlTextWriter(stringWriter);
+        gvProductMas.HeaderRow.Style.Add("background-color", "#d8d4d4");
         foreach (TableCell tableCell in gvProductMas.HeaderRow.Cells)
         {
             tableCell.Style["background-color"] = "#d8d4d4";
         }
-
         foreach (GridViewRow gridViewRow in gvProductMas.Rows)
         {
             gridViewRow.BackColor = System.Drawing.Color.White;
@@ -104,8 +104,10 @@ public partial class frmStockDetailedReport : System.Web.UI.Page
                 gridViewRowTableCell.Style["background-color"] = "#FFFFFF";
             }
         }
-        gvProductMas.RenderControl(htmltextwriter);
-        Response.Write(stringwriter.ToString());
+
+        gvProductMas.RenderControl(htmlTextWriter);
+        Response.Write(stringWriter.ToString());
+        Response.Flush();
         Response.End();
     }
     public override void VerifyRenderingInServerForm(Control control)

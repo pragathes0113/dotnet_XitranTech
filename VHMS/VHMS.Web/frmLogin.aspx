@@ -20,7 +20,7 @@
                     <img src="images/default_user.png" alt="Logo" />
                 </div>
                 <div class="row loginbox">
-                    <div id="divTitle" runat="server"> VRS Tools v 1.0.0.0</div>
+                    <div id="divTitle" runat="server"> <%= Session["CompanyName"].ToString().ToUpper()%> v 1.0.0.0</div>
                     <br />
                     <div class="col-lg-12">
                         <span class="singtext">Sign in </span>
@@ -59,7 +59,7 @@
                     <img src="images/default_user.png" alt="Logo" />
                 </div>
                 <div class="row loginbox">
-                    <div id="divTitle" runat="server">VRS Tools </div>
+                    <div id="divTitle" runat="server">VRS Tools  v 1.0.0.0</div>
                     <br />
                     <div class="col-lg-12">
                         <span class="singtext">Sign in </span>

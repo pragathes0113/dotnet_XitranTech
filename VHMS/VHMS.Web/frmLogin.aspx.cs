@@ -23,11 +23,9 @@ public partial class frmLogin : System.Web.UI.Page
                 ddlCompany.Value = Request.Form["ddlCompany"];
             }
         }
-
         Assembly assembly = Assembly.Load("App_Code");
         string version = assembly.GetName().Version.ToString();
-
-        divTitle.InnerHtml = " VRS Tools" + version;
+        divTitle.InnerHtml = "VRS Tools " + version;
     }
     protected void btnSignIn_Click(object sender, EventArgs e)
     {

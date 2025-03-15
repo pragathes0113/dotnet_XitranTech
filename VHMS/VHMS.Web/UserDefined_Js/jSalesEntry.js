@@ -4,7 +4,6 @@ var RecordAvailable = 0;
 
 $(function () {
     pLoadingSetup(false);
-
     ActionAdd = _CMActionAdd;
     ActionUpdate = _CMActionUpdate;
     ActionDelete = _CMActionDelete;
@@ -23,6 +22,7 @@ $(function () {
     GetProductList("ddlProduct");
     GetTaxList("ddlTax");
     GetPassword();
+    $("#divCustomerinfo").hide();
     $("#ddlTaxName").change();
     $("#txtBillDate,#txtLRDate").attr("data-link-format", "dd/MM/yyyy");
     $("#txtBillDate,#txtLRDate").datetimepicker({
@@ -51,6 +51,84 @@ $(function () {
     GetRecord();
 });
 
+$("#btnCustomerAdd").click(function () {
+    GetStateList();
+    $("#btnClose").click();
+    $("#secHeader").hide();
+    $("#divTab").hide();
+    $("#btnCustomerAdd").hide();
+    $("#btnCustomerSave").show();
+    $("#btnCustomerClose").show();
+    $("#btnCustomerUpdate").hide();
+    $("#divCustomerinfo").show();
+    ClearAddCustomerFields();
+    document.title = "Add New Customer";
+    return false;
+});
+
+$("#btnCustomerClose").click(function () {
+    $("#divCustomerinfo").hide();
+    $("#btnAddNew").click();
+    return false;
+});
+
+function ClearAddCustomerFields() {
+    $("#txtName").val("");
+    $("#txtPhoneNo1").val("");
+    $("#ddlState").val(null).change();
+    $("#txtAlternateNo").val("");
+    $("#txtCustomerAddress").val("");
+    $("#txtWhatsAppNo").val("");
+    $("#txtPincode").val("");
+    $("#txtEmail").val("");
+    $("#txtFax").val("");
+}
+
+function GetStateList() {
+    $("#ddlState").empty();
+    $.ajax({
+        type: "POST",
+        url: "WebServices/VHMSService.svc/GetState",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ CountryID: 0 }),
+        dataType: "json",
+        async: false,
+        success: function (data) {
+            if (data.d != "") {
+                var objResponse = jQuery.parseJSON(data.d);
+                if (objResponse.Status == "Success") {
+                    if (objResponse.Value != null && objResponse.Value != "NoRecord") {
+                        var obj = $.parseJSON(objResponse.Value);
+                        if (obj.length > 0) {
+                            //$("#ddlState").append('<option value="' + '0' + '">' + '--Select State--' + '</option>');
+                            for (var index = 0; index < obj.length; index++) {
+                                $("#ddlState").append('<option value=' + obj[index].StateID + ' >' + obj[index].StateName + '</option>');
+                            }
+                        }
+                    }
+                    else if (objResponse.Value == "NoRecord") {
+                        $("#ddlState").append('<option value="' + '0' + '">' + '--No Records--' + '</option>');
+                    }
+                }
+                else if (objResponse.Status == "Error") {
+                    if (objResponse.Value == "0") {
+                        window.location("frmLogin.aspx");
+                    }
+                    else if (objResponse.Value == "Error") {
+                        window.location = "frmErrorPage.aspx";
+                    }
+                }
+            }
+            else {
+                $("#ddlState").append('<option value="' + '0' + '">' + '--No Records--' + '</option>');
+            }
+        },
+        error: function (e) {
+            $.jGrowl("Error  Occured", { sticky: false, theme: 'danger', life: jGrowlLife });
+        }
+    });
+    return false;
+}
 function saveimage(id) {
     pLoadingSetup(false);
     var images = $("#" + id + "").attr('src');
@@ -254,6 +332,8 @@ function Edit_OPBillingDetail(ID) {
 
 $("#btnAddNew").click(function () {
     $("#secHeader").addClass('hidden');
+    $("#divCustomerinfo").hide();
+    $("#btnCustomerAdd").show();
     $("#btnAddNew").hide();
     $("#btnList").show();
     $("#hdnSalesEntryID").val("0");
@@ -1331,6 +1411,54 @@ function GetProductTax() {
         });
         return false;
     }
+}
+
+function GetCustomerList(ddlname) {
+    var sControlName = "#" + ddlname;
+    dProgress(true);
+    $(sControlName).empty();
+    $.ajax({
+        type: "POST",
+        url: "WebServices/VHMSService.svc/GetTopCustomer",
+        data: JSON.stringify({ CustomerID: 0 }),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: false,
+        success: function (data) {
+            if (data.d != "") {
+                var objResponse = jQuery.parseJSON(data.d);
+                if (objResponse.Status == "Success") {
+                    if (objResponse.Value != null && objResponse.Value != "NoRecord") {
+                        var obj = $.parseJSON(objResponse.Value);
+                        if (obj.length > 0) {
+                            $(sControlName).append('<option value="' + '0' + '">' + '--All--' + '</option>');
+                            for (var index = 0; index < obj.length; index++) {
+                                $(sControlName).append('<option value=' + obj[index].CustomerID + ' >' + obj[index].CustomerName + '</option>');
+                            }
+                        }
+                    }
+                    else if (objResponse.Value == "NoRecord") {
+                        $(sControlName).append('<option value="' + '0' + '">' + '--No Records--' + '</option>');
+                    }
+                }
+                else if (objResponse.Status == "Error") {
+                    if (objResponse.Value == "0") {
+                        window.location("frmLogin.aspx");
+                    }
+                    else if (objResponse.Value == "Error") {
+                        window.location = "frmErrorPage.aspx";
+                    }
+                }
+            }
+            else {
+                $(sControlName).append('<option value="' + '0' + '">' + '--No Records--' + '</option>');
+            }
+        },
+        error: function (e) {
+            $.jGrowl("Error  Occured", { sticky: false, theme: 'danger', life: jGrowlLife });
+        }
+    });
+    return false;
 }
 function GetCustomerList(ddlname) {
     var sControlName = "#" + ddlname;
@@ -3413,3 +3541,138 @@ $("#btnCustomerAdd").click(function () {
 
     return false;
 });
+
+$("#btnCustomerSave").click(function () {
+    if ($("#txtName").val().trim() == "" || $("#txtName").val().trim() == undefined) {
+        $.jGrowl("Please enter Customer Name", { sticky: false, theme: 'warning', life: jGrowlLife });
+        $("#divCustomerName").addClass('has-error'); $("#txtName").focus(); return false;
+    } else { $("#divCustomerName").removeClass('has-error'); }
+
+    if ($("#ddlState").val() == "0" || $("#ddlState").val() == undefined) {
+        $.jGrowl("Please Select State", { sticky: false, theme: 'warning', life: jGrowlLife });
+        $("#divState").addClass('has-error'); $("#ddlState").focus(); return false;
+    } else { $("#divState").removeClass('has-error'); }
+
+    if ($("#txtPhoneNo1").val().trim() == "" || $("#txtPhoneNo1").val().trim() == undefined) {
+        $.jGrowl("Please enter Phone No", { sticky: false, theme: 'warning', life: jGrowlLife });
+        $("#divPhoneNo1").addClass('has-error'); $("#txtPhoneNo1").focus(); return false;
+    } else { $("#divPhoneNo1").removeClass('has-error'); }
+    SaveandUpdateCustomer();
+    return false;
+});
+
+function SaveandUpdateCustomer() {
+    var Obj = new Object();
+    Obj.CustomerID = 0;
+    Obj.CustomerName = $("#txtName").val().trim().toUpperCase();
+    Obj.Address = $("#txtCustomerAddress").val();
+    Obj.AlternateNo = $("#txtAlternateNo").val();
+    Obj.Email = $("#txtEmail").val();
+    Obj.MobileNo = $("#txtPhoneNo1").val();
+    Obj.Pincode = $("#txtPincode").val();
+    Obj.GSTNo = $("#txtFax").val();
+    var ObjState = new Object();
+    ObjState.StateID = $("#ddlState").val();
+    Obj.State = ObjState;
+    if ($("#hdnCustomerID").val() > 0) {
+        Obj.CustomerID = $("#hdnCustomerID").val();
+        sMethodName = "UpdateCustomer";
+    }
+    else { sMethodName = "AddCustomer"; }
+    $.ajax({
+        type: "POST",
+        url: "WebServices/VHMSService.svc/" + sMethodName,
+        data: JSON.stringify({ Objdata: Obj }),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: false,
+        success: function (data) {
+            if (data.d != "") {
+                var objResponse = jQuery.parseJSON(data.d);
+                if (objResponse.Status == "Success") {
+                    if (objResponse.Value > 0) {
+                        if (sMethodName == "AddCustomer") {
+                            $("#btnAddNew").click();
+                            $("#divTab").hide();
+                            $("#divOPBilling").show();
+                            GetCustomerList("ddlCustomerName");
+                            GetCustomerID(objResponse.Value);
+                            $.jGrowl("Saved Successfully", { sticky: false, theme: 'success', life: jGrowlLife });
+                        }
+                    }
+                }
+                else if (objResponse.Status == "Error") {
+                    if (objResponse.Value == "0") {
+                        window.location = "frmLogin.aspx";
+                    }
+                    else if (objResponse.Value == "Customer_A_01") {
+                        $.jGrowl("Name Already Exists", { sticky: false, theme: 'danger', life: jGrowlLife });
+                    }
+                    else if (objResponse.Value == "Error") {
+                        window.location = "frmErrorPage.aspx";
+                    }
+                }
+            }
+            else {
+                $.jGrowl("Error  Occured", { sticky: true, theme: 'danger', life: jGrowlLife });
+            }
+        },
+        error: function (e) {
+            $.jGrowl("Error  Occured", { sticky: true, theme: 'danger', life: jGrowlLife });
+        }
+    });
+    return false;
+}
+
+function GetCustomerID(id) {
+    dProgress(true);
+    $.ajax({
+        type: "POST",
+        url: "WebServices/VHMSService.svc/GetCustomerByID",
+        data: JSON.stringify({ ID: id }),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: false,
+        success: function (data) {
+            if (data.d != "") {
+                var objResponse = jQuery.parseJSON(data.d);
+                if (objResponse.Status == "Success") {
+                    if (objResponse.Value != null && objResponse.Value != "NoRecord" && objResponse.Value != "Error") {
+                        var obj = jQuery.parseJSON(objResponse.Value);
+                        if (obj != null) {
+                            $("#ddlCustomerName").val(obj.CustomerID).change();
+                        }
+                        dProgress(false);
+                    }
+                    else if (objResponse.Value == "NoRecord") {
+                        $.jGrowl("No Record", { sticky: false, theme: 'warning', life: jGrowlLife });
+                        dProgress(false);
+                    }
+                    else if (objResponse.Value == "Error") {
+                        $.jGrowl("Error", { sticky: false, theme: 'warning', life: jGrowlLife });
+                    }
+                }
+                else if (objResponse.Status == "Error") {
+                    if (objResponse.Value == "0") {
+                        window.location("frmLogin.aspx");
+                    }
+                    else if (objResponse.Value == "Error") {
+                        window.location = "frmErrorPage.aspx";
+                    }
+                    else if (objResponse.Value == "NoRecord") {
+                        $.jGrowl("No Record", { sticky: false, theme: 'warning', life: jGrowlLife });
+                    }
+                }
+            }
+            else {
+                $.jGrowl("Error  Occured", { sticky: true, theme: 'danger', life: jGrowlLife });
+                dProgress(false);
+            }
+        },
+        error: function () {
+            $.jGrowl("Error  Occured", { sticky: true, theme: 'danger', life: jGrowlLife });
+            dProgress(false);
+        }
+    });
+    return false;
+}

@@ -402,8 +402,6 @@
         $("#btnSupplierClose").click(function () {
             $("#divSupplierinfo").hide();
             $("#btnAddNew").click();
-            //$("#divTab").show();
-            //$("#divSearchProduct").show();
             return false;
         });
         function ClearAddSupplierFields() {
@@ -1427,6 +1425,7 @@
             SaveandUpdateSupplier();
             return false;
         });
+
         function SaveandUpdateSupplier() {
             var Obj = new Object();
             Obj.SupplierID = 0;
@@ -1495,6 +1494,7 @@
             });
             return false;
         }
+
         function GetSupplierID(id) {
             dProgress(true);
             $.ajax({
@@ -1547,6 +1547,7 @@
             });
             return false;
         }
+
     </script>
     <script type="text/javascript" src="JS/fancybox/jquery.fancybox.js?v=2.1.4"></script>
     <link rel="stylesheet" type="text/css" href="JS/fancybox/jquery.fancybox.css?v=2.1.4" media="screen" />

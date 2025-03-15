@@ -134,7 +134,7 @@ public partial class frmSalesReport : System.Web.UI.Page
         DateTime dtFrom = DateTime.MinValue, dtTo = DateTime.MinValue;
         ReportDataSet dsReportData = new ReportDataSet();
 
-        dsData = VHMS.DataAccess.VHMSReports.PrintSalesEntry(txtDOB.Text, txtDOR.Text, ddlCustomer.SelectedValue, ddlCompany.SelectedValue);
+        dsData = VHMS.DataAccess.VHMSReports.PrintSalesEntry(0, txtDOB.Text, txtDOR.Text, ddlCustomer.SelectedValue, ddlCompany.SelectedValue);
         try
         {
             if (dsData.Tables.Count > 0)
@@ -168,28 +168,24 @@ public partial class frmSalesReport : System.Web.UI.Page
     {
         if (e.Row.RowType == DataControlRowType.DataRow)
         {
-            NetAmount += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "TaxAmount"));
+
             InvoiceAmount += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "NetAmount"));
-            ProfitLossAmount += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "ProfitLossAmount"));
             DiscountAmount += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "DiscountAmount"));
             OtherCharges += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "OtherCharges"));
             TotalQty += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "TotalQuantity"));
         }
         if (e.Row.RowType == DataControlRowType.Footer)
         {
-            e.Row.Cells[0].ColumnSpan = 5;
+            e.Row.Cells[0].ColumnSpan = 4;
             e.Row.Cells.RemoveAt(2);
             e.Row.Cells.RemoveAt(3);
             e.Row.Cells.RemoveAt(4);
-            e.Row.Cells.RemoveAt(5);
 
             e.Row.Cells[1].Text = "Total Amount :";
             e.Row.Cells[2].Text = Convert.ToDecimal(TotalQty).ToString();
             e.Row.Cells[3].Text = Convert.ToDecimal(DiscountAmount).ToString();
-            e.Row.Cells[4].Text = Convert.ToDecimal(NetAmount).ToString();
-            e.Row.Cells[5].Text = Convert.ToDecimal(OtherCharges).ToString();
-            e.Row.Cells[6].Text = Convert.ToDecimal(InvoiceAmount).ToString();
-            e.Row.Cells[7].Text = Convert.ToDecimal(ProfitLossAmount).ToString();
+            e.Row.Cells[4].Text = Convert.ToDecimal(OtherCharges).ToString();
+            e.Row.Cells[5].Text = Convert.ToDecimal(InvoiceAmount).ToString();
             e.Row.Cells[1].Font.Bold = true;
             e.Row.Cells[2].Font.Bold = true;
             e.Row.Cells[3].Font.Bold = true;
