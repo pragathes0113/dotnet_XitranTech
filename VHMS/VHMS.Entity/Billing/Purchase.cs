@@ -69,7 +69,7 @@ namespace VHMS.Entity.Billing
         public DateTime PurchaseBatchDate { get; set; }
         public string sPurchaseBatchDate { get; set; }
         public decimal SellingRate { get; set; }
-
+        public decimal PreviousRate { get; set; }
     }
     public class PurchaseFilter
     {

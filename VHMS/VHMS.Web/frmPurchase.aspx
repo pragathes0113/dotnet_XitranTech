@@ -200,6 +200,12 @@
                                     <input type="text" class="form-control TRSearch" id="txtPartyCode" placeholder="Code"
                                         maxlength="12" tabindex="-1" readonly="true" />
                                 </div>
+                                <div class="form-group col-md-1" id="divPerviousRate">
+                                    <label>
+                                        Pervious Rate</label><span class="text-danger">*</span>
+                                    <input type="text" class="form-control TRSearch" id="txtPerviousRate" placeholder="Pervious Rate"
+                                        maxlength="12" tabindex="-1" onkeypress="return IsNumeric(event)" autocomplete="off" readonly />
+                                </div>
                                 <div class="form-group col-md-1" id="divQuantity">
                                     <label>
                                         Quantity</label><span class="text-danger">*</span>
@@ -212,7 +218,7 @@
                                     <input type="text" class="form-control TRSearch" id="txtRate" placeholder="Rate"
                                         maxlength="12" tabindex="10" onkeypress="return IsNumeric(event)" autocomplete="off" />
                                 </div>
-                                <div class="form-group col-md-1" id="divSalesMargin">
+                                <div class="form-group col-md-1" id="divSalesMargin" style="display: none">
                                     <label>
                                         Sales Margin</label><span class="text-danger">*</span>
                                     <input type="text" class="form-control TRSearch" id="txtSalesMargin" placeholder="Margin"
@@ -222,7 +228,7 @@
                                     <label>
                                         Sales Rate</label><span class="text-danger">*</span>
                                     <input type="text" class="form-control TRSearch" id="txtSalesRate" placeholder="Rate"
-                                        maxlength="12" tabindex="11" onkeypress="return IsNumeric(event)" autocomplete="off" readonly/>
+                                        maxlength="12" tabindex="11" onkeypress="return IsNumeric(event)" autocomplete="off" />
                                 </div>
                                 <div class="form-group col-md-1" id="divBatchNo" style="display: none;">
                                     <label>
@@ -230,21 +236,21 @@
                                     <input type="text" class="form-control TRSearch" id="txtBatchNo" placeholder="Batch No"
                                         maxlength="12" tabindex="-1" onkeypress="return IsNumeric(event)" readonly="true" />
                                 </div>
-                                <div class="form-group col-md-1" id="divDisPer" style="display:none">
+                                <div class="form-group col-md-1" id="divDisPer" style="display: none">
                                     <label>
                                         Disc %</label>
                                     <input type="text" class="form-control TRSearch" id="txtDisPer" placeholder="Discount %"
                                         maxlength="12" tabindex="12" onkeypress="return IsNumeric(event)" autocomplete="off" />
                                 </div>
 
-                                <div class="form-group col-md-1" id="divDisAmt" style="display:none">
+                                <div class="form-group col-md-1" id="divDisAmt" style="display: none">
                                     <label>
                                         Disc. Amt</label>
                                     <input type="text" class="form-control TRSearch" id="txtDisAmt" placeholder="Disc. Amt"
                                         maxlength="12" tabindex="-1" onkeypress="return IsNumeric(event)" readonly="true" />
                                 </div>
 
-                                <div class="form-group col-md-1" id="divTaxTrans" style="display:none">
+                                <div class="form-group col-md-1" id="divTaxTrans" style="display: none">
                                     <label>
                                         Tax</label><span class="text-danger">*</span>
                                     <select id="ddlTax" class="form-control select2" data-placeholder="Select Tax " disabled="disabled" tabindex="14"></select>
@@ -289,7 +295,7 @@
                         </div>
                     </div>
                     <div class="row"></div>
-                    <div class="row" style="display:none">
+                    <div class="row" style="display: none">
                         <div class="form-group col-md-1" style="display: none;">
                             <label>
                                 Upload</label>
@@ -335,7 +341,7 @@
                                 maxlength="15" tabindex="-1" readonly="true" value="0" onkeypress="return IsNumeric(event)" />
                         </div>
                     </div>
-                    <div class="row" style="display:none">
+                    <div class="row" style="display: none">
                         <div class="form-group col-md-7"></div>
                         <div class="form-group col-md-1">
                             <label>
@@ -356,7 +362,7 @@
                                 maxlength="15" tabindex="18" value="0" onkeypress="return IsNumeric(event)" />
                         </div>
                     </div>
-                    <div class="row" style="display:none">
+                    <div class="row" style="display: none">
                         <div class="form-group col-md-1"></div>
                         <div class="form-group col-md-2" style="display: none">
                             <input type="checkbox" id="chk" value="value" />
@@ -400,7 +406,7 @@
                                 maxlength="15" tabindex="-1" readonly="true" value="0" onkeypress="return IsNumeric(event)" />
                         </div>
                     </div>
-                    <div class="row" style="display:none">
+                    <div class="row" style="display: none">
                         <div class="form-group col-md-7"></div>
                         <div class="form-group col-md-1">
                             <label>

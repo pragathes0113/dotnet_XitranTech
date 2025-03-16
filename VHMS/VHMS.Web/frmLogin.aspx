@@ -51,7 +51,7 @@
         <div class="container" style="width: 100%; display: flex; height: 100vh; padding: 0px;">
 
             <div class="col-sm-6">
-                <img src="images/VRS.jpg" style="margin: auto; display: block; transform: translate(-50%, -50%); position: absolute; left: 50%; top: 45%; width: 500px;" alt="Logo" />
+                <img src="images/VRS.jpg" style="margin: auto; display: block; transform: translate(-50%, -50%); position: absolute; left: 50%; top: 50%; width: 500px;" alt="Logo" />
             </div>
             <div class="col-sm-1"></div>
             <div class="col-sm-3" style="margin-top: 10%">

@@ -516,7 +516,8 @@ namespace VHMS.DataAccess.Master
                         objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
                         objProduct.Quantity = Convert.ToDecimal(drData["Quantity"]);
                         objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
-                        
+                        objProduct.PerviousRate = Convert.ToDecimal(drData["PerviousRate"]);
+
                     }
                 }
             }

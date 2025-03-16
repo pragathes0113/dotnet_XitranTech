@@ -29,5 +29,6 @@ namespace VHMS.Entity.Master
         public Decimal PurchaseRate { get; set; }
         public Decimal SellingRate { get; set; }
         public Decimal Quantity { get; set; }
+        public Decimal PerviousRate { get; set; }
     }
 }

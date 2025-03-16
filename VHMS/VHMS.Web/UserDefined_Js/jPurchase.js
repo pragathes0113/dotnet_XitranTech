@@ -1,5 +1,4 @@
 ﻿var gOPBillingList = [];
-var PreviousRate = 0;
 var RecordAvailable = 0;
 var RateCount = 0;
 $(function () {
@@ -685,7 +684,6 @@ function GetProductDetailsPurchase(id, value, SID) {
                         var obj = jQuery.parseJSON(objResponse.Value);
                         if (obj != null) {
                             RecordAvailable = obj.length;
-                            PreviousRate = obj[0].Rate;
                         }
                         dProgress(false);
                     }
@@ -746,8 +744,6 @@ function GetRate() {
                                 $("#txtPartyCode").val(obj.ProductCode);
                                 // $("#txtCode").val(obj.SMSCode);
                                 //$("#ddlTax").val(obj.Tax.TaxID);
-                                PreviousRate = obj.Rate;
-
                             }
                             dProgress(false);
                         }
@@ -804,7 +800,7 @@ function GetProductTax() {
                             var obj = jQuery.parseJSON(objResponse.Value);
                             if (obj != null) {
                                 $("#ddlTax").val($("#ddlTaxName").val()).change();
-                                $("#txtSalesMargin").val(obj.SalesPercent);
+                                $("#txtPerviousRate").val(obj.PerviousRate);
                             }
                             dProgress(false);
                         }
@@ -1190,18 +1186,9 @@ Array.prototype.max = function () {
     return max;
 }
 
-$("#txtRate,#txtQuantity, #txtDisAmt, #txtDisPer,#txtSalesMargin,#txtSalesRate").change(function () {
+$("#txtRate,#txtQuantity, #txtDisAmt, #txtDisPer").change(function () {
     CalculateTrans();
-    SalesRate();
 });
-function SalesRate() {
-    var iRate = parseFloat($("#txtRate").val()) || 0;
-    var iSM = parseFloat($("#txtSalesMargin").val()) || 0;
-    if (isNaN(iSM)) iSM = 0;
-    var iMR = iRate * iSM / 100;
-    var iSR = iRate + iMR;
-    $("#txtSalesRate").val(iSR.toFixed(2));
-}
 
 function CalculateTrans() {
     var iTax = parseFloat($("#hdnTransTaxPercent").val());
@@ -1234,24 +1221,24 @@ function CalculateTrans() {
     $("#txtSubTotal").val(parseFloat(iSubTotal).toFixed(2));
 }
 
-$("#txtRate").change(function () {
-    if (PreviousRate == parseFloat($("#txtRate").val())) {
-        PreviousRate = $("#txtRate").val();
-        RateCount = 0;
-    }
-    else {
-        if (PreviousRate != 0) {
-            $(".modal-title").html("&nbsp;&nbsp;Rate has been changed");
-            $('#composedialog').modal({ show: true, backdrop: 'static', keyboard: false });
-            if (PreviousRate < parseFloat($("#txtRate").val())) {
-                RateCount = 1;
-            }
-            else
-                RateCount = 2;
+//$("#txtRate").change(function () {
+//    if (PreviousRate == parseFloat($("#txtRate").val())) {
+//        PreviousRate = $("#txtRate").val();
+//        RateCount = 0;
+//    }
+//    else {
+//        if (PreviousRate != 0) {
+//            $(".modal-title").html("&nbsp;&nbsp;Rate has been changed");
+//            $('#composedialog').modal({ show: true, backdrop: 'static', keyboard: false });
+//            if (PreviousRate < parseFloat($("#txtRate").val())) {
+//                RateCount = 1;
+//            }
+//            else
+//                RateCount = 2;
 
-        }
-    }
-});
+//        }
+//    }
+//});
 
 $("#btnCloseDialog").click(function () {
     $('#composedialog').modal('hide');
@@ -1311,12 +1298,6 @@ $("#btnAddMagazine,#btnUpdateMagazine").click(function () {
         $("#divQuantity").addClass('has-error'); $("#txtQuantity").focus(); return false;
     } else { $("#divQuantity").removeClass('has-error'); }
 
-    //if ($("#ddlTax").val() == "0" || $("#ddlTax").val() == undefined || $("#ddlTax").val() == null) {
-    //    $.jGrowl("Please select Tax", { sticky: false, theme: 'warning', life: jGrowlLife });
-    //    $("#divTaxTrans").addClass('has-error'); $("#ddlTax").focus(); return false;
-    //}
-    //else { $("#divTaxTrans").removeClass('has-error'); }
-
     if ($("#txtRate").val() == "" || $("#txtRate").val() == undefined || $("#txtRate").val() == null) {
         $.jGrowl("Please enter rate", { sticky: false, theme: 'warning', life: jGrowlLife });
         $("#divRate").addClass('has-error'); $("#txtRate").focus(); return false;
@@ -1369,6 +1350,7 @@ $("#btnAddMagazine,#btnUpdateMagazine").click(function () {
     ObjData.Quantity = parseFloat($("#txtQuantity").val());
     ObjData.Rate = parseFloat($("#txtRate").val());
     ObjData.SellingRate = parseFloat($("#txtSalesRate").val());
+    ObjData.PerviousRate = parseFloat($("#txtPerviousRate").val());
     ObjData.BatchNo = $("#txtBatchNo").val();
     ObjData.SerialNo = $("#txtSerialNo").val();
 
@@ -1460,7 +1442,7 @@ $("#btnAddMagazine,#btnUpdateMagazine").click(function () {
     var scrollBottom = Math.max($('#tblOPBillingList').height());
     $('#divOPBillingList').scrollTop(scrollBottom);
     RateCount = 0;
-    PreviousRate = 0;
+ /*   PreviousRate = 0;*/
     CalculateAmount();
     ClearOPBillingFields();
     $("#txtCode").focus();
@@ -1483,7 +1465,6 @@ function ClearOPBillingFields() {
     $("#txtSubTotal").val("0.00");
     $("#txtBarcode").val("");
     $("#txtSalesRate").val("0");
-    $("#txtSalesMargin").val("0");
     $("#txtBatchNo").val("");
     $("#txtSerialNo").val("");
     $("#hdnOPSNo").val("");
@@ -1519,8 +1500,10 @@ function DisplayOPBillingList(gData) {
         sTable = "<table id='tblOPBillingList' class='table no-margin table-condensed table-hover'>";
         sTable += "<thead><tr><th class='" + sColorCode + "' style='width:3px;text-align: center'>S.No</th>";
         sTable += "<th class='" + sColorCode + "'>Product Name</th>";
+        sTable += "<th class='" + sColorCode + "'>PreviousRate</th>";
         sTable += "<th class='" + sColorCode + "'>Quantity</th>";
         sTable += "<th class='" + sColorCode + "'>Rate</th>";
+        sTable += "<th class='" + sColorCode + "'>Sales Rate</th>";
         //sTable += "<th class='" + sColorCode + "'>Disc. %</th>";
         //sTable += "<th class='" + sColorCode + "'>Disc. Amt</th>";
         //sTable += "<th class='" + sColorCode + "'>Tax %</th>";
@@ -1536,8 +1519,10 @@ function DisplayOPBillingList(gData) {
                 sTable = "<tr><td id='" + gData[i].SNo + "'>" + sCount + "</td>";
                 $("#txtSNo").val(sCount + 1);
                 sTable += "<td>" + gData[i].Product.ProductName + "</td>";
+                sTable += "<td>" + gData[i].PreviousRate + "</td>";
                 sTable += "<td>" + gData[i].Quantity + "</td>";
                 sTable += "<td>" + gData[i].Rate + "</td>";
+                sTable += "<td>" + gData[i].SellingRate + "</td>";
                 //sTable += "<td>" + gData[i].DiscountPercentage + "</td>";
                 //sTable += "<td>" + gData[i].DiscountAmount + "</td>";
                 //sTable += "<td>" + gData[i].Tax.TaxPercentage + "</td>";
@@ -1601,6 +1586,7 @@ function Bind_OPBillingByID(ID, data) {
                 $("#txtSerialNo").val(data[i].SerialNo);
                 $("#txtSubTotal").val(data[i].SubTotal);
                 $("#txtBarcode").val(data[i].Barcode);
+                $("#txtPerviousRate").val(data[i].PreviousRate);
                 for (var i = 0; i < data.length; i++) {
                     if ($("#ddlProductName option[value='" + data[i].Product.ProductID + "']").length === 0) {
                         $("#ddlProductName").append(
@@ -1650,6 +1636,8 @@ function Update_OPBilling(oData) {
 
             gOPBillingList[i].Quantity = oData.Quantity;
             gOPBillingList[i].Rate = oData.Rate;
+            gOPBillingList[i].PreviousRate = oData.PreviousRate;
+            
             gOPBillingList[i].RateupdateFlag = oData.RateupdateFlag;
             gOPBillingList[i].RateDecreaseFlag = oData.RateDecreaseFlag;
             gOPBillingList[i].NewProductFlag = oData.NewProductFlag;
@@ -2677,6 +2665,8 @@ function EditRecord(id) {
 
                                 objTemp.Quantity = ObjProduct[index].Quantity;
                                 objTemp.Rate = ObjProduct[index].Rate;
+                                objTemp.PreviousRate = ObjProduct[index].PreviousRate;
+                                
                                 objTemp.DiscountPercentage = ObjProduct[index].DiscountPercentage;
                                 objTemp.DiscountAmount = ObjProduct[index].DiscountAmount;
                                 objTemp.SubTotal = ObjProduct[index].SubTotal;

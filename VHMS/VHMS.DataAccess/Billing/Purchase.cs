@@ -1145,6 +1145,7 @@ namespace VHMS.DataAccess.Billing
                         objPurchaseTrans.Product = objProduct;
                         objPurchaseTrans.BatchNo = Convert.ToString(drData["BatchNo"]);
                         objPurchaseTrans.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
+                        objPurchaseTrans.PreviousRate = Convert.ToDecimal(drData["PreviousRate"]);
                         objPurchaseTrans.PurchaseBatchDate = Convert.ToDateTime(drData["PurchaseBatchDate"]);
                         objPurchaseTrans.sPurchaseBatchDate = objPurchaseTrans.PurchaseBatchDate.ToString("dd/MM/yyyy");
                         objList.Add(objPurchaseTrans);
@@ -1208,6 +1209,7 @@ namespace VHMS.DataAccess.Billing
                         objPurchaseTrans.Product = objProduct;
                         objPurchaseTrans.BatchNo = Convert.ToString(drData["BatchNo"]);
                         objPurchaseTrans.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
+                        objPurchaseTrans.PreviousRate = Convert.ToDecimal(drData["PreviousRate"]);
                         objPurchaseTrans.PurchaseBatchDate = Convert.ToDateTime(drData["PurchaseBatchDate"]);
                         objPurchaseTrans.sPurchaseBatchDate = objPurchaseTrans.PurchaseBatchDate.ToString("dd/MM/yyyy");
 

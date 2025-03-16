@@ -206,7 +206,7 @@
                                     <input type="text" class="form-control TRSearch" id="txtPreviousPrice" placeholder="Rate"
                                         maxlength="12" tabindex="9" onkeypress="return IsNumeric(event)" autocomplete="off" readonly />
                                 </div>
-                                <div class="form-group col-md-1" id="divSalesMargin" style="margin-left: -21px;">
+                                <div class="form-group col-md-1" id="divSalesMargin" style="margin-left: -21px;display:none">
                                     <label>
                                         SM</label><span class="text-danger">*</span>
                                     <input type="text" class="form-control TRSearch" id="txtSalesMargin" placeholder="Rate"

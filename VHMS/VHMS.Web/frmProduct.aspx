@@ -119,7 +119,7 @@
                             </div>
                             <div class="modal-body">
                                 <div class="row">
-                                    <div class="form-group col-md-3" id="divCategory">
+                                    <div class="form-group col-md-4" id="divCategory">
                                         <label>
                                             Category</label><span class="text-danger">*</span>
                                         <select id="ddlCategory" class="form-control select2" data-placeholder="Select Category" tabindex="1">
@@ -139,7 +139,7 @@
                                         <input type="text" class="form-control" id="txtProductCode" placeholder="Please enter HSN Code"
                                             maxlength="10" tabindex="3" autocomplete="off" />
                                     </div>
-                                    <div class="form-group col-md-3" id="divSalesMargin">
+                                    <div class="form-group col-md-3" id="divSalesMargin" style="display:none">
                                         <label>
                                             Sales Margin</label><span class="text-danger">*</span>
                                         <input type="text" class="form-control" id="txtSalesPercent" placeholder="Please enter Sales Margin"
@@ -160,13 +160,13 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="form-group  col-md-4" id="divSupplier">
+                                    <div class="form-group  col-md-5" id="divSupplier">
                                         <label>
                                             Supplier</label><span class="text-danger">*</span>
                                         <select id="ddlSupplier" class="form-control select2" data-placeholder="Select Supplier" tabindex="6">
                                         </select>
                                     </div>
-                                    <div class="form-group  col-md-3" id="divUnit">
+                                    <div class="form-group  col-md-5" id="divUnit">
                                         <label>
                                             Unit</label><span class="text-danger">*</span>
                                         <select id="ddlUnit" class="form-control select2" data-placeholder="Select Unit" tabindex="7">
@@ -925,19 +925,6 @@
         $("#btnView").click(function () {
             GetRecord();
         });
-
-        $("#txtSalesPercent, #txtPurchaseRate, #txtSellingRate").change(function () {
-            SalesRate();
-        });
-
-        function SalesRate() {
-            var iPR = parseFloat($("#txtPurchaseRate").val()) || 0;
-            var iSP = parseFloat($("#txtSalesPercent").val()) || 0;
-            var iMR = (iPR * iSP) / 100;
-            var iSR = iPR + iMR;
-            $("#txtSellingRate").val(iSR);
-        }
-
         $("#btnSave,#btnUpdate").click(function () {
             if (this.id == "btnSave") { if (ActionAdd != "1") { $.jGrowl(_CMAccessDeined, { sticky: false, theme: 'danger', life: jGrowlLife }); return false; } }
             else if (this.id == "btnUpdate") { if (ActionUpdate != "1") { $.jGrowl(_CMAccessDeined, { sticky: false, theme: 'danger', life: jGrowlLife }); return false; } }
@@ -952,10 +939,10 @@
                 $("#divName").addClass('has-error'); $("#txtName").focus(); return false;
             } else { $("#divName").removeClass('has-error'); }
 
-            if ($("#txtSalesPercent").val().trim() == "" || $("#txtSalesPercent").val().trim() == undefined) {
-                $.jGrowl("Please enter Sales Margin", { sticky: false, theme: 'warning', life: jGrowlLife });
-                $("#divSalesMargin").addClass('has-error'); $("#txtSalesPercent").focus(); return false;
-            } else { $("#divSalesMargin").removeClass('has-error'); }
+            //if ($("#txtSalesPercent").val().trim() == "" || $("#txtSalesPercent").val().trim() == undefined) {
+            //    $.jGrowl("Please enter Sales Margin", { sticky: false, theme: 'warning', life: jGrowlLife });
+            //    $("#divSalesMargin").addClass('has-error'); $("#txtSalesPercent").focus(); return false;
+            //} else { $("#divSalesMargin").removeClass('has-error'); }
 
             if (!$("#txtPurchaseRate").val().trim() || $("#txtPurchaseRate").val().trim() == "0") {
                 $.jGrowl("Please enter Purchase Rate", { sticky: false, theme: 'warning', life: jGrowlLife });
@@ -996,7 +983,7 @@
             Obj.Category = ObjCategory;
             Obj.ProductName = $("#txtName").val().toUpperCase();
             Obj.ProductCode = $("#txtProductCode").val();
-            Obj.SalesPercent = parseFloat($("#txtSalesPercent").val());
+            Obj.SalesPercent = 0;
             var ObjSupplier = new Object();
             ObjSupplier.SupplierID = $("#ddlSupplier").val();
             Obj.Supplier = ObjSupplier;
@@ -1371,7 +1358,6 @@
                                     $("#txtSellingRate").val(obj.SellingRate);
                                     $("#txtName").val(obj.ProductName);
                                     $("#txtProductCode").val(obj.ProductCode);
-                                    $("#txtSalesPercent").val(obj.SalesPercent);
                                     $("#ddlCategory").val(obj.Category.CategoryID).change();
                                     $("#ddlSupplier").val(obj.Supplier.SupplierID).change();
                                     $("#ddlTaxName").val(obj.Tax.TaxID).change();

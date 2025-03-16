@@ -1141,7 +1141,7 @@ function GetRate() {
                                 $("#txtRate").val(obj.SellingPrice);
                                 $("#txtPreviousPrice").val(obj.PreviousPrice);
                                 $("#txtPurchasePrice").val(obj.PurchaseRate);
-                                $("#txtSalesMargin").val(obj.SalesMargin);
+                               // $("#txtSalesMargin").val(obj.SalesMargin);
                             }
                             dProgress(false);
                         }
@@ -1901,7 +1901,7 @@ $("#btnAddMagazine,#btnUpdateMagazine").click(function () {
     ObjData.Quantity = parseFloat($("#txtQuantity").val());
     ObjData.PurchasePrice = parseFloat($("#txtPurchasePrice").val());
     ObjData.PreviousPrice = parseFloat($("#txtPreviousPrice").val());
-    ObjData.SalesMargin = parseFloat($("#txtSalesMargin").val());
+    ObjData.SalesMargin = 0;
     ObjData.Rate = parseFloat($("#txtRate").val());
     ObjData.DiscountPercentage = parseFloat($("#txtDisPer").val());
     ObjData.DiscountAmount = parseFloat($("#txtDisAmt").val());
@@ -2058,8 +2058,7 @@ function DisplayOPBillingList(gData) {
         sTable = "<table id='tblOPBillingList' class='table no-margin table-condensed table-hover'>";
         sTable += "<thead><tr><th class='" + sColorCode + "' style='width:3px;text-align: center'>S.No</th>";
         sTable += "<th class='" + sColorCode + "'>Product Name</th>";
-        sTable += "<th class='" + sColorCode + "'>PR</th>";
-        sTable += "<th class='" + sColorCode + "'>SM</th>";
+        sTable += "<th class='" + sColorCode + "'>PR</th>";;
         sTable += "<th class='" + sColorCode + "'>PP</th>";
         sTable += "<th class='" + sColorCode + "'>Qty</th>";
         sTable += "<th class='" + sColorCode + "'>Rate</th>";
@@ -2082,7 +2081,6 @@ function DisplayOPBillingList(gData) {
                 $("#txtSNo").val(sCount + 1);
                 sTable += "<td>" + gData[i].Product.ProductName + "</td>";
                 sTable += "<td>" + gData[i].PurchasePrice + "</td>";
-                sTable += "<td>" + gData[i].SalesMargin + "</td>";
                 sTable += "<td>" + gData[i].PreviousPrice + "</td>";
                 sTable += "<td>" + gData[i].Quantity + "</td>";
                 sTable += "<td>" + gData[i].Rate + "</td>";
@@ -2129,7 +2127,6 @@ function Bind_OPBillingByID(ID, data) {
                 $("#txtQuantity").val(data[i].Quantity);
                 $("#txtPreviousPrice").val(data[i].PreviousPrice);
                 $("#txtPurchasePrice").val(data[i].PurchasePrice);
-                $("#txtSalesMargin").val(data[i].SalesMargin);
                 $("#txtRate").val(data[i].Rate);
                 $("#txtDisPer").val(data[i].DiscountPercentage);
                 $("#txtDisAmt").val(data[i].DiscountAmount);
@@ -2170,7 +2167,6 @@ function Update_OPBilling(oData) {
             gOPBillingList[i].Quantity = oData.Quantity;
             gOPBillingList[i].Rate = oData.Rate;
             gOPBillingList[i].PurchasePrice = oData.PurchasePrice;
-            gOPBillingList[i].SalesMargin = oData.SalesMargin;
             gOPBillingList[i].PreviousPrice = oData.PreviousPrice;
             gOPBillingList[i].DiscountPercentage = oData.DiscountPercentage;
             gOPBillingList[i].DiscountAmount = oData.DiscountAmount;
@@ -3125,12 +3121,12 @@ function SaveandUpdateOPBilling(ObjOPBilling, sMethodName) {
                             $("#btnSave").hide();
                             $("#btnUpdate").hide();
                             $("#btnPrintbill").show();
-                            // SetSessionValue("SalesEntryID", $("#hdnSalesEntryID").val());
-                            // var myWindow = window.open("PrintSalesEntryInvoice.aspx", "MsgWindow");
+                             SetSessionValue("SalesEntryID", $("#hdnSalesEntryID").val());
+                             var myWindow = window.open("PrintSalesEntryInvoice.aspx", "MsgWindow");
                             $("#btnAddMagazine").hide();
                             $("#btnUpdateMagazine").hide();
-                            //SetSessionValue("SalesEntryID", $("#hdnSalesEntryID").val());
-                            //var myWindow = window.open("PrintSalesEntryInvoice.aspx", "MsgWindow");
+                            SetSessionValue("SalesEntryID", $("#hdnSalesEntryID").val());
+                            var myWindow = window.open("PrintSalesEntryInvoice.aspx", "MsgWindow");
                         }
                         else if (sMethodName == "UpdateSalesEntry") {
                             $.jGrowl("Updated Successfully", { sticky: false, theme: 'success', life: jGrowlLife });
@@ -3282,7 +3278,6 @@ function EditRecord(id) {
                                 objTemp.Quantity = ObjProduct[index].Quantity;
                                 objTemp.PreviousPrice = ObjProduct[index].PreviousPrice;
                                 objTemp.PurchasePrice = ObjProduct[index].PurchasePrice;
-                                objTemp.SalesMargin = ObjProduct[index].SalesMargin;
                                 objTemp.TaxAmount = ObjProduct[index].TaxAmount;
                                 objTemp.SGSTAmount = ObjProduct[index].SGSTAmount;
                                 objTemp.IGSTAmount = ObjProduct[index].IGSTAmount;
