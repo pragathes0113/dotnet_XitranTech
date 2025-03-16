@@ -3593,7 +3593,7 @@ function SaveandUpdateCustomer() {
                     if (objResponse.Value > 0) {
                         if (sMethodName == "AddCustomer") {
                             $("#btnAddNew").click();
-                            $("#divTab").hide();
+                            $("#divTab").hide()
                             $("#divOPBilling").show();
                             GetCustomerList("ddlCustomerName");
                             GetCustomerID(objResponse.Value);

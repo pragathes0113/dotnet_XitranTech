@@ -111,8 +111,8 @@ namespace VHMS.DataAccess.Master
                         objCategory.CategoryName = Convert.ToString(drData["CategoryName"]);
                         objProduct.Category = objCategory;
                         objProduct.AvailableQty = Convert.ToInt32(drData["AvailableQty"]);
-                        objProduct.PurchasePrice = Convert.ToDecimal(drData["PurchasePrice"]);
-                        objProduct.SalesPrice = Convert.ToDecimal(drData["SalesPrice"]);
+                        objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
+                        objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
                         objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
                         objList.Add(objProduct);
                     }
@@ -154,8 +154,8 @@ namespace VHMS.DataAccess.Master
                         objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
                         objProduct.Supplier = objSupplier;
                         objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
-                        //objProduct.PurchasePrice = Convert.ToDecimal(drData["PurchasePrice"]);
-                        //objProduct.SalesPrice = Convert.ToDecimal(drData["SalesPrice"]);
+                        //objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
+                        //objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
                         objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
                         objList.Add(objProduct);
                     }
@@ -512,8 +512,9 @@ namespace VHMS.DataAccess.Master
                         
                         objProduct.ProductCode = Convert.ToString(drData["ProductCode"]);
                         objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
-                        //objProduct.PurchasePrice = Convert.ToDecimal(drData["PurchasePrice"]);
-                        //objProduct.SalesPrice = Convert.ToDecimal(drData["SalesPrice"]);
+                        objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
+                        objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
+                        objProduct.Quantity = Convert.ToDecimal(drData["Quantity"]);
                         objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
                         
                     }
@@ -644,8 +645,8 @@ namespace VHMS.DataAccess.Master
                         objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
                         objProduct.CreatedOn = Convert.ToDateTime(drData["CreatedOn"]);
                         objProduct.sCreatedOn = objProduct.CreatedOn.ToString("dd/MM/yyyy");
-                        //objProduct.PurchasePrice = Convert.ToDecimal(drData["PurchasePrice"]);
-                        //objProduct.SalesPrice = Convert.ToDecimal(drData["SalesPrice"]);
+                        //objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
+                        //objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
                         objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
                         objList.Add(objProduct);
                     }
@@ -760,8 +761,8 @@ namespace VHMS.DataAccess.Master
                             objProduct.ProductImage3 = Convert.ToString(drData["ProductImage3"]);
                             objProduct.ProductCode = Convert.ToString(drData["ProductCode"]);
                             objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
-                            objProduct.PurchasePrice = Convert.ToDecimal(drData["PurchasePrice"]);
-                            objProduct.SalesPrice = Convert.ToDecimal(drData["SalesPrice"]);
+                            objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
+                            objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
                             objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
                             objList.Add(objProduct);
                         }
@@ -823,8 +824,8 @@ namespace VHMS.DataAccess.Master
                         objProduct.ProductImage3 = Convert.ToString(drData["ProductImage3"]);
                         objProduct.ProductCode = Convert.ToString(drData["ProductCode"]);
                         objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
-                        objProduct.PurchasePrice = Convert.ToDecimal(drData["PurchasePrice"]);
-                        objProduct.SalesPrice = Convert.ToDecimal(drData["SalesPrice"]);
+                        objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
+                        objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
                         objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
                         objList.Add(objProduct);
                     }
@@ -891,8 +892,8 @@ namespace VHMS.DataAccess.Master
                         objProduct.ProductImage3 = Convert.ToString(drData["ProductImage3"]);
                         objProduct.ProductCode = Convert.ToString(drData["ProductCode"]);
                         objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
-                        objProduct.PurchasePrice = Convert.ToDecimal(drData["PurchasePrice"]);
-                        objProduct.SalesPrice = Convert.ToDecimal(drData["SalesPrice"]);
+                        objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
+                        objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
                         objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
                         
                         objList.Add(objProduct);
@@ -949,8 +950,9 @@ namespace VHMS.DataAccess.Master
                 oDb.AddInParameter(cmd, "@FK_SupplierID", DbType.Int32, objProduct.Supplier.SupplierID);
                 oDb.AddInParameter(cmd, "@FK_TaxID", DbType.Int32, objProduct.Tax.TaxID);
                 oDb.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, objProduct.Company.CompanyID);
-                //oDb.AddInParameter(cmd, "@SalesPrice", DbType.Decimal, objProduct.SalesPrice);
-                //oDb.AddInParameter(cmd, "@PurchasePrice", DbType.Decimal, objProduct.PurchasePrice);
+                oDb.AddInParameter(cmd, "@SellingRate", DbType.Decimal, objProduct.SellingRate);
+                oDb.AddInParameter(cmd, "@PurchaseRate", DbType.Decimal, objProduct.PurchaseRate);
+                oDb.AddInParameter(cmd, "@Quantity", DbType.Decimal, objProduct.Quantity);
                 oDb.AddInParameter(cmd, "@SalesPercent", DbType.String, objProduct.SalesPercent);
                 oDb.AddInParameter(cmd, "@ProductImage1", DbType.String, objProduct.ProductImage1);
                 oDb.AddInParameter(cmd, "@ProductImage2", DbType.String, objProduct.ProductImage2);
@@ -1015,7 +1017,9 @@ namespace VHMS.DataAccess.Master
                 oDb.AddInParameter(cmd, "@FK_SupplierID", DbType.Int32, objProduct.Supplier.SupplierID);
                 oDb.AddInParameter(cmd, "@FK_TaxID", DbType.Int32, objProduct.Tax.TaxID);
                 oDb.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, objProduct.Company.CompanyID);
-
+                oDb.AddInParameter(cmd, "@SellingRate", DbType.Decimal, objProduct.SellingRate);
+                oDb.AddInParameter(cmd, "@PurchaseRate", DbType.Decimal, objProduct.PurchaseRate);
+                oDb.AddInParameter(cmd, "@Quantity", DbType.Decimal, objProduct.Quantity);
                 oDb.AddInParameter(cmd, "@SalesPercent", DbType.String, objProduct.SalesPercent);
                 oDb.AddInParameter(cmd, "@ProductImage1", DbType.String, objProduct.ProductImage1);
                 oDb.AddInParameter(cmd, "@ProductImage2", DbType.String, objProduct.ProductImage2);

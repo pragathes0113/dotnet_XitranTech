@@ -26,7 +26,8 @@ namespace VHMS.Entity.Master
         public User ModifiedBy { get; set; }
         public DateTime ModifiedOn { get; set; }
         public Decimal AvailableQty { get; set; }
-        public Decimal PurchasePrice { get; set; }
-        public Decimal SalesPrice { get; set; }
+        public Decimal PurchaseRate { get; set; }
+        public Decimal SellingRate { get; set; }
+        public Decimal Quantity { get; set; }
     }
 }

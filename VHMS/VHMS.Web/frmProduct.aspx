@@ -131,7 +131,7 @@
                                         <input type="text" class="form-control" id="txtName" style="text-transform: uppercase" placeholder="Please enter Product Name"
                                             maxlength="150" tabindex="2" autocomplete="off" />
                                     </div>
-                                    <div class="form-group col-md-4 " id="divProductCode" style="display:none">
+                                    <div class="form-group col-md-4 " id="divProductCode" style="display: none">
                                         <label>
                                             Product Company Name
                                         </label>
@@ -178,7 +178,26 @@
                                         </label>
                                     </div>
                                 </div>
-
+                                <div class="row">
+                                    <div class="form-group col-md-3" id="divStockQuantity">
+                                        <label>
+                                            Stock Quantity</label><span class="text-danger">*</span>
+                                        <input type="text" class="form-control" id="txtStockQuantity" placeholder="Please enter Stock Quantity"
+                                            maxlength="10" tabindex="4" onkeypress="return IsNumeric(event)" autocomplete="off" />
+                                    </div>
+                                    <div class="form-group col-md-3" id="divPurchaseRate">
+                                        <label>
+                                            Purchase Rate</label><span class="text-danger">*</span>
+                                        <input type="text" class="form-control" id="txtPurchaseRate" placeholder="Please enter Purchase Rate"
+                                            maxlength="10" tabindex="4" onkeypress="return IsNumeric(event)" autocomplete="off" />
+                                    </div>
+                                    <div class="form-group col-md-3" id="divSellingRate">
+                                        <label>
+                                            Selling Rate</label><span class="text-danger">*</span>
+                                        <input type="text" class="form-control" id="txtSellingRate" placeholder="Please enter Selling Rate"
+                                            maxlength="10" tabindex="4" onkeypress="return IsNumeric(event)" autocomplete="off" />
+                                    </div>
+                                </div>
                                 <div class="row" style="display: none">
                                     <div class="form-group col-md-4">
                                         <label>
@@ -410,6 +429,11 @@
             $("#ddlState").val(null).change();
             $("#txtPincode").val("");
             $("#txtPhoneNo1").val("");
+
+            $("#txtStockQuantity").val("0");
+            $("#txtPurchaseRate").val("0");
+            $("#txtSellingRate").val("0");
+
             $("#txtWhatsAppNo").val("");
             $("#txtPhoneNo2").val("");
             $("#txtFax").val("");
@@ -902,6 +926,17 @@
             GetRecord();
         });
 
+        $("#txtSalesPercent, #txtPurchaseRate, #txtSellingRate").change(function () {
+            SalesRate();
+        });
+
+        function SalesRate() {
+            var iPR = parseFloat($("#txtPurchaseRate").val()) || 0;
+            var iSP = parseFloat($("#txtSalesPercent").val()) || 0;
+            var iMR = (iPR * iSP) / 100;
+            var iSR = iPR + iMR;
+            $("#txtSellingRate").val(iSR);
+        }
 
         $("#btnSave,#btnUpdate").click(function () {
             if (this.id == "btnSave") { if (ActionAdd != "1") { $.jGrowl(_CMAccessDeined, { sticky: false, theme: 'danger', life: jGrowlLife }); return false; } }
@@ -917,15 +952,28 @@
                 $("#divName").addClass('has-error'); $("#txtName").focus(); return false;
             } else { $("#divName").removeClass('has-error'); }
 
-            //if ($("#txtProductCode").val().trim() == "" || $("#txtProductCode").val().trim() == undefined) {
-            //    $.jGrowl("Please enter HSN Code", { sticky: false, theme: 'warning', life: jGrowlLife });
-            //    $("#divProductCode").addClass('has-error'); $("#txtProductCode").focus(); return false;
-            //} else { $("#divProductCode").removeClass('has-error'); }
-
             if ($("#txtSalesPercent").val().trim() == "" || $("#txtSalesPercent").val().trim() == undefined) {
                 $.jGrowl("Please enter Sales Margin", { sticky: false, theme: 'warning', life: jGrowlLife });
                 $("#divSalesMargin").addClass('has-error'); $("#txtSalesPercent").focus(); return false;
             } else { $("#divSalesMargin").removeClass('has-error'); }
+
+            if (!$("#txtPurchaseRate").val().trim() || $("#txtPurchaseRate").val().trim() == "0") {
+                $.jGrowl("Please enter Purchase Rate", { sticky: false, theme: 'warning', life: jGrowlLife });
+                $("#divPurchaseRate").addClass('has-error');
+                $("#txtPurchaseRate").focus();
+                return false;} else { $("#divPurchaseRate").removeClass('has-error');}
+
+            if (!$("#txtSellingRate").val().trim() || $("#txtSellingRate").val().trim() == "0") {
+                $.jGrowl("Please enter Sales Margin", { sticky: false, theme: 'warning', life: jGrowlLife });
+                $("#divSellingRate").addClass('has-error');
+                $("#txtSellingRate").focus();
+                return false; } else { $("#divSellingRate").removeClass('has-error');}
+
+            if (!$("#txtStockQuantity").val().trim() || $("#txtStockQuantity").val().trim() == "0") {
+                $.jGrowl("Please enter Stock Quantity", { sticky: false, theme: 'warning', life: jGrowlLife });
+                $("#divStockQuantity").addClass('has-error');
+                $("#txtStockQuantity").focus();
+                return false;} else {$("#divStockQuantity").removeClass('has-error');}
 
             if ($("#ddlTaxName").val() == "0" || $("#ddlTaxName").val() == undefined) {
                 $.jGrowl("Please Select Tax", { sticky: false, theme: 'warning', life: jGrowlLife });
@@ -962,6 +1010,9 @@
             Obj.ProductImage2 = $("[id*=imgUpload2_view]").attr("src");
             Obj.ProductImage3 = $("[id*=imgUpload3_view]").attr("src");
             Obj.IsActive = $("#chkStatus").is(':checked') ? "1" : "0";
+            Obj.Quantity = $("#txtStockQuantity").val();
+            Obj.PurchaseRate = $("#txtPurchaseRate").val();
+            Obj.SellingRate = $("#txtSellingRate").val();
             var sMethodName;
             if ($("#hdnID").val() > 0) {
                 Obj.ProductID = $("#hdnID").val();
@@ -980,6 +1031,9 @@
         });
 
         function ClearFields() {
+            $("#txtStockQuantity").val("0");
+            $("#txtPurchaseRate").val("0");
+            $("#txtSellingRate").val("0");
             $("#txtName").val("");
             $("#txtProductCode").val("");
             $("#txtSalesPercent").val("0");
@@ -1312,6 +1366,9 @@
                                         }
                                     });
                                     $("#hdnID").val(obj.ProductID);
+                                    $("#txtStockQuantity").val(obj.Quantity);
+                                    $("#txtPurchaseRate").val(obj.PurchaseRate);
+                                    $("#txtSellingRate").val(obj.SellingRate);
                                     $("#txtName").val(obj.ProductName);
                                     $("#txtProductCode").val(obj.ProductCode);
                                     $("#txtSalesPercent").val(obj.SalesPercent);
