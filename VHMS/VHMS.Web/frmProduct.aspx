@@ -58,7 +58,7 @@
                                                 <th>Category</th>
                                                 <th>Supplier</th>
                                                 <th>Product Name</th>
-                                                <th>Sales Margin</th>
+                                                <th>Unit</th>
                                                 <th>Status</th>
                                                 <th>View</th>
                                                 <th>Edit</th>
@@ -91,7 +91,7 @@
                                                     <th>Category</th>
                                                     <th>Supplier</th>
                                                     <th>Product Name</th>
-                                                    <th>Sales Margin</th>
+                                                     <th>Unit</th>
                                                     <th>Status</th>
                                                     <th>View</th>
                                                     <th>Edit</th>
@@ -1071,7 +1071,7 @@
                                         table += "<td>" + obj[index].Category.CategoryName + "</td>";
                                         table += "<td>" + obj[index].Supplier.SupplierName + "</td>";
                                         table += "<td>" + obj[index].ProductName + "</td>";
-                                        table += "<td>" + obj[index].SalesPercent + "</td>";
+                                        table += "<td>" + obj[index].Unit.UnitName + "</td>";
                                         table += "<td>" + TypeStatus + "</td>";
                                         if (ActionView == "1") { table += "<td style='text-align:center;'><a href='#' id=" + obj[index].ProductID + " class='View' title='Click here to View'><i class='fa fa-lg fa-clone text-yellow'/></a></td>"; }
                                         else { table += "<td></td>"; }
@@ -1191,7 +1191,7 @@
                                         table += "<td>" + obj[index].Category.CategoryName + "</td>";
                                         table += "<td>" + obj[index].Supplier.SupplierName + "</td>";
                                         table += "<td>" + obj[index].ProductName + "</td>";
-                                        table += "<td>" + obj[index].SalesPercent + "</td>";
+                                        table += "<td>" + obj[index].Unit.UnitName + "</td>";
                                         table += "<td>" + TypeStatus + "</td>";
                                         if (ActionView == "1") { table += "<td style='text-align:center;'><a href='#' id=" + obj[index].ProductID + " class='View' title='Click here to View'><i class='fa fa-lg fa-clone text-yellow'/></a></td>"; }
                                         else { table += "<td></td>"; }

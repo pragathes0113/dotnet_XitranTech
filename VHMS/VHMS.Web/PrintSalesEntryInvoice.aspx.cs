@@ -124,7 +124,6 @@ public partial class PrintSalesEntryInvoice : System.Web.UI.Page
         }
         try
         {
-
             dsReportData = LoadData();
             rprt = new ReportDocument();
             rprt.Load(Server.MapPath("~/Reports/rptSalesEntryReport.rpt"));
@@ -133,25 +132,6 @@ public partial class PrintSalesEntryInvoice : System.Web.UI.Page
             CRDischargeSummaryReport.AllowedExportFormats = (int)(CrystalDecisions.Shared.ViewerExportFormats.AllFormats ^ CrystalDecisions.Shared.ViewerExportFormats.RptFormat);
             CRDischargeSummaryReport.Zoom(100);
             this.CRDischargeSummaryReport.DataBind();
-
-            //rprtDuplicate = new ReportDocument();
-            //if (DiscountAmount > 0)
-            //    rprtDuplicate.Load(Server.MapPath("~/Reports/rptSalesEntryDuplicateReport.rpt"));
-            //else
-            //    rprtDuplicate.Load(Server.MapPath("~/Reports/rptSalesEntryDuplicateWithoutDiscountamtReport.rpt"));
-            //rprtDuplicate.SetDataSource(dsReportData);
-            //this.CRDuplicate.ReportSource = rprtDuplicate;
-            //CRDuplicate.AllowedExportFormats = (int)(CrystalDecisions.Shared.ViewerExportFormats.AllFormats ^ CrystalDecisions.Shared.ViewerExportFormats.RptFormat);
-            //CRDuplicate.Zoom(100);
-            //this.CRDuplicate.DataBind();
-
-            //rprtTransport = new ReportDocument();
-            //rprtTransport.Load(Server.MapPath("~/Reports/rptSalesEntryTransportReport.rpt"));
-            //rprtTransport.SetDataSource(dsReportData);
-            //this.CRTransport.ReportSource = rprtTransport;
-            //CRTransport.AllowedExportFormats = (int)(CrystalDecisions.Shared.ViewerExportFormats.AllFormats ^ CrystalDecisions.Shared.ViewerExportFormats.RptFormat);
-            //CRTransport.Zoom(100);
-            //this.CRTransport.DataBind();
         }
         catch (Exception ex)
         {
@@ -244,17 +224,10 @@ public partial class PrintSalesEntryInvoice : System.Web.UI.Page
         dfdopt.DiskFileName = Server.MapPath(fname);
 
         exopt = rprt.ExportOptions;
-        exopt.ExportDestinationType = ExportDestinationType.DiskFile;
-
-        //for PDF select PortableDocFormat for excel select ExportFormatType.Excel    
+        exopt.ExportDestinationType = ExportDestinationType.DiskFile; 
         exopt.ExportFormatType = ExportFormatType.PortableDocFormat;
-        exopt.DestinationOptions = dfdopt;
-
-        //finally export your report document    
+        exopt.DestinationOptions = dfdopt;   
         rprt.Export();
-
-        //To open your PDF after save it from crystal report    
-
         string Path = Server.MapPath(fname);
         FileInfo file = new FileInfo(Path);
         Response.ClearContent();
