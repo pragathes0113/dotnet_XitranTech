@@ -68,6 +68,7 @@
                                 </div>
                                 <div class="form-group col-md-2" id="Branch">
                                     <label>
+                                         <asp:HiddenField ID="hdnBillNo" runat="server" />
                                         Customer</label><span class="text-danger">*</span>
                                     <asp:DropDownList ID="ddlCustomer" CssClass="select2" Width="200" Height="30" runat="server">
                                     </asp:DropDownList>

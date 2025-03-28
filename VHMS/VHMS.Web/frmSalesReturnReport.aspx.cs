@@ -22,6 +22,7 @@ public partial class frmSalesReturnReport : System.Web.UI.Page
         if (!IsPostBack)
         {
             VHMSService.AddPageVisitLog();
+            hdnBillNo.Value = HttpContext.Current.Session["CompanyID"].ToString();
             LoadCustomer();
             txtDOB.Text = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
             txtDOR.Text = DateTime.Now.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -34,7 +35,7 @@ public partial class frmSalesReturnReport : System.Web.UI.Page
         DateTime dtFrom = DateTime.MinValue, dtTo = DateTime.MinValue;
         ReportDataSet dsReportData = new ReportDataSet();
 
-        dsData = VHMS.DataAccess.VHMSReports.PrintReturn(txtDOB.Text, txtDOR.Text, ddlCustomer.SelectedValue);
+        dsData = VHMS.DataAccess.VHMSReports.PrintReturn(txtDOB.Text, txtDOR.Text, ddlCustomer.SelectedValue,Convert.ToInt32(hdnBillNo.Value));
         try
         {
             if (dsData.Tables.Count > 0)
@@ -167,8 +168,7 @@ public partial class frmSalesReturnReport : System.Web.UI.Page
     public void LoadCustomer()
     {
         Collection<VHMS.Entity.Customer> ObjList = new Collection<VHMS.Entity.Customer>();
-      //  ObjList = VHMS.DataAccess.Customer.GetActiveCustomer();
-
+        ObjList = VHMS.DataAccess.Customer.GetCustomer();
         ddlCustomer.DataSource = ObjList;
         ddlCustomer.DataTextField = "CustomerName";
         ddlCustomer.DataValueField = "CustomerID";

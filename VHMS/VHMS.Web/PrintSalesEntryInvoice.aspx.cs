@@ -220,7 +220,7 @@ public partial class PrintSalesEntryInvoice : System.Web.UI.Page
     {
         ExportOptions exopt = default(ExportOptions);
         DiskFileDestinationOptions dfdopt = new DiskFileDestinationOptions();
-        string fname = "PurchaseInvoice.pdf";
+        string fname = "SalesInvoice.pdf";
         dfdopt.DiskFileName = Server.MapPath(fname);
 
         exopt = rprt.ExportOptions;

@@ -118,7 +118,7 @@ public partial class frmStockDetailedReport : System.Web.UI.Page
     public void LoadProduct()
     {
         Collection<VHMS.Entity.Master.Product> ObjList = new Collection<VHMS.Entity.Master.Product>();
-        //ObjList = VHMS.DataAccess.Master.Product.GetProduct();
+        ObjList = VHMS.DataAccess.Master.Product.GetProduct(CompanyID);
 
         ddlProduct.DataSource = ObjList;
         ddlProduct.DataTextField = "ProductName";

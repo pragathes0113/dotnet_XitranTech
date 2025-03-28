@@ -39,16 +39,16 @@
                         </div>
                         <div class="box-body">
                             <div class="row">
-                                <div class="form-group col-md-2" id="divProduct">
+                                <div class="form-group col-md-4" id="divProduct">
                                     <label>
                                         Prodtct</label><span class="text-danger">*</span>
-                                    <asp:DropDownList ID="ddlProduct" Width="200" Height="30" runat="server">
+                                    <asp:DropDownList ID="ddlProduct" Width="200" Height="30" runat="server" CssClass="select2">
                                     </asp:DropDownList>
                                 </div>
-                                <div class="form-group col-md-2" id="divSupplier">
+                                <div class="form-group col-md-3" id="divSupplier">
                                     <label>
                                         Supplier</label><span class="text-danger">*</span>
-                                    <asp:DropDownList ID="ddlSupplier" Width="200" Height="30" runat="server">
+                                    <asp:DropDownList ID="ddlSupplier" Width="200" Height="30" runat="server" CssClass="select2">
                                     </asp:DropDownList>
                                 </div>
                                 <div class="form-group col-md-1">
@@ -79,7 +79,7 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField HeaderText="ProductName" ReadOnly="true" DataField="ProductName" />
-                         
+
                             <asp:BoundField HeaderText="Purchase Quantity" ReadOnly="true" DataField="InQuantity" />
                             <asp:BoundField HeaderText="Sales Quantity" ReadOnly="true" DataField="OutQuantity" />
                             <asp:BoundField HeaderText="Available Quantity" ReadOnly="true" DataField="Quantity" />

@@ -2409,7 +2409,7 @@ namespace VHMS.DataAccess
             }
             return dsReportData;
         }
-        public static DataSet PrintReturn(string iDatefrom = "", string iDateto = "", string iCustomer = "")
+        public static DataSet PrintReturn(string iDatefrom = "", string iDateto = "", string iCustomer = "",int CompanyID=0)
         {
             string sException = string.Empty;
             Database db;
@@ -2421,6 +2421,8 @@ namespace VHMS.DataAccess
                 db.AddInParameter(cmd, "@DateFrom", DbType.String, iDatefrom);
                 db.AddInParameter(cmd, "@DateTo", DbType.String, iDateto);
                 db.AddInParameter(cmd, "@FK_CustomerID", DbType.String, iCustomer);
+                db.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, CompanyID);
+                
 
                 dsReportData = db.ExecuteDataSet(cmd);
             }
@@ -2566,7 +2568,7 @@ namespace VHMS.DataAccess
             return dsReportData;
         }
 
-        public static DataSet PrintSalesLedgerReport(string iDatefrom = "", string iDateto = "", string iCustomer = "")
+        public static DataSet PrintSalesLedgerReport(string iDatefrom = "", string iDateto = "", string iCustomer = "",int CompanyID=0)
         {
             string sException = string.Empty;
             Database db;
@@ -2578,6 +2580,7 @@ namespace VHMS.DataAccess
                 db.AddInParameter(cmd, "@DateFrom", DbType.String, iDatefrom);
                 db.AddInParameter(cmd, "@DateTo", DbType.String, iDateto);
                 db.AddInParameter(cmd, "@FK_CustomerID", DbType.String, iCustomer);
+                db.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, CompanyID);
 
                 dsReportData = db.ExecuteDataSet(cmd);
             }
@@ -2660,7 +2663,7 @@ namespace VHMS.DataAccess
             }
             return dsReportData;
         }
-        public static DataSet PrintPurchaseLedgerReport(string iDatefrom = "", string iDateto = "", string iCustomer = "", int iType = 1)
+        public static DataSet PrintPurchaseLedgerReport(string iDatefrom = "", string iDateto = "", string iCustomer = "", int iType = 1,int CompanyID=0)
         {
             string sException = string.Empty;
             Database db;
@@ -2673,6 +2676,8 @@ namespace VHMS.DataAccess
                 db.AddInParameter(cmd, "@DateTo", DbType.String, iDateto);
                 db.AddInParameter(cmd, "@FK_SupplierID", DbType.String, iCustomer);
                 db.AddInParameter(cmd, "@BillType", DbType.Boolean, iType);
+                db.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, CompanyID);
+                
 
                 dsReportData = db.ExecuteDataSet(cmd);
             }

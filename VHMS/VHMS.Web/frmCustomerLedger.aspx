@@ -68,6 +68,7 @@
                             </div>
                             <div class="form-group col-md-2" id="divDOR">
                                 <label>
+                                     <asp:HiddenField ID="hdnBillNo" runat="server" />
                                     To</label><span class="text-danger">*</span>
                                 <div class="input-group date form_date" data-date-format="dd/MM/yyyy HH:ii P" data-link-field="txtDOR"
                                     data-link-format="dd/MM/yyyy">
@@ -81,7 +82,7 @@
                             </div>
                             <div class="form-group col-md-2" id="Branch">
                                 <label>
-                                    Buyer</label><span class="text-danger">*</span>
+                                    Customer</label><span class="text-danger">*</span>
                                 <asp:DropDownList ID="ddlCustomer" Width="200" Height="30" runat="server" CssClass="select2">
                                 </asp:DropDownList>
                             </div>

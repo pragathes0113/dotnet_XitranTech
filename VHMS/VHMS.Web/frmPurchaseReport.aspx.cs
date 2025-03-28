@@ -20,12 +20,13 @@ public partial class frmPurchaseReport : System.Web.UI.Page
     DataSet dsData = new DataSet();
     string sException = string.Empty;
     decimal InvoiceAmount = 0, NetAmount = 0, DiscountAmount = 0, TotalQty = 0,TotalAmount=0;
-
+    int CompanyID = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
             VHMSService.AddPageVisitLog();
+            CompanyID = Convert.ToInt32(HttpContext.Current.Session["CompanyID"].ToString());
             LoadSupplier();
             txtDOB.Text = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
             txtDOR.Text = DateTime.Now.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -138,7 +139,7 @@ public partial class frmPurchaseReport : System.Web.UI.Page
     public void LoadSupplier()
     {
         Collection<VHMS.Entity.Billing.Supplier> ObjList = new Collection<VHMS.Entity.Billing.Supplier>();
-        ObjList = VHMS.DataAccess.Billing.Supplier.GetActiveSupplier();
+        ObjList = VHMS.DataAccess.Billing.Supplier.GetSupplier(CompanyID);
 
         ddlSupplier.DataSource = ObjList;
         ddlSupplier.DataTextField = "SupplierName";

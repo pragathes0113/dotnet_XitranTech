@@ -19,11 +19,14 @@ public partial class frmCustomerLedger : System.Web.UI.Page
     ReportDocument rprt = new ReportDocument();
     DataSet dsData = new DataSet();
     string sException = string.Empty;
+    int CompanyID = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
             VHMSService.AddPageVisitLog();
+            hdnBillNo.Value = HttpContext.Current.Session["CompanyID"].ToString();
+            CompanyID = Convert.ToInt32(HttpContext.Current.Session["CompanyID"].ToString());
             LoadCustomer();
             if (DateTime.Now.Month > 3)
                 txtDOB.Text = new DateTime(DateTime.Now.Year, 4, 1).ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -117,7 +120,7 @@ public partial class frmCustomerLedger : System.Web.UI.Page
             {
                 ReportDataSet dsReportData = new ReportDataSet();
 
-                dsData = VHMS.DataAccess.VHMSReports.PrintSalesLedgerReport(txtDOB.Text, txtDOR.Text, ddlCustomer.SelectedValue);
+                dsData = VHMS.DataAccess.VHMSReports.PrintSalesLedgerReport(txtDOB.Text, txtDOR.Text, ddlCustomer.SelectedValue, Convert.ToInt32(hdnBillNo.Value));
 
                 if (dsData.Tables.Count > 0)
                 {
@@ -189,7 +192,7 @@ public partial class frmCustomerLedger : System.Web.UI.Page
     {
         ReportDataSet dsReportData = new ReportDataSet();
 
-        dsData = VHMS.DataAccess.VHMSReports.PrintSalesLedgerReport(txtDOB.Text, txtDOR.Text, ddlCustomer.SelectedValue);
+        dsData = VHMS.DataAccess.VHMSReports.PrintSalesLedgerReport(txtDOB.Text, txtDOR.Text, ddlCustomer.SelectedValue, Convert.ToInt32(hdnBillNo.Value));
         try
         {
             if (dsData.Tables.Count > 0)

@@ -21,7 +21,7 @@ $(function () {
     GetTaxList("ddlTax");
     GetPassword();
     GetSupplierList("ddlSupplierName");
-    //GetProductList("ddlProductName");
+    GetProductList("ddlProductName");
     $("#btnPurchaseBarcode").hide();
     $("#ddlVerifiedBy").val("1011").change();
     $("#ddlConfirmedBy").val("1011").change();
@@ -2058,7 +2058,7 @@ $("#ddlSupplierName").change(function () {
     var iSupplierID = $("#ddlSupplierName").val();
     if (iSupplierID != undefined && iSupplierID > 0) {
         GetSupplierByID(iSupplierID);
-        GetProductSupplierList("ddlProductName");
+       // GetProductSupplierList("ddlProductName");
     }
 });
 

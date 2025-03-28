@@ -41,7 +41,6 @@ public partial class frmSalesReport : System.Web.UI.Page
     {
         Collection<VHMS.Entity.Company> ObjList = new Collection<VHMS.Entity.Company>();
         ObjList = VHMS.DAL.Company.GetCompany();
-
         ddlCompany.DataSource = ObjList;
         ddlCompany.DataTextField = "CompanyName";
         ddlCompany.DataValueField = "CompanyID";

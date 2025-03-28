@@ -19,11 +19,14 @@ public partial class frmSupplierLedger : System.Web.UI.Page
     ReportDocument rprt = new ReportDocument();
     DataSet dsData = new DataSet();
     string sException = string.Empty;
+    int CompanyID;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
             VHMSService.AddPageVisitLog();
+            hdnBillNo.Value = HttpContext.Current.Session["CompanyID"].ToString();
+            CompanyID = Convert.ToInt32(HttpContext.Current.Session["CompanyID"].ToString());
             LoadSupplier();
             if(DateTime.Now.Month >3)
                 txtDOB.Text = new DateTime(DateTime.Now.Year, 4, 1).ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -36,14 +39,14 @@ public partial class frmSupplierLedger : System.Web.UI.Page
 
     public void LoadSupplier()
     {
-        //Collection<VHMS.Entity.Billing.Supplier> ObjList = new Collection<VHMS.Entity.Billing.Supplier>();
-        //ObjList = VHMS.DataAccess.Billing.Supplier.GetActiveSupplier();
+        Collection<VHMS.Entity.Billing.Supplier> ObjList = new Collection<VHMS.Entity.Billing.Supplier>();
+        ObjList = VHMS.DataAccess.Billing.Supplier.GetSupplier(CompanyID);
 
-        //ddlSupplier.DataSource = ObjList;
-        //ddlSupplier.DataTextField = "SupplierName";
-        //ddlSupplier.DataValueField = "SupplierID";
-        //ddlSupplier.DataBind();
-        //ddlSupplier.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--Select--", "0"));
+        ddlSupplier.DataSource = ObjList;
+        ddlSupplier.DataTextField = "SupplierName";
+        ddlSupplier.DataValueField = "SupplierID";
+        ddlSupplier.DataBind();
+        ddlSupplier.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--Select--", "0"));
     }
     protected void btnExcel_Click(object sender, EventArgs e)
     {
@@ -126,7 +129,7 @@ public partial class frmSupplierLedger : System.Web.UI.Page
     {
         ReportDataSet dsReportData = new ReportDataSet();
 
-        dsData = VHMS.DataAccess.VHMSReports.PrintPurchaseLedgerReport(txtDOB.Text, txtDOR.Text, ddlSupplier.SelectedValue, 1);
+        dsData = VHMS.DataAccess.VHMSReports.PrintPurchaseLedgerReport(txtDOB.Text, txtDOR.Text, ddlSupplier.SelectedValue,1, Convert.ToInt32(hdnBillNo.Value));
         try
         {
             if (dsData.Tables.Count > 0)

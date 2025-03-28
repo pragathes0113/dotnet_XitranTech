@@ -514,7 +514,7 @@ namespace VHMS.DataAccess.Master
                         objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
                         objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
                         objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
-                        objProduct.Quantity = Convert.ToDecimal(drData["Quantity"]);
+                     //   objProduct.Quantity = Convert.ToDecimal(drData["Quantity"]);
                         objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
                         objProduct.PerviousRate = Convert.ToDecimal(drData["PerviousRate"]);
 
@@ -953,7 +953,7 @@ namespace VHMS.DataAccess.Master
                 oDb.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, objProduct.Company.CompanyID);
                 oDb.AddInParameter(cmd, "@SellingRate", DbType.Decimal, objProduct.SellingRate);
                 oDb.AddInParameter(cmd, "@PurchaseRate", DbType.Decimal, objProduct.PurchaseRate);
-                oDb.AddInParameter(cmd, "@Quantity", DbType.Decimal, objProduct.Quantity);
+                //oDb.AddInParameter(cmd, "@Quantity", DbType.Decimal, objProduct.Quantity);
                 oDb.AddInParameter(cmd, "@SalesPercent", DbType.String, objProduct.SalesPercent);
                 oDb.AddInParameter(cmd, "@ProductImage1", DbType.String, objProduct.ProductImage1);
                 oDb.AddInParameter(cmd, "@ProductImage2", DbType.String, objProduct.ProductImage2);
@@ -1020,7 +1020,7 @@ namespace VHMS.DataAccess.Master
                 oDb.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, objProduct.Company.CompanyID);
                 oDb.AddInParameter(cmd, "@SellingRate", DbType.Decimal, objProduct.SellingRate);
                 oDb.AddInParameter(cmd, "@PurchaseRate", DbType.Decimal, objProduct.PurchaseRate);
-                oDb.AddInParameter(cmd, "@Quantity", DbType.Decimal, objProduct.Quantity);
+                //oDb.AddInParameter(cmd, "@Quantity", DbType.Decimal, objProduct.Quantity);
                 oDb.AddInParameter(cmd, "@SalesPercent", DbType.String, objProduct.SalesPercent);
                 oDb.AddInParameter(cmd, "@ProductImage1", DbType.String, objProduct.ProductImage1);
                 oDb.AddInParameter(cmd, "@ProductImage2", DbType.String, objProduct.ProductImage2);

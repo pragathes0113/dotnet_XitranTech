@@ -89,21 +89,21 @@
                                         <input class="form-control pull-right" tabindex="2" id="txtVoucherDate" data-link-format="dd/MM/yyyy HH:ii P" type="text" readonly />
                                     </div>
                                 </div>
-                                <div class="form-group col-md-3" id="divCustomer">
+                                <div class="form-group col-md-5" id="divCustomer">
                                     <label>
                                         Customer</label>
                                     <span class="text-danger">*</span>
                                     <select id="ddlCustomer" class="form-control select2" data-placeholder="Select Customer" tabindex="3">
                                     </select>
                                 </div>
-                                <div class="form-group col-md-3" id="divBank">
+                                <div class="form-group col-md-3" id="divBank" style="display:none">
                                     <label>
                                         Select A/c</label>
                                     <span class="text-danger">*</span>
                                     <select id="ddlBank" class="form-control select2" data-placeholder="Select Account" tabindex="4">
                                     </select>
                                 </div>
-                                <div class="form-group col-md-3" id="divReceiptMode">
+                                <div class="form-group col-md-4" id="divReceiptMode">
                                     <label>
                                         Receipt Mode</label>
                                     <span class="text-danger">*</span>
@@ -139,7 +139,7 @@
                                         <span class="input-group-addon">.00</span>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-3" id="divTDSAmount" style="display:none;">
+                                <div class="form-group col-md-3" id="divTDSAmount" style="display: none;">
                                     <label>TDS Amount</label>
                                     <span class="text-danger">*</span>
                                     <div class="input-group">
@@ -236,7 +236,7 @@
                                         <span class="input-group-addon">.00</span>
                                     </div>
                                 </div>
-                                 <div class="form-group col-md-3" id="divPendingAmount">
+                                <div class="form-group col-md-3" id="divPendingAmount">
                                     <label>Pending Amount</label>
                                     <span class="text-danger">*</span>
                                     <div class="input-group">
@@ -246,7 +246,7 @@
                                         <span class="input-group-addon">.00</span>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-2" id="divOnAccount">
+                                <div class="form-group col-md-2" id="divOnAccount" style="display: none;">
                                     <label>On Account</label>
                                     <span class="text-danger">*</span>
                                     <div class="input-group">
@@ -255,15 +255,15 @@
                                             maxlength="15" tabindex="-1" disabled="disabled" autocomplete="off" />
                                     </div>
                                 </div>
-                                <div class="form-group col-md-1" id="divcheckbox">
-                                        <input type="checkbox" id="chkAddOnAccount" style="margin: 30px 0 0 0; width:18px; height:18px;"  tabindex="-1" />
+                                <div class="form-group col-md-1" id="divcheckbox" style="display: none;">
+                                    <input type="checkbox" id="chkAddOnAccount" style="margin: 30px 0 0 0; width: 18px; height: 18px;" tabindex="-1" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-3" id="divDescription">
                                     <label>
                                         Notes</label>
-                                    <input id="txtDescription" class="form-control" maxlength="250" tabindex="16" autocomplete="off"/>
+                                    <input id="txtDescription" class="form-control" maxlength="250" tabindex="16" autocomplete="off" />
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label>
@@ -309,7 +309,7 @@
                     </div>
                 </div>
             </div>
-              <div class="modal fade" id="compose-password" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal fade" id="compose-password" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -322,9 +322,9 @@
                                 <label>
                                     Password</label><span class="text-danger">*</span>
                                 <input type="text" class="form-control" id="txtPassword" placeholder="Please enter Password"
-                                    maxlength="150" tabindex="32" autocomplete="off"/>
+                                    maxlength="150" tabindex="32" autocomplete="off" />
                             </div>
-                            <div class="form-group" id="divID" style="display:none;">
+                            <div class="form-group" id="divID" style="display: none;">
                                 <label>
                                     ID</label><span class="text-danger">*</span>
                                 <input type="text" class="form-control" id="txtID"
@@ -369,7 +369,7 @@
             ActionUpdate = '<%=Session["ActionUpdate"]%>';
             ActionDelete = '<%=Session["ActionDelete"]%>';
             ActionView = '<%=Session["ActionView"]%>';
-                                  
+
             if (ActionAdd != "1") {
                 $("#btnAddNew").remove();
                 $("#btnSave").remove();
@@ -475,10 +475,10 @@
                 $("#divCustomer").addClass('has-error'); $("#ddlCustomer").focus(); return false;
             } else { $("#divCustomer").removeClass('has-error'); }
 
-            if ($("#ddlBank").val() == "0" || $("#ddlBank").val() == undefined || $("#ddlBank").val() == null) {
-                $.jGrowl("Please select Account", { sticky: false, theme: 'warning', life: jGrowlLife });
-                $("#divBank").addClass('has-error'); $("#ddlBank").focus(); return false;
-            } else { $("#divBank").removeClass('has-error'); }
+            //if ($("#ddlBank").val() == "0" || $("#ddlBank").val() == undefined || $("#ddlBank").val() == null) {
+            //    $.jGrowl("Please select Account", { sticky: false, theme: 'warning', life: jGrowlLife });
+            //   $("#divBank").addClass('has-error'); $("#ddlBank").focus(); return false;
+            // } else { $("#divBank").removeClass('has-error'); }
 
             if ($("#ddlReceiptMode").val() == "0" || $("#ddlReceiptMode").val() == undefined || $("#ddlReceiptMode").val() == null) {
                 $.jGrowl("Please select Receipt Mode", { sticky: false, theme: 'warning', life: jGrowlLife });
@@ -551,12 +551,11 @@
             }
             else {
                 if (parseFloat($("#txtBalanceAmount").val()) < parseFloat($("#txtAmount").val())) {
-                    if (confirm('Amount entered is greater than balance amount. Do you want to continue?'))
-                    { } else return false;
+                    if (confirm('Amount entered is greater than balance amount. Do you want to continue?')) { } else return false;
                 }
             }
 
-            
+
             var Obj = new Object();
             Obj.ReceiptID = 0;
             Obj.VoucherNo = $("#txtVoucherNo").val().trim();
@@ -573,7 +572,7 @@
             Obj.Customer = objCustomer;
 
             var objBank = new Object();
-            objBank.LedgerID = $("#ddlBank").val();
+            objBank.LedgerID = 1;
             Obj.Bank = objBank;
             Obj.SalesEntryIDs = sAgentID;
             Obj.ReceiptModeID = $("#ddlReceiptMode").val();
@@ -653,7 +652,7 @@
             $("#txtTotalAmount").val("0");
             if ($("#txtAmount").val() == 0)
                 $('#<%= Label2.ClientID %>').text("");
-            if ($("#ddlCustomer").val() > 0) {                
+            if ($("#ddlCustomer").val() > 0) {
                 GetOnAccountAmount($("#ddlCustomer").val());
                 GetLastTransaction();
                 GetPendingBill();
@@ -665,7 +664,7 @@
             $.ajax({
                 type: "POST",
                 url: "WebServices/VHMSService.svc/GetOnAccountAmount",
-                data: JSON.stringify({ ID: id, Type :'W' }),
+                data: JSON.stringify({ ID: id, Type: 'W' }),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 async: false,
@@ -708,7 +707,7 @@
             });
             return false;
         }
-       
+
 
         $("#txtDiscountAmount,#txtAmount,#txtTDSAmount,#chkAddOnAccount").change(function () {
             var iDiscount = 0; var iAmount = 0; var TDSAmount = 0, iOnAccount = 0;
@@ -725,6 +724,7 @@
             $("#txtTotalAmount").val((parseFloat(iDiscount) + parseFloat(iAmount) + parseFloat(iOnAccount) - parseFloat(TDSAmount)));
             if (iCount == 1)
                 CalculateTrans();
+               CalculateBalanceTrans();
 
             if ($("#txtAmount").val() > 0)
                 $('#<%= Label2.ClientID %>').text(convertNumberToWords($("#txtAmount").val()));
@@ -839,7 +839,7 @@
 
             if (gData.length > 0) {
                 $("#divRecentTransaction").show();
-               
+
                 sTable = "<table id='tblOPBillingList' class='table no-margin table-condensed table-hover'>";
                 sTable += "<thead><tr><th style='line-height:0.5;'  class='" + sColorCode + "' style='width:3px;text-align: center'>S.No</th>";
                 sTable += "<th style='line-height:0.5;' class='" + sColorCode + "'>Voucher No</th>";
@@ -867,7 +867,7 @@
                         sPaymentMode = "IMPS";
                     else if (gData[i].ReceiptModeID == 6)
                         sPaymentMode = "UPI Pay";
-                   
+
                     sTable = "<tr><td style='line-height:0.5;'  id='" + gData[i].SNo + "'>" + sCount + "</td>";
                     sTable += "<td style='line-height:0.5;' >" + gData[i].VoucherNo + "</td>";
                     sTable += "<td style='line-height:0.5;' >" + gData[i].sVoucherDate + "</td>";
@@ -1018,10 +1018,10 @@
                 for (var i = 0; i < n_length; i++) {
                     received_n_array[i] = number.substr(i, 1);
                 }
-                for (var i = 9 - n_length, j = 0; i < 9; i++ , j++) {
+                for (var i = 9 - n_length, j = 0; i < 9; i++, j++) {
                     n_array[i] = received_n_array[j];
                 }
-                for (var i = 0, j = 1; i < 9; i++ , j++) {
+                for (var i = 0, j = 1; i < 9; i++, j++) {
                     if (i == 0 || i == 2 || i == 4 || i == 7) {
                         if (n_array[i] == 1) {
                             n_array[j] = 10 + parseInt(n_array[j]);
@@ -1436,7 +1436,7 @@
         }
 
         $("#btnOK").click(function () {
-           
+
             if ($("#txtPassword").val().trim() == "" || $("#txtPassword").val().trim() == undefined || $("#txtPassword").val().trim() != $("#hdRS").val()) {
                 $.jGrowl("Please enter Valid Password", { sticky: false, theme: 'warning', life: jGrowlLife });
                 $("#divPassword").addClass('has-error'); $("#txtPassword").focus(); return false;
@@ -1469,7 +1469,7 @@
                                 var obj = jQuery.parseJSON(objResponse.Value);
                                 if (obj != null) {
                                     $("#hdRS").val(obj.ConfirmPassword);
-                                   // alert(obj.ConfirmPassword);
+                                    // alert(obj.ConfirmPassword);
                                 }
                                 dProgress(false);
                             }
@@ -1544,7 +1544,7 @@
                                     $("#txtVoucherNo").val(obj.VoucherNo);
                                     $("#txtVoucherDate").val(obj.sVoucherDate);
                                     $("#ddlCustomer").val(obj.Customer.CustomerID).change();
-                                    $("#ddlBank").val(obj.Bank.LedgerID).change();
+                                    //$("#ddlBank").val(obj.Bank.LedgerID).change();
                                     $("#ddlReceiptMode").val(obj.ReceiptModeID).change();
                                     $("#txtOnAccount").val(obj.OnAccount);
                                     $("[id*=imgUpload1]").attr("src", obj.DocumentPath);
@@ -1553,7 +1553,7 @@
 
                                     $("#txtAmount").val(obj.Amount);
 
-                                  
+
 
                                     $("#ddlPaymentStatus").val(obj.Status);
                                     if (obj.Status == 'Cleared')

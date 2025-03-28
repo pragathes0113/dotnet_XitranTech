@@ -93,7 +93,7 @@
                                         <input class="form-control pull-right" tabindex="2" id="txtVoucherDate" data-link-format="dd/MM/yyyy HH:ii P" type="text" readonly />
                                     </div>
                                 </div>
-                                <div class="form-group col-md-3" id="divSupplier">
+                                <div class="form-group col-md-5" id="divSupplier">
                                     <label>
                                         Supplier</label><span class="text-danger">*</span>
                                     <button type="button" class="btn" id="btnShow" style="margin-top: -15px; background-color: #efdebe;" tabindex="18">
@@ -104,7 +104,7 @@
                                     </select>
                                 </div>
 
-                                <div class="form-group col-md-3" id="divPaymentMode">
+                                <div class="form-group col-md-4" id="divPaymentMode">
                                     <label>
                                         Payment Mode</label>
                                     <span class="text-danger">*</span>
@@ -118,7 +118,7 @@
                                         <option value="6">UPI Pay</option>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-3" id="divBank">
+                                <div class="form-group col-md-3" id="divBank" style="display:none">
                                     <label>
                                         Select A/c</label>
                                     <span class="text-danger">*</span>
@@ -204,7 +204,7 @@
                                     <img src="" id="imgUpload1_view" alt="" class="preview_img" style="width: 280px;" />
 
                                 </div>
-                                <div class="form-group col-md-2" id="divOnAccount">
+                                <div class="form-group col-md-2" id="divOnAccount" style="display:none">
                                     <label>On Account</label>
                                     <span class="text-danger">*</span>
                                     <div class="input-group">
@@ -213,7 +213,7 @@
                                             maxlength="15" tabindex="-1" disabled="disabled" autocomplete="off" />
                                     </div>
                                 </div>
-                                <div class="form-group col-md-1" id="divcheckbox">
+                                <div class="form-group col-md-1" id="divcheckbox" style="display:none">
                                     <input type="checkbox" id="chkAddOnAccount" style="margin: 30px 0 0 0; width: 18px; height: 18px;" tabindex="-1" />
                                 </div>
                             </div>
@@ -728,10 +728,10 @@
                 $("#divSupplier").addClass('has-error'); $("#ddlSupplier").focus(); return false;
             } else { $("#divSupplier").removeClass('has-error'); }
 
-            if ($("#ddlBank").val() == "0" || $("#ddlBank").val() == undefined || $("#ddlBank").val() == null) {
-                $.jGrowl("Please select Account", { sticky: false, theme: 'warning', life: jGrowlLife });
-                $("#divBank").addClass('has-error'); $("#ddlBank").focus(); return false;
-            } else { $("#divBank").removeClass('has-error'); }
+            //if ($("#ddlBank").val() == "0" || $("#ddlBank").val() == undefined || $("#ddlBank").val() == null) {
+            //    $.jGrowl("Please select Account", { sticky: false, theme: 'warning', life: jGrowlLife });
+            //    $("#divBank").addClass('has-error'); $("#ddlBank").focus(); return false;
+            //} else { $("#divBank").removeClass('has-error'); }
 
             if ($("#ddlPaymentMode").val() == "0" || $("#ddlPaymentMode").val() == undefined || $("#ddlPaymentMode").val() == null) {
                 $.jGrowl("Please select Payment Mode", { sticky: false, theme: 'warning', life: jGrowlLife });
@@ -830,7 +830,7 @@
             Obj.Supplier = objSupplier;
 
             var objBank = new Object();
-            objBank.LedgerID = $("#ddlBank").val();
+            objBank.LedgerID = 1;
             Obj.Bank = objBank;
             Obj.PurchaseIDs = sAgentID;
             Obj.BillType = 1;
@@ -1889,7 +1889,7 @@
                                     $("#txtVoucherDate").val(obj.sVoucherDate);
                                     $("#ddlSupplier").val(obj.Supplier.SupplierID).change();
 
-                                    $("#ddlBank").val(obj.Bank.LedgerID).change();
+                                   // $("#ddlBank").val(obj.Bank.LedgerID).change();
                                     $("#ddlPaymentMode").val(obj.PaymentModeID).change();
                                     $("#txtAmount").val(obj.Amount).change();
                                     $("#hdnAmount").val(obj.Amount + obj.DiscountAmount + obj.OtherDiscount);

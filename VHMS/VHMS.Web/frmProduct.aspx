@@ -178,7 +178,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row" style="display:none">
                                     <div class="form-group col-md-3" id="divStockQuantity">
                                         <label>
                                             Stock Quantity</label><span class="text-danger">*</span>
@@ -944,23 +944,23 @@
             //    $("#divSalesMargin").addClass('has-error'); $("#txtSalesPercent").focus(); return false;
             //} else { $("#divSalesMargin").removeClass('has-error'); }
 
-            if (!$("#txtPurchaseRate").val().trim() || $("#txtPurchaseRate").val().trim() == "0") {
-                $.jGrowl("Please enter Purchase Rate", { sticky: false, theme: 'warning', life: jGrowlLife });
-                $("#divPurchaseRate").addClass('has-error');
-                $("#txtPurchaseRate").focus();
-                return false;} else { $("#divPurchaseRate").removeClass('has-error');}
+            //if (!$("#txtPurchaseRate").val().trim() || $("#txtPurchaseRate").val().trim() == "0") {
+            //    $.jGrowl("Please enter Purchase Rate", { sticky: false, theme: 'warning', life: jGrowlLife });
+            //    $("#divPurchaseRate").addClass('has-error');
+            //    $("#txtPurchaseRate").focus();
+            //    return false;} else { $("#divPurchaseRate").removeClass('has-error');}
 
-            if (!$("#txtSellingRate").val().trim() || $("#txtSellingRate").val().trim() == "0") {
-                $.jGrowl("Please enter Sales Margin", { sticky: false, theme: 'warning', life: jGrowlLife });
-                $("#divSellingRate").addClass('has-error');
-                $("#txtSellingRate").focus();
-                return false; } else { $("#divSellingRate").removeClass('has-error');}
+            //if (!$("#txtSellingRate").val().trim() || $("#txtSellingRate").val().trim() == "0") {
+            //    $.jGrowl("Please enter Sales Margin", { sticky: false, theme: 'warning', life: jGrowlLife });
+            //    $("#divSellingRate").addClass('has-error');
+            //    $("#txtSellingRate").focus();
+            //    return false; } else { $("#divSellingRate").removeClass('has-error');}
 
-            if (!$("#txtStockQuantity").val().trim() || $("#txtStockQuantity").val().trim() == "0") {
-                $.jGrowl("Please enter Stock Quantity", { sticky: false, theme: 'warning', life: jGrowlLife });
-                $("#divStockQuantity").addClass('has-error');
-                $("#txtStockQuantity").focus();
-                return false;} else {$("#divStockQuantity").removeClass('has-error');}
+            //if (!$("#txtStockQuantity").val().trim() || $("#txtStockQuantity").val().trim() == "0") {
+            //    $.jGrowl("Please enter Stock Quantity", { sticky: false, theme: 'warning', life: jGrowlLife });
+            //    $("#divStockQuantity").addClass('has-error');
+            //    $("#txtStockQuantity").focus();
+            //    return false;} else {$("#divStockQuantity").removeClass('has-error');}
 
             if ($("#ddlTaxName").val() == "0" || $("#ddlTaxName").val() == undefined) {
                 $.jGrowl("Please Select Tax", { sticky: false, theme: 'warning', life: jGrowlLife });
@@ -997,9 +997,9 @@
             Obj.ProductImage2 = $("[id*=imgUpload2_view]").attr("src");
             Obj.ProductImage3 = $("[id*=imgUpload3_view]").attr("src");
             Obj.IsActive = $("#chkStatus").is(':checked') ? "1" : "0";
-            Obj.Quantity = $("#txtStockQuantity").val();
-            Obj.PurchaseRate = $("#txtPurchaseRate").val();
-            Obj.SellingRate = $("#txtSellingRate").val();
+            Obj.Quantity = 0;
+            Obj.PurchaseRate = 0;
+            Obj.SellingRate = 0;
             var sMethodName;
             if ($("#hdnID").val() > 0) {
                 Obj.ProductID = $("#hdnID").val();
@@ -1353,9 +1353,9 @@
                                         }
                                     });
                                     $("#hdnID").val(obj.ProductID);
-                                    $("#txtStockQuantity").val(obj.Quantity);
-                                    $("#txtPurchaseRate").val(obj.PurchaseRate);
-                                    $("#txtSellingRate").val(obj.SellingRate);
+                                    //$("#txtStockQuantity").val(obj.Quantity);
+                                    //$("#txtPurchaseRate").val(obj.PurchaseRate);
+                                    //$("#txtSellingRate").val(obj.SellingRate);
                                     $("#txtName").val(obj.ProductName);
                                     $("#txtProductCode").val(obj.ProductCode);
                                     $("#ddlCategory").val(obj.Category.CategoryID).change();

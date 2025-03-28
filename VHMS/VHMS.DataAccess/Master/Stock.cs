@@ -273,7 +273,7 @@ namespace VHMS.DataAccess
             {
                 db = Entity.DBConnection.dbCon;
                 DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_PRODUCTSTOCK);
-                db.AddInParameter(cmd, "@PK_StockID", DbType.Int32, iStockID);
+                db.AddInParameter(cmd, "@FK_ProductID", DbType.Int32, iStockID);
                 DataSet dsList = db.ExecuteDataSet(cmd);
                 if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
                 {
