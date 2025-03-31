@@ -3566,6 +3566,7 @@ function SaveandUpdateCustomer() {
     Obj.MobileNo = $("#txtPhoneNo1").val();
     Obj.Pincode = $("#txtPincode").val();
     Obj.GSTNo = $("#txtFax").val();
+    Obj.IsActive ="1";
     var ObjState = new Object();
     ObjState.StateID = $("#ddlState").val();
     Obj.State = ObjState;

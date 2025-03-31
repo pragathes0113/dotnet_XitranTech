@@ -405,7 +405,7 @@
                         </div>
                         <div class="form-group col-md-1">
                             <label>
-                                Other Charges</label>
+                                Transport Charges</label>
                         </div>
                         <div class="form-group col-md-2" id="divOtherCharges">
                             <input type="text" class="form-control" id="txtOtherCharges" placeholder="Other Charges" style="font-size: 104%; font-weight: bold;"

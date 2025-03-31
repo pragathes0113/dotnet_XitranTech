@@ -54,7 +54,6 @@
                                                 <th>Qutations #</th>
                                                 <th>Date</th>
                                                 <th>Customer</th>
-                                                <th>Tax Amount</th>
                                                 <th>Net Amount</th>
                                                 <th></th>
                                                 <th></th>
@@ -87,7 +86,6 @@
                                                 <th>Qutations #</th>
                                                 <th>Date</th>
                                                 <th>Customer</th>
-                                                <th>Tax Amount</th>
                                                 <th>Net Amount</th>
                                                 <th></th>
                                                 <th></th>
@@ -132,69 +130,6 @@
                                 Customer</label><span class="text-danger">*</span>
                             <select id="ddlCustomerName" class="form-control select2" data-placeholder="Select Customer Name" tabindex="3"></select>
                         </div>
-                       <%-- <div class="form-group col-md-2" id="divBranchr" style="display: none">
-                            <label>
-                                Branch</label><span class="text-danger">*</span>
-                            <select id="ddlBranchName" class="form-control select2" data-placeholder="Select Branch Name" tabindex="3"></select>
-                        </div>
-                        <div class="form-group col-md-2" id="divPerson" style="display: none">
-                            <label>
-                                Contact Person</label>
-                            <input type="text" class="form-control" id="txtPerson" placeholder="Contact Person"
-                                maxlength="10" tabindex="-1" readonly="true" />
-                        </div>--%>
-             <%--           <div class="form-group col-md-2" style="display: none">
-                            <label>
-                                MobileNo</label>
-                            <input type="text" class="form-control" id="txtMobileNo" placeholder="MobileNo"
-                                maxlength="10" tabindex="-1" readonly="true" />
-                        </div>--%>
-                        <div class="form-group col-md-2" id="divTaxName">
-                            <label>
-                                Tax</label><span class="text-danger">*</span>
-                            <select id="ddlTaxName" class="form-control select2" data-placeholder="Select Tax Name" tabindex="4"></select>
-                        </div>
-                  <%--      <div class="form-group col-md-2" id="divCompany" style="display:none">
-                            <label>
-                                Company</label><span class="text-danger">*</span>
-                            <select id="ddlCompany" class="form-control select2" data-placeholder="Select Company" tabindex="5"></select>
-                        </div>--%>
-                       <%-- <div class="form-group col-md-2" id="divBillingType" style="display: none">
-                            <label>
-                                Billing Address Type
-                            </label>
-                            <span class="text-danger">*</span>
-                            <select id="ddlBillingType" class="form-control" tabindex="3">
-                                <option value="Office Address" selected="selected">Office Address</option>
-                                <option value="Client address">Client address</option>
-                                <option value="Post address">Post address</option>
-                                <option value="Headoffice address">Headoffice address</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-4" id="divBillingAddress" style="display: none">
-                            <label>
-                                Billing Address</label><span class="text-danger">*</span>
-                            <input type="text" class="form-control" id="txtBillingAddress" placeholder="Billing Address"
-                                maxlength="1000" tabindex="-1" readonly="true" />
-                        </div>
-                        <div class="form-group col-md-2" id="divShippingType" style="display: none">
-                            <label>
-                                Shipping Address Type
-                            </label>
-                            <span class="text-danger">*</span>
-                            <select id="ddlType" class="form-control" tabindex="3">
-                                <option value="Office Address" selected="selected">Office Address</option>
-                                <option value="Client address">Client address</option>
-                                <option value="Post address">Post address</option>
-                                <option value="Headoffice address">Headoffice address</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-4" id="divShippingAddress" style="display: none">
-                            <label>
-                                Shipping Address</label><span class="text-danger">*</span>
-                            <input type="text" class="form-control" id="txtShippingAddress" placeholder="Shipping Address"
-                                maxlength="1000" tabindex="-1" readonly="true" />
-                        </div>--%>
                     </div>
                 </div>
                 <div class="box box-primary box-solid">
@@ -216,18 +151,17 @@
                                     <select id="ddlProductName" class="form-control select2" data-placeholder="Select Product Name" tabindex="5"></select>
                                 </div>
                             </div>
-                            <div class="form-group col-md-2" id="divDescription" style="margin-left: -21px;display:none">
+                            <div class="form-group col-md-2" id="divDescription" style="margin-left: -21px; display: none">
                                 <label>
                                     Description</label><span class="text-danger">*</span>
                                 <textarea id="txtDescription" class="form-control" maxlength="1000" tabindex="-1" rows="1" aria-autocomplete="none"></textarea>
                             </div>
-                            <div class="form-group col-md-1" id="divHSNCode" style="margin-left: -21px;display:none">
+                            <div class="form-group col-md-1" id="divHSNCode" style="margin-left: -21px; display: none">
                                 <label>
                                     HSNCode</label><span class="text-danger"></span>
                                 <input type="text" class="form-control TRSearch" id="txtHSNCode" placeholder="Code"
                                     maxlength="100" tabindex="-1" autocomplete="off" />
                             </div>
-
                             <div class="form-group col-md-1" id="divQuantity" style="margin-left: -21px;">
                                 <label>
                                     Quantity</label><span class="text-danger">*</span>
@@ -244,17 +178,6 @@
                                 <label>
                                     Unit</label><span class="text-danger">*</span>
                                 <select id="ddlUnit" class="form-control select2" data-placeholder="Select Unit" tabindex="-1"></select>
-                            </div>
-                            <div class="form-group col-md-1" id="divTaxTrans" style="margin-left: -21px;">
-                                <label>
-                                    Tax</label><span class="text-danger">*</span>
-                                <select id="ddlTax" class="form-control select2" data-placeholder="Select Tax " tabindex="13"></select>
-                            </div>
-                            <div class="form-group col-md-1" id="divTaxAmt" style="margin-left: -21px;">
-                                <label>
-                                    Tax Amt</label>
-                                <input type="text" class="form-control TRSearch" id="txtTaxAmt" placeholder="Tax. Amt"
-                                    maxlength="12" tabindex="-1" onkeypress="return IsNumeric(event)" readonly="true" />
                             </div>
                             <div class="form-group col-md-1" id="divDisPer" style="margin-left: -21px;">
                                 <label>
@@ -294,7 +217,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" style="display: none">
                     <div class="form-group col-md-8"></div>
                     <div class="form-group col-md-2" style="text-align: right;">
                         <label>
@@ -306,13 +229,13 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="form-group col-md-6"></div>
-                    <div class="form-group col-md-1">
+                    <div class="form-group col-md-8"></div>
+                    <div class="form-group col-md-1" style="display: none">
                         <label>
                             Discount %</label>
                         <span class="text-danger">*</span>
                     </div>
-                    <div class="form-group col-md-1" id="divDiscountPercent">
+                    <div class="form-group col-md-1" id="divDiscountPercent" style="display: none">
                         <input type="text" class="form-control" id="txtDiscountPercent" placeholder="Discount Percent"
                             maxlength="15" tabindex="16" value="0" onkeypress="return IsNumeric(event)" autocomplete="off" />
                     </div>
@@ -325,7 +248,7 @@
                             maxlength="15" tabindex="17" value="0" onkeypress="return IsNumeric(event)" />
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" style="display: none">
                     <div class="form-group col-md-6"></div>
                     <div class="form-group col-md-1">
                         <label>
@@ -344,7 +267,7 @@
                             maxlength="15" tabindex="-1" readonly="true" value="0" onkeypress="return IsNumeric(event)" />
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" style="display: none">
                     <div class="form-group col-md-6"></div>
                     <div class="form-group col-md-1">
                         <label>
@@ -363,8 +286,18 @@
                             maxlength="15" tabindex="-1" readonly="true" value="0" onkeypress="return IsNumeric(event)" />
                     </div>
                 </div>
-
                 <div class="row">
+                    <div class="form-group col-md-8"></div>
+                    <div class="form-group col-md-2" style="text-align: right;">
+                        <label>
+                            Roundoff</label>
+                    </div>
+                    <div class="form-group col-md-2" id="divRoundoff">
+                        <input type="text" class="form-control" id="txtRoundoff" placeholder="Roundoff" style="font-size: 104%; font-weight: bold;"
+                            maxlength="15" tabindex="-1" value="0" autocomplete="off" readonly />
+                    </div>
+                </div>
+                <div class="row" style="display: none">
                     <div class="form-group col-md-6"></div>
                     <div class="form-group col-md-1">
                         <label>
@@ -373,14 +306,6 @@
                     <div class="form-group col-md-1" id="divIGST">
                         <input type="text" class="form-control" id="txtIGST" placeholder="SGST"
                             maxlength="15" tabindex="-1" readonly="true" value="0" onkeypress="return IsNumeric(event)" />
-                    </div>
-                    <div class="form-group col-md-2" style="text-align: right;">
-                        <label>
-                            Roundoff</label>
-                    </div>
-                    <div class="form-group col-md-2" id="divRoundoff">
-                        <input type="text" class="form-control" id="txtRoundoff" placeholder="Roundoff" style="font-size: 104%; font-weight: bold;"
-                            maxlength="15" tabindex="-1" value="0" autocomplete="off" readonly />
                     </div>
                 </div>
                 <div class="row">
