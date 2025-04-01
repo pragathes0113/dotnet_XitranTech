@@ -801,6 +801,7 @@ function GetProductTax() {
                             if (obj != null) {
                                 $("#ddlTax").val($("#ddlTaxName").val()).change();
                                 $("#txtPerviousRate").val(obj.PerviousRate);
+                                $("#txtSalesRate").val(obj.SellingRate);
                             }
                             dProgress(false);
                         }
@@ -1298,12 +1299,12 @@ $("#btnAddMagazine,#btnUpdateMagazine").click(function () {
         $("#divQuantity").addClass('has-error'); $("#txtQuantity").focus(); return false;
     } else { $("#divQuantity").removeClass('has-error'); }
 
-    if ($("#txtRate").val() == "" || $("#txtRate").val() == undefined || $("#txtRate").val() == null) {
+    if ($("#txtRate").val() == "" || $("#txtRate").val() == 0 || $("#txtRate").val() == undefined || $("#txtRate").val() == null) {
         $.jGrowl("Please enter rate", { sticky: false, theme: 'warning', life: jGrowlLife });
         $("#divRate").addClass('has-error'); $("#txtRate").focus(); return false;
     } else { $("#divRate").removeClass('has-error'); }
 
-    if ($("#txtSalesRate").val() == "" || $("#txtSalesRate").val() == undefined || $("#txtSalesRate").val() == null) {
+    if ($("#txtSalesRate").val() == "" || $("#txtSalesRate").val() == 0 || $("#txtSalesRate").val() == undefined || $("#txtSalesRate").val() == null) {
         $.jGrowl("Please enter Sales Rate", { sticky: false, theme: 'warning', life: jGrowlLife });
         $("#divSalesRate").addClass('has-error'); $("#txtSalesRate").focus(); return false;
     } else { $("#divSalesRate").removeClass('has-error'); }
@@ -1376,7 +1377,7 @@ $("#btnAddMagazine,#btnUpdateMagazine").click(function () {
     ObjData.DiscountAmount = parseFloat($("#txtDisAmt").val());
     ObjData.SubTotal = parseFloat($("#txtSubTotal").val());
     ObjData.Barcode = $("#txtBarcode").val();
-
+    ObjData.PreviousRate = $("#txtPerviousRate").val();
     // GetProductDetailsPurchase(ObjData.Product.ProductID, $("#hdnPurchaseID").val(), $("#ddlSupplierName").val());
     if (RecordAvailable == 0)
         ObjData.NewProductFlag = 1;
@@ -1504,10 +1505,6 @@ function DisplayOPBillingList(gData) {
         sTable += "<th class='" + sColorCode + "'>Quantity</th>";
         sTable += "<th class='" + sColorCode + "'>Rate</th>";
         sTable += "<th class='" + sColorCode + "'>Sales Rate</th>";
-        //sTable += "<th class='" + sColorCode + "'>Disc. %</th>";
-        //sTable += "<th class='" + sColorCode + "'>Disc. Amt</th>";
-        //sTable += "<th class='" + sColorCode + "'>Tax %</th>";
-        //sTable += "<th class='" + sColorCode + "'>Tax Amount</th>";
         sTable += "<th class='" + sColorCode + "'>Subtotal</th>";
         sTable += "<th class='" + sColorCode + "' style='width:3px;text-align: center'>Edit</th>";
         sTable += "<th class='" + sColorCode + "' style='width:3px;text-align: center'>Delete</th>";
@@ -1567,15 +1564,10 @@ function Bind_OPBillingByID(ID, data) {
     for (var i = 0; i < data.length; i++) {
         if (data[i].sNO == ID) {
             if (data[i].StatusFlag != "D") {
-                //$("#hdnOPSNo").val = null;
                 $("#hdnOPSNo").val(ID);
                 $("#txtSNo").val(ID);
                 $("#hdnPurchaseID").val(data[i].PurchaseID);
-                $("#txtCode").val(data[i].Product.SMSCode).change();
-               
-
-
-                $("#txtPartyCode").val(data[i].Product.ProductCode);
+                $("#ddlProductName").val(data[i].Product.ProductID).change();
                 $("#txtQuantity").val(data[i].Quantity);
                 $("#txtTaxAmt").val(data[i].TaxAmount);
                 $("#txtRate").val(data[i].Rate);
@@ -1586,29 +1578,7 @@ function Bind_OPBillingByID(ID, data) {
                 $("#txtSerialNo").val(data[i].SerialNo);
                 $("#txtSubTotal").val(data[i].SubTotal);
                 $("#txtBarcode").val(data[i].Barcode);
-                $("#txtPerviousRate").val(data[i].PreviousRate);
-                for (var i = 0; i < data.length; i++) {
-                    if ($("#ddlProductName option[value='" + data[i].Product.ProductID + "']").length === 0) {
-                        $("#ddlProductName").append(
-                            $("<option></option>")
-                                .val(data[i].Product.ProductID)  // Correct value
-                                .text(data[i].Product.ProductName) // Correct text
-                        );
-                    }
-                }
-                $("#ddlProductName").val(data[0].Product.ProductID).change(); 
-                //var id = data[i].Tax.TaxID;
-                //if (data[i].Tax.TaxID == 0) {
-                //    $("#divNewProductName").show();
-                //    $("#divTaxTrans").hide();
-                //}
-                //else if (data[i].Tax.TaxID > 0) {
-                //    $("#divNewProductName").hide();
-                //    $("#divTaxTrans").show();
-                //    $("#rdbNewProductName").prop("checked", false);
-                //    $("#rdbExistingProductName").prop("checked", true);
-                //    $("#ddlTax").val(data[i].Tax.TaxID).change();
-                //}
+                $("#txtPerviousRate").val(data[i].PreviousRate); 
             }
         }
     }
