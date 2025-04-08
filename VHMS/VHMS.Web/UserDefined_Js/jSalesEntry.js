@@ -358,7 +358,7 @@ $("#btnAddNew").click(function () {
     $("#ddlTax").val(2).change();
     $("#divOtherPasswordlbl").hide();
     $("#divOtherPassword").hide();
-    GetInvoiceNo();
+    //GetInvoiceNo();
     $("#txtBillDate").focus();
     $("#txtBillNo").focus();
     $("#imagefile2").val("");
