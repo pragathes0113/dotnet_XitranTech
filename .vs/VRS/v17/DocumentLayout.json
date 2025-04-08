@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "E:\\Web Live Project\\dotnet_VRS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_VRS\\vhms\\vhms.web\\userdefined_js\\jsalesentry.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_vrs\\vhms\\vhms.web\\userdefined_js\\jsalesentry.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\userdefined_js\\jsalesentry.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_vrs\\vhms\\vhms.web\\frmemployee.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_VRS\\vhms\\vhms.web\\frmemployee.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmemployee.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
@@ -54,8 +54,7 @@
               "RelativeToolTip": "VHMS\\VHMS.Web\\frmEmployee.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-04-03T09:25:40.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T09:25:40.827Z"
             },
             {
               "$type": "Document",
@@ -101,7 +100,7 @@
               "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\UserDefined_Js\\jSalesEntry.js",
               "ToolTip": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\UserDefined_Js\\jSalesEntry.js",
               "RelativeToolTip": "VHMS\\VHMS.Web\\UserDefined_Js\\jSalesEntry.js",
-              "ViewState": "AgIAABwDAAAAAAAAAAAawNwCAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAALYCAAAAAAAAAAAiwMcCAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-03-31T06:10:56.518Z",
               "EditorCaption": ""

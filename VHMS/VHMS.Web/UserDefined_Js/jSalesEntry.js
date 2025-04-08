@@ -709,7 +709,7 @@ function GetAllProductDetails(id, smscode, value, SID, SalesID) {
     return false;
 
 }
-
+//
 $("#btnList").click(function () {
     $("#btnAddNew").show();
     $("#btnList").hide();
