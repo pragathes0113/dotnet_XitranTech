@@ -198,10 +198,3 @@ D:\Projects\.net\dotnet_sunlight\VHMS\VHMS.Entity\obj\Debug\VHMS.Entity.dll
 D:\Projects\.net\dotnet_sunlight\VHMS\VHMS.Entity\obj\Debug\VHMS.Entity.pdb
 D:\WEB\Files\dotnet_sunlight\VHMS\VHMS.Entity\obj\Debug\VHMS.Entity.csproj.AssemblyReference.cache
 D:\WEB\Files\dotnet_sunlight\VHMS\VHMS.Entity\obj\Debug\VHMS.Entity.csproj.CoreCompileInputs.cache
-E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Entity\bin\Debug\VHMS.Entity.dll
-E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Entity\bin\Debug\VHMS.Entity.pdb
-E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Entity\obj\Debug\VHMS.Entity.csproj.AssemblyReference.cache
-E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Entity\obj\Debug\VHMS.Entity.csproj.CoreCompileInputs.cache
-E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Entity\obj\Debug\VHMS.Ent.EE1E71EC.Up2Date
-E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Entity\obj\Debug\VHMS.Entity.dll
-E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Entity\obj\Debug\VHMS.Entity.pdb

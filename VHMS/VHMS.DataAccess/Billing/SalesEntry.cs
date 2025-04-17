@@ -575,11 +575,13 @@ namespace VHMS.DataAccess.Billing
                         objSalesEntry.SalesEntryID = Convert.ToInt32(drData["PK_SalesEntryID"]);
                         objSalesEntry.InvoiceNo = Convert.ToString(drData["InvoiceNo"]);
                         objSalesEntry.InvoiceDate = Convert.ToDateTime(drData["InvoiceDate"]);
+
                         objCustomer.CustomerID = Convert.ToInt32(drData["FK_CustomerID"]);
                         objCustomer.CustomerName = Convert.ToString(drData["CustomerName"]);
                         objCustomer.MobileNo = Convert.ToString(drData["MobileNo"]);
                         objCustomer.Address = Convert.ToString(drData["Address"]);
                         objSalesEntry.Customer = objCustomer;
+
                         objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
                         objSalesEntry.Tax = objTax;
                         objSalesEntry.LRDate = Convert.ToDateTime(drData["LRDate"]);

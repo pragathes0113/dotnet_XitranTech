@@ -371,6 +371,7 @@ namespace VHMS.DataAccess.Billing
                         objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
                         objPurchase.Tax = objTax;
                         objPurchase.TaxPercent = Convert.ToDecimal(drData["TaxPercent"]);
+                        objPurchase.TaxPercent = Convert.ToDecimal(drData["TaxPercent"]);
                         objPurchase.CGSTAmount = Convert.ToDecimal(drData["CGSTAmount"]);
                         objPurchase.SGSTAmount = Convert.ToDecimal(drData["SGSTAmount"]);
                         objPurchase.IGSTAmount = Convert.ToDecimal(drData["IGSTAmount"]);

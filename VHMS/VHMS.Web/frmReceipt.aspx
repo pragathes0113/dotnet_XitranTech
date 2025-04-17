@@ -2,6 +2,25 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="VHMSWebHead" runat="Server">
+    <style>
+    .select2-container--default .select2-selection--single {
+        height: 38px !important;
+        padding: 6px 12px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        line-height: 24px;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 36px;
+        right: 10px;
+    }
+    .select2-container {
+        width: 100% !important;
+    }
+</style>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="VHMSWebContent" runat="Server">
     <div class="container-wrapper hidden">
@@ -48,11 +67,11 @@
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="compose-modal" role="dialog" aria-hidden="true">
+            <div class="modal fade" id="compose-modal" role="dialog">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <button type="button" class="close" data-dismiss="modal">
                                 &times;</button>
                             <h4 class="modal-title"></h4>
                         </div>
@@ -68,10 +87,8 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <br />
-                            <br />
-                            <div class="row"></div>
+                            <br/>
+                            <br/>
                             <div class="row">
                                 <div class="form-group col-md-3" id="divVoucherNo">
                                     <label>
@@ -363,6 +380,12 @@
             });
         });
 
+        $('#compose-modal').on('shown.bs.modal', function () {
+            $('#ddlCustomer').select2({
+                dropdownParent: $('#compose-modal'),
+                placeholder: "Select Customer"
+            });
+        });
         $(document).ready(function () {
             pLoadingSetup(false);
             ActionAdd = '<%=Session["ActionAdd"]%>';

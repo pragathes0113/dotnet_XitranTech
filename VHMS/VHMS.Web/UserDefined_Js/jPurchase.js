@@ -1703,11 +1703,11 @@ function GetRecord() {
                             $("#tblRecord_tbody").empty();
                             var TypeStatus = "";
                             for (var index = 0; index < obj.length; index++) {
+                                var table = "";
                                 if (obj[index].IsCancelled == "0") { TypeStatus = "<span class='label label-success'>Active</span>"; }
                                 else { TypeStatus = "<span class='label label-danger'>Cancelled</span>"; }
-                                var table = "";
-
-                                table += "<tr id='" + obj[index].PurchaseID + "'>";
+                                if (obj[index].BalanceAmount > 0) { table += "<tr style='background-color:#f1c6ad;' id='" + obj[index].PurchaseID + "'>"; }
+                                else { table += "<tr id='" + obj[index].SalesEntryID + "'>"; }
                                 table += "<td>" + (index + 1) + "</td>";
                                 table += "<td>" + obj[index].PurchaseNo + "</td>";
                                 table += "<td>" + obj[index].sPurchaseDate + "</td>";

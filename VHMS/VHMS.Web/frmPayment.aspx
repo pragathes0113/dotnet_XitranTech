@@ -7,11 +7,30 @@
             background-color: #ef00bc !important;
             margin-top: 0px !important;
         }
+
+        .select2-container--default .select2-selection--single {
+            height: 38px !important;
+            padding: 6px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+            .select2-container--default .select2-selection--single .select2-selection__rendered {
+                line-height: 24px;
+            }
+
+            .select2-container--default .select2-selection--single .select2-selection__arrow {
+                height: 36px;
+                right: 10px;
+            }
+
+        .select2-container {
+            width: 100% !important;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="VHMSWebContent" runat="Server">
     <div class="container-wrapper hidden">
-
         <section class="content-header">
             <h1>Payment
             </h1>
@@ -22,7 +41,6 @@
             </div>
             <br />
         </section>
-
         <section class="content">
             <div class="row">
                 <div class="col-xs-12">
@@ -118,7 +136,10 @@
                                         <option value="6">UPI Pay</option>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-3" id="divBank" style="display:none">
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-3" id="divBank" style="display: none">
                                     <label>
                                         Select A/c</label>
                                     <span class="text-danger">*</span>
@@ -204,7 +225,7 @@
                                     <img src="" id="imgUpload1_view" alt="" class="preview_img" style="width: 280px;" />
 
                                 </div>
-                                <div class="form-group col-md-2" id="divOnAccount" style="display:none">
+                                <div class="form-group col-md-2" id="divOnAccount" style="display: none">
                                     <label>On Account</label>
                                     <span class="text-danger">*</span>
                                     <div class="input-group">
@@ -213,7 +234,7 @@
                                             maxlength="15" tabindex="-1" disabled="disabled" autocomplete="off" />
                                     </div>
                                 </div>
-                                <div class="form-group col-md-1" id="divcheckbox" style="display:none">
+                                <div class="form-group col-md-1" id="divcheckbox" style="display: none">
                                     <input type="checkbox" id="chkAddOnAccount" style="margin: 30px 0 0 0; width: 18px; height: 18px;" tabindex="-1" />
                                 </div>
                             </div>
@@ -254,77 +275,71 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="form-group col-md-3" id="divDescription">
+                                <label>
+                                    Notes</label>
+                                <input id="txtDescription" class="form-control" maxlength="255" tabindex="13" autocomplete="off" />
+                            </div>
 
-
-                                <div class="form-group col-md-3" id="divDescription">
-                                    <label>
-                                        Notes</label>
-                                    <input id="txtDescription" class="form-control" maxlength="255" tabindex="13" autocomplete="off" />
-                                </div>
+                            <div class="form-group col-md-12">
+                                <label>
+                                    Total Amount in Words :
+                                </label>
+                                <asp:Label ID="Label2" Text="" Style="color: blue; font-size: initial;" runat="server"></asp:Label>
                             </div>
-                            <div class="row">
-                                <div class="form-group col-md-12">
-                                    <label>
-                                        Total Amount in Words :
-                                    </label>
-                                    <asp:Label ID="Label2" Text="" Style="color: blue; font-size: initial;" runat="server"></asp:Label>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-3" id="divAccountHolder">
+                                <label>
+                                    AccountHolder name</label>
+                                <input id="txtAccountHolder" class="form-control" maxlength="255" tabindex="-1" readonly autocomplete="off" />
                             </div>
-                            <div class="row">
-                                <div class="form-group col-md-3" id="divAccountHolder">
-                                    <label>
-                                        AccountHolder name</label>
-                                    <input id="txtAccountHolder" class="form-control" maxlength="255" tabindex="-1" readonly autocomplete="off" />
-                                </div>
-                                <div class="form-group col-md-2" id="divAccountNo">
-                                    <label>
-                                        AccountNo</label>
-                                    <input id="txtAccountNo" class="form-control" maxlength="255" tabindex="-1" readonly autocomplete="off" />
-                                </div>
-                                <div class="form-group col-md-3" id="divBankname">
-                                    <label>
-                                        Bankname</label>
-                                    <input id="txtBankname" class="form-control" maxlength="255" tabindex="-1" readonly autocomplete="off" />
-                                </div>
-                                <div class="form-group col-md-2" id="divBranch">
-                                    <label>
-                                        Branch Name</label>
-                                    <input id="txtBranch" class="form-control" maxlength="255" tabindex="-1" readonly autocomplete="off" />
-                                </div>
-                                <div class="form-group col-md-2" id="divIFSC">
-                                    <label>
-                                        IFSC Code</label>
-                                    <input id="txtIFSC" class="form-control" maxlength="255" tabindex="-1" readonly autocomplete="off" />
-                                </div>
+                            <div class="form-group col-md-2" id="divAccountNo">
+                                <label>
+                                    AccountNo</label>
+                                <input id="txtAccountNo" class="form-control" maxlength="255" tabindex="-1" readonly autocomplete="off" />
                             </div>
-                            <div class="box box-primary box-solid" id="A">
-                                <div class="box-header">
-                                    Pending Bills
-                                </div>
-                                <div class="box-body">
-                                    <div class="table-responsive" style="min-height: 10px !important">
-                                        <div id="divPendingBillList">
-                                        </div>
+                            <div class="form-group col-md-3" id="divBankname">
+                                <label>
+                                    Bankname</label>
+                                <input id="txtBankname" class="form-control" maxlength="255" tabindex="-1" readonly autocomplete="off" />
+                            </div>
+                            <div class="form-group col-md-2" id="divBranch">
+                                <label>
+                                    Branch Name</label>
+                                <input id="txtBranch" class="form-control" maxlength="255" tabindex="-1" readonly autocomplete="off" />
+                            </div>
+                            <div class="form-group col-md-2" id="divIFSC">
+                                <label>
+                                    IFSC Code</label>
+                                <input id="txtIFSC" class="form-control" maxlength="255" tabindex="-1" readonly autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="box box-primary box-solid" id="A">
+                            <div class="box-header">
+                                Pending Bills
+                            </div>
+                            <div class="box-body">
+                                <div class="table-responsive" style="min-height: 10px !important">
+                                    <div id="divPendingBillList">
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal-footer clearfix">
-                                <button type="submit" class="btn btn-info pull-left" id="btnSave" tabindex="14">
-                                    <i class="fa fa-save"></i>&nbsp;&nbsp;
+                        </div>
+                        <div class="modal-footer clearfix">
+                            <button type="submit" class="btn btn-info pull-left" id="btnSave" tabindex="14">
+                                <i class="fa fa-save"></i>&nbsp;&nbsp;
                                 Save</button>
-                                <button type="submit" class="btn btn-info pull-left" id="btnUpdate" tabindex="15">
-                                    <i class="fa fa-edit"></i>&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-info pull-left" id="btnUpdate" tabindex="15">
+                                <i class="fa fa-edit"></i>&nbsp;&nbsp;
                                 Update</button>
-                                <button id="btnPrint" type="button" class="btn btn-info btnPrint margin pull-left" tabindex="16">
-                                    <i class="fa fa-print"></i>&nbsp;&nbsp;Save & Print</button>
-                                <button id="btnPrintbill" type="button" class="btn btn-info btnPrint margin pull-left" tabindex="17">
-                                    <i class="fa fa-print"></i>&nbsp;&nbsp; Print</button>
-                                <button type="button" class="btn btn-danger pull-right" id="btnClose" tabindex="18">
-                                    <i class="fa fa-close"></i>&nbsp;&nbsp;
+                            <button id="btnPrint" type="button" class="btn btn-info btnPrint margin pull-left" tabindex="16">
+                                <i class="fa fa-print"></i>&nbsp;&nbsp;Save & Print</button>
+                            <button id="btnPrintbill" type="button" class="btn btn-info btnPrint margin pull-left" tabindex="17">
+                                <i class="fa fa-print"></i>&nbsp;&nbsp; Print</button>
+                            <button type="button" class="btn btn-danger pull-right" id="btnClose" tabindex="18">
+                                <i class="fa fa-close"></i>&nbsp;&nbsp;
                                 Close</button>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -364,7 +379,6 @@
                 </div>
             </div>
         </section>
-
     </div>
     <input type="hidden" id="hdnID" />
     <input type="hidden" id="hdRS" />
@@ -379,6 +393,15 @@
         var gvalue = []; var iAmount = 0; var iCount = 0;
 
         var pageUrl = '<%=ResolveUrl("~/frmPayment.aspx") %>';
+
+
+        $('#compose-modal').on('shown.bs.modal', function () {
+            $('#ddlSupplier').select2({
+                dropdownParent: $('#compose-modal'),
+                placeholder: "Select Supplier"
+            });
+        });
+
         $(document).ready(function () {
             pLoadingSetup(false);
             ActionAdd = '<%=Session["ActionAdd"]%>';
@@ -1889,7 +1912,7 @@
                                     $("#txtVoucherDate").val(obj.sVoucherDate);
                                     $("#ddlSupplier").val(obj.Supplier.SupplierID).change();
 
-                                   // $("#ddlBank").val(obj.Bank.LedgerID).change();
+                                    // $("#ddlBank").val(obj.Bank.LedgerID).change();
                                     $("#ddlPaymentMode").val(obj.PaymentModeID).change();
                                     $("#txtAmount").val(obj.Amount).change();
                                     $("#hdnAmount").val(obj.Amount + obj.DiscountAmount + obj.OtherDiscount);

@@ -38,7 +38,7 @@
     <Shape ID="DesignTable:tUser" ZOrder="51" X="790" Y="190" Height="28" Width="154" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="576" SplitterPosition="24" />
     <Shape ID="DesignTable:tSettings" ZOrder="52" X="798" Y="294" Height="28" Width="150" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="158" SplitterPosition="24" />
     <Shape ID="DesignTable:tCustomer" ZOrder="48" X="546" Y="71" Height="28" Width="150" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="300" SplitterPosition="24" />
-    <Shape ID="DesignTable:tSalesEntry" ZOrder="1" X="792" Y="224" Height="308" Width="163" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="28" SplitterPosition="304" />
+    <Shape ID="DesignTable:tSalesEntry" ZOrder="1" X="792" Y="224" Height="309" Width="163" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="28" SplitterPosition="305" />
     <Shape ID="DesignTable:tSalesEntryTrans" ZOrder="13" X="797" Y="260" Height="28" Width="162" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="253" SplitterPosition="24" />
     <Shape ID="DesignTable:tProduct" ZOrder="35" X="776" Y="347" Height="28" Width="150" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="300" SplitterPosition="24" />
     <Shape ID="DesignTable:tStatement" ZOrder="46" X="417" Y="343" Height="28" Width="150" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="215" SplitterPosition="24" />

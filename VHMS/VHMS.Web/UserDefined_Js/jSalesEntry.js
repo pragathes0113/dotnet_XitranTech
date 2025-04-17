@@ -2245,10 +2245,6 @@ function GetRecord() {
                             var TypeStatus = "";
                             for (var index = 0; index < obj.length; index++) {
                                 if (obj[index].IsActive == "1") {
-                                    //{ TypeStatus = "<span class='label label-success'>Active</span>"; }
-                                    //else
-                                    //{ TypeStatus = "<span class='label label-danger'>Cancelled</span>"; }
-
                                     var table = "";
                                     if (obj[index].BalanceAmount > 0) {
                                         if (obj[index].DueDays == obj[index].Customer.MinDueDays)
