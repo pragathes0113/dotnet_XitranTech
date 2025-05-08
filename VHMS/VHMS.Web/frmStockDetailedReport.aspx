@@ -78,11 +78,14 @@
                                     <%#Container.DataItemIndex+1 %>
                                 </ItemTemplate>
                             </asp:TemplateField>
+                            <asp:BoundField HeaderText="ID" ReadOnly="true" DataField="FK_ProductID" />
                             <asp:BoundField HeaderText="ProductName" ReadOnly="true" DataField="ProductName" />
+                            <asp:BoundField HeaderText="Purchase Quantity" ReadOnly="true" DataField="InQuantity" DataFormatString="{0:N0}" HtmlEncode="false" />
+                            <asp:BoundField HeaderText="Sales Quantity" ReadOnly="true" DataField="OutQuantity" DataFormatString="{0:N0}" HtmlEncode="false" />
+                            <asp:BoundField HeaderText="Available Quantity" ReadOnly="true" DataField="Quantity" DataFormatString="{0:N0}" HtmlEncode="false" />
+                            <asp:BoundField HeaderText="Selling Rate" ReadOnly="true" DataField="SellingRate" DataFormatString="{0:N0}" HtmlEncode="false" />
+                            <asp:BoundField HeaderText="Stock Value" ReadOnly="true" DataField="productvalue" DataFormatString="{0:N0}" HtmlEncode="false" />
 
-                            <asp:BoundField HeaderText="Purchase Quantity" ReadOnly="true" DataField="InQuantity" />
-                            <asp:BoundField HeaderText="Sales Quantity" ReadOnly="true" DataField="OutQuantity" />
-                            <asp:BoundField HeaderText="Available Quantity" ReadOnly="true" DataField="Quantity" />
                         </Columns>
                         <PagerStyle CssClass="cssPager" HorizontalAlign="Center" />
                     </asp:GridView>

@@ -1164,7 +1164,39 @@ $("#btnAddMagazine,#btnUpdateMagazine").click(function () {
         ObjData.SNo = ObjData.sNO;
         ObjData.SalesReturnTransID = 0;
         ObjData.StatusFlag = "I";
-        AddSalesReturnData(ObjData);
+        var Count = 0;
+        for (var i = 0; i < gOPBillingList.length; i++) {
+            if (gOPBillingList[i].StatusFlag != "D") {
+                if ((gOPBillingList[i].Product.ProductID == $("#hdnProductID").val()) && (gOPBillingList[i].Rate == parseFloat($("#txtRate").val())) && (gOPBillingList[i].DiscountPercentage == parseFloat($("#txtDisPer").val()))) {
+                    gOPBillingList[i].Quantity = gOPBillingList[i].Quantity + parseFloat($("#txtQuantity").val());
+                    var iDisPercent = parseFloat(gOPBillingList[i].Quantity) * parseFloat(gOPBillingList[i].Rate) * parseFloat(gOPBillingList[i].DiscountPercentage) / 100;
+                    gOPBillingList[i].DiscountAmount = parseFloat(iDisPercent);
+                    gOPBillingList[i].SubTotal = gOPBillingList[i].SubTotal + parseFloat($("#txtSubTotal").val());
+                    if ($("#hdnStateCode").val() == 33) {
+                        gOPBillingList[i].Tax.CGSTPercent = 0;
+                        gOPBillingList[i].Tax.SGSTPercent = 0;
+                        gOPBillingList[i].Tax.IGSTPercent = 0;
+                        gOPBillingList[i].CGSTAmount = 0;
+                        gOPBillingList[i].SGSTAmount = 0;
+                        gOPBillingList[i].IGSTAmount = 0;
+                    }
+                    else {
+                        gOPBillingList[i].Tax.CGSTPercent = 0;
+                        gOPBillingList[i].Tax.SGSTPercent = 0;
+                        gOPBillingList[i].Tax.IGSTPercent = 0;
+                        gOPBillingList[i].CGSTAmount = 0;
+                        gOPBillingList[i].SGSTAmount = 0;
+                        gOPBillingList[i].IGSTAmount = 0;
+                    }
+                    gOPBillingList[i].TaxAmount = 0;
+                    Count = 1;
+                }
+            }
+        }
+        if (Count == 0)
+            AddSalesReturnData(ObjData);
+        else
+            DisplaySalesReturnList(gOPBillingList);
     }
     else if (this.id == "btnUpdateMagazine") {
         ObjData.sNO = $("#hdnOPSNo").val();

@@ -195,3 +195,10 @@ D:\WEB\Files\dotnet_sunlight\VHMS\VHMS.Log\obj\Debug\VHMS.Log.csproj.CoreCompile
 D:\WEB\Files\dotnet_sunlight\VHMS\VHMS.Log\obj\Debug\VHMS.Log.csproj.Up2Date
 D:\WEB\Files\dotnet_sunlight\VHMS\VHMS.Log\obj\Debug\VHMS.Log.dll
 D:\WEB\Files\dotnet_sunlight\VHMS\VHMS.Log\obj\Debug\VHMS.Log.pdb
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Log\bin\Debug\VHMS.Log.dll
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Log\bin\Debug\VHMS.Log.pdb
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Log\obj\Debug\VHMS.Log.csproj.AssemblyReference.cache
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Log\obj\Debug\VHMS.Log.csproj.CoreCompileInputs.cache
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Log\obj\Debug\VHMS.Log.csproj.Up2Date
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Log\obj\Debug\VHMS.Log.dll
+E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Log\obj\Debug\VHMS.Log.pdb

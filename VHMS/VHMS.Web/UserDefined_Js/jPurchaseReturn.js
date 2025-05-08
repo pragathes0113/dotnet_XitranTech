@@ -1133,8 +1133,42 @@ $("#btnAddMagazine,#btnUpdateMagazine").click(function () {
         ObjData.sNO = gOPBillingList.max() + 1;
         ObjData.SNo = ObjData.sNO;
         ObjData.PurchaseReturnID = 0;
+        var Count = 0;
         ObjData.StatusFlag = "I";
-        AddOPBillingData(ObjData);
+        for (var i = 0; i < gOPBillingList.length; i++) {
+            if (gOPBillingList[i].StatusFlag != "D") {
+                if ((gOPBillingList[i].Product.ProductID == $("#hdnProductID").val()) && (gOPBillingList[i].Rate == parseFloat($("#txtRate").val())) && (gOPBillingList[i].Tax.TaxID == $("#ddlTax").val()) && (gOPBillingList[i].BatchNo == $("#txtBatchNo").val()) && (gOPBillingList[i].DiscountPercentage == parseFloat($("#txtDisPer").val()))) {
+                    gOPBillingList[i].Quantity = gOPBillingList[i].Quantity + parseFloat($("#txtQuantity").val());
+                    var iDisPercent = parseFloat(gOPBillingList[i].Quantity) * parseFloat(gOPBillingList[i].Rate) * parseFloat(gOPBillingList[i].DiscountPercentage) / 100;
+                    gOPBillingList[i].DiscountAmount = parseFloat(iDisPercent);
+                    gOPBillingList[i].SubTotal = gOPBillingList[i].SubTotal + parseFloat($("#txtSubTotal").val());
+                    if ($("#hdnStateCode").val() == 33) {
+                        gOPBillingList[i].Tax.CGSTPercent = parseFloat($("#hdnTransCGSTPercent").val());
+                        gOPBillingList[i].Tax.SGSTPercent = parseFloat($("#hdnTransSGSTPercent").val());
+                        gOPBillingList[i].Tax.IGSTPercent = 0;
+                        gOPBillingList[i].CGSTAmount = (parseFloat(gOPBillingList[i].SubTotal) * parseFloat(gOPBillingList[i].Tax.CGSTPercent) / 100).toFixed(2);
+                        gOPBillingList[i].SGSTAmount = (parseFloat(gOPBillingList[i].SubTotal) * parseFloat(gOPBillingList[i].Tax.SGSTPercent) / 100).toFixed(2);
+                        gOPBillingList[i].IGSTAmount = 0;
+                    }
+                    else {
+
+                        gOPBillingList[i].Tax.CGSTPercent = 0;
+                        gOPBillingList[i].Tax.SGSTPercent = 0;
+                        gOPBillingList[i].Tax.IGSTPercent = parseFloat($("#hdnTransIGSTPercent").val());
+                        gOPBillingList[i].CGSTAmount = 0;
+                        gOPBillingList[i].SGSTAmount = 0;
+                        gOPBillingList[i].IGSTAmount = (parseFloat(gOPBillingList[i].SubTotal) * parseFloat(gOPBillingList[i].Tax.IGSTPercent) / 100).toFixed(2);
+                    }
+                    gOPBillingList[i].TaxAmount = (parseFloat(gOPBillingList[i].CGSTAmount) + parseFloat(gOPBillingList[i].SGSTAmount) + parseFloat(gOPBillingList[i].IGSTAmount)).toFixed(2);
+
+                    Count = 1;
+                }
+            }
+        }
+        if (Count == 0)
+            AddOPBillingData(ObjData);
+        else
+            DisplayOPBillingList(gOPBillingList);
     }
     else if (this.id == "btnUpdateMagazine") {
         ObjData.sNO = $("#hdnOPSNo").val();

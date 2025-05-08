@@ -706,3 +706,17 @@ D:\WEB\Files\dotnet_sunlight\VHMSReports\obj\Debug\VHMSReports.csproj.CoreCompil
 D:\WEB\Files\dotnet_sunlight\VHMSReports\obj\Debug\VHMSRepo.47C9F632.Up2Date
 D:\WEB\Files\dotnet_sunlight\VHMSReports\obj\Debug\VHMSReports.dll
 D:\WEB\Files\dotnet_sunlight\VHMSReports\obj\Debug\VHMSReports.pdb
+E:\Web Live Project\dotnet_VRS\VHMSReports\bin\Reports\frmPrescriptionNew.rpt
+E:\Web Live Project\dotnet_VRS\VHMSReports\bin\Reports\frmPrescription.rpt
+E:\Web Live Project\dotnet_VRS\VHMSReports\bin\Reports\rptDischargeSummary.rpt
+E:\Web Live Project\dotnet_VRS\VHMSReports\bin\Reports\frmPrescriptionNew.cs
+E:\Web Live Project\dotnet_VRS\VHMSReports\bin\Reports\frmPrescription.cs
+E:\Web Live Project\dotnet_VRS\VHMSReports\bin\Reports\rptDischargeSummary.cs
+E:\Web Live Project\dotnet_VRS\VHMSReports\bin\VHMSReports.dll.config
+E:\Web Live Project\dotnet_VRS\VHMSReports\bin\VHMSReports.dll
+E:\Web Live Project\dotnet_VRS\VHMSReports\bin\VHMSReports.pdb
+E:\Web Live Project\dotnet_VRS\VHMSReports\obj\Debug\VHMSReports.csproj.AssemblyReference.cache
+E:\Web Live Project\dotnet_VRS\VHMSReports\obj\Debug\VHMSReports.csproj.CoreCompileInputs.cache
+E:\Web Live Project\dotnet_VRS\VHMSReports\obj\Debug\VHMSRepo.47C9F632.Up2Date
+E:\Web Live Project\dotnet_VRS\VHMSReports\obj\Debug\VHMSReports.dll
+E:\Web Live Project\dotnet_VRS\VHMSReports\obj\Debug\VHMSReports.pdb

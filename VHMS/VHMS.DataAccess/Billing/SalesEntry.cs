@@ -1360,17 +1360,12 @@ namespace VHMS.DataAccess.Billing
                         objSalesEntry.Bank = objBank;
 
 
-                        objShippingAddress.Address = Convert.ToString(drData["ShippingAddress"]);
-                        objShippingAddress.ShippingAddressID = Convert.ToInt32(drData["FK_ShippingAddressID"]);
-                        objShippingAddress.GSTIN = Convert.ToString(drData["ShippingGSTIN"]);
-                        objShippingAddress.BranchName = Convert.ToString(drData["ShippingBranch"]);
-                        // objSalesEntry.ShippingAddress = objShippingAddress;
+                        //objShippingAddress.Address = Convert.ToString(drData["ShippingAddress"]);
+                        //objShippingAddress.ShippingAddressID = Convert.ToInt32(drData["FK_ShippingAddressID"]);
+                        //objShippingAddress.GSTIN = Convert.ToString(drData["ShippingGSTIN"]);
+                        //objShippingAddress.BranchName = Convert.ToString(drData["ShippingBranch"]);
+                        //// objSalesEntry.ShippingAddress = objShippingAddress;
                         objSalesEntry.PaymentMode = Convert.ToString(drData["PaymentMode"]);
-
-
-
-
-
                         objSalesEntry.ImagePath1 = Convert.ToString(drData["ImagePath1"]);
                         objSalesEntry.ImagePath2 = Convert.ToString(drData["ImagePath2"]);
                         objSalesEntry.ImagePath3 = Convert.ToString(drData["ImagePath3"]);

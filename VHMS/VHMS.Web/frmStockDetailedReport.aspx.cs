@@ -16,7 +16,7 @@ public partial class frmStockDetailedReport : System.Web.UI.Page
 {
     DataSet dsData = new DataSet();
     string sException = string.Empty;
-    decimal TotalWeight = 0, Waste = 0, NetWeight = 0;
+    decimal Quantity = 0, productvalue = 0;
     int CompanyID = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -189,31 +189,29 @@ public partial class frmStockDetailedReport : System.Web.UI.Page
     }
     protected void GridView2_RowDataBound(object sender, GridViewRowEventArgs e)
     {
-        //if (e.Row.RowType == DataControlRowType.DataRow)
-        //{
-        //    TotalWeight += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "TotalWeight"));
-        //    Waste += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "Wastage"));
-        //    NetWeight += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "NetWeight"));
-        //}
-        //if (e.Row.RowType == DataControlRowType.Footer)
-        //{
-        //    e.Row.Cells[0].ColumnSpan = 4;
-        //    e.Row.Cells.RemoveAt(1);
-        //    e.Row.Cells.RemoveAt(2);
-        //    e.Row.Cells.RemoveAt(3);
+        if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+            productvalue += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "productvalue"));
+        }
+        if (e.Row.RowType == DataControlRowType.Footer)
+        {
+            e.Row.Cells[0].ColumnSpan = 4;
+            e.Row.Cells.RemoveAt(1);
+            e.Row.Cells.RemoveAt(2);
+            e.Row.Cells.RemoveAt(3);
 
-        //    e.Row.Cells[1].Text = "Total Amount :";
-        //    e.Row.Cells[4].Text = Convert.ToDecimal(TotalWeight).ToString();
-        //    e.Row.Cells[3].Text = Convert.ToDecimal(Waste).ToString();
-        //    e.Row.Cells[2].Text = Convert.ToDecimal(NetWeight).ToString();
-        //    e.Row.Cells[1].Font.Bold = true;
-        //    e.Row.Cells[2].Font.Bold = true;
-        //    e.Row.Cells[3].Font.Bold = true;
-        //    e.Row.Cells[4].Font.Bold = true;
-        //    e.Row.Cells[1].Font.Size = 14;
-        //    e.Row.Cells[2].Font.Size = 14;
-        //    e.Row.Cells[3].Font.Size = 14;
-        //    e.Row.Cells[4].Font.Size = 14;
-        //}
+            e.Row.Cells[3].Text = "Total Amount :";
+            e.Row.Cells[4].Text = Convert.ToDecimal(productvalue).ToString("F0");
+            e.Row.Cells[1].Font.Bold = true;
+            e.Row.Cells[2].Font.Bold = true;
+            e.Row.Cells[3].Font.Bold = true;
+            e.Row.Cells[4].Font.Bold = true;
+            e.Row.Cells[5].Font.Bold = true;
+            e.Row.Cells[1].Font.Size = 14;
+            e.Row.Cells[2].Font.Size = 14;
+            e.Row.Cells[3].Font.Size = 14;
+            e.Row.Cells[4].Font.Size = 14;
+            e.Row.Cells[5].Font.Size = 14;
+        }
     }
 }
