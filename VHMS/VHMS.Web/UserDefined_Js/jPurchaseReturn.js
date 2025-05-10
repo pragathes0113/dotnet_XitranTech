@@ -1,6 +1,6 @@
 ﻿var gMagazineData = [];
 var gOPBillingList = [];
-var gSalesReturnList = [];
+/*var gSalesReturnList = [];*/
 
 $(function () {
     pLoadingSetup(false);
@@ -180,7 +180,6 @@ function GetSupplierByID(id) {
                         var obj = jQuery.parseJSON(objResponse.Value);
                         if (obj != null) {
                             $("#hdnStateCode").val(obj.State.StateCode);
-
                         }
                         dProgress(false);
                     }

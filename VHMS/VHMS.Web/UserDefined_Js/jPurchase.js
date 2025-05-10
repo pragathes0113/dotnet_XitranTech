@@ -1706,8 +1706,8 @@ function GetRecord() {
                                 var table = "";
                                 if (obj[index].IsCancelled == "0") { TypeStatus = "<span class='label label-success'>Active</span>"; }
                                 else { TypeStatus = "<span class='label label-danger'>Cancelled</span>"; }
-                                if (obj[index].BalanceAmount > 0) { table += "<tr style='background-color:#f1c6ad;' id='" + obj[index].PurchaseID + "'>"; }
-                                else { table += "<tr id='" + obj[index].SalesEntryID + "'>"; }
+                                if (obj[index].BalanceAmount > 0) { table += "<tr id='" + obj[index].PurchaseID + "'>"; }
+                                else { table +="<tr style='background-color:#f1c6ad;' id='" + obj[index].PurchaseID + "'>"; }
                                 table += "<td>" + (index + 1) + "</td>";
                                 table += "<td>" + obj[index].PurchaseNo + "</td>";
                                 table += "<td>" + obj[index].sPurchaseDate + "</td>";

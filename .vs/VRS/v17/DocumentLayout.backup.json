@@ -3,51 +3,55 @@
   "WorkspaceRootPath": "E:\\Web Live Project\\dotnet_VRS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_vrs\\vhms\\vhms.web\\frmstockdetailedreport.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmstockdetailedreport.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_vrs\\vhms\\vhms.web\\frmstockdetailedreport.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmstockdetailedreport.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_vrs\\vhms\\vhms.web\\frmpurchasereturn.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmpurchasereturn.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_vrs\\vhms\\vhms.web\\userdefined_js\\jpurchasereturn.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\userdefined_js\\jpurchasereturn.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_vrs\\vhms\\vhms.web\\userdefined_js\\jpurchase.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_VRS\\vhms\\vhms.web\\userdefined_js\\jpurchase.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\userdefined_js\\jpurchase.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_vrs\\vhms\\vhms.web\\userdefined_js\\jsalesreturn.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\userdefined_js\\jsalesreturn.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_VRS\\vhms\\vhms.web\\userdefined_js\\jsalesentry.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\userdefined_js\\jsalesentry.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|e:\\web live project\\dotnet_vrs\\vhms\\vhms.dataaccess\\billing\\purchasereturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_vrs\\vhms\\vhms.web\\userdefined_js\\jpurchasereturn.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\userdefined_js\\jpurchasereturn.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_VRS\\vhms\\vhms.web\\app_code\\webservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\app_code\\webservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_VRS\\vhms\\vhms.web\\frmpurchasereturn.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmpurchasereturn.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_VRS\\vhms\\vhms.web\\frmstockdetailedreport.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmstockdetailedreport.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_VRS\\vhms\\vhms.web\\frmstockdetailedreport.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmstockdetailedreport.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_VRS\\vhms\\vhms.web\\frmpurchasereturn.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmpurchasereturn.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_VRS\\vhms\\vhms.web\\userdefined_js\\jsalesreturn.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\userdefined_js\\jsalesreturn.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|E:\\Web Live Project\\dotnet_VRS\\vhms\\vhms.dataaccess\\billing\\purchasereturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|solutionrelative:vhms\\vhms.dataaccess\\billing\\purchasereturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|e:\\web live project\\dotnet_vrs\\vhms\\vhms.dataaccess\\billing\\purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|E:\\Web Live Project\\dotnet_VRS\\vhms\\vhms.dataaccess\\billing\\purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|solutionrelative:vhms\\vhms.dataaccess\\billing\\purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_vrs\\vhms\\vhms.web\\frmpurchasereturn.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmpurchasereturn.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|E:\\Web Live Project\\dotnet_VRS\\vhms\\vhms.dataaccess\\billing\\salesentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|solutionrelative:vhms\\vhms.dataaccess\\billing\\salesentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_vrs\\vhms\\vhms.web\\reports\\rptsalesentryreport.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}",
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_VRS\\vhms\\vhms.web\\reports\\rptsalesentryreport.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}",
       "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\reports\\rptsalesentryreport.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}"
     },
     {
@@ -90,11 +94,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "SalesEntry.cs",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.DataAccess\\Billing\\SalesEntry.cs",
               "RelativeDocumentMoniker": "VHMS\\VHMS.DataAccess\\Billing\\SalesEntry.cs",
@@ -103,8 +107,7 @@
               "ViewState": "AgIAABkJAAAAAAAAAADwv5oJAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T10:49:30.164Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -112,20 +115,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "jPurchaseReturn.js",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\UserDefined_Js\\jPurchaseReturn.js",
               "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\UserDefined_Js\\jPurchaseReturn.js",
               "ToolTip": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\UserDefined_Js\\jPurchaseReturn.js",
               "RelativeToolTip": "VHMS\\VHMS.Web\\UserDefined_Js\\jPurchaseReturn.js",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAIwEAAARAAAAAAAAAA==",
+              "ViewState": "AgIAANMAAAAAAAAAAAAQwKwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-05-07T06:22:55.509Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "frmPurchaseReturn.aspx",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\frmPurchaseReturn.aspx",
               "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmPurchaseReturn.aspx",
@@ -133,12 +136,11 @@
               "RelativeToolTip": "VHMS\\VHMS.Web\\frmPurchaseReturn.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-07T06:22:39.336Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-07T06:22:39.336Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "frmPurchaseReturn.aspx.cs",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\frmPurchaseReturn.aspx.cs",
               "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmPurchaseReturn.aspx.cs",
@@ -146,12 +148,11 @@
               "RelativeToolTip": "VHMS\\VHMS.Web\\frmPurchaseReturn.aspx.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T06:22:41.01Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-07T06:22:41.01Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "frmStockDetailedReport.aspx.cs",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\frmStockDetailedReport.aspx.cs",
               "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmStockDetailedReport.aspx.cs",
@@ -159,12 +160,49 @@
               "RelativeToolTip": "VHMS\\VHMS.Web\\frmStockDetailedReport.aspx.cs",
               "ViewState": "AgIAAHEAAAAAAAAAAAAswIYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T07:08:20.873Z",
+              "WhenOpened": "2025-05-06T07:08:20.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "jPurchase.js",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\UserDefined_Js\\jPurchase.js",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\UserDefined_Js\\jPurchase.js",
+              "ToolTip": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\UserDefined_Js\\jPurchase.js",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\UserDefined_Js\\jPurchase.js",
+              "ViewState": "AgIAAJsGAAAAAAAAAADgv6wGAAB2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-07T07:43:26.398Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "jSalesEntry.js",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\UserDefined_Js\\jSalesEntry.js",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\UserDefined_Js\\jSalesEntry.js",
+              "ToolTip": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\UserDefined_Js\\jSalesEntry.js",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\UserDefined_Js\\jSalesEntry.js",
+              "ViewState": "AgIAALsIAAAAAAAAAADgv8oIAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-27T10:58:28.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WebService.cs",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\App_Code\\WebService.cs",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\App_Code\\WebService.cs",
+              "ToolTip": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\App_Code\\WebService.cs",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\App_Code\\WebService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T16:06:21.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "frmStockDetailedReport.aspx",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\frmStockDetailedReport.aspx",
               "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmStockDetailedReport.aspx",
@@ -172,12 +210,11 @@
               "RelativeToolTip": "VHMS\\VHMS.Web\\frmStockDetailedReport.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-05-06T07:08:20.596Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T07:08:20.596Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "PurchaseReturn.cs",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.DataAccess\\Billing\\PurchaseReturn.cs",
               "RelativeDocumentMoniker": "VHMS\\VHMS.DataAccess\\Billing\\PurchaseReturn.cs",
@@ -190,7 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "JSalesReturn.js",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\UserDefined_Js\\JSalesReturn.js",
               "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\UserDefined_Js\\JSalesReturn.js",
@@ -198,38 +235,11 @@
               "RelativeToolTip": "VHMS\\VHMS.Web\\UserDefined_Js\\JSalesReturn.js",
               "ViewState": "AgIAAH4EAAAAAAAAAAASwIoEAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-05-07T06:58:28.611Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-07T06:58:28.611Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "jPurchase.js",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\UserDefined_Js\\jPurchase.js",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\UserDefined_Js\\jPurchase.js",
-              "ToolTip": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\UserDefined_Js\\jPurchase.js",
-              "RelativeToolTip": "VHMS\\VHMS.Web\\UserDefined_Js\\jPurchase.js",
-              "ViewState": "AgIAAGMFAAAAAAAAAAAAAJAFAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-05-07T07:43:26.398Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "jSalesEntry.js",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\UserDefined_Js\\jSalesEntry.js",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\UserDefined_Js\\jSalesEntry.js",
-              "ToolTip": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\UserDefined_Js\\jSalesEntry.js",
-              "RelativeToolTip": "VHMS\\VHMS.Web\\UserDefined_Js\\jSalesEntry.js",
-              "ViewState": "AgIAABgIAAAAAAAAAADgvwAIAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-27T10:58:28.088Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Purchase.cs",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.DataAccess\\Billing\\Purchase.cs",
               "RelativeDocumentMoniker": "VHMS\\VHMS.DataAccess\\Billing\\Purchase.cs",
@@ -237,12 +247,11 @@
               "RelativeToolTip": "VHMS\\VHMS.DataAccess\\Billing\\Purchase.cs",
               "ViewState": "AgIAADECAAAAAAAAAAAvwDgCAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T06:49:35.332Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T06:49:35.332Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Rpt_CashBill.rpt",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\Reports\\Rpt_CashBill.rpt",
               "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\Reports\\Rpt_CashBill.rpt",
@@ -253,19 +262,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "rptSalesEntryReport.rpt",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\Reports\\rptSalesEntryReport.rpt",
               "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\Reports\\rptSalesEntryReport.rpt",
               "ToolTip": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\Reports\\rptSalesEntryReport.rpt",
               "RelativeToolTip": "VHMS\\VHMS.Web\\Reports\\rptSalesEntryReport.rpt",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPESURBVDhPrZRLaFxVHMZ/59w7k8lkJpmZTDJ5m1pJ2iY0JoWA0aKFUK1dtF2I2ampoggiSHAjaHFVRBA3FXSjuJFaqDbFCl1Z00JNMkmahGIe5lHznplM7rxn7sNFHp1JuvQPH/f\u002Bz\u002BX73fP4OPB/lmVZIr9v6XjhzKs9736WP/akWpieHLz63eUP9o8DqPmNq9TjP9r6bGfbYT\u002BKIhEU/A\u002BAfzdijHgrqvVcNn37\u002BvdfxrYia/nflfymrrGp7flTr1w42VaL112Mx1WEz\u002B3Am6dYMkvWspWdfK6zfT0ciW6GNlaSCW1zlyHzgQACkEKQSOXYjKWJ7FMyo\u002BN22jlxrK645\u002BJHl9u7ul9zl/kCu/4DwL0SIJ4kYD2a5MbALFoyy9me9z7tPv9G367tAHB31xQhUOS2sjLN71Y/q2KJ\u002BoCbrpYaOo9W0dVaw6G68uKSkmLHrr8AKIRASoFg\u002BymlJC5jPLDGuBm/zg9b3zIpBgn4SqjakcthQ5GPMfuAIHemKIQgYoSYNv5mSjzkYXKCX\u002BPX\u002BCX\u002BMxO5UeTO7IUoTIJUnJUOxVlZqjgrPcJe5jQtiWFapK0EwXSQgdQAhpKlyCzCMAxua7e4Ev6KSC6EJYwDQLX63NWXwGwD/KLS0Ta9YhGJ5ehP3GQmM4OOQTQVJbapoRs6mBAMD/H\u002BSi9fH7\u002BCoLgQ\u002BM2Hx52ZXM4T1nLVsysZ7\u002Bh8lks/hVA9TYQDc0QDQSyXiTQU0mMZMktpGqob6Xv9YyodFUREvAAo9djClBlf/LPOHbvTeVidaWlwsBzOMjvl59FYK\u002BH5p0mqcaQuMZZ02tUOLh57mxcrTuGyuQ4sWYnqZRvB0cl5IVhorPVWHGkoOe2wq8yuGYRXKxBZP3ZviOTWMk\u002Bl63mzs5e3unsRYvtAVsNxgsPDg2N/3bkFoMxO3GV24p6ZzNkSamnVM7XV5RdOd/hY2zLZ0EySIS/WP0ewe4J8/vInnGs7jyrlXrzWIilGgkODI/e3gXuxGb//G\u002BN3b2C3qZQU22muKaLBb8PpUPAWldN36BJNzlYsQMidiElQ5OOoFQDTCY1UYgshBaYliabAEJIyl4q3xI7fFkA17ZimubfcfB0AAugGbCZgcCbNUsRCURTq/ZLmgE5US7IcirO0EWNxXdtTKqsj84AF96GQiqZb9rnxxXSlXcXRWCFwq3rSXxQLLS5HE\u002BFNLYuRMjIpzcr3hdaXF3bfC4A1PsfI2RO\u002BLzI5/Z14It28Fc\u002BytBYfnZze\u002BHFqbm0opxuPHtzr14b/uJbL9\u002BXXf8LCnE6KaQGDAAAAAElFTkSuQmCC",
-              "WhenOpened": "2025-04-15T02:47:12.988Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T02:47:12.988Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Payment.cs",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.DataAccess\\Billing\\Payment.cs",
               "RelativeDocumentMoniker": "VHMS\\VHMS.DataAccess\\Billing\\Payment.cs",
@@ -277,7 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Payment.cs",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Entity\\Billing\\Payment.cs",
               "RelativeDocumentMoniker": "VHMS\\VHMS.Entity\\Billing\\Payment.cs",
@@ -289,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "frmPayment.aspx",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\frmPayment.aspx",
               "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmPayment.aspx",
@@ -301,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "frmReceipt.aspx",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\frmReceipt.aspx",
               "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmReceipt.aspx",
@@ -313,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "frmCustomer.aspx",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\frmCustomer.aspx",
               "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmCustomer.aspx",
@@ -325,7 +333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "frmProduct.aspx",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\frmProduct.aspx",
               "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmProduct.aspx",
@@ -337,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "frmSalesEntry.aspx",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_VRS\\VHMS\\VHMS.Web\\frmSalesEntry.aspx",
               "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmSalesEntry.aspx",
