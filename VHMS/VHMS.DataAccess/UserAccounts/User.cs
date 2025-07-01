@@ -142,16 +142,14 @@ namespace VHMS.DataAccess
                         objUser.MobileNo = Convert.ToString(drData["MobileNo"]);
                         objUser.IDProof = Convert.ToString(drData["IDProof"]);
                         objUser.EmployeeCode = Convert.ToString(drData["EmployeeCode"]);
-                        objUser.BasicPay = Convert.ToDecimal(drData["BasicPay"]);
+                 
                         objUser.DOB = Convert.ToDateTime(drData["DOB"]);
                         objUser.sDOB = objUser.DOB.ToString("dd/MM/yyyy");
                         objUser.DOJ = Convert.ToDateTime(drData["DOJ"]);
                         objUser.sDOJ = objUser.DOJ.ToString("dd/MM/yyyy");
                         objUser.Address = Convert.ToString(drData["Address"]);
                         objUser.ConfirmPassword = CommonMethods.Security.Decrypt(drData["ConfirmPassword"].ToString(), true);
-                        ObjCompany.CompanyID = Convert.ToInt32(drData["FK_CompanyID"]);
-                        ObjCompany.CompanyName = Convert.ToString(drData["CompanyName"]);
-                        objUser.Company = ObjCompany;
+                       
                         objList.Add(objUser);
                     }
                 }
@@ -197,7 +195,7 @@ namespace VHMS.DataAccess
                         objUser.MobileNo = Convert.ToString(drData["MobileNo"]);
                         objUser.IDProof = Convert.ToString(drData["IDProof"]);
                         objUser.EmployeeCode = Convert.ToString(drData["EmployeeCode"]);
-                        objUser.BasicPay = Convert.ToDecimal(drData["BasicPay"]);
+                        
                         objUser.DOB = Convert.ToDateTime(drData["DOB"]);
                         objUser.sDOB = objUser.DOB.ToString("dd/MM/yyyy");
                         objUser.DOJ = Convert.ToDateTime(drData["DOJ"]);
@@ -247,15 +245,12 @@ namespace VHMS.DataAccess
                         objUser.MobileNo = Convert.ToString(drData["MobileNo"]);
                         objUser.IDProof = Convert.ToString(drData["IDProof"]);
                         objUser.EmployeeCode = Convert.ToString(drData["EmployeeCode"]);
-                        objUser.BasicPay = Convert.ToDecimal(drData["BasicPay"]);
+                       
                         objUser.DOB = Convert.ToDateTime(drData["DOB"]);
                         objUser.sDOB = objUser.DOB.ToString("dd/MM/yyyy");
                         objUser.DOJ = Convert.ToDateTime(drData["DOJ"]);
                         objUser.sDOJ = objUser.DOJ.ToString("dd/MM/yyyy");
                         objUser.Address = Convert.ToString(drData["Address"]);
-                        ObjCompany.CompanyID = Convert.ToInt32(drData["FK_CompanyID"]);
-                        ObjCompany.CompanyName = Convert.ToString(drData["CompanyName"]);
-                        objUser.Company = ObjCompany;
                         objUser.ConfirmPassword = CommonMethods.Security.Decrypt(drData["ConfirmPassword"].ToString(), true);
 
                     }
@@ -309,14 +304,12 @@ namespace VHMS.DataAccess
                 oDb.AddInParameter(cmd, "@FK_RoleID", DbType.Int32, objUser.RoleID);
                 oDb.AddInParameter(cmd, "@EmployeeName", DbType.String, objUser.EmployeeName);
                 oDb.AddInParameter(cmd, "@EmployeeCode", DbType.String, objUser.EmployeeCode);
-               // oDb.AddInParameter(cmd, "@SalesManCode", DbType.String, objUser.SalesManCode);
-                oDb.AddInParameter(cmd, "@BasicPay", DbType.Decimal, objUser.BasicPay);
                 oDb.AddInParameter(cmd, "@Address", DbType.String, objUser.Address);
                 oDb.AddInParameter(cmd, "@ConfirmPassword", DbType.String, CommonMethods.Security.Encrypt(objUser.ConfirmPassword, true));
                 oDb.AddInParameter(cmd, "@DOB", DbType.String, objUser.sDOB);
                 oDb.AddInParameter(cmd, "@DOJ", DbType.String, objUser.sDOJ);
                 oDb.AddInParameter(cmd, "@MobileNo", DbType.String, objUser.MobileNo);
-                oDb.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, objUser.Company.CompanyID);
+
                 oDb.AddInParameter(cmd, "@FK_CreatedBy", DbType.Int32, objUser.CreatedBy.UserID);
                 oDb.AddInParameter(cmd, "@IDProof", DbType.String, objUser.IDProof);
 
@@ -373,14 +366,11 @@ namespace VHMS.DataAccess
                 oDb.AddInParameter(cmd, "@FK_RoleID", DbType.Int32, objUser.RoleID);
                 oDb.AddInParameter(cmd, "@EmployeeName", DbType.String, objUser.EmployeeName);
                 oDb.AddInParameter(cmd, "@EmployeeCode", DbType.String, objUser.EmployeeCode);
-              //  oDb.AddInParameter(cmd, "@SalesManCode", DbType.String, objUser.SalesManCode);
-                oDb.AddInParameter(cmd, "@BasicPay", DbType.Decimal, objUser.BasicPay);
                 oDb.AddInParameter(cmd, "@Address", DbType.String, objUser.Address);
                 oDb.AddInParameter(cmd, "@ConfirmPassword", DbType.String, CommonMethods.Security.Encrypt(objUser.ConfirmPassword, true));
                 oDb.AddInParameter(cmd, "@DOB", DbType.String, objUser.sDOB);
                 oDb.AddInParameter(cmd, "@DOJ", DbType.String, objUser.sDOJ);
                 oDb.AddInParameter(cmd, "@MobileNo", DbType.String, objUser.MobileNo);
-                oDb.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, objUser.Company.CompanyID);
                 oDb.AddInParameter(cmd, "@FK_ModifiedBy", DbType.Int32, objUser.ModifiedBy.UserID);
                 oDb.AddInParameter(cmd, "@IDProof", DbType.String, objUser.IDProof);
 

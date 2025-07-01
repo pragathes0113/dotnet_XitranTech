@@ -137,95 +137,52 @@
     <div class="container-fluid mt-4">
         <section class="content-header" id="secHeader">
         </section>
+        
         <div class="row g-4">
-            <div class="col-lg-3 col-md-6">
-                <div class="small-box" style="background: linear-gradient(90deg, #ff6a00, #ee0979);">
-                    <div class="inner">
-                        <h4 id="lblTotalProduct">0</h4>
-                        <p>Total Pooja Products</p>
-                    </div>
-                    <div class="icon"><i class="fas fa-praying-hands"></i></div>
-                    <a href="frmProduct.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="small-box" style="background: linear-gradient(90deg, #11998e, #38ef7d);">
+            <div class="inner">
+                <h4 id="lblTotalProduct">0</h4>
+                <p style="color: #fff;">Total Number of Leads</p>
             </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="small-box" style="background: linear-gradient(90deg, #00c6ff, #0072ff);">
-                    <div class="inner">
-                        <h4 id="lblTotalCustomer">0</h4>
-                        <p>Total Customers</p>
-                    </div>
-                    <div class="icon"><i class="fas fa-users"></i></div>
-                    <a href="frmCustomer.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="small-box" style="background: linear-gradient(90deg, #f7971e, #ffd200); color: #000;">
-                    <div class="inner">
-                        <h4 id="lblTotalSupplier">0</h4>
-                        <p>Total Suppliers</p>
-                    </div>
-                    <div class="icon"><i class="fas fa-truck-loading"></i></div>
-                    <a href="frmBSupplier.aspx" class="small-box-footer" style="color: #000;">More info <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="small-box" style="background: linear-gradient(90deg, #8e2de2, #4a00e0);">
-                    <div class="inner">
-                        <h4 id="lblTotalSales">0</h4>
-                        <p>Sales Entries</p>
-                    </div>
-                    <div class="icon"><i class="fas fa-cash-register"></i></div>
-                    <a href="frmSalesEntry.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
+            <div class="icon"><i class="fas fa-praying-hands"></i></div>
+            <a href="frmProduct.aspx" class="small-box-footer" style="color: #fff;">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
+    </div>
 
-        <div class="row g-4 mt-3">
-            <div class="col-lg-3 col-md-6">
-                <div class="small-box" style="background: linear-gradient(90deg, #43cea2, #185a9d);">
-                    <div class="inner">
-                        <h4 id="lblTotalPurchase">0</h4>
-                        <p>Purchase Entries</p>
-                    </div>
-                    <div class="icon"><i class="fas fa-shopping-basket"></i></div>
-                    <a href="frmPurchase.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="small-box" style="background: linear-gradient(90deg, #00c6ff, #0072ff); color: #fff;">
+            <div class="inner">
+                <h4 id="lblTotalCustomer">0</h4>
+                <p style="color: #fff;">Total Number of Call</p>
             </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="small-box" style="background: linear-gradient(90deg, #fc6076, #ff9a44);">
-                    <div class="inner">
-                        <h4 id="lblTodayOrders">0</h4>
-                        <p>Today’s Pooja Orders</p>
-                    </div>
-                    <div class="icon"><i class="fas fa-calendar-check"></i></div>
-                    <a href="frmOrders.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="small-box" style="background: linear-gradient(90deg, #fda085, #f6d365); color: #333;">
-                    <div class="inner">
-                        <h4 id="lblLowStock">0</h4>
-                        <p>Low Stock Items</p>
-                    </div>
-                    <div class="icon"><i class="fas fa-exclamation-triangle"></i></div>
-                    <a href="frmInventory.aspx" class="small-box-footer" style="color: #333;">More info <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="small-box" style="background: linear-gradient(90deg, #16a085, #f4d03f); color: #000;">
-                    <div class="inner">
-                        <h4 id="lblTopItem">Kumkum</h4>
-                        <p>Top Selling Item</p>
-                    </div>
-                    <div class="icon"><i class="fas fa-star"></i></div>
-                    <a href="frmReports.aspx" class="small-box-footer" style="color: #000;">More info <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
+            <div class="icon"><i class="fas fa-users"></i></div>
+            <a href="frmCustomer.aspx" class="small-box-footer" style="color: #fff;">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+        <div class="small-box" style="background: linear-gradient(90deg, #f7971e, #ffd200); color: #000;">
+            <div class="inner">
+                <h4 id="lblTotalSupplier">0</h4>
+                <p style="color: #000;">Total Follow Up</p>
+            </div>
+            <div class="icon"><i class="fas fa-truck-loading"></i></div>
+            <a href="frmBSupplier.aspx" class="small-box-footer" style="color: #000;">More info <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+        <div class="small-box" style="background: linear-gradient(90deg, #8e2de2, #4a00e0); color: #fff;">
+            <div class="inner">
+                <h4 id="lblTotalSales">0</h4>
+                <p style="color: #fff;">Wrong Lead</p>
+            </div>
+            <div class="icon"><i class="fas fa-cash-register"></i></div>
+            <a href="frmSalesEntry.aspx" class="small-box-footer" style="color: #fff;">More info <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+</div>
 
 
         <section class="content">
@@ -236,17 +193,12 @@
                 </div>
             </div>
             <div class="row g-3 mt-3" style="margin-top: 1%;">
-                <div class="col-md-4">
-                    <div class="card shadow-sm p-2">
-                        <canvas id="purchaseSalesStockChart" style="height: 300px;"></canvas>
-                    </div>
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="card shadow-sm p-2">
                         <canvas id="financialChart" style="height: 300px;"></canvas>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="card shadow-sm p-2">
                         <canvas id="topSellingChart" style="height: 300px;"></canvas>
                     </div>
@@ -255,41 +207,13 @@
         </section>
         <section class="content">
             <div class="row g-4">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card shadow border-0 rounded-4 overflow-hidden h-100">
                         <div class="card-header bg-white border-bottom text-center py-4">
                             <h4 class="text-danger fw-bold mb-0">
-                                <i class="fas fa-exclamation-circle me-2"></i>Product Expiry Summary
+                                <i class="fas fa-boxes me-2"></i>FollOw Up
                             </h4>
-                            <p class="text-muted mb-0 small">Stay ahead by tracking items nearing expiry</p>
-                        </div>
-                        <div class="card-body px-0">
-                            <div class="table-responsive px-3" style="max-height: 320px; overflow-y: auto;">
-                                <table id="tblRecord" class="table table-hover align-middle mb-0">
-                                    <thead class="bg-gradient text-white" style="background: linear-gradient(90deg, #ff416c, #ff4b2b);">
-                                        <tr>
-                                            <th class="text-center">#</th>
-                                            <th>Product</th>
-                                            <th>Unit</th>
-                                            <th>Supplier</th>
-                                            <th class="text-center">Available Qty</th>
-                                            <th class="text-center">Expiry Date</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tblRecord_tbody" class="table-light">
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card shadow border-0 rounded-4 overflow-hidden h-100">
-                        <div class="card-header bg-white border-bottom text-center py-4">
-                            <h4 class="text-danger fw-bold mb-0">
-                                <i class="fas fa-boxes me-2"></i>Stock Summary
-                            </h4>
-                            <p class="text-muted mb-0 small">Check real-time stock availability</p>
+                            <p class="text-muted mb-0 small">Check real-time ollOw Up</p>
                         </div>
                         <div class="card-body px-0">
                             <div class="table-responsive px-3" style="max-height: 320px; overflow-y: auto;">
@@ -297,10 +221,10 @@
                                     <thead class="bg-gradient text-white" style="background: linear-gradient(90deg, #ff416c, #ff4b2b);">
                                         <tr>
                                             <th class="text-center">#</th>
-                                            <th>Product</th>
-                                            <th>Unit</th>
-                                            <th>Supplier</th>
-                                            <th class="text-center">Quantity</th>
+                                            <th>Customer Name</th>
+                                            <th>Mobile No</th>
+                                            <th>Address</th>
+                                            <th class="text-center">Status</th>
                                         </tr>
                                     </thead>
                                     <tbody id="tblstock_tbody" class="table-light">
@@ -1538,24 +1462,26 @@
         const financialChart = new Chart(barCtx, {
             type: 'bar',
             data: {
-                labels: ['Purchase', 'Sales', 'Purchase Return', 'Sales Return', 'Expense'],
+                labels: ['Success', 'Processing', 'Not Success', 'Wrong Lead', 'Rate of Call'],
                 datasets: [{
-                    label: '₹ Amount',
-                    data: [10000, 15000, 2000, 1000, 5000],
+                    label: 'Number of Calls',
+                    data: [120, 90, 30, 15, 200], // <-- Update these values as needed
                     backgroundColor: [
-                        '#ff0000',
-                        '#00b0f0',
-                        '#92d050',
-                        '#ffd966',
-                        '#ff99ff'
-                    ]
+                        '#28a745',  // Success - green
+                        '#ffc107',  // Processing - yellow
+                        '#dc3545',  // Not Success - red
+                        '#6f42c1',  // Wrong Lead - purple
+                        '#17a2b8'   // Rate of Call - teal
+                    ],
+                    borderRadius: 5,
+                    barThickness: 40
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 animation: {
-                    duration: 1200,
+                    duration: 1000,
                     easing: 'easeOutQuart'
                 },
                 plugins: {
@@ -1564,7 +1490,18 @@
                     },
                     title: {
                         display: true,
-                        text: 'Financial Overview'
+                        text: 'Lead Call Status Overview',
+                        font: {
+                            size: 18,
+                            weight: 'bold'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                return `${context.dataset.label}: ${context.parsed.y}`;
+                            }
+                        }
                     }
                 },
                 scales: {
@@ -1572,37 +1509,49 @@
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: '₹ Amount'
+                            text: 'Number of Calls'
                         }
                     },
                     x: {
                         title: {
                             display: true,
-                            text: 'Category'
+                            text: 'Status'
                         }
                     }
                 }
             }
         });
     </script>
+
     <canvas id="topSellingChart" style="height: 300px;"></canvas>
     <script>
         const ctx = document.getElementById('topSellingChart').getContext('2d');
         const topSellingChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['Product A', 'Product B', 'Product C', 'Product D', 'Product E'],
+                labels: [
+                    'Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7',
+                    'Day 8', 'Day 9', 'Day 10', 'Day 11', 'Day 12', 'Day 13', 'Day 14',
+                    'Day 15', 'Day 16', 'Day 17', 'Day 18', 'Day 19', 'Day 20',
+                    'Day 21', 'Day 22', 'Day 23', 'Day 24', 'Day 25', 'Day 26',
+                    'Day 27', 'Day 28', 'Day 29', 'Day 30'
+                ],
                 datasets: [{
-                    label: 'Units Sold',
-                    data: [120, 150, 100, 80, 170], // Sample data
-                    borderColor: '#ff5722',
-                    backgroundColor: '#ff5722',
+                    label: 'Calls per Day',
+                    data: [
+                        25, 30, 20, 28, 35, 40, 38,
+                        45, 48, 50, 42, 39, 41, 46,
+                        50, 52, 48, 53, 56, 60,
+                        58, 55, 54, 59, 63, 65,
+                        67, 66, 70, 72
+                    ],
+                    borderColor: '#4caf50',
+                    backgroundColor: '#c8e6c9',
                     borderWidth: 2,
-                    fill: false,
-                    pointBackgroundColor: '#ff5722',
-                    pointRadius: 6,
-                    borderDash: [5, 5], // Dashed line
-                    tension: 0.3
+                    fill: true,
+                    pointBackgroundColor: '#4caf50',
+                    pointRadius: 4,
+                    tension: 0.4
                 }]
             },
             options: {
@@ -1614,11 +1563,15 @@
                 },
                 plugins: {
                     legend: {
-                        display: false
+                        display: true
                     },
                     title: {
                         display: true,
-                        text: 'Top 5 Selling Products'
+                        text: 'Number of Call Recordings (30 Days)',
+                        font: {
+                            size: 18,
+                            weight: 'bold'
+                        }
                     }
                 },
                 scales: {
@@ -1626,19 +1579,20 @@
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'Units Sold'
+                            text: 'Number of Calls'
                         }
                     },
                     x: {
                         title: {
                             display: true,
-                            text: 'Products'
+                            text: 'Days'
                         }
                     }
                 }
             }
         });
     </script>
+
     <script>
         const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
             "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];

@@ -323,7 +323,7 @@ public partial class VHMSMasterPage : System.Web.UI.MasterPage
 
                     if ((from t in qPrivilege where t.fd_menu_id == 1 select t).Count() > 0) //Accounts
                     {
-                        sbTopMenuBar.Append("<li class='dropdown'><a href='#' class='dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>Accounts<span class='caret'></span></a>");
+                        sbTopMenuBar.Append("<li class='dropdown'><a href='#' class='dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>User Accounts<span class='caret'></span></a>");
                         sbTopMenuBar.Append("<ul class='dropdown-menu' role='menu'>");
                         var qUserAccountsMenu = (from t in qPrivilege where t.fd_menu_id == 1 select t).OrderBy(o => o.fd_OrderNo);
                         int MenuItemCount = qUserAccountsMenu.Count();

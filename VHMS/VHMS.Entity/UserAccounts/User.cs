@@ -18,7 +18,6 @@ namespace VHMS.Entity
         public string Email { get; set; }
         public Boolean IsActive { get; set; }
         public User CreatedBy { get; set; }
-        public Company Company { get; set; }
         public DateTime CreatedOn { get; set; }
         public User ModifiedBy { get; set; }
         public DateTime ModifiedOn { get; set; }
@@ -27,7 +26,6 @@ namespace VHMS.Entity
         public string FileName { get; set; }
         public string EmployeeName { get; set; }
         public string Address { get; set; }
-        public decimal BasicPay { get; set; }
         public string ConfirmPassword { get; set; }
         public DateTime DOJ { get; set; }
         public string sDOJ { get; set; }

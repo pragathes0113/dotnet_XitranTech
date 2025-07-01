@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "E:\\Web Live Project\\dotnet_XitranTech\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.web\\frmdefault.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmdefault.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.web\\frmlogin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmlogin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.web\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.web\\vhmsmasterpage.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\vhmsmasterpage.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6282BB3-4162-4296-BE1B-0DC28375222E}|VHMSReports\\VHMSReports.csproj|e:\\web live project\\dotnet_xitrantech\\vhmsreports\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A6282BB3-4162-4296-BE1B-0DC28375222E}|VHMSReports\\VHMSReports.csproj|solutionrelative:vhmsreports\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.web\\vhmsmasterpage.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\vhmsmasterpage.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.dataaccess\\useraccounts\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|solutionrelative:vhms\\vhms.dataaccess\\useraccounts\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCC9F862-A6E4-4188-9793-95219643C283}|VHMS\\VHMS.Entity\\VHMS.Entity.csproj|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.entity\\useraccounts\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCC9F862-A6E4-4188-9793-95219643C283}|VHMS\\VHMS.Entity\\VHMS.Entity.csproj|solutionrelative:vhms\\vhms.entity\\useraccounts\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +34,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmLogin.aspx.cs",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmLogin.aspx.cs",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmLogin.aspx.cs",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmLogin.aspx.cs",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\frmLogin.aspx.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T09:27:01.623Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -31,40 +57,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmLogin.aspx.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmLogin.aspx.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmLogin.aspx.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmLogin.aspx.cs",
-              "RelativeToolTip": "VHMS\\VHMS.Web\\frmLogin.aspx.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAAACMAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T09:27:01.623Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "web.config",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\web.config",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\web.config",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\web.config",
-              "RelativeToolTip": "VHMS\\VHMS.Web\\web.config",
-              "ViewState": "AgIAACAAAAAAAAAAAAAowC0AAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-07-01T09:26:09.258Z",
+              "Title": "frmDefault.aspx",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmDefault.aspx",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmDefault.aspx",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmDefault.aspx",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\frmDefault.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-07-01T11:35:23.902Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Web.config",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMSReports\\Web.config",
-              "RelativeDocumentMoniker": "VHMSReports\\Web.config",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMSReports\\Web.config",
-              "RelativeToolTip": "VHMSReports\\Web.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-07-01T09:25:42.691Z",
+              "Title": "VHMSMasterPage.master.cs",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\VHMSMasterPage.master.cs",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\VHMSMasterPage.master.cs",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\VHMSMasterPage.master.cs",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\VHMSMasterPage.master.cs",
+              "ViewState": "AgIAACIBAAAAAAAAAAAvwE4BAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T11:23:56.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VHMSMasterPage.master",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\VHMSMasterPage.master",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\VHMSMasterPage.master",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\VHMSMasterPage.master",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\VHMSMasterPage.master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-07-01T11:23:48.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Entity\\UserAccounts\\User.cs",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Entity\\UserAccounts\\User.cs",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Entity\\UserAccounts\\User.cs",
+              "RelativeToolTip": "VHMS\\VHMS.Entity\\UserAccounts\\User.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBMAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T11:09:02.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\UserAccounts\\User.cs",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.DataAccess\\UserAccounts\\User.cs",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\UserAccounts\\User.cs",
+              "RelativeToolTip": "VHMS\\VHMS.DataAccess\\UserAccounts\\User.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAArwEkAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T11:09:00.741Z",
               "EditorCaption": ""
             }
           ]
