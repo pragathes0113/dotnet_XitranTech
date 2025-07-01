@@ -41,14 +41,14 @@ public partial class frmStockDetailedReport : System.Web.UI.Page
     private void LoadReport()
     {
         ReportDataSet dsReportData = new ReportDataSet();
-        dsData = VHMS.DataAccess.VHMSReports.PrintStockDetails(ddlProduct.SelectedValue,ddlSupplier.SelectedValue);
+        dsData = VHMS.DataAccess.VHMSReports.PrintStockDetails(ddlProduct.SelectedValue, ddlSupplier.SelectedValue);
         try
         {
             if (dsData.Tables.Count > 0)
             {
                 dsData.Tables[0].TableName = "tStock";
                 foreach (DataRow drow in dsData.Tables[0].Rows)
-                dsReportData.tStock.ImportRow(drow);
+                    dsReportData.tStock.ImportRow(drow);
                 gvProductMas.DataSource = dsData.Tables[0];
                 gvProductMas.DataBind();
             }
@@ -59,7 +59,7 @@ public partial class frmStockDetailedReport : System.Web.UI.Page
             Log.Write(sException);
         }
     }
-    
+
     protected void btnPDF_Click(object sender, EventArgs e)
     {
         Response.ContentType = "application/pdf";
@@ -130,7 +130,7 @@ public partial class frmStockDetailedReport : System.Web.UI.Page
     {
         LoadReport();
     }
-   
+
     protected void btnPDF1_Click(object sender, EventArgs e)
     {
         //Response.ContentType = "application/pdf";
@@ -185,33 +185,33 @@ public partial class frmStockDetailedReport : System.Web.UI.Page
     }
     protected void btnView1_Click(object sender, EventArgs e)
     {
-       // LoadReport1();
+        // LoadReport1();
     }
     protected void GridView2_RowDataBound(object sender, GridViewRowEventArgs e)
     {
-        if (e.Row.RowType == DataControlRowType.DataRow)
-        {
-            productvalue += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "productvalue"));
-        }
-        if (e.Row.RowType == DataControlRowType.Footer)
-        {
-            e.Row.Cells[0].ColumnSpan = 4;
-            e.Row.Cells.RemoveAt(1);
-            e.Row.Cells.RemoveAt(2);
-            e.Row.Cells.RemoveAt(3);
+        //if (e.Row.RowType == DataControlRowType.DataRow)
+        //{
+        //    productvalue += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "productvalue"));
+        //}
+        //if (e.Row.RowType == DataControlRowType.Footer)
+        //{
+        //    e.Row.Cells[0].ColumnSpan = 4;
+        //    e.Row.Cells.RemoveAt(1);
+        //    e.Row.Cells.RemoveAt(2);
+        //    e.Row.Cells.RemoveAt(3);
 
-            e.Row.Cells[3].Text = "Total Amount :";
-            e.Row.Cells[4].Text = Convert.ToDecimal(productvalue).ToString("F0");
-            e.Row.Cells[1].Font.Bold = true;
-            e.Row.Cells[2].Font.Bold = true;
-            e.Row.Cells[3].Font.Bold = true;
-            e.Row.Cells[4].Font.Bold = true;
-            e.Row.Cells[5].Font.Bold = true;
-            e.Row.Cells[1].Font.Size = 14;
-            e.Row.Cells[2].Font.Size = 14;
-            e.Row.Cells[3].Font.Size = 14;
-            e.Row.Cells[4].Font.Size = 14;
-            e.Row.Cells[5].Font.Size = 14;
-        }
+        //    e.Row.Cells[3].Text = "Total Amount :";
+        //    e.Row.Cells[4].Text = Convert.ToDecimal(productvalue).ToString("F0");
+        //    e.Row.Cells[1].Font.Bold = true;
+        //    e.Row.Cells[2].Font.Bold = true;
+        //    e.Row.Cells[3].Font.Bold = true;
+        //    e.Row.Cells[4].Font.Bold = true;
+        //    e.Row.Cells[5].Font.Bold = true;
+        //    e.Row.Cells[1].Font.Size = 14;
+        //    e.Row.Cells[2].Font.Size = 14;
+        //    e.Row.Cells[3].Font.Size = 14;
+        //    e.Row.Cells[4].Font.Size = 14;
+        //    e.Row.Cells[5].Font.Size = 14;
+        //}
     }
 }

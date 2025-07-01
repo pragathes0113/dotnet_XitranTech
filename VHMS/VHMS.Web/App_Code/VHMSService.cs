@@ -360,7 +360,7 @@ public partial class VHMSService : IVHMSService
         }
         return jsObject.Serialize(objResponse);
     }
-    public string GetUserLogin(string sUserName, string sPassword,int CompanyID)
+    public string GetUserLogin(string sUserName, string sPassword)
     {
         string sException = string.Empty;
         string sFileNames = string.Empty;
@@ -376,7 +376,7 @@ public partial class VHMSService : IVHMSService
                 clientIp = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString();
 
             VHMS.Entity.User ObjUser = new User();
-            ObjUser = VHMS.DataAccess.User.GetUserLogin(sUserName, sPassword,CompanyID, sIPAddress, clientIp);
+            ObjUser = VHMS.DataAccess.User.GetUserLogin(sUserName, sPassword,sIPAddress, clientIp);
             if (ObjUser.UserID > 0)
             {
                 objResponse.Status = "Success";
@@ -2060,7 +2060,7 @@ public partial class VHMSService : IVHMSService
         return jsObject.Serialize(objResponse);
     }
 
-    public string GetReorderStock()
+    public string GetAllProduct(int ID, int CategoryID, int SupplierID)
     {
         string sException = string.Empty;
         string sFileNames = string.Empty;
@@ -2072,7 +2072,7 @@ public partial class VHMSService : IVHMSService
             if (ValidateSession() && Int32.TryParse(HttpContext.Current.Session["CompanyID"].ToString(), out iCompanyID))
             {
                 Collection<VHMS.Entity.Master.Product> ObjList = new Collection<VHMS.Entity.Master.Product>();
-                ObjList = VHMS.DataAccess.Master.Product.GetReorderStock(iCompanyID);
+                ObjList = VHMS.DataAccess.Master.Product.GetAllProduct(ID, CategoryID, SupplierID, iCompanyID);
                 objResponse.Status = "Success";
                 objResponse.Value = ObjList.Count > 0 ? jsObject.Serialize(ObjList) : "NoRecord";
             }
@@ -2123,7 +2123,6 @@ public partial class VHMSService : IVHMSService
         }
         return jsObject.Serialize(objResponse);
     }
-
     public string GetTopProduct()
     {
         string sException = string.Empty;
@@ -2155,7 +2154,6 @@ public partial class VHMSService : IVHMSService
         }
         return jsObject.Serialize(objResponse);
     }
-
     public string SearchProduct(string ID)
     {
         string sException = string.Empty;
@@ -2220,169 +2218,6 @@ public partial class VHMSService : IVHMSService
         catch (Exception ex)
         {
             sException = "VHMSService.Master.Product GetProductByID |" + ex.Message.ToString();
-            Log.Write(sException);
-            objResponse.Status = "Error";
-            objResponse.Value = "Error";
-        }
-        return jsObject.Serialize(objResponse);
-    }
-
-
-
-    public string GetProductSupplierList(int SupplierID)
-    {
-        string sException = string.Empty;
-        string sFileNames = string.Empty;
-        JavaScriptSerializer jsObject = new JavaScriptSerializer();
-        VHMS.Entity.Response objResponse = new VHMS.Entity.Response();
-        try
-        {
-            int iCompanyID = 0;
-            if (ValidateSession() && Int32.TryParse(HttpContext.Current.Session["CompanyID"].ToString(), out iCompanyID))
-            {
-                Collection<VHMS.Entity.Master.Product> ObjList = new Collection<VHMS.Entity.Master.Product>();
-                ObjList = VHMS.DataAccess.Master.Product.GetProductSupplierList(SupplierID, iCompanyID);
-                objResponse.Status = "Success";
-                objResponse.Value = ObjList.Count > 0 ? jsObject.Serialize(ObjList) : "NoRecord";
-            }
-            else
-            {
-                objResponse.Status = "Error";
-                objResponse.Value = "0";
-            }
-        }
-        catch (Exception ex)
-        {
-            sException = "VHMSService.Master.Product GetProduct |" + ex.Message.ToString();
-            Log.Write(sException);
-            objResponse.Status = "Error";
-            objResponse.Value = "Error";
-        }
-        return jsObject.Serialize(objResponse);
-    }
-
-    public string GetAllProduct(int ID, int CategoryID, int SupplierID)
-    {
-        string sException = string.Empty;
-        string sFileNames = string.Empty;
-        JavaScriptSerializer jsObject = new JavaScriptSerializer();
-        VHMS.Entity.Response objResponse = new VHMS.Entity.Response();
-        try
-        {
-            int iCompanyID = 0;
-            if (ValidateSession() && Int32.TryParse(HttpContext.Current.Session["CompanyID"].ToString(), out iCompanyID))
-            {
-                Collection<VHMS.Entity.Master.Product> ObjList = new Collection<VHMS.Entity.Master.Product>();
-                ObjList = VHMS.DataAccess.Master.Product.GetAllProduct(ID, CategoryID, SupplierID, iCompanyID);
-                objResponse.Status = "Success";
-                objResponse.Value = ObjList.Count > 0 ? jsObject.Serialize(ObjList) : "NoRecord";
-            }
-            else
-            {
-                objResponse.Status = "Error";
-                objResponse.Value = "0";
-            }
-        }
-        catch (Exception ex)
-        {
-            sException = "VHMSService.Master.Product GetProduct |" + ex.Message.ToString();
-            Log.Write(sException);
-            objResponse.Status = "Error";
-            objResponse.Value = "Error";
-        }
-        return jsObject.Serialize(objResponse);
-    }
-
-    public string GetProductID(int ID, int CategoryID, int SubCategoryID, int SupplierID, int TypeID)
-    {
-        string sException = string.Empty;
-        string sFileNames = string.Empty;
-        JavaScriptSerializer jsObject = new JavaScriptSerializer();
-        VHMS.Entity.Response objResponse = new VHMS.Entity.Response();
-        try
-        {
-            int iCompanyID = 0;
-            if (ValidateSession() && Int32.TryParse(HttpContext.Current.Session["CompanyID"].ToString(), out iCompanyID))
-            {
-                Collection<VHMS.Entity.Master.Product> ObjList = new Collection<VHMS.Entity.Master.Product>();
-                ObjList = VHMS.DataAccess.Master.Product.GetProductID(ID, CategoryID, SupplierID, iCompanyID);
-                objResponse.Status = "Success";
-                objResponse.Value = ObjList.Count > 0 ? jsObject.Serialize(ObjList) : "NoRecord";
-            }
-            else
-            {
-                objResponse.Status = "Error";
-                objResponse.Value = "0";
-            }
-        }
-        catch (Exception ex)
-        {
-            sException = "VHMSService.Master.Product GetProduct |" + ex.Message.ToString();
-            Log.Write(sException);
-            objResponse.Status = "Error";
-            objResponse.Value = "Error";
-        }
-        return jsObject.Serialize(objResponse);
-    }
-
-    public string GetProductByCode(string ProductCode, Boolean SMSOnly)
-    {
-        string sException = string.Empty;
-        string sFileNames = string.Empty;
-        JavaScriptSerializer jsObject = new JavaScriptSerializer();
-        VHMS.Entity.Response objResponse = new VHMS.Entity.Response();
-        try
-        {
-            int iCompanyID = 0;
-            if (ValidateSession() && Int32.TryParse(HttpContext.Current.Session["CompanyID"].ToString(), out iCompanyID))
-            {
-                Collection<VHMS.Entity.Master.Product> ObjList = new Collection<VHMS.Entity.Master.Product>();
-                ObjList = VHMS.DataAccess.Master.Product.GetProductByCode(ProductCode, SMSOnly);
-                objResponse.Status = "Success";
-                objResponse.Value = ObjList.Count > 0 ? jsObject.Serialize(ObjList) : "NoRecord";
-            }
-            else
-            {
-                objResponse.Status = "Error";
-                objResponse.Value = "0";
-            }
-        }
-        catch (Exception ex)
-        {
-            sException = "VHMSService.Master.Product GetProduct |" + ex.Message.ToString();
-            Log.Write(sException);
-            objResponse.Status = "Error";
-            objResponse.Value = "Error";
-        }
-        return jsObject.Serialize(objResponse);
-    }
-
-
-    public string GetProductByBarcode(string ProductCode, Boolean SMSOnly)
-    {
-        string sException = string.Empty;
-        string sFileNames = string.Empty;
-        JavaScriptSerializer jsObject = new JavaScriptSerializer();
-        VHMS.Entity.Response objResponse = new VHMS.Entity.Response();
-        try
-        {
-            int iCompanyID = 0;
-            if (ValidateSession() && Int32.TryParse(HttpContext.Current.Session["CompanyID"].ToString(), out iCompanyID))
-            {
-                Collection<VHMS.Entity.Master.Product> ObjList = new Collection<VHMS.Entity.Master.Product>();
-                ObjList = VHMS.DataAccess.Master.Product.GetProductByBarcode(ProductCode, SMSOnly);
-                objResponse.Status = "Success";
-                objResponse.Value = ObjList.Count > 0 ? jsObject.Serialize(ObjList) : "NoRecord";
-            }
-            else
-            {
-                objResponse.Status = "Error";
-                objResponse.Value = "0";
-            }
-        }
-        catch (Exception ex)
-        {
-            sException = "VHMSService.Master.Product GetProduct |" + ex.Message.ToString();
             Log.Write(sException);
             objResponse.Status = "Error";
             objResponse.Value = "Error";

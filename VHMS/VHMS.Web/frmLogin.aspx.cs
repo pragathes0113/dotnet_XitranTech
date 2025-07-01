@@ -20,12 +20,11 @@ public partial class frmLogin : System.Web.UI.Page
             {
                 txtUserName.Value = Request.Cookies["UserName"].Value;
                 txtPassword.Attributes["value"] = Request.Cookies["Password"].Value;
-                ddlCompany.Value = Request.Form["ddlCompany"];
             }
         }
         Assembly assembly = Assembly.Load("App_Code");
         string version = assembly.GetName().Version.ToString();
-        divTitle.InnerHtml = "VRS Tools " + version;
+        divTitle.InnerHtml = "Xitran Technologies " + version;
     }
     protected void btnSignIn_Click(object sender, EventArgs e)
     {
@@ -37,33 +36,22 @@ public partial class frmLogin : System.Web.UI.Page
             string sIPAddress = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
             string clientIp = string.Empty;
             int ComID = 0;
-            if (!string.IsNullOrEmpty(Request.Form["ddlCompany"]))
-            {
-                int.TryParse(Request.Form["ddlCompany"], out ComID);
-            }
             if (System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList.Length > 2)
                 clientIp = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[2].ToString();  // (HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] ?? HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]).Split(',')[0].Trim();
             else
                 clientIp = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[1].ToString();
             objUser = new VHMS.Entity.User();
-            var companyid = Request.Form["ddlCompany"];
             var companyName = Request.Form["ddlname"];
-            objUser = VHMS.DataAccess.User.GetUserLogin(txtUserName.Value.ToString(), txtPassword.Value.ToString(), ComID, sIPAddress, clientIp);
+            objUser = VHMS.DataAccess.User.GetUserLogin(txtUserName.Value.ToString(), txtPassword.Value.ToString(), sIPAddress, clientIp);
             if (objUser.UserID > 0)
             {
                 Session["UserID"] = objUser.UserID;
                 Session["UserName"] = objUser.UserName;
-                Session["CompanyID"] = objUser.Company.CompanyID;
-                Session["CompanyName"] = objUser.Company.CompanyName;
                 Session["EmployeeName"] = objUser.EmployeeName;
                 Session["RoleID"] = objUser.RoleID;
                 Session["RoleName"] = objUser.RoleName;
                 Session["LogDateTime"] = DateTime.Now.ToString("");
-                Session["SMSUsername"] = objUser.Settings.SMSUsername;
-                Session["SMSPassword"] = objUser.Settings.SMSPassword;
-                Session["SenderName"] = objUser.Settings.SenderName;
-                Session["SendSMS"] = objUser.Settings.SendSMS;
-                Session["APILink"] = objUser.Settings.APILink;
+
 
                 Response.Redirect("frmDefault.aspx", false);
             }

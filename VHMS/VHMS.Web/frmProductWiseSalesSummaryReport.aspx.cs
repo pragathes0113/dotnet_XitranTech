@@ -79,7 +79,7 @@ public partial class frmProductWiseSalesSummaryReport : System.Web.UI.Page
     public void LoadProduct()
     {
         Collection<VHMS.Entity.Master.Product> ObjList = new Collection<VHMS.Entity.Master.Product>();
-        ObjList = VHMS.DataAccess.Master.Product.GetActiveProductID(0,0, Convert.ToInt32(ddlCategory.SelectedValue), Convert.ToInt32(ddlSubCategory.SelectedValue), 0);
+//        ObjList = VHMS.DataAccess.Master.Product.GetActiveProductID(0,0, Convert.ToInt32(ddlCategory.SelectedValue), Convert.ToInt32(ddlSubCategory.SelectedValue), 0);
 
         ddlProduct.DataSource = ObjList;
         ddlProduct.DataTextField = "ProductName";
@@ -212,7 +212,7 @@ public partial class frmProductWiseSalesSummaryReport : System.Web.UI.Page
         if (txtCode.Text != "")
         {
             Collection<VHMS.Entity.Master.Product> ObjList = new Collection<VHMS.Entity.Master.Product>();
-            ObjList = VHMS.DataAccess.Master.Product.GetProductByCode(txtCode.Text, false);
+//            ObjList = VHMS.DataAccess.Master.Product.GetProductByCode(txtCode.Text, false);
 
             ddlProduct.DataSource = ObjList;
             ddlProduct.DataTextField = "ProductName";

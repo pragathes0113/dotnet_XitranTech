@@ -177,12 +177,11 @@
                                     <input type="text" class="form-control TRSearch" id="txtSNo" placeholder="Sno"
                                         maxlength="12" tabindex="-1" onkeypress="return IsNumeric(event)" readonly="true" />
                                 </div>
-                                <%--                                <div class="form-group col-md-2" id="divCode" style="margin-left: -27px; display: none;">
+                                <div class="form-group col-md-2" id="divCode" style="margin-left: -27px; display: none;">
                                     <label>
                                         Search Code</label>
-                                    <input type="text" class="form-control TRSearch" id="txtCode" placeholder="Code"
-                                        maxlength="12" tabindex="7" autocomplete="off" />
-                                </div>--%>
+                                    <input type="text" class="form-control TRSearch" id="txtCode" placeholder="Code" maxlength="12" tabindex="7" autocomplete="off" />
+                                </div>
                                 <div class="form-group col-md-3" id="divProductName">
                                     <label>
                                         Product</label><span class="text-danger">*</span>
@@ -540,6 +539,8 @@
                             <i class="fa fa-save"></i>&nbsp;&nbsp;Save</button>
                         <button id="btnUpdate" type="button" class="btn btn-info pull-right" tabindex="31">
                             <i class="fa fa-save"></i>&nbsp;&nbsp;Update Changes</button>
+                        <button id="btnPurchaseBarcode" type="button" class="btn btn-info pull-left" tabindex="32">
+                            <i class="fa fa-save"></i>&nbsp;&nbsp;Barcode</button>
                         <button type="button" class="btn btn-danger pull-left" id="btnClose" tabindex="33">
                             <i class="fa fa-close"></i>&nbsp;&nbsp;Close</button>
                     </div>

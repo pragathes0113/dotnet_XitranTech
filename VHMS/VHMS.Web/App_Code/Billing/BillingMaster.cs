@@ -1738,7 +1738,7 @@ public partial class VHMSService : IVHMSService
         }
         return jsObject.Serialize(objResponse);
     }
-    public string GetPurchasTranseByID(int ID = 0)
+    public string GetPurchaseTransByID(int ID = 0)
     {
         string sException = string.Empty;
         string sFileNames = string.Empty;
@@ -1750,6 +1750,45 @@ public partial class VHMSService : IVHMSService
             {
                 VHMS.Entity.Billing.PurchaseTrans objPurchase = new VHMS.Entity.Billing.PurchaseTrans();
                 objPurchase = VHMS.DataAccess.Billing.PurchaseTrans.GetPurchaseTransByID(ID);
+                if (objPurchase.PurchaseID > 0)
+                {
+                    objResponse.Status = "Success";
+                    objResponse.Value = jsObject.Serialize(objPurchase);
+                }
+                else
+                {
+                    objResponse.Status = "Success";
+                    objResponse.Value = "NoRecord";
+                }
+            }
+            else
+            {
+                objResponse.Status = "Error";
+                objResponse.Value = "0";
+            }
+        }
+        catch (Exception ex)
+        {
+            sException = "Purchase GetPurchaseByID |" + ex.Message.ToString();
+            Log.Write(sException);
+            objResponse.Status = "Error";
+            objResponse.Value = "Error";
+        }
+        return jsObject.Serialize(objResponse);
+    }
+
+    public string GetPurchaseTransBarcodeByID(int ID = 0, int ProductId = 0, string Barcode = "")
+    {
+        string sException = string.Empty;
+        string sFileNames = string.Empty;
+        JavaScriptSerializer jsObject = new JavaScriptSerializer();
+        VHMS.Entity.Response objResponse = new VHMS.Entity.Response();
+        try
+        {
+            if (ValidateSession())
+            {
+                VHMS.Entity.Billing.PurchaseTrans objPurchase = new VHMS.Entity.Billing.PurchaseTrans();
+                objPurchase = VHMS.DataAccess.Billing.PurchaseTrans.GetPurchaseTransBarcodeByID(ID, ProductId, Barcode);
                 if (objPurchase.PurchaseID > 0)
                 {
                     objResponse.Status = "Success";

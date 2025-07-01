@@ -218,7 +218,7 @@ public partial class frmProductWiseSalesReport : System.Web.UI.Page
         if (txtCode.Text != "")
         {
             Collection<VHMS.Entity.Master.Product> ObjList = new Collection<VHMS.Entity.Master.Product>();
-            ObjList = VHMS.DataAccess.Master.Product.GetProductByCode(txtCode.Text, false);
+           // ObjList = VHMS.DataAccess.Master.Product.GetProductByCode(txtCode.Text, false);
 
             ddlProduct.DataSource = ObjList;
             ddlProduct.DataTextField = "ProductName";

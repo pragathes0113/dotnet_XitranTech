@@ -202,3 +202,17 @@ E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Log\obj\Debug\VHMS.Log.csproj.CoreCompi
 E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Log\obj\Debug\VHMS.Log.csproj.Up2Date
 E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Log\obj\Debug\VHMS.Log.dll
 E:\Web Live Project\dotnet_VRS\VHMS\VHMS.Log\obj\Debug\VHMS.Log.pdb
+E:\Web Live Project\dotnet_PoojaStores\VHMS\VHMS.Log\bin\Debug\VHMS.Log.dll
+E:\Web Live Project\dotnet_PoojaStores\VHMS\VHMS.Log\bin\Debug\VHMS.Log.pdb
+E:\Web Live Project\dotnet_PoojaStores\VHMS\VHMS.Log\obj\Debug\VHMS.Log.csproj.AssemblyReference.cache
+E:\Web Live Project\dotnet_PoojaStores\VHMS\VHMS.Log\obj\Debug\VHMS.Log.csproj.CoreCompileInputs.cache
+E:\Web Live Project\dotnet_PoojaStores\VHMS\VHMS.Log\obj\Debug\VHMS.Log.csproj.Up2Date
+E:\Web Live Project\dotnet_PoojaStores\VHMS\VHMS.Log\obj\Debug\VHMS.Log.dll
+E:\Web Live Project\dotnet_PoojaStores\VHMS\VHMS.Log\obj\Debug\VHMS.Log.pdb
+E:\Web Live Project\dotnet_XitranTech\VHMS\VHMS.Log\bin\Debug\VHMS.Log.dll
+E:\Web Live Project\dotnet_XitranTech\VHMS\VHMS.Log\bin\Debug\VHMS.Log.pdb
+E:\Web Live Project\dotnet_XitranTech\VHMS\VHMS.Log\obj\Debug\VHMS.Log.csproj.AssemblyReference.cache
+E:\Web Live Project\dotnet_XitranTech\VHMS\VHMS.Log\obj\Debug\VHMS.Log.csproj.CoreCompileInputs.cache
+E:\Web Live Project\dotnet_XitranTech\VHMS\VHMS.Log\obj\Debug\VHMS.Log.csproj.Up2Date
+E:\Web Live Project\dotnet_XitranTech\VHMS\VHMS.Log\obj\Debug\VHMS.Log.dll
+E:\Web Live Project\dotnet_XitranTech\VHMS\VHMS.Log\obj\Debug\VHMS.Log.pdb

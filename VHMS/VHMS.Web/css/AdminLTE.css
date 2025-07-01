@@ -2388,13 +2388,20 @@ a {
     }
 
 .btn-info {
-    background-color: #00c0ef;
-    border-color: #00acd6;
+    background: linear-gradient(90deg, #185a9d, #43cea2);
+    border: none;
+    color: #fff;
+    transition: background 0.3s ease;
 }
 
-    .btn-info:hover, .btn-info:active, .btn-info.hover {
-        background-color: #00acd6;
+    .btn-info:hover,
+    .btn-info:active,
+    .btn-info:focus,
+    .btn-info.hover {
+        background: linear-gradient(90deg, #1572b9, #30d6b2); /* Slightly darker for hover effect */
+        color: #fff;
     }
+
 
 .btn-danger {
     background-color: #dd4b39;

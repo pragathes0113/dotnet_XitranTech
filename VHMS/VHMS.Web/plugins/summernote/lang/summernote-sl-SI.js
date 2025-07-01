@@ -119,7 +119,7 @@ return /******/ (function(modules) { // webpackBootstrap
         italic: 'Ležeče',
         underline: 'Podčrtano',
         clear: 'Počisti oblikovanje izbire',
-        height: 'Razmik med vrsticami',
+        height: 'Razmik med Xitranticami',
         name: 'Pisava',
         strikethrough: 'Prečrtano',
         subscript: 'Podpisano',

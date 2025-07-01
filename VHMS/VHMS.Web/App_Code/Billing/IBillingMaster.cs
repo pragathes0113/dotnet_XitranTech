@@ -203,7 +203,11 @@ public partial interface IVHMSService
 
     [OperationContract]
     [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
-    string GetPurchasTranseByID(int ID = 0);
+    string GetPurchaseTransByID(int ID = 0);
+
+    [OperationContract]
+    [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
+    string GetPurchaseTransBarcodeByID(int ID = 0, int ProductId = 0, string Barcode = "");
 
     [OperationContract]
     [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]

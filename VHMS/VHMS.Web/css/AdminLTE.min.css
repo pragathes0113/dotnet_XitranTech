@@ -1663,18 +1663,20 @@ a {
                 }
 
         .box.box-solid.box-primary {
-            border: 1px solid #3c8dbc
+            border: 1px solid #3c8dbc;
         }
 
             .box.box-solid.box-primary > .box-header {
                 color: #fff;
-                background: #196fb8;
-                background-color: #196fb8
+                background: linear-gradient(to bottom, #7f92c2, #5e76b2, #264796);
+                background-color: #185a9d; /* fallback for older browsers */
             }
 
-                .box.box-solid.box-primary > .box-header a, .box.box-solid.box-primary > .box-header .btn {
-                    color: #fff
+                .box.box-solid.box-primary > .box-header a,
+                .box.box-solid.box-primary > .box-header .btn {
+                    color: #fff;
                 }
+
 
         .box.box-solid.box-info {
             border: 1px solid #00c0ef
@@ -1705,18 +1707,20 @@ a {
                 }
 
         .box.box-solid.box-warning {
-            border: 1px solid #f39c12
+            border: 1px solid #185a9d; /* match starting gradient color */
         }
 
             .box.box-solid.box-warning > .box-header {
                 color: #fff;
-                background: #f39c12;
-                background-color: #f39c12
+                background: linear-gradient(to bottom, #7f92c2, #5e76b2, #264796);
+                background-color: #185a9d; /* fallback for older browsers */
             }
 
-                .box.box-solid.box-warning > .box-header a, .box.box-solid.box-warning > .box-header .btn {
-                    color: #fff
+                .box.box-solid.box-warning > .box-header a,
+                .box.box-solid.box-warning > .box-header .btn {
+                    color: #fff;
                 }
+
 
         .box.box-solid.box-success {
             border: 1px solid #00a65a
@@ -2386,13 +2390,20 @@ a {
     }
 
 .btn-info {
-    background-color: #196fb8;
-    border-color: #196fb8
+    background: linear-gradient(to bottom, #7f92c2, #5e76b2, #264796);
+    border: none;
+    color: #fff;
+    transition: background 0.3s ease;
 }
 
-    .btn-info:hover, .btn-info:active, .btn-info.hover {
-        background-color: #196fb8
+    .btn-info:hover,
+    .btn-info:active,
+    .btn-info:focus,
+    .btn-info.hover {
+        background: linear-gradient(to bottom, #7f92c2, #5e76b2, #264796); /* Slightly darker for hover effect */
+        color: #fff;
     }
+
 
 .btn-danger {
     background-color: #dd4b39;

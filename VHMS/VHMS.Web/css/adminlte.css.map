@@ -1,4 +1,4 @@
-{
+navbar navbar-fixed-top{
 	"version": 3,
 	"file": "adminlte.css",
 	"sources": [

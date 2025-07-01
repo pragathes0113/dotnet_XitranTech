@@ -83,8 +83,8 @@
                             <asp:BoundField HeaderText="Purchase Quantity" ReadOnly="true" DataField="InQuantity" DataFormatString="{0:N0}" HtmlEncode="false" />
                             <asp:BoundField HeaderText="Sales Quantity" ReadOnly="true" DataField="OutQuantity" DataFormatString="{0:N0}" HtmlEncode="false" />
                             <asp:BoundField HeaderText="Available Quantity" ReadOnly="true" DataField="Quantity" DataFormatString="{0:N0}" HtmlEncode="false" />
-                            <asp:BoundField HeaderText="Selling Rate" ReadOnly="true" DataField="SellingRate" DataFormatString="{0:N0}" HtmlEncode="false" />
-                            <asp:BoundField HeaderText="Stock Value" ReadOnly="true" DataField="productvalue" DataFormatString="{0:N0}" HtmlEncode="false" />
+                           <%-- <asp:BoundField HeaderText="Selling Rate" ReadOnly="true" DataField="SellingRate" DataFormatString="{0:N0}" HtmlEncode="false" />
+                            <asp:BoundField HeaderText="Stock Value" ReadOnly="true" DataField="productvalue" DataFormatString="{0:N0}" HtmlEncode="false" />--%>
 
                         </Columns>
                         <PagerStyle CssClass="cssPager" HorizontalAlign="Center" />

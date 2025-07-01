@@ -30,7 +30,7 @@ public partial class frmProduct : BaseConfig
     public static string[] GetBarcode(string prefix)
     {
         List<string> customers = new List<string>();
-        customers = VHMS.DataAccess.Master.Product.GetProductNameList(prefix);
+       // customers = VHMS.DataAccess.Master.Product.GetProductNameList(prefix);
         return customers.ToArray();
     }
 

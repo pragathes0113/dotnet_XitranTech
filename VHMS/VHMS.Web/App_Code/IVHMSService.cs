@@ -47,7 +47,7 @@ public partial interface IVHMSService
 
     [OperationContract]
     [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
-    string GetUserLogin(string sUserName, string sPassword,int CompanyID);
+    string GetUserLogin(string sUserName, string sPassword);
 
     [OperationContract]
     [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
@@ -291,7 +291,7 @@ public partial interface IVHMSService
 
     [OperationContract]
     [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
-    string GetReorderStock();
+    string GetAllProduct(int ID, int CategoryID, int SupplierID);
 
     [OperationContract]
     [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
@@ -303,39 +303,11 @@ public partial interface IVHMSService
 
     [OperationContract]
     [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
-    string GetProductSupplierList(int SupplierID);
-
-    //[OperationContract]
-    //[WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
-    //string GenerateSMSCode(int SupplierID);
-
-    [OperationContract]
-    [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
     string GetTopProduct();
 
     [OperationContract]
     [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
     string SearchProduct(string ID);
-
-    [OperationContract]
-    [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
-    string GetProductID(int ID, int CategoryID, int SubCategoryID, int SupplierID, int TypeID);
-
-    [OperationContract]
-    [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
-    string GetAllProduct(int ID, int CategoryID, int SupplierID);
-
-    [OperationContract]
-    [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
-    string GetProductByCode(string ProductCode, Boolean SMSOnly);
-
-    //[OperationContract]
-    //[WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
-    //string GetProductBySMSCode(string ProductCode, Boolean SMSOnly,int SupplierID);
-
-    [OperationContract]
-    [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
-    string GetProductByBarcode(string ProductCode, Boolean SMSOnly);
 
     [OperationContract]
     [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]

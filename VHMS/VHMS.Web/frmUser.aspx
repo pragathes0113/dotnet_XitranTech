@@ -125,9 +125,9 @@
                                         <option selected="selected" value="0">--Select Branch--</option>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-4" id="divCompany">
+                                <div class="form-group col-md-4" id="divCompany" style="display: none">
                                     <label>
-                                       Company</label><span class="text-danger">*</span>
+                                        Company</label><span class="text-danger">*</span>
                                     <select id="ddlCompany" class="form-control" tabindex="9">
                                         <option selected="selected" value="0">--Select Company--</option>
                                     </select>
@@ -159,15 +159,15 @@
                                     <input type="text" class="form-control" id="txtIDProof" placeholder="ID Proof" maxlength="500"
                                         tabindex="13" />
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="form-group col-md-4" id="divEmail">
                                     <label>
                                         Email</label>
                                     <input type="text" class="form-control" id="txtEmail" placeholder="Email" maxlength="512"
                                         tabindex="11" />
                                 </div>
-                                <div class="form-group col-md-4" id="divDOB">
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-3" id="divDOB">
                                     <label>
                                         DOB</label><span class="text-danger">*</span>
                                     <div class="input-group date form_date" data-date-format="dd/MM/yyyy HH:ii P" data-link-field="txtDOB"
@@ -178,7 +178,7 @@
                                         <input type="text" class="form-control pull-right" tabindex="12" id="txtDOB" readonly />
                                     </div>
                                 </div>
-                                <div class="form-group col-md-4" id="divDOJ">
+                                <div class="form-group col-md-3" id="divDOJ">
                                     <label>
                                         DOJ</label><span class="text-danger">*</span>
                                     <div class="input-group date form_date" data-date-format="dd/MM/yyyy HH:ii P" data-link-field="txtDOJ"
@@ -189,36 +189,33 @@
                                         <input type="text" class="form-control pull-right" tabindex="13" id="txtDOJ" readonly />
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-4" id="divAddress">
-                                    <label>
-                                        Address</label>
-                                    <textarea id="txtAddress" class="form-control" maxlength="2000" tabindex="14" rows="3"></textarea>
-                                </div>
-                                <div class="form-group col-md-4" id="divBasicpay">
-                                    <label>
-                                        Basic Pay</label>
-                                    <input type="text" class="form-control" id="txtBasicPay" placeholder="Basic Pay"
-                                        maxlength="15" tabindex="15" value="0" onkeypress="return IsNumeric(event)" />
-
-                                </div>
-
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-4" id="divOtherPassword">
+                                <div class="form-group col-md-3" id="divOtherPassword">
                                     <label>
                                         Special Password</label>
                                     <input type="password" class="form-control" id="txtOtherPassword" placeholder="Special Password" maxlength="512"
                                         tabindex="16" />
                                 </div>
-                                <div class="form-group col-md-4" id="divCOtherPassword">
+                                <div class="form-group col-md-3" id="divCOtherPassword">
                                     <label>
                                         Confirm Special Password</label>
                                     <input type="password" class="form-control" id="txtCOtherPassword" placeholder="Confirm Special Password" maxlength="512"
                                         tabindex="17" />
                                 </div>
-
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12" id="divAddress">
+                                    <label>
+                                        Address</label>
+                                    <textarea id="txtAddress" class="form-control" maxlength="2000" tabindex="14" rows="3"></textarea>
+                                </div>
+                                <div class="form-group col-md-4" id="divBasicpay" style="display: none">
+                                    <label>
+                                        Basic Pay</label>
+                                    <input type="text" class="form-control" id="txtBasicPay" placeholder="Basic Pay"
+                                        maxlength="15" tabindex="15" value="0" onkeypress="return IsNumeric(event)" />
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="form-group col-md-4">
                                     <label>
                                         <input type="checkbox" id="chkStatus" checked="checked" tabindex="18" />&nbsp;&nbsp; Active

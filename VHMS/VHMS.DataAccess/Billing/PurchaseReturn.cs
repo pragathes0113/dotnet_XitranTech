@@ -38,38 +38,22 @@ namespace VHMS.DataAccess.Billing
                         objSupplier = new Entity.Billing.Supplier();
                         objTax = new Entity.Billing.Tax();
                         objPurchase = new Entity.Billing.Purchase();
-
                         objPurchaseReturn.PurchaseReturnID = Convert.ToInt32(drData["PK_PurchaseReturnID"]);
                         objPurchaseReturn.ReturnNo = Convert.ToString(drData["ReturnNo"]);
                         objPurchaseReturn.ReturnDate = Convert.ToDateTime(drData["ReturnDate"]);
                         objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
                         objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
                         objPurchaseReturn.Supplier = objSupplier;
-
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objPurchaseReturn.Tax = objTax;
-
                         objPurchase.PurchaseID = Convert.ToInt32(drData["FK_PurchaseID"]);
                         objPurchase.PurchaseNo = Convert.ToString(drData["PurchaseNo"]);
                         objPurchase.BillNo = Convert.ToString(drData["BillNo"]);
                         objPurchaseReturn.Purchase = objPurchase;
-
                         objPurchaseReturn.Notes = Convert.ToString(drData["Notes"]);
-                        objPurchaseReturn.TaxPercent = Convert.ToDecimal(drData["TaxPercent"]);
-                        objPurchaseReturn.CGSTAmount = Convert.ToDecimal(drData["CGSTAmount"]);
-                        objPurchaseReturn.SGSTAmount = Convert.ToDecimal(drData["SGSTAmount"]);
-                        objPurchaseReturn.IGSTAmount = Convert.ToDecimal(drData["IGSTAmount"]);
-                        objPurchaseReturn.TaxAmount = Convert.ToDecimal(drData["TaxAmount"]);
                         objPurchaseReturn.TotalAmount = Convert.ToDecimal(drData["TotalAmount"]);
-                        objPurchaseReturn.DiscountPercent = Convert.ToDecimal(drData["DiscountPercent"]);
-                        objPurchaseReturn.DiscountAmount = Convert.ToDecimal(drData["DiscountAmount"]);
                         objPurchaseReturn.Roundoff = Convert.ToDecimal(drData["Roundoff"]);
                         objPurchaseReturn.NetAmount = Convert.ToDecimal(drData["NetAmount"]);
                         objPurchaseReturn.CreatedOn = Convert.ToDateTime(drData["CreatedOn"]);
-                        objPurchaseReturn.ImagePath1 = Convert.ToString(drData["ImagePath1"]);
-                        objPurchaseReturn.ImagePath2 = Convert.ToString(drData["ImagePath2"]);
                         objPurchaseReturn.TotalQty = Convert.ToDecimal(drData["TotalQty"]);
-                        objPurchaseReturn.ImagePath3 = Convert.ToString(drData["ImagePath3"]);
                         objPurchaseReturn.sReturnDate = objPurchaseReturn.ReturnDate.ToString("dd/MM/yyyy") + " " + objPurchaseReturn.CreatedOn.ToString("h:mm");
 
                         objList.Add(objPurchaseReturn);
@@ -118,34 +102,17 @@ namespace VHMS.DataAccess.Billing
                         objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
                         objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
                         objPurchaseReturn.Supplier = objSupplier;
-
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objPurchaseReturn.Tax = objTax;
-
                         objPurchase.PurchaseID = Convert.ToInt32(drData["FK_PurchaseID"]);
                         objPurchase.PurchaseNo = Convert.ToString(drData["PurchaseNo"]);
                         objPurchase.BillNo = Convert.ToString(drData["BillNo"]);
                         objPurchaseReturn.Purchase = objPurchase;
-
                         objPurchaseReturn.Notes = Convert.ToString(drData["Notes"]);
-                        objPurchaseReturn.TaxPercent = Convert.ToDecimal(drData["TaxPercent"]);
-                        objPurchaseReturn.CGSTAmount = Convert.ToDecimal(drData["CGSTAmount"]);
-                        objPurchaseReturn.SGSTAmount = Convert.ToDecimal(drData["SGSTAmount"]);
-                        objPurchaseReturn.IGSTAmount = Convert.ToDecimal(drData["IGSTAmount"]);
-                        objPurchaseReturn.TaxAmount = Convert.ToDecimal(drData["TaxAmount"]);
                         objPurchaseReturn.TotalAmount = Convert.ToDecimal(drData["TotalAmount"]);
-                        objPurchaseReturn.DiscountPercent = Convert.ToDecimal(drData["DiscountPercent"]);
-                        objPurchaseReturn.DiscountAmount = Convert.ToDecimal(drData["DiscountAmount"]);
                         objPurchaseReturn.Roundoff = Convert.ToDecimal(drData["Roundoff"]);
                         objPurchaseReturn.NetAmount = Convert.ToDecimal(drData["NetAmount"]);
                         objPurchaseReturn.CreatedOn = Convert.ToDateTime(drData["CreatedOn"]);
                         objPurchaseReturn.TotalQty = Convert.ToDecimal(drData["TotalQty"]);
-                        objPurchaseReturn.ImagePath1 = Convert.ToString(drData["ImagePath1"]);
-                        objPurchaseReturn.ImagePath2 = Convert.ToString(drData["ImagePath2"]);
-                        objPurchaseReturn.ImagePath3 = Convert.ToString(drData["ImagePath3"]);
                         objPurchaseReturn.sReturnDate = objPurchaseReturn.ReturnDate.ToString("dd/MM/yyyy") + " " + objPurchaseReturn.CreatedOn.ToString("h:mm");
-
-
                         objList.Add(objPurchaseReturn);
                     }
                 }
@@ -191,29 +158,13 @@ namespace VHMS.DataAccess.Billing
                         objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
                         objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
                         objPurchaseReturn.Supplier = objSupplier;
-
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objPurchaseReturn.Tax = objTax;
-
                         objPurchase.PurchaseID = Convert.ToInt32(drData["FK_PurchaseID"]);
                         objPurchase.PurchaseNo = Convert.ToString(drData["PurchaseNo"]);
                         objPurchaseReturn.Purchase = objPurchase;
-
                         objPurchaseReturn.Notes = Convert.ToString(drData["Notes"]);
-                        objPurchaseReturn.TaxPercent = Convert.ToDecimal(drData["TaxPercent"]);
-                        objPurchaseReturn.CGSTAmount = Convert.ToDecimal(drData["CGSTAmount"]);
-                        objPurchaseReturn.SGSTAmount = Convert.ToDecimal(drData["SGSTAmount"]);
-                        objPurchaseReturn.IGSTAmount = Convert.ToDecimal(drData["IGSTAmount"]);
-                        objPurchaseReturn.TaxAmount = Convert.ToDecimal(drData["TaxAmount"]);
                         objPurchaseReturn.TotalAmount = Convert.ToDecimal(drData["TotalAmount"]);
-                        objPurchaseReturn.DiscountPercent = Convert.ToDecimal(drData["DiscountPercent"]);
-                        objPurchaseReturn.DiscountAmount = Convert.ToDecimal(drData["DiscountAmount"]);
                         objPurchaseReturn.Roundoff = Convert.ToDecimal(drData["Roundoff"]);
                         objPurchaseReturn.NetAmount = Convert.ToDecimal(drData["NetAmount"]);
-                        objPurchaseReturn.ImagePath1 = Convert.ToString(drData["ImagePath1"]);
-                        objPurchaseReturn.ImagePath2 = Convert.ToString(drData["ImagePath2"]);
-                        objPurchaseReturn.ImagePath3 = Convert.ToString(drData["ImagePath3"]);
-
                         objPurchaseReturn.PurchaseReturnTrans = PurchaseReturnTrans.GetPurchaseReturnTransByPurchaseReturnID(objPurchaseReturn.PurchaseReturnID);
                     }
                 }
@@ -239,24 +190,13 @@ namespace VHMS.DataAccess.Billing
                 db.AddInParameter(cmd, "@ReturnNo", DbType.String, objPurchaseReturn.ReturnNo);
                 db.AddInParameter(cmd, "@ReturnDate", DbType.String, objPurchaseReturn.sReturnDate);
                 db.AddInParameter(cmd, "@FK_SupplierID", DbType.Int32, objPurchaseReturn.Supplier.SupplierID);
-                db.AddInParameter(cmd, "@FK_TaxID", DbType.Int32, objPurchaseReturn.Tax.TaxID);
                 db.AddInParameter(cmd, "@FK_PurchaseID", DbType.Int32, objPurchaseReturn.Purchase.PurchaseID);
-                db.AddInParameter(cmd, "@TaxPercent", DbType.Decimal, objPurchaseReturn.TaxPercent);
-                db.AddInParameter(cmd, "@CGSTAmount", DbType.Decimal, objPurchaseReturn.CGSTAmount);
-                db.AddInParameter(cmd, "@SGSTAmount", DbType.Decimal, objPurchaseReturn.SGSTAmount);
-                db.AddInParameter(cmd, "@IGSTAmount", DbType.Decimal, objPurchaseReturn.IGSTAmount);
-                db.AddInParameter(cmd, "@TaxAmount", DbType.Decimal, objPurchaseReturn.TaxAmount);
                 db.AddInParameter(cmd, "@TotalAmount", DbType.Decimal, objPurchaseReturn.TotalAmount);
-                db.AddInParameter(cmd, "@DiscountPercent", DbType.Decimal, objPurchaseReturn.DiscountPercent);
-                db.AddInParameter(cmd, "@DiscountAmount", DbType.Decimal, objPurchaseReturn.DiscountAmount);
                 db.AddInParameter(cmd, "@Roundoff", DbType.Decimal, objPurchaseReturn.Roundoff);
                 db.AddInParameter(cmd, "@NetAmount", DbType.Decimal, objPurchaseReturn.NetAmount);
                 db.AddInParameter(cmd, "@FK_CreatedBy", DbType.Int32, objPurchaseReturn.CreatedBy.UserID);
                 db.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, objPurchaseReturn.Company.CompanyID);
                 db.AddInParameter(cmd, "@Notes", DbType.String, objPurchaseReturn.Notes);
-                db.AddInParameter(cmd, "@ImagePath1", DbType.String, objPurchaseReturn.ImagePath1);
-                db.AddInParameter(cmd, "@ImagePath2", DbType.String, objPurchaseReturn.ImagePath2);
-                db.AddInParameter(cmd, "@ImagePath3", DbType.String, objPurchaseReturn.ImagePath3);
                 iID = db.ExecuteNonQuery(cmd);
                 if (iID != 0) iID = Convert.ToInt32(db.GetParameterValue(cmd, "@PK_PurchaseReturnID"));
 
@@ -287,27 +227,15 @@ namespace VHMS.DataAccess.Billing
                 db.AddInParameter(cmd, "@ReturnNo", DbType.String, objPurchaseReturn.ReturnNo);
                 db.AddInParameter(cmd, "@ReturnDate", DbType.String, objPurchaseReturn.sReturnDate);
                 db.AddInParameter(cmd, "@FK_SupplierID", DbType.Int32, objPurchaseReturn.Supplier.SupplierID);
-                db.AddInParameter(cmd, "@FK_TaxID", DbType.Int32, objPurchaseReturn.Tax.TaxID);
                 db.AddInParameter(cmd, "@FK_PurchaseID", DbType.Int32, objPurchaseReturn.Purchase.PurchaseID);
-                db.AddInParameter(cmd, "@TaxPercent", DbType.Decimal, objPurchaseReturn.TaxPercent);
-                db.AddInParameter(cmd, "@CGSTAmount", DbType.Decimal, objPurchaseReturn.CGSTAmount);
-                db.AddInParameter(cmd, "@SGSTAmount", DbType.Decimal, objPurchaseReturn.SGSTAmount);
-                db.AddInParameter(cmd, "@IGSTAmount", DbType.Decimal, objPurchaseReturn.IGSTAmount);
-                db.AddInParameter(cmd, "@TaxAmount", DbType.Decimal, objPurchaseReturn.TaxAmount);
                 db.AddInParameter(cmd, "@TotalAmount", DbType.Decimal, objPurchaseReturn.TotalAmount);
-                db.AddInParameter(cmd, "@DiscountPercent", DbType.Decimal, objPurchaseReturn.DiscountPercent);
-                db.AddInParameter(cmd, "@DiscountAmount", DbType.Decimal, objPurchaseReturn.DiscountAmount);
                 db.AddInParameter(cmd, "@Roundoff", DbType.Decimal, objPurchaseReturn.Roundoff);
                 db.AddInParameter(cmd, "@NetAmount", DbType.Decimal, objPurchaseReturn.NetAmount);
                 db.AddInParameter(cmd, "@FK_ModifiedBy", DbType.Int32, objPurchaseReturn.ModifiedBy.UserID);
-                db.AddInParameter(cmd, "@ImagePath1", DbType.String, objPurchaseReturn.ImagePath1);
-                db.AddInParameter(cmd, "@ImagePath2", DbType.String, objPurchaseReturn.ImagePath2);
-                db.AddInParameter(cmd, "@ImagePath3", DbType.String, objPurchaseReturn.ImagePath3);
                 db.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, objPurchaseReturn.Company.CompanyID);
                 db.AddInParameter(cmd, "@Notes", DbType.String, objPurchaseReturn.Notes);
                 foreach (Entity.Billing.PurchaseReturnTrans ObjPurchaseReturnTrans in objPurchaseReturn.PurchaseReturnTrans)
                     ObjPurchaseReturnTrans.PurchaseReturnID = objPurchaseReturn.PurchaseReturnID;
-
                 iID = db.ExecuteNonQuery(cmd);
                 if (iID != 0) bResult = true;
 
@@ -373,35 +301,17 @@ namespace VHMS.DataAccess.Billing
 
                         objPurchaseReturnTrans.PurchaseReturnTransID = Convert.ToInt32(drData["PK_PurchaseReturnTransID"]);
                         objPurchaseReturnTrans.PurchaseReturnID = Convert.ToInt32(drData["FK_PurchaseReturnID"]);
-
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objTax.TaxPercentage = Convert.ToDecimal(drData["TaxPercent"]);
-                        objTax.SGSTPercent = Convert.ToDecimal(drData["SGSTPercent"]);
-                        objTax.IGSTPercent = Convert.ToDecimal(drData["IGSTPercent"]);
-                        objTax.CGSTPercent = Convert.ToDecimal(drData["CGSTPercent"]);
-                        objPurchaseReturnTrans.Tax = objTax;
-
-                        objPurchaseReturnTrans.SGSTAmount = Convert.ToDecimal(drData["SGSTAmount"]);
-                        objPurchaseReturnTrans.IGSTAmount = Convert.ToDecimal(drData["IGSTAmount"]);
-                        objPurchaseReturnTrans.CGSTAmount = Convert.ToDecimal(drData["CGSTAmount"]);
-                        objPurchaseReturnTrans.TaxAmount = Convert.ToDecimal(drData["TaxAmount"]);
-
                         objPurchaseReturnTrans.Quantity = Convert.ToDecimal(drData["Quantity"]);
                         objPurchaseReturnTrans.Rate = Convert.ToInt32(drData["Rate"]);
                         objPurchaseReturnTrans.SubTotal = Convert.ToDecimal(drData["SubTotal"]);
-                        objPurchaseReturnTrans.DiscountAmount = Convert.ToDecimal(drData["DiscountAmount"]);
-                        objPurchaseReturnTrans.DiscountPercentage = Convert.ToDecimal(drData["DiscountPercentage"]);
                         objPurchaseReturnTrans.Barcode = Convert.ToString(drData["Barcode"]);
                         objPurchaseReturnTrans.Notes = Convert.ToString(drData["Notes"]);
                         objPurchaseReturnTrans.PurchaseTransID = Convert.ToInt32(drData["FK_PurchaseTransID"]);
                         objPurchaseReturnTrans.BatchNo = Convert.ToString(drData["BatchNo"]);
-
                         objProduct.ProductCode = Convert.ToString(drData["ProductCode"]);
                         objProduct.ProductName = Convert.ToString(drData["ProductName"]);
-                        
                         objProduct.ProductID = Convert.ToInt32(drData["FK_ProductID"]);
                         objPurchaseReturnTrans.Product = objProduct;
-
                         objList.Add(objPurchaseReturnTrans);
                     }
                 }
@@ -440,21 +350,11 @@ namespace VHMS.DataAccess.Billing
                         objTax = new Entity.Billing.Tax();
                         objPurchaseReturnTrans.PurchaseReturnTransID = Convert.ToInt32(drData["PK_PurchaseReturnTransID"]);
                         objPurchaseReturnTrans.PurchaseReturnID = Convert.ToInt32(drData["FK_PurchaseReturnID"]);
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objTax.TaxPercentage = Convert.ToDecimal(drData["TaxPercent"]);
-                        objTax.SGSTPercent = Convert.ToDecimal(drData["SGSTPercent"]);
-                        objTax.IGSTPercent = Convert.ToDecimal(drData["IGSTPercent"]);
-                        objTax.CGSTPercent = Convert.ToDecimal(drData["CGSTPercent"]);
-                        objPurchaseReturnTrans.Tax = objTax;
-                        objPurchaseReturnTrans.SGSTAmount = Convert.ToDecimal(drData["SGSTAmount"]);
-                        objPurchaseReturnTrans.IGSTAmount = Convert.ToDecimal(drData["IGSTAmount"]);
-                        objPurchaseReturnTrans.CGSTAmount = Convert.ToDecimal(drData["CGSTAmount"]);
-                        objPurchaseReturnTrans.TaxAmount = Convert.ToDecimal(drData["TaxAmount"]);
+                      
                         objPurchaseReturnTrans.Quantity = Convert.ToDecimal(drData["Quantity"]);
                         objPurchaseReturnTrans.Rate = Convert.ToInt32(drData["Rate"]);
                         objPurchaseReturnTrans.SubTotal = Convert.ToDecimal(drData["SubTotal"]);
-                        objPurchaseReturnTrans.DiscountAmount = Convert.ToDecimal(drData["DiscountAmount"]);
-                        objPurchaseReturnTrans.DiscountPercentage = Convert.ToDecimal(drData["DiscountPercentage"]);
+                       
                         objPurchaseReturnTrans.Barcode = Convert.ToString(drData["Barcode"]);
                         objPurchaseReturnTrans.Notes = Convert.ToString(drData["Notes"]);
                         objProduct.ProductCode = Convert.ToString(drData["ProductCode"]);
@@ -504,20 +404,10 @@ namespace VHMS.DataAccess.Billing
                 db.AddInParameter(cmd, "@FK_ProductID", DbType.String, objPurchaseReturnTrans.Product.ProductID);
                 db.AddInParameter(cmd, "@Quantity", DbType.Decimal, objPurchaseReturnTrans.Quantity);
                 db.AddInParameter(cmd, "@Rate", DbType.Decimal, objPurchaseReturnTrans.Rate);
-                db.AddInParameter(cmd, "@DiscountPercentage", DbType.Decimal, objPurchaseReturnTrans.DiscountPercentage);
-                db.AddInParameter(cmd, "@DiscountAmount", DbType.Decimal, objPurchaseReturnTrans.DiscountAmount);
                 db.AddInParameter(cmd, "@SubTotal", DbType.Decimal, objPurchaseReturnTrans.SubTotal);
                 db.AddInParameter(cmd, "@Barcode", DbType.String, objPurchaseReturnTrans.Barcode);
-                db.AddInParameter(cmd, "@FK_TaxID", DbType.Int32, objPurchaseReturnTrans.Tax.TaxID);
                 db.AddInParameter(cmd, "@Notes", DbType.String, objPurchaseReturnTrans.Notes);
-                db.AddInParameter(cmd, "@TaxPercent", DbType.Decimal, objPurchaseReturnTrans.Tax.TaxPercentage);
-                db.AddInParameter(cmd, "@IGSTPercent", DbType.Decimal, objPurchaseReturnTrans.Tax.IGSTPercent);
-                db.AddInParameter(cmd, "@SGSTPercent", DbType.Decimal, objPurchaseReturnTrans.Tax.SGSTPercent);
-                db.AddInParameter(cmd, "@CGSTPercent", DbType.Decimal, objPurchaseReturnTrans.Tax.CGSTPercent);
-                db.AddInParameter(cmd, "@CGSTAmount", DbType.Decimal, objPurchaseReturnTrans.CGSTAmount);
-                db.AddInParameter(cmd, "@SGSTAmount", DbType.Decimal, objPurchaseReturnTrans.SGSTAmount);
-                db.AddInParameter(cmd, "@IGSTAmount", DbType.Decimal, objPurchaseReturnTrans.IGSTAmount);
-                db.AddInParameter(cmd, "@TaxAmount", DbType.Decimal, objPurchaseReturnTrans.TaxAmount);
+
                 db.AddInParameter(cmd, "@FK_PurchaseTransID", DbType.Int32, objPurchaseReturnTrans.PurchaseTransID);
                 db.AddInParameter(cmd, "@BatchNo", DbType.String, objPurchaseReturnTrans.BatchNo);
 
@@ -547,20 +437,12 @@ namespace VHMS.DataAccess.Billing
                 db.AddInParameter(cmd, "@FK_ProductID", DbType.String, objPurchaseReturnTrans.Product.ProductID);
                 db.AddInParameter(cmd, "@Quantity", DbType.Decimal, objPurchaseReturnTrans.Quantity);
                 db.AddInParameter(cmd, "@Rate", DbType.Decimal, objPurchaseReturnTrans.Rate);
-                db.AddInParameter(cmd, "@DiscountPercentage", DbType.Decimal, objPurchaseReturnTrans.DiscountPercentage);
-                db.AddInParameter(cmd, "@DiscountAmount", DbType.Decimal, objPurchaseReturnTrans.DiscountAmount);
+
                 db.AddInParameter(cmd, "@SubTotal", DbType.Decimal, objPurchaseReturnTrans.SubTotal);
                 db.AddInParameter(cmd, "@Barcode", DbType.String, objPurchaseReturnTrans.Barcode);
-                db.AddInParameter(cmd, "@FK_TaxID", DbType.Int32, objPurchaseReturnTrans.Tax.TaxID);
+
                 db.AddInParameter(cmd, "@Notes", DbType.String, objPurchaseReturnTrans.Notes);
-                db.AddInParameter(cmd, "@TaxPercent", DbType.Decimal, objPurchaseReturnTrans.Tax.TaxPercentage);
-                db.AddInParameter(cmd, "@IGSTPercent", DbType.Decimal, objPurchaseReturnTrans.Tax.IGSTPercent);
-                db.AddInParameter(cmd, "@SGSTPercent", DbType.Decimal, objPurchaseReturnTrans.Tax.SGSTPercent);
-                db.AddInParameter(cmd, "@CGSTPercent", DbType.Decimal, objPurchaseReturnTrans.Tax.CGSTPercent);
-                db.AddInParameter(cmd, "@CGSTAmount", DbType.Decimal, objPurchaseReturnTrans.CGSTAmount);
-                db.AddInParameter(cmd, "@SGSTAmount", DbType.Decimal, objPurchaseReturnTrans.SGSTAmount);
-                db.AddInParameter(cmd, "@IGSTAmount", DbType.Decimal, objPurchaseReturnTrans.IGSTAmount);
-                db.AddInParameter(cmd, "@TaxAmount", DbType.Decimal, objPurchaseReturnTrans.TaxAmount);
+             
                 db.AddInParameter(cmd, "@FK_PurchaseTransID", DbType.Int32, objPurchaseReturnTrans.PurchaseTransID);
                 db.AddInParameter(cmd, "@BatchNo", DbType.String, objPurchaseReturnTrans.BatchNo);
 

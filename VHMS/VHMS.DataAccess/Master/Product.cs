@@ -45,24 +45,82 @@ namespace VHMS.DataAccess.Master
                         objTax = new Entity.Billing.Tax();
                         objProduct.ProductID = Convert.ToInt32(drData["PK_ProductID"]);
                         objProduct.ProductName = Convert.ToString(drData["ProductName"]);
-                        objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
                         objProduct.ProductCode = Convert.ToString(drData["ProductCode"]);
+                        objProduct.ExpiryType = Convert.ToString(drData["ExpiryType"]);
+                        objProduct.ExpiryDate = Convert.ToDateTime(drData["ExpiryDate"]);
+                        objProduct.sExpiryDate = objProduct.ExpiryDate.ToString("dd/MM/yyyy");
                         objCategory.CategoryID = Convert.ToInt32(drData["FK_CategoryID"]);
                         objCategory.CategoryName = Convert.ToString(drData["CategoryName"]);
                         objProduct.Category = objCategory;
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objTax.TaxName = Convert.ToString(drData["TaxName"]);
-                        objTax.TaxPercentage = Convert.ToDecimal(drData["TaxPercentage"]);
-                        objProduct.Tax = objTax;
                         objUnit.UnitID = Convert.ToInt32(drData["FK_UnitID"]);
                         objUnit.UnitName = Convert.ToString(drData["UnitName"]);
                         objProduct.Unit = objUnit;
                         objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
                         objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
                         objProduct.Supplier = objSupplier;
-                        objProduct.ProductImage1 = Convert.ToString(drData["ProductImage1"]);
-                        objProduct.ProductImage2 = Convert.ToString(drData["ProductImage2"]);
-                        objProduct.ProductImage3 = Convert.ToString(drData["ProductImage3"]);
+                        objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
+                        objProduct.CreatedOn = Convert.ToDateTime(drData["CreatedOn"]);
+                        objProduct.sCreatedOn = objProduct.CreatedOn.ToString("dd/MM/yyyy");
+                        objProduct.Quantity = Convert.ToDecimal(drData["Quantity"]);
+                        objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
+                        objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
+
+                        objList.Add(objProduct);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                sException = "VHMS.DataAccess.Master.Product GetProduct | " + ex.ToString();
+                Log.Write(sException);
+                throw;
+            }
+            return objList;
+        }
+
+        public static Collection<Entity.Master.Product> GetAllProduct(int iProductID, int iCategoryID, int iSupplierID, int CompanyID)
+        {
+            string sException = string.Empty;
+            Database db;
+            DataSet dsList = null;
+            Collection<Entity.Master.Product> objList = new Collection<Entity.Master.Product>();
+            Entity.Master.Product objProduct = new Entity.Master.Product();
+            Entity.Billing.Category objCategory; Entity.Billing.Supplier objSupplier;
+            Entity.Billing.Tax objTax;
+            Entity.Billing.Unit objUnit;
+
+            try
+            {
+                db = Entity.DBConnection.dbCon;
+                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_GETALLPRODUCT);
+                db.AddInParameter(cmd, "@PK_ProductID", DbType.Int32, iProductID);
+                db.AddInParameter(cmd, "@FK_CategoryID", DbType.Int32, iCategoryID);
+                db.AddInParameter(cmd, "@FK_SupplierID", DbType.Int32, iSupplierID);
+                db.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, CompanyID);
+                dsList = db.ExecuteDataSet(cmd);
+
+                if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow drData in dsList.Tables[0].Rows)
+                    {
+                        objCategory = new Entity.Billing.Category();
+                        objProduct = new Entity.Master.Product();
+                        objSupplier = new Entity.Billing.Supplier();
+                        objUnit = new Entity.Billing.Unit();
+                        objTax = new Entity.Billing.Tax();
+
+                        objProduct.ProductID = Convert.ToInt32(drData["PK_ProductID"]);
+                        objProduct.ProductName = Convert.ToString(drData["ProductName"]);
+                        objProduct.ProductCode = Convert.ToString(drData["ProductCode"]);
+                        objCategory.CategoryID = Convert.ToInt32(drData["FK_CategoryID"]);
+                        objCategory.CategoryName = Convert.ToString(drData["CategoryName"]);
+                        objProduct.Category = objCategory;
+                        objUnit.UnitID = Convert.ToInt32(drData["FK_UnitID"]);
+                        objUnit.UnitName = Convert.ToString(drData["UnitName"]);
+                        objProduct.Unit = objUnit;
+                        objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
+                        objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
+                        objProduct.Supplier = objSupplier;
                         objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
                         objProduct.CreatedOn = Convert.ToDateTime(drData["CreatedOn"]);
                         objProduct.sCreatedOn = objProduct.CreatedOn.ToString("dd/MM/yyyy");
@@ -78,55 +136,6 @@ namespace VHMS.DataAccess.Master
             }
             return objList;
         }
-
-        public static Collection<Entity.Master.Product> GetReorderStock(int CompanyID)
-        {
-            string sException = string.Empty;
-            Database db;
-            DataSet dsList = null;
-            Collection<Entity.Master.Product> objList = new Collection<Entity.Master.Product>();
-            Entity.Master.Product objProduct = new Entity.Master.Product();
-            Entity.Billing.Category objCategory; Entity.Billing.Supplier objSupplier;
-            Entity.Billing.Tax objTax;
-            Entity.Billing.Unit objUnit; 
-            
-            try
-            {
-                db = Entity.DBConnection.dbCon;
-                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.RPT_SELECT_REORDERPRODUCT);
-                db.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, CompanyID);
-                dsList = db.ExecuteDataSet(cmd);
-                if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
-                {
-                    foreach (DataRow drData in dsList.Tables[0].Rows)
-                    {
-                        objCategory = new Entity.Billing.Category();
-                        objSupplier = new Entity.Billing.Supplier();
-                        objUnit = new Entity.Billing.Unit();
-                        objProduct = new Entity.Master.Product();                      
-                        objTax = new Entity.Billing.Tax();
-                        objProduct.ProductID = Convert.ToInt32(drData["PK_ProductID"]);
-                        objProduct.ProductName = Convert.ToString(drData["ProductName"]);
-                        objCategory.CategoryID = Convert.ToInt32(drData["FK_CategoryID"]);
-                        objCategory.CategoryName = Convert.ToString(drData["CategoryName"]);
-                        objProduct.Category = objCategory;
-                        objProduct.AvailableQty = Convert.ToInt32(drData["AvailableQty"]);
-                        objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
-                        objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
-                        objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
-                        objList.Add(objProduct);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                sException = "VHMS.DataAccess.Master.Product GetProduct | " + ex.ToString();
-                Log.Write(sException);
-                throw;
-            }
-            return objList;
-        }
-
         public static Collection<Entity.Master.Product> GetProductList(int CompanyID)
         {
             string sException = string.Empty;
@@ -154,9 +163,6 @@ namespace VHMS.DataAccess.Master
                         objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
                         objProduct.Supplier = objSupplier;
                         objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
-                        //objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
-                        //objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
-                        objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
                         objList.Add(objProduct);
                     }
                 }
@@ -169,7 +175,6 @@ namespace VHMS.DataAccess.Master
             }
             return objList;
         }
-
         public static Collection<Entity.Master.Product> GetTopProduct(int CompanyID)
         {
             string sException = string.Empty;
@@ -197,20 +202,24 @@ namespace VHMS.DataAccess.Master
                         objUnit = new Entity.Billing.Unit();
                         objProduct = new Entity.Master.Product();
                         objTax = new Entity.Billing.Tax();
-                        
-
                         objProduct.ProductID = Convert.ToInt32(drData["PK_ProductID"]);
                         objProduct.ProductName = Convert.ToString(drData["ProductName"]);
                         objCategory.CategoryID = Convert.ToInt32(drData["FK_CategoryID"]);
                         objCategory.CategoryName = Convert.ToString(drData["CategoryName"]);
                         objProduct.Category = objCategory;
+                        objProduct.ExpiryType = Convert.ToString(drData["ExpiryType"]);
+                        objProduct.ExpiryDate = Convert.ToDateTime(drData["ExpiryDate"]);
+                        objProduct.sExpiryDate = objProduct.ExpiryDate.ToString("dd/MM/yyyy");
                         objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
                         objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
                         objProduct.Supplier = objSupplier;
-                        objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
                         objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
                         objProduct.CreatedOn = Convert.ToDateTime(drData["CreatedOn"]);
                         objProduct.sCreatedOn = objProduct.CreatedOn.ToString("dd/MM/yyyy");
+                        objProduct.Quantity = Convert.ToDecimal(drData["Quantity"]);
+                        objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
+                        objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
+
                         objList.Add(objProduct);
                     }
                 }
@@ -223,7 +232,6 @@ namespace VHMS.DataAccess.Master
             }
             return objList;
         }
-
         public static Collection<Entity.Master.Product> SearchProduct(string ID, int CompanyID)
         {
             string sException = string.Empty;
@@ -259,10 +267,9 @@ namespace VHMS.DataAccess.Master
                         objCategory.CategoryID = Convert.ToInt32(drData["FK_CategoryID"]);
                         objCategory.CategoryName = Convert.ToString(drData["CategoryName"]);
                         objProduct.Category = objCategory;
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objTax.TaxName = Convert.ToString(drData["TaxName"]);
-                        objTax.TaxPercentage = Convert.ToDecimal(drData["TaxPercentage"]);
-                        objProduct.Tax = objTax;
+                        objProduct.ExpiryType = Convert.ToString(drData["ExpiryType"]);
+                        objProduct.ExpiryDate = Convert.ToDateTime(drData["ExpiryDate"]);
+                        objProduct.sExpiryDate = objProduct.ExpiryDate.ToString("dd/MM/yyyy");
                         objUnit.UnitID = Convert.ToInt32(drData["FK_UnitID"]);
                         objUnit.UnitName = Convert.ToString(drData["UnitName"]);
                         objProduct.Unit = objUnit;
@@ -273,7 +280,9 @@ namespace VHMS.DataAccess.Master
                         objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
                         objProduct.CreatedOn = Convert.ToDateTime(drData["CreatedOn"]);
                         objProduct.sCreatedOn = objProduct.CreatedOn.ToString("dd/MM/yyyy");
-                        objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
+                        objProduct.Quantity = Convert.ToDecimal(drData["Quantity"]);
+                        objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
+                        objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
                         objList.Add(objProduct);
                     }
                 }
@@ -285,179 +294,6 @@ namespace VHMS.DataAccess.Master
                 throw;
             }
             return objList;
-        }
-
-        public static List<string> GetProductList(string prefix)
-        {
-            List<string> Products = new List<string>();
-            string sException = string.Empty;
-            Database db;
-            DataSet dsList = null;
-            Collection<Entity.Master.Product> objList = new Collection<Entity.Master.Product>();
-            Entity.Master.Product objProduct = new Entity.Master.Product();
-            try
-            {
-                db = Entity.DBConnection.dbCon;
-                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_PRODUCTBYCODE);
-                db.AddInParameter(cmd, "@ProductCode", DbType.String, prefix);
-                db.AddInParameter(cmd, "@SMSOnly", DbType.Boolean, true);
-                dsList = db.ExecuteDataSet(cmd);
-
-                if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
-                {
-                    foreach (DataRow drData in dsList.Tables[0].Rows)
-                    {
-                        Products.Add(string.Format("{0,-15} | {1,-15} | {2,-500}", drData["SMSCode"], drData["ProductCode"], drData["ProductName"]));
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                sException = "VHMS.DataAccess.Master.Product GetProduct | " + ex.ToString();
-                Log.Write(sException);
-                throw;
-            }
-            return Products;
-        }
-
-        public static List<string> GetBarcodeList(string prefix)
-        {
-            List<string> Products = new List<string>();
-            string sException = string.Empty;
-            Database db;
-            DataSet dsList = null;
-            Collection<Entity.Master.Product> objList = new Collection<Entity.Master.Product>();
-            Entity.Master.Product objProduct = new Entity.Master.Product();
-            try
-            {
-                db = Entity.DBConnection.dbCon;
-                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_BARCODELIST);
-                db.AddInParameter(cmd, "@Barcode", DbType.String, prefix);
-                dsList = db.ExecuteDataSet(cmd);
-
-                if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
-                {
-                    foreach (DataRow drData in dsList.Tables[0].Rows)
-                    {
-                        Products.Add(string.Format("{0,-200}", drData["Barcode"]));
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                sException = "VHMS.DataAccess.Master.Product GetProduct | " + ex.ToString();
-                Log.Write(sException);
-                throw;
-            }
-            return Products;
-        }
-
-        public static List<string> GetProductCodeList(string prefix, int SupplierID)
-        {
-            List<string> Products = new List<string>();
-            string sException = string.Empty;
-            Database db;
-            DataSet dsList = null;
-            Collection<Entity.Master.Product> objList = new Collection<Entity.Master.Product>();
-            Entity.Master.Product objProduct = new Entity.Master.Product();
-            try
-            {
-                db = Entity.DBConnection.dbCon;
-                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_PRODUCTBYCODE);
-                db.AddInParameter(cmd, "@FK_SupplierID", DbType.Int32, SupplierID);
-                db.AddInParameter(cmd, "@ProductCode", DbType.String, prefix);
-                db.AddInParameter(cmd, "@SMSOnly", DbType.Boolean, false);
-                dsList = db.ExecuteDataSet(cmd);
-
-                if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
-                {
-                    foreach (DataRow drData in dsList.Tables[0].Rows)
-                    {
-                        string ItemName = drData["ProductName"].ToString();
-                        if (Convert.ToBoolean(drData["PricingA"]) == true)
-                            ItemName = ItemName + "( A ";
-                        if (Convert.ToBoolean(drData["PricingB"]) == true)
-                            ItemName = ItemName + ", B ";
-                        if (Convert.ToBoolean(drData["PricingC"]) == true)
-                            ItemName = ItemName + ", C ";
-                        if (Convert.ToBoolean(drData["PricingA"]) == true || Convert.ToBoolean(drData["PricingB"]) == true || Convert.ToBoolean(drData["PricingC"]) == true)
-                            ItemName = ItemName + " )";
-                        Products.Add(string.Format("{0,-15} | {1,-15} | {2,-500}", drData["SMSCode"], drData["ProductCode"], ItemName));
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                sException = "VHMS.DataAccess.Master.Product GetProduct | " + ex.ToString();
-                Log.Write(sException);
-                throw;
-            }
-            return Products;
-        }
-
-        public static List<string> GetProductSMSCodeList(string prefix, int SupplierID)
-        {
-            List<string> Products = new List<string>();
-            string sException = string.Empty;
-            Database db;
-            DataSet dsList = null;
-            Collection<Entity.Master.Product> objList = new Collection<Entity.Master.Product>();
-            Entity.Master.Product objProduct = new Entity.Master.Product();
-            try
-            {
-                db = Entity.DBConnection.dbCon;
-                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_PRODUCTBYSMSCODE);
-                db.AddInParameter(cmd, "@FK_SupplierID", DbType.Int32, SupplierID);
-                db.AddInParameter(cmd, "@ProductCode", DbType.String, prefix);
-                db.AddInParameter(cmd, "@SMSOnly", DbType.Boolean, false);
-                dsList = db.ExecuteDataSet(cmd);
-
-                if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
-                {
-                    foreach (DataRow drData in dsList.Tables[0].Rows)
-                    {
-                        Products.Add(string.Format("{0,-15} | {1,-15} | {2,-500}", drData["SMSCode"], drData["ProductCode"], drData["ProductName"]));
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                sException = "VHMS.DataAccess.Master.Product GetProduct | " + ex.ToString();
-                Log.Write(sException);
-                throw;
-            }
-            return Products;
-        }
-        public static List<string> GetProductNameList(string prefix)
-        {
-            List<string> Products = new List<string>();
-            string sException = string.Empty;
-            Database db;
-            DataSet dsList = null;
-            Collection<Entity.Master.Product> objList = new Collection<Entity.Master.Product>();
-            Entity.Master.Product objProduct = new Entity.Master.Product();
-            try
-            {
-                db = Entity.DBConnection.dbCon;
-                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_PRODUCTBYNAME);
-                db.AddInParameter(cmd, "@ProductCode", DbType.String, prefix);
-                dsList = db.ExecuteDataSet(cmd);
-
-                if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
-                {
-                    foreach (DataRow drData in dsList.Tables[0].Rows)
-                    {
-                        Products.Add(string.Format("{0,-500} | {1,-15} | {2,-200} | {3,-15}", drData["ProductName"], drData["SMSCode"], drData["SupplierName"], drData["ProductCode"]));
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                sException = "VHMS.DataAccess.Master.Product GetProduct | " + ex.ToString();
-                Log.Write(sException);
-                throw;
-            }
-            return Products;
         }
         public static Entity.Master.Product GetProductByID(int iProductID, int CompanyID)
         {
@@ -486,36 +322,25 @@ namespace VHMS.DataAccess.Master
                         objSupplier = new Entity.Billing.Supplier();
                         objUnit = new Entity.Billing.Unit();
                         objTax = new Entity.Billing.Tax();
-                        
-
                         objProduct.ProductID = Convert.ToInt32(drData["PK_ProductID"]);
                         objProduct.ProductName = Convert.ToString(drData["ProductName"]);
                         objCategory.CategoryID = Convert.ToInt32(drData["FK_CategoryID"]);
                         objCategory.CategoryName = Convert.ToString(drData["CategoryName"]);
                         objProduct.Category = objCategory;
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objTax.TaxName = Convert.ToString(drData["TaxName"]);
-                        objTax.TaxPercentage = Convert.ToDecimal(drData["TaxPercentage"]);
-                        objProduct.Tax = objTax;
-
                         objUnit.UnitID = Convert.ToInt32(drData["FK_UnitID"]);
                         objUnit.UnitName = Convert.ToString(drData["UnitName"]);
                         objProduct.Unit = objUnit;
-
                         objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
                         objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
                         objProduct.Supplier = objSupplier;
-
-                        objProduct.ProductImage1 = Convert.ToString(drData["ProductImage1"]);
-                        objProduct.ProductImage2 = Convert.ToString(drData["ProductImage2"]);
-                        objProduct.ProductImage3 = Convert.ToString(drData["ProductImage3"]);
-                        
+                        objProduct.ExpiryType = Convert.ToString(drData["ExpiryType"]);
+                        objProduct.ExpiryDate = Convert.ToDateTime(drData["ExpiryDate"]);
+                        objProduct.sExpiryDate = objProduct.ExpiryDate.ToString("dd/MM/yyyy");
                         objProduct.ProductCode = Convert.ToString(drData["ProductCode"]);
                         objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
                         objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
                         objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
-                     //   objProduct.Quantity = Convert.ToDecimal(drData["Quantity"]);
-                        objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
+                        objProduct.Quantity = Convert.ToDecimal(drData["Quantity"]);
                         objProduct.PerviousRate = Convert.ToDecimal(drData["PerviousRate"]);
 
                     }
@@ -529,387 +354,6 @@ namespace VHMS.DataAccess.Master
             }
             return objProduct;
         }
-
-        public static Collection<Entity.Master.Product> GetProductSupplierList(int SupplierID, int CompanyID)
-        {
-            string sException = string.Empty;
-            Database db;
-            DataSet dsList = null;
-            Collection<Entity.Master.Product> objList = new Collection<Entity.Master.Product>();
-            Entity.Master.Product objProduct = new Entity.Master.Product();
-            Entity.Billing.Category objCategory; Entity.Billing.Supplier objSupplier;
-            Entity.Billing.Tax objTax;
-            Entity.Billing.Unit objUnit;
-            try
-            {
-                db = Entity.DBConnection.dbCon;
-                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_PRODUCTSUPPLIERLIST);
-                db.AddInParameter(cmd, "@FK_SupplierID", DbType.Int32, SupplierID);
-                db.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, CompanyID);
-                dsList = db.ExecuteDataSet(cmd);
-
-                if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
-                {
-                    foreach (DataRow drData in dsList.Tables[0].Rows)
-                    {
-
-                        objCategory = new Entity.Billing.Category();
-                        objSupplier = new Entity.Billing.Supplier();
-                        objUnit = new Entity.Billing.Unit();
-                        objProduct = new Entity.Master.Product();
-                        objTax = new Entity.Billing.Tax();
-                        objProduct.ProductID = Convert.ToInt32(drData["PK_ProductID"]);
-                        objProduct.ProductName = Convert.ToString(drData["ProductName"]);
-                        objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
-                        objProduct.ProductCode = Convert.ToString(drData["ProductCode"]);
-                        objCategory.CategoryID = Convert.ToInt32(drData["FK_CategoryID"]);
-                        objCategory.CategoryName = Convert.ToString(drData["CategoryName"]);
-                        objProduct.Category = objCategory;
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objTax.TaxName = Convert.ToString(drData["TaxName"]);
-                        objTax.TaxPercentage = Convert.ToDecimal(drData["TaxPercentage"]);
-                        objProduct.Tax = objTax;
-                        objUnit.UnitID = Convert.ToInt32(drData["FK_UnitID"]);
-                        objUnit.UnitName = Convert.ToString(drData["UnitName"]);
-                        objProduct.Unit = objUnit;
-                        objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
-                        objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
-                        objProduct.Supplier = objSupplier;
-                        objProduct.ProductImage1 = Convert.ToString(drData["ProductImage1"]);
-                        objProduct.ProductImage2 = Convert.ToString(drData["ProductImage2"]);
-                        objProduct.ProductImage3 = Convert.ToString(drData["ProductImage3"]);
-                        objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
-                        objProduct.CreatedOn = Convert.ToDateTime(drData["CreatedOn"]);
-                        objProduct.sCreatedOn = objProduct.CreatedOn.ToString("dd/MM/yyyy");
-                        objList.Add(objProduct);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                sException = "VHMS.DataAccess.Master.Product GetProduct | " + ex.ToString();
-                Log.Write(sException);
-                throw;
-            }
-            return objList;
-        }
-      
-        public static Collection<Entity.Master.Product> GetAllProduct(int iProductID, int iCategoryID, int iSupplierID, int CompanyID)
-        {
-            string sException = string.Empty;
-            Database db;
-            DataSet dsList = null;
-            Collection<Entity.Master.Product> objList = new Collection<Entity.Master.Product>();
-            Entity.Master.Product objProduct = new Entity.Master.Product();
-            Entity.Billing.Category objCategory; Entity.Billing.Supplier objSupplier;
-            Entity.Billing.Tax objTax;
-            Entity.Billing.Unit objUnit; 
-             
-            try
-            {
-                db = Entity.DBConnection.dbCon;
-                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_GETALLPRODUCT);
-                db.AddInParameter(cmd, "@PK_ProductID", DbType.Int32, iProductID);
-                db.AddInParameter(cmd, "@FK_CategoryID", DbType.Int32, iCategoryID);
-                db.AddInParameter(cmd, "@FK_SupplierID", DbType.Int32, iSupplierID);
-                db.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, CompanyID);
-                dsList = db.ExecuteDataSet(cmd);
-
-                if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
-                {
-                    foreach (DataRow drData in dsList.Tables[0].Rows)
-                    {
-                        objCategory = new Entity.Billing.Category();
-                        objProduct = new Entity.Master.Product();
-                        objSupplier = new Entity.Billing.Supplier();
-                        objUnit = new Entity.Billing.Unit();
-                        objTax = new Entity.Billing.Tax();
-
-                        objProduct.ProductID = Convert.ToInt32(drData["PK_ProductID"]);
-                        objProduct.ProductName = Convert.ToString(drData["ProductName"]);
-                        objProduct.ProductCode = Convert.ToString(drData["ProductCode"]);
-                        objCategory.CategoryID = Convert.ToInt32(drData["FK_CategoryID"]);
-                        objCategory.CategoryName = Convert.ToString(drData["CategoryName"]);
-                        objProduct.Category = objCategory;
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objTax.TaxName = Convert.ToString(drData["TaxName"]);
-                        objProduct.Tax = objTax;
-                        objUnit.UnitID = Convert.ToInt32(drData["FK_UnitID"]);
-                        objUnit.UnitName = Convert.ToString(drData["UnitName"]);
-                        objProduct.Unit = objUnit;
-                        objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
-                        objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
-                        objProduct.Supplier = objSupplier;
-                        objProduct.ProductImage1 = Convert.ToString(drData["ProductImage1"]);
-                        objProduct.ProductImage2 = Convert.ToString(drData["ProductImage2"]);
-                        objProduct.ProductImage3 = Convert.ToString(drData["ProductImage3"]);
-                        objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
-                        objProduct.CreatedOn = Convert.ToDateTime(drData["CreatedOn"]);
-                        objProduct.sCreatedOn = objProduct.CreatedOn.ToString("dd/MM/yyyy");
-                        //objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
-                        //objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
-                        objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
-                        objList.Add(objProduct);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                sException = "VHMS.DataAccess.Master.Product GetProduct | " + ex.ToString();
-                Log.Write(sException);
-                throw;
-            }
-            return objList;
-        }
-        public static Collection<Entity.Master.Product> GetProductID(int iProductID, int iCategoryID,int iSupplierID, int CompanyID)
-        {
-            string sException = string.Empty;
-            Database db;
-            DataSet dsList = null;
-            Collection<Entity.Master.Product> objList = new Collection<Entity.Master.Product>();
-            Entity.Master.Product objProduct = new Entity.Master.Product(); Entity.Billing.Supplier objSupplier;
-            try
-            {
-                db = Entity.DBConnection.dbCon;
-                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_PRODUCT);
-                db.AddInParameter(cmd, "@PK_ProductID", DbType.Int32, iProductID);
-                db.AddInParameter(cmd, "@FK_CategoryID", DbType.Int32, iCategoryID);
-                db.AddInParameter(cmd, "@FK_SupplierID", DbType.Int32, iSupplierID);
-                db.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, CompanyID);
-                dsList = db.ExecuteDataSet(cmd);
-
-                if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
-                {
-                    foreach (DataRow drData in dsList.Tables[0].Rows)
-                    {
-                        objProduct = new Entity.Master.Product();
-                        objSupplier = new Entity.Billing.Supplier();
-
-                        objProduct.ProductID = Convert.ToInt32(drData["PK_ProductID"]);
-                        objProduct.ProductName = Convert.ToString(drData["ProductName"]);
-                      
-                        objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
-                        objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
-                        objProduct.Supplier = objSupplier;
-                        objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
-                        objList.Add(objProduct);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                sException = "VHMS.DataAccess.Master.Product GetProduct | " + ex.ToString();
-                Log.Write(sException);
-                throw;
-            }
-            return objList;
-        }
-
-        public static Collection<Entity.Master.Product> GetActiveProductID(int iProductID, int iCategoryID, int iSubCategoryID, int iSupplierID, int CompanyID)
-        {
-            string sException = string.Empty;
-            Database db;
-            DataSet dsList = null;
-            Collection<Entity.Master.Product> objList = new Collection<Entity.Master.Product>();
-            Entity.Master.Product objProduct = new Entity.Master.Product();
-            Entity.Billing.Category objCategory; Entity.Billing.Supplier objSupplier; Entity.Billing.Tax objTax;
-            Entity.Billing.Unit objUnit;   
-            try
-            {
-                db = Entity.DBConnection.dbCon;
-                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_PRODUCT);
-                db.AddInParameter(cmd, "@PK_ProductID", DbType.Int32, iProductID);
-                db.AddInParameter(cmd, "@FK_CategoryID", DbType.Int32, iCategoryID);
-                db.AddInParameter(cmd, "@FK_SupplierID", DbType.Int32, iSupplierID);
-                db.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, CompanyID);
-                dsList = db.ExecuteDataSet(cmd);
-
-                if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
-                {
-                    foreach (DataRow drData in dsList.Tables[0].Rows)
-                    {
-                        if (Convert.ToBoolean(drData["IsActive"]))
-                        {
-                            objCategory = new Entity.Billing.Category();
-                            objProduct = new Entity.Master.Product();
-                            objSupplier = new Entity.Billing.Supplier();
-                            objUnit = new Entity.Billing.Unit();
-                            objTax = new Entity.Billing.Tax();
-                            
-
-                            objProduct.ProductID = Convert.ToInt32(drData["PK_ProductID"]);
-                            objProduct.ProductName = Convert.ToString(drData["ProductName"]);
-                           
-                            objCategory.CategoryID = Convert.ToInt32(drData["FK_CategoryID"]);
-                            objCategory.CategoryName = Convert.ToString(drData["CategoryName"]);
-                            objProduct.Category = objCategory;
-
-                            objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                            objTax.TaxName = Convert.ToString(drData["TaxName"]);
-                            objTax.TaxPercentage = Convert.ToDecimal(drData["TaxPercentage"]);
-                            objProduct.Tax = objTax;
-
-                            objUnit.UnitID = Convert.ToInt32(drData["FK_UnitID"]);
-                            objUnit.UnitName = Convert.ToString(drData["UnitName"]);
-                            objProduct.Unit = objUnit;
-
-                            objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
-                            objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
-                            objProduct.Supplier = objSupplier;
-
-                            objProduct.ProductImage1 = Convert.ToString(drData["ProductImage1"]);
-                            objProduct.ProductImage2 = Convert.ToString(drData["ProductImage2"]);
-                            objProduct.ProductImage3 = Convert.ToString(drData["ProductImage3"]);
-                            objProduct.ProductCode = Convert.ToString(drData["ProductCode"]);
-                            objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
-                            objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
-                            objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
-                            objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
-                            objList.Add(objProduct);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                sException = "VHMS.DataAccess.Master.Product GetProduct | " + ex.ToString();
-                Log.Write(sException);
-                throw;
-            }
-            return objList;
-        }
-
-        public static Collection<Entity.Master.Product> GetProductByCode(string iProductCode, Boolean SMSOnly)
-        {
-            string sException = string.Empty;
-            Database db;
-            DataSet dsList = null;
-            Collection<Entity.Master.Product> objList = new Collection<Entity.Master.Product>();
-            Entity.Master.Product objProduct = new Entity.Master.Product();
-            Entity.Billing.Category objCategory; Entity.Billing.Supplier objSupplier; Entity.Billing.Tax objTax;
-            Entity.Billing.Unit objUnit;   
-            try
-            {
-                db = Entity.DBConnection.dbCon;
-                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_PRODUCTBYCODE);
-                db.AddInParameter(cmd, "@ProductCode", DbType.String, iProductCode);
-                db.AddInParameter(cmd, "@SMSOnly", DbType.Boolean, SMSOnly);
-                dsList = db.ExecuteDataSet(cmd);
-
-                if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
-                {
-                    foreach (DataRow drData in dsList.Tables[0].Rows)
-                    {
-                        objCategory = new Entity.Billing.Category();
-                        objProduct = new Entity.Master.Product();
-                        objSupplier = new Entity.Billing.Supplier();
-                        objUnit = new Entity.Billing.Unit();
-                        objTax = new Entity.Billing.Tax();
-                        objProduct.ProductID = Convert.ToInt32(drData["PK_ProductID"]);
-                        objProduct.ProductName = Convert.ToString(drData["ProductName"]);
-                        objCategory.CategoryID = Convert.ToInt32(drData["FK_CategoryID"]);
-                        objCategory.CategoryName = Convert.ToString(drData["CategoryName"]);
-                        objProduct.Category = objCategory;
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objTax.TaxName = Convert.ToString(drData["TaxName"]);
-                        objTax.TaxPercentage = Convert.ToDecimal(drData["TaxPercentage"]);
-                        objProduct.Tax = objTax;
-                        objUnit.UnitID = Convert.ToInt32(drData["FK_UnitID"]);
-                        objUnit.UnitName = Convert.ToString(drData["UnitName"]);
-                        objProduct.Unit = objUnit;
-                        objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
-                        objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
-                        objProduct.Supplier = objSupplier;
-                        objProduct.ProductImage1 = Convert.ToString(drData["ProductImage1"]);
-                        objProduct.ProductImage2 = Convert.ToString(drData["ProductImage2"]);
-                        objProduct.ProductImage3 = Convert.ToString(drData["ProductImage3"]);
-                        objProduct.ProductCode = Convert.ToString(drData["ProductCode"]);
-                        objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
-                        objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
-                        objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
-                        objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
-                        objList.Add(objProduct);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                sException = "VHMS.DataAccess.Master.Product GetProduct | " + ex.ToString();
-                Log.Write(sException);
-                throw;
-            }
-            return objList;
-        }
-
-        public static Collection<Entity.Master.Product> GetProductByBarcode(string iProductCode, Boolean SMSOnly)
-        {
-            string sException = string.Empty;
-            Database db;
-            DataSet dsList = null;
-            Collection<Entity.Master.Product> objList = new Collection<Entity.Master.Product>();
-            Entity.Master.Product objProduct = new Entity.Master.Product(); Entity.Billing.Tax objTax;
-            Entity.Billing.Category objCategory; Entity.Billing.Supplier objSupplier;
-            Entity.Billing.Unit objUnit;  
-            
-            try
-            {
-                db = Entity.DBConnection.dbCon;
-                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_PRODUCTBYBARCODE);
-                db.AddInParameter(cmd, "@ProductCode", DbType.String, iProductCode);
-                db.AddInParameter(cmd, "@SMSOnly", DbType.Boolean, SMSOnly);
-                dsList = db.ExecuteDataSet(cmd);
-
-                if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
-                {
-                    foreach (DataRow drData in dsList.Tables[0].Rows)
-                    {
-                        objCategory = new Entity.Billing.Category();
-                        objProduct = new Entity.Master.Product();
-                        objSupplier = new Entity.Billing.Supplier();
-                        objUnit = new Entity.Billing.Unit();
-                        objTax = new Entity.Billing.Tax();
-
-                        objProduct.ProductID = Convert.ToInt32(drData["PK_ProductID"]);
-                        objProduct.ProductName = Convert.ToString(drData["ProductName"]);
-                        objCategory.CategoryID = Convert.ToInt32(drData["FK_CategoryID"]);
-                        objCategory.CategoryName = Convert.ToString(drData["CategoryName"]);
-                        objProduct.Category = objCategory;
-
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objTax.TaxName = Convert.ToString(drData["TaxName"]);
-                        objTax.TaxPercentage = Convert.ToDecimal(drData["TaxPercentage"]);
-                        objProduct.Tax = objTax;
-
-                        objUnit.UnitID = Convert.ToInt32(drData["FK_UnitID"]);
-                        objUnit.UnitName = Convert.ToString(drData["UnitName"]);
-                        objProduct.Unit = objUnit;
-
-                        objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
-                        objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
-                        objProduct.Supplier = objSupplier;
-
-                        objProduct.ProductImage1 = Convert.ToString(drData["ProductImage1"]);
-                        objProduct.ProductImage2 = Convert.ToString(drData["ProductImage2"]);
-                        objProduct.ProductImage3 = Convert.ToString(drData["ProductImage3"]);
-                        objProduct.ProductCode = Convert.ToString(drData["ProductCode"]);
-                        objProduct.IsActive = Convert.ToBoolean(drData["IsActive"]);
-                        objProduct.PurchaseRate = Convert.ToDecimal(drData["PurchaseRate"]);
-                        objProduct.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
-                        objProduct.SalesPercent = Convert.ToDecimal(drData["SalesPercent"]);
-                        
-                        objList.Add(objProduct);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                sException = "VHMS.DataAccess.Master.Product GetProduct | " + ex.ToString();
-                Log.Write(sException);
-                throw;
-            }
-            return objList;
-        }
-
         public static int AddProduct(Entity.Master.Product objProduct)
         {
             int ID = 0;
@@ -946,18 +390,15 @@ namespace VHMS.DataAccess.Master
                 DbCommand cmd = oDb.GetStoredProcCommand(constants.StoredProcedures.USP_INSERT_PRODUCT);
                 oDb.AddOutParameter(cmd, "@PK_ProductID", DbType.Int32, objProduct.ProductID);
                 oDb.AddInParameter(cmd, "@ProductName", DbType.String, objProduct.ProductName);
+                oDb.AddInParameter(cmd, "@ExpiryType", DbType.String, objProduct.ExpiryType);
+                oDb.AddInParameter(cmd, "@ExpiryDate", DbType.String, objProduct.sExpiryDate);
                 oDb.AddInParameter(cmd, "@FK_CategoryID", DbType.Int32, objProduct.Category.CategoryID);
                 oDb.AddInParameter(cmd, "@FK_UnitID", DbType.Int32, objProduct.Unit.UnitID);
                 oDb.AddInParameter(cmd, "@FK_SupplierID", DbType.Int32, objProduct.Supplier.SupplierID);
-                oDb.AddInParameter(cmd, "@FK_TaxID", DbType.Int32, objProduct.Tax.TaxID);
                 oDb.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, objProduct.Company.CompanyID);
                 oDb.AddInParameter(cmd, "@SellingRate", DbType.Decimal, objProduct.SellingRate);
                 oDb.AddInParameter(cmd, "@PurchaseRate", DbType.Decimal, objProduct.PurchaseRate);
-                //oDb.AddInParameter(cmd, "@Quantity", DbType.Decimal, objProduct.Quantity);
-                oDb.AddInParameter(cmd, "@SalesPercent", DbType.String, objProduct.SalesPercent);
-                oDb.AddInParameter(cmd, "@ProductImage1", DbType.String, objProduct.ProductImage1);
-                oDb.AddInParameter(cmd, "@ProductImage2", DbType.String, objProduct.ProductImage2);
-                oDb.AddInParameter(cmd, "@ProductImage3", DbType.String, objProduct.ProductImage3);
+                oDb.AddInParameter(cmd, "@Quantity", DbType.Decimal, objProduct.Quantity);
                 oDb.AddInParameter(cmd, "@ProductCode", DbType.String, objProduct.ProductCode);
                 oDb.AddInParameter(cmd, "@IsActive", DbType.Boolean, objProduct.IsActive);
                 oDb.AddInParameter(cmd, "@FK_CreatedBy", DbType.Int32, objProduct.CreatedBy.UserID);
@@ -976,7 +417,6 @@ namespace VHMS.DataAccess.Master
             }
             return iID;
         }
-
         public static bool UpdateProduct(Entity.Master.Product objProduct)
         {
             bool IsUpdated = true;
@@ -1013,18 +453,15 @@ namespace VHMS.DataAccess.Master
                 DbCommand cmd = oDb.GetStoredProcCommand(constants.StoredProcedures.USP_UPDATE_PRODUCT);
                 oDb.AddInParameter(cmd, "@PK_ProductID", DbType.Int32, objProduct.ProductID);
                 oDb.AddInParameter(cmd, "@ProductName", DbType.String, objProduct.ProductName);
+                oDb.AddInParameter(cmd, "@ExpiryType", DbType.String, objProduct.ExpiryType);
+                oDb.AddInParameter(cmd, "@ExpiryDate", DbType.String, objProduct.sExpiryDate);
                 oDb.AddInParameter(cmd, "@FK_CategoryID", DbType.Int32, objProduct.Category.CategoryID);
                 oDb.AddInParameter(cmd, "@FK_UnitID", DbType.Int32, objProduct.Unit.UnitID);
                 oDb.AddInParameter(cmd, "@FK_SupplierID", DbType.Int32, objProduct.Supplier.SupplierID);
-                oDb.AddInParameter(cmd, "@FK_TaxID", DbType.Int32, objProduct.Tax.TaxID);
                 oDb.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, objProduct.Company.CompanyID);
                 oDb.AddInParameter(cmd, "@SellingRate", DbType.Decimal, objProduct.SellingRate);
                 oDb.AddInParameter(cmd, "@PurchaseRate", DbType.Decimal, objProduct.PurchaseRate);
-                //oDb.AddInParameter(cmd, "@Quantity", DbType.Decimal, objProduct.Quantity);
-                oDb.AddInParameter(cmd, "@SalesPercent", DbType.String, objProduct.SalesPercent);
-                oDb.AddInParameter(cmd, "@ProductImage1", DbType.String, objProduct.ProductImage1);
-                oDb.AddInParameter(cmd, "@ProductImage2", DbType.String, objProduct.ProductImage2);
-                oDb.AddInParameter(cmd, "@ProductImage3", DbType.String, objProduct.ProductImage3);
+                oDb.AddInParameter(cmd, "@Quantity", DbType.Decimal, objProduct.Quantity);
                 oDb.AddInParameter(cmd, "@ProductCode", DbType.String, objProduct.ProductCode);
                 oDb.AddInParameter(cmd, "@IsActive", DbType.Boolean, objProduct.IsActive);
                 oDb.AddInParameter(cmd, "@FK_ModifiedBy", DbType.Int32, objProduct.ModifiedBy.UserID);

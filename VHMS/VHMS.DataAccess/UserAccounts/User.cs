@@ -71,7 +71,7 @@ namespace VHMS.DataAccess
             }
             return dsList;
         }
-        public static Entity.User GetUserLogin(string sUserName, string sPassword,int CompanyID, string sIPAddress, string clientIp)
+        public static Entity.User GetUserLogin(string sUserName, string sPassword,string sIPAddress, string clientIp)
         {
             string sException = string.Empty;
             Database db;
@@ -83,7 +83,6 @@ namespace VHMS.DataAccess
                 db = Entity.DBConnection.dbCon;
                 DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_USERLOGIN);
                 db.AddInParameter(cmd, "@username", DbType.String, sUserName);
-                db.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, CompanyID);
                 db.AddInParameter(cmd, "@password", DbType.String, CommonMethods.Security.Encrypt(sPassword, true));
                 DataSet dsList = db.ExecuteDataSet(cmd);
                 if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
@@ -99,15 +98,6 @@ namespace VHMS.DataAccess
                         ObjUser.RoleID = Convert.ToInt32(drrow["FK_RoleID"]);
                         ObjUser.RoleName = drrow["RoleName"].ToString();
                         ObjUser.EmployeeName = Convert.ToString(drrow["EmployeeName"]).ToString();
-                        ObjSettings.SendSMS = Convert.ToBoolean(drrow["SendSMS"]);
-                        ObjSettings.SMSUsername = Convert.ToString(drrow["SMSUsername"]);
-                        ObjSettings.SMSPassword = Convert.ToString(drrow["SMSPassword"]);
-                        ObjSettings.SenderName = Convert.ToString(drrow["SenderName"]);
-                        ObjSettings.APILink = Convert.ToString(drrow["APILink"]);
-                        ObjUser.Settings = ObjSettings;
-                        ObjCompany.CompanyID = Convert.ToInt32(drrow["FK_CompanyID"]);
-                        ObjCompany.CompanyName = Convert.ToString(drrow["CompanyName"]);
-                        ObjUser.Company = ObjCompany;
                     }
                     int i = AddLog(sIPAddress, ObjUser.UserID, clientIp);
                 }

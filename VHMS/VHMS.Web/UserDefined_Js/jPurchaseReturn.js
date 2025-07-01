@@ -244,7 +244,6 @@ $("#txtCode").blur(function () {
 $("#ddlProductName").change(function () {
     if ($("#ddlProductName").val() > 0) {
         GetRate();
-        //GetProductTax();
     }
 });
 
@@ -623,7 +622,7 @@ function GetRate() {
     dProgress(true);
     $.ajax({
         type: "POST",
-        url: "WebServices/VHMSService.svc/GetPurchasTranseByID",
+        url: "WebServices/VHMSService.svc/GetPurchaseTransByID",
         data: JSON.stringify({ ID: $("#ddlProductName").val() }),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -636,11 +635,7 @@ function GetRate() {
                         var obj = jQuery.parseJSON(objResponse.Value);
                         if (obj != null) {
                             $("#txtRate").val(obj.Rate);
-                            $("#txtDisPer").val(obj.DiscountPercentage);
                             $("#hdnProductID").val(obj.Product.ProductID);
-                            $("#txtBatchNo").val(obj.BatchNo);
-                            $("#txtSMSCode").val(obj.Product.SMSCode);
-                            $("#ddlTax").val(obj.Tax.TaxID).change();
                         }
                         dProgress(false);
                     }
@@ -1005,18 +1000,12 @@ $("#btnAddMagazine,#btnUpdateMagazine").click(function () {
         $("#divQuantity").addClass('has-error'); $("#txtQuantity").focus(); return false;
     } else { $("#divQuantity").removeClass('has-error'); }
 
-    if ($("#ddlTax").val() == "0" || $("#ddlTax").val() == undefined || $("#ddlTax").val() == null) {
-        $.jGrowl("Please select Tax", { sticky: false, theme: 'warning', life: jGrowlLife });
-        $("#divTaxTrans").addClass('has-error'); $("#ddlTax").focus(); return false;
-    }
-    else { $("#divTaxTrans").removeClass('has-error'); }
-
     if ($("#txtRate").val() == "" || $("#txtRate").val() == undefined || $("#txtRate").val() == null) {
         $.jGrowl("Please enter Quantity", { sticky: false, theme: 'warning', life: jGrowlLife });
         $("#divRate").addClass('has-error'); $("#txtRate").focus(); return false;
     } else { $("#divRate").removeClass('has-error'); }
 
-    var iStockCount = 0; var StockValue = 0; var StockQty = 0;  var previousQty = 0;
+    var iStockCount = 0; var StockValue = 0; var StockQty = 0; var previousQty = 0;
     for (var i = 0; i < gOPBillingList.length; i++) {
         if (gOPBillingList[i].PurchaseTransID == $("#ddlProductName").val())
             iStockCount = iStockCount + 1;
@@ -1037,7 +1026,7 @@ $("#btnAddMagazine,#btnUpdateMagazine").click(function () {
     $.ajax({
         type: "POST",
         url: "WebServices/VHMSService.svc/GetStockProductByID",
-        data: JSON.stringify({ ID: $("#hdnProductID").val()}),
+        data: JSON.stringify({ ID: $("#hdnProductID").val() }),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         async: false,
@@ -1105,26 +1094,10 @@ $("#btnAddMagazine,#btnUpdateMagazine").click(function () {
     var oProduct = new Object();
     oProduct.ProductID = $("#hdnProductID").val();
     oProduct.ProductName = $("#ddlProductName option:selected").text();
-    oProduct.SMSCode = $("#txtSMSCode").val().toUpperCase();
     ObjData.Product = oProduct;
-    var oTaxTrans = new Object();
-    oTaxTrans.TaxID = $("#ddlTax").val();
-    oTaxTrans.TaxPercentage = $("#hdnTransTaxPercent").val().trim();
-    oTaxTrans.CGSTPercent = $("#hdnTransCGSTPercent").val().trim();
-    oTaxTrans.SGSTPercent = $("#hdnTransSGSTPercent").val().trim();
-    oTaxTrans.IGSTPercent = $("#hdnTransIGSTPercent").val().trim();
-    ObjData.Tax = oTaxTrans;
-    $("#ddlTaxName").val($("#ddlTax").val());
-    ObjData.SGSTAmount = $("#hdnTransSGSTAmount").val();
-    ObjData.CGSTAmount = $("#hdnTransCGSTAmount").val();
-    ObjData.IGSTAmount = $("#hdnTransIGSTAmount").val();
-    ObjData.TaxAmount = parseFloat($("#txtTaxAmt").val());
-    ObjData.BatchNo = 0;
     ObjData.PurchaseTransID = $("#ddlProductName").val();
     ObjData.Quantity = parseFloat($("#txtQuantity").val());
     ObjData.Rate = parseFloat($("#txtRate").val());
-    ObjData.DiscountPercentage = parseFloat($("#txtDisPer").val());
-    ObjData.DiscountAmount = parseFloat($("#txtDisAmt").val());
     ObjData.SubTotal = parseFloat($("#txtSubTotal").val());
     ObjData.Barcode = $("#txtBarcode").val();
     ObjData.Notes = $("#txtNotes").val();
@@ -1136,30 +1109,9 @@ $("#btnAddMagazine,#btnUpdateMagazine").click(function () {
         ObjData.StatusFlag = "I";
         for (var i = 0; i < gOPBillingList.length; i++) {
             if (gOPBillingList[i].StatusFlag != "D") {
-                if ((gOPBillingList[i].Product.ProductID == $("#hdnProductID").val()) && (gOPBillingList[i].Rate == parseFloat($("#txtRate").val())) && (gOPBillingList[i].Tax.TaxID == $("#ddlTax").val()) && (gOPBillingList[i].BatchNo == $("#txtBatchNo").val()) && (gOPBillingList[i].DiscountPercentage == parseFloat($("#txtDisPer").val()))) {
+                if ((gOPBillingList[i].Product.ProductID == $("#hdnProductID").val()) && (gOPBillingList[i].Rate == parseFloat($("#txtRate").val()))) {
                     gOPBillingList[i].Quantity = gOPBillingList[i].Quantity + parseFloat($("#txtQuantity").val());
-                    var iDisPercent = parseFloat(gOPBillingList[i].Quantity) * parseFloat(gOPBillingList[i].Rate) * parseFloat(gOPBillingList[i].DiscountPercentage) / 100;
-                    gOPBillingList[i].DiscountAmount = parseFloat(iDisPercent);
                     gOPBillingList[i].SubTotal = gOPBillingList[i].SubTotal + parseFloat($("#txtSubTotal").val());
-                    if ($("#hdnStateCode").val() == 33) {
-                        gOPBillingList[i].Tax.CGSTPercent = parseFloat($("#hdnTransCGSTPercent").val());
-                        gOPBillingList[i].Tax.SGSTPercent = parseFloat($("#hdnTransSGSTPercent").val());
-                        gOPBillingList[i].Tax.IGSTPercent = 0;
-                        gOPBillingList[i].CGSTAmount = (parseFloat(gOPBillingList[i].SubTotal) * parseFloat(gOPBillingList[i].Tax.CGSTPercent) / 100).toFixed(2);
-                        gOPBillingList[i].SGSTAmount = (parseFloat(gOPBillingList[i].SubTotal) * parseFloat(gOPBillingList[i].Tax.SGSTPercent) / 100).toFixed(2);
-                        gOPBillingList[i].IGSTAmount = 0;
-                    }
-                    else {
-
-                        gOPBillingList[i].Tax.CGSTPercent = 0;
-                        gOPBillingList[i].Tax.SGSTPercent = 0;
-                        gOPBillingList[i].Tax.IGSTPercent = parseFloat($("#hdnTransIGSTPercent").val());
-                        gOPBillingList[i].CGSTAmount = 0;
-                        gOPBillingList[i].SGSTAmount = 0;
-                        gOPBillingList[i].IGSTAmount = (parseFloat(gOPBillingList[i].SubTotal) * parseFloat(gOPBillingList[i].Tax.IGSTPercent) / 100).toFixed(2);
-                    }
-                    gOPBillingList[i].TaxAmount = (parseFloat(gOPBillingList[i].CGSTAmount) + parseFloat(gOPBillingList[i].SGSTAmount) + parseFloat(gOPBillingList[i].IGSTAmount)).toFixed(2);
-
                     Count = 1;
                 }
             }
@@ -1551,7 +1503,7 @@ function GetRecord() {
                                 table += "<td>" + obj[index].Supplier.SupplierName + "</td>";
                                 table += "<td>" + obj[index].Purchase.BillNo + "</td>";
                                 table += "<td>" + obj[index].TotalAmount + "</td>";
-                              /*  table += "<td>" + obj[index].TaxAmount + "</td>";*/
+                                /*  table += "<td>" + obj[index].TaxAmount + "</td>";*/
                                 table += "<td>" + obj[index].NetAmount + "</td>";
                                 table += "<td>" + obj[index].TotalQty + "</td>";
                                 if (ActionView == "1") { table += "<td style='text-align:center;'><a href='#' id=" + obj[index].PurchaseReturnID + " class='View' title='Click here to View'><i class='fa fa-lg fa-clone text-yellow'/></a></td>"; }
@@ -1682,7 +1634,7 @@ function GetSearchRecord(iDetails) {
                                 table += "<td>" + obj[index].Supplier.SupplierName + "</td>";
                                 table += "<td>" + obj[index].Purchase.BillNo + "</td>";
                                 table += "<td>" + obj[index].TotalAmount + "</td>";
-                             /*   table += "<td>" + obj[index].TaxAmount + "</td>";*/
+                                /*   table += "<td>" + obj[index].TaxAmount + "</td>";*/
                                 table += "<td>" + obj[index].NetAmount + "</td>";
                                 table += "<td>" + obj[index].TotalQty + "</td>";
                                 if (ActionView == "1") { table += "<td style='text-align:center;'><a href='#' id=" + obj[index].PurchaseReturnID + " class='View' title='Click here to View'><i class='fa fa-lg fa-clone text-yellow'/></a></td>"; }
@@ -1763,7 +1715,7 @@ function GetSearchRecord(iDetails) {
                             { "sWidth": "8%" },
                             { "sWidth": "8%" },
                             { "sWidth": "8%" },
-                         /*   { "sWidth": "8%" },*/
+                            /*   { "sWidth": "8%" },*/
                             { "sWidth": "5%" },
                             { "sWidth": "5%" },
                             { "sWidth": "5%" },
@@ -1909,41 +1861,20 @@ function GetTaxByID(id) {
 }
 
 function CalculateAmount() {
-    var iOPBillingAmount = 0, iBillingQty = 0, iBillingCGST = 0, iBillingSGST = 0, iBillingIGST = 0, iBillingDiscount = 0, iBillingTaxAmt = 0, iGross = 0;
+    var iOPBillingAmount = 0, iBillingQty = 0;
     for (var i = 0; i < gOPBillingList.length; i++) {
         if (gOPBillingList[i].StatusFlag != "D") {
             iOPBillingAmount = iOPBillingAmount + parseFloat(gOPBillingList[i].SubTotal);
-            iBillingTaxAmt = iBillingTaxAmt + parseFloat(gOPBillingList[i].TaxAmount);
-            iBillingCGST = iBillingCGST + parseFloat(gOPBillingList[i].CGSTAmount);
-            iBillingSGST = iBillingSGST + parseFloat(gOPBillingList[i].SGSTAmount);
-            iBillingIGST = iBillingIGST + parseFloat(gOPBillingList[i].IGSTAmount);
-            iBillingDiscount = iBillingDiscount + parseFloat(gOPBillingList[i].DiscountAmount);
             iBillingQty = iBillingQty + parseFloat(gOPBillingList[i].Quantity);
-            iGross = iGross + parseFloat(gOPBillingList[i].Quantity * gOPBillingList[i].Rate);
         }
     }
-    $("#txtGrossAmount").val(parseFloat(iGross).toFixed(2));
-    $("#txtTotalAmount").val(parseFloat(iOPBillingAmount).toFixed(2));
-
-    $("#txtTaxAmount").val(parseFloat(iBillingTaxAmt).toFixed(2));
-    $("#txtCGST").val(parseFloat(iBillingCGST).toFixed(2));
-    $("#txtSGST").val(parseFloat(iBillingSGST).toFixed(2));
-    $("#txtIGST").val(parseFloat(iBillingIGST).toFixed(2));
-    $("#txtDiscountAmount").val(parseFloat(iBillingDiscount).toFixed(2));
-
-    //var iround = parseFloat($("#txtRoundoff").val());
-    //if (isNaN(iround)) iround = 0;
-
-    var iTCS_Amt = parseFloat($("#txtTCSAmount").val());
-    if (isNaN(iTCS_Amt)) iTCS_Amt = 0;
-
-    var Total_Amount = (parseFloat(iOPBillingAmount) + parseFloat($("#txtTaxAmount").val()) + parseFloat(iTCS_Amt)).toFixed(2);
+    var Total_Amount = (parseFloat(iOPBillingAmount)).toFixed(2);
     var NetAmount = Math.round(Total_Amount);
     var iround = (parseFloat(NetAmount) - parseFloat(Total_Amount)).toFixed(2);
     if (isNaN(iround)) iround = 0;
     $("#txtRoundoff").val(parseFloat(iround));
 
-    $("#txtNetAmount").val((parseFloat(iOPBillingAmount) + parseFloat($("#txtTaxAmount").val()) + parseFloat(iround) + parseFloat(iTCS_Amt)).toFixed(2));
+    $("#txtNetAmount").val((parseFloat(iOPBillingAmount) + parseFloat(iround)).toFixed(2));
     $("#txtTotalQty").val(parseFloat(iBillingQty));
 }
 

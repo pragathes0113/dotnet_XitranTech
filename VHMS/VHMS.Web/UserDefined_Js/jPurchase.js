@@ -18,13 +18,12 @@ $(function () {
     $("#divTab").show();
     $("#divOPBilling").hide();
 
-    GetTaxList("ddlTax");
     GetPassword();
     GetSupplierList("ddlSupplierName");
     GetProductList("ddlProductName");
     $("#btnPurchaseBarcode").hide();
-    $("#ddlVerifiedBy").val("1011").change();
-    $("#ddlConfirmedBy").val("1011").change();
+    $("#ddlVerifiedBy").val("1").change();
+    $("#ddlConfirmedBy").val("1").change();
     GetTaxList("ddlTaxName");
     $("input[name=SupplierProduct]:checked").val("S");
     $("#txtBillDate").attr("data-link-format", "dd/MM/yyyy");
@@ -120,210 +119,7 @@ function GetSupplierName(ddlname) {
     return false;
 }
 
-function GetSalesProductDetails(id, smscode, value, SID, SalesID) {
-    dProgress(true);
-    $.ajax({
-        type: "POST",
-        url: "WebServices/VHMSService.svc/GetPurchaseNewProductDetails",
-        data: JSON.stringify({ ID: id, code: smscode, type: value, SupplierID: SID, SalesEntryID: SalesID }),
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        async: false,
-        success: function (data) {
-            if (data.d != "") {
-                var objResponse = jQuery.parseJSON(data.d);
-                if (objResponse.Status == "Success") {
-                    if (objResponse.Value != null && objResponse.Value != "NoRecord" && objResponse.Value != "Error") {
-                        var obj = jQuery.parseJSON(objResponse.Value);
-                        if (obj != null) {
-                            var sTable = "";
-                            var sCount = 1;
-                            var sColorCode = "bg-info";
 
-                            if (obj.length >= 5) { $("#divDetailsList").css({ 'height': '0px', 'min-height': '200px', 'overflow': 'auto' }); }
-                            else { $("#divDetailsList").css({ 'height': '', 'min-height': '' }); }
-
-                            if (obj.length > 0) {
-                                sTable = "<table id='tblDetailsList' class='table no-margin table-condensed table-hover'>";
-                                sTable += "<thead><tr><th style='line-height:0.5;' class='" + sColorCode + "' style='width:3px;text-align: center'>S.No</th>";
-                                sTable += "<th style='line-height:0.5;' class='" + sColorCode + "'>Supplier</th>";
-                                sTable += "<th style='line-height:0.5;' class='" + sColorCode + "'>Rate</th>";
-                                sTable += "<th style='line-height:0.5;' class='" + sColorCode + "'>Date</th>";
-                                sTable += "<th style='line-height:0.5;' class='" + sColorCode + "'>Bill No</th>";
-                                sTable += "<th style='line-height:0.5;' class='" + sColorCode + "'>Quantity</th>";
-                                sTable += "<th style='line-height:0.5;' class='" + sColorCode + "'>Disc. Amt</th>";
-                                sTable += "<th style='line-height:0.5;' class='" + sColorCode + "'>Subtotal</th>";
-                                sTable += "</tr></thead><tbody id='tblDetailsList_body'>";
-                                sTable += "</tbody></table>";
-                                $("#divDetailsList").html(sTable);
-                                for (var i = 0; i < obj.length; i++) {
-                                    sTable = "<tr><td style='line-height:0.5;' id='" + obj[i].PurchaseTransID + "'>" + sCount + "</td>";
-                                    sTable += "<td style='line-height:0.5;'>" + obj[i].SupplierName + "</td>";
-                                    sTable += "<td style='line-height:0.5;'>" + obj[i].Rate + "</td>";
-                                    sTable += "<td style='line-height:0.5;'>" + obj[i].sBillDate + "</td>";
-                                    sTable += "<td style='line-height:0.5;'>" + obj[i].BillNo + "</td>";
-                                    sTable += "<td style='line-height:0.5;'>" + obj[i].Quantity + "</td>";
-                                    sTable += "<td style='line-height:0.5;'>" + obj[i].DiscountAmount + "</td>";
-                                    sTable += "<td style='line-height:0.5;'>" + obj[i].SubTotal + "</td>";
-                                    sTable += "</tr>";
-                                    sCount = sCount + 1;
-                                    $("#tblDetailsList_body").append(sTable);
-                                    // if ($('#hdnIsAllProduct').val() == 1)
-                                    // $(".modal-title").html("&nbsp;&nbsp; All Customers - " + obj[i].Product.ProductName + " | " + obj[i].Product.SMSCode + " | " + obj[i].Product.ProductCode);
-                                    // else
-                                    if ($('#hdnIsAllProduct').val() == 0) {
-                                        $(".modal-title").html("&nbsp;&nbsp; This Supplier - " + obj[i].Product.ProductName + " | " + obj[i].Product.SMSCode + " | " + obj[i].Product.ProductCode);
-                                        $("#Allcomposedetails").modal('hide');
-                                        $('#composedetails').modal({ show: true, backdrop: true });
-
-                                    }
-                                }
-                                RecordAvailable = obj.length;
-
-                            }
-                            else { $("#divDetailsList").empty(); }
-
-                            return false;
-                        }
-                        dProgress(false);
-                    }
-                    else if (objResponse.Value == "NoRecord") {
-
-                        RecordAvailable = 0;
-                        dProgress(false);
-                    }
-                    else if (objResponse.Value == "Error") {
-                        $.jGrowl("Error", { sticky: false, theme: 'warning', life: jGrowlLife });
-                    }
-                }
-                else if (objResponse.Status == "Error") {
-                    if (objResponse.Value == "0") {
-                        window.location("frmLogin.aspx");
-                    }
-                    else if (objResponse.Value == "Error") {
-                        window.location = "frmErrorPage.aspx";
-                    }
-                    else if (objResponse.Value == "NoRecord") {
-                        $.jGrowl("No Record", { sticky: false, theme: 'warning', life: jGrowlLife });
-                    }
-                }
-            }
-            else {
-                $.jGrowl("Error  Occured", { sticky: true, theme: 'danger', life: jGrowlLife });
-                dProgress(false);
-            }
-        },
-        error: function (e) {
-            $.jGrowl("Error  Occured", { sticky: true, theme: 'danger', life: jGrowlLife });
-            dProgress(false);
-        }
-    });
-    dProgress(false);
-    return false;
-
-}
-
-function GetAllProductDetails(id, smscode, value, SID, SalesID) {
-    //dProgress(true);
-    //$.ajax({
-    //    type: "POST",
-    //    url: "WebServices/VHMSService.svc/GetPurchaseNewProductDetails",
-    //    data: JSON.stringify({ ID: id, code: smscode, type: value, SupplierID: SID, SalesEntryID: SalesID }),
-    //    contentType: "application/json; charset=utf-8",
-    //    dataType: "json",
-    //    async: false,
-    //    success: function (data) {
-    //        if (data.d != "") {
-
-    //            var objResponse = jQuery.parseJSON(data.d);
-    //            if (objResponse.Status == "Success") {
-    //                if (objResponse.Value != null && objResponse.Value != "NoRecord" && objResponse.Value != "Error") {
-    //                    var obj = jQuery.parseJSON(objResponse.Value);
-    //                    if (obj != null) {
-    //                        var sTable = "";
-    //                        var sCount = 1;
-    //                        var sColorCode = "bg-info";
-
-    //                        if (obj.length >= 5) { $("#divAllDetailsList").css({ 'height': '0px', 'min-height': '200px', 'overflow': 'auto' }); }
-    //                        else { $("#divAllDetailsList").css({ 'height': '', 'min-height': '' }); }
-
-    //                        if (obj.length > 0) {
-    //                            sTable = "<table id='tblAllDetailsList' class='table no-margin table-condensed table-hover'>";
-    //                            sTable += "<thead><tr><th style='line-height:0.5;' class='" + sColorCode + "' style='width:3px;text-align: center'>S.No</th>";
-    //                            sTable += "<th style='line-height:0.5;' class='" + sColorCode + "'>Supplier</th>";
-    //                            sTable += "<th style='line-height:0.5;' class='" + sColorCode + "'>Rate</th>";
-    //                            sTable += "<th style='line-height:0.5;' class='" + sColorCode + "'>Date</th>";
-    //                            sTable += "<th style='line-height:0.5;' class='" + sColorCode + "'>Bill No</th>";
-    //                            sTable += "<th style='line-height:0.5;' class='" + sColorCode + "'>Quantity</th>";
-    //                            sTable += "<th style='line-height:0.5;' class='" + sColorCode + "'>Disc. Amt</th>";
-    //                            sTable += "<th style='line-height:0.5;' class='" + sColorCode + "'>Subtotal</th>";
-    //                            sTable += "</tr></thead><tbody id='tblAllDetailsList_body'>";
-    //                            sTable += "</tbody></table>";
-    //                            $("#divAllDetailsList").html(sTable);
-    //                            for (var i = 0; i < obj.length; i++) {
-    //                                sTable = "<tr><td style='line-height:0.5;' id='" + obj[i].PurchaseTransID + "'>" + sCount + "</td>";
-    //                                sTable += "<td style='line-height:0.5;'>" + obj[i].SupplierName + "</td>";
-    //                                sTable += "<td style='line-height:0.5;'>" + obj[i].Rate + "</td>";
-    //                                sTable += "<td style='line-height:0.5;'>" + obj[i].sBillDate + "</td>";
-    //                                sTable += "<td style='line-height:0.5;'>" + obj[i].BillNo + "</td>";
-    //                                sTable += "<td style='line-height:0.5;'>" + obj[i].Quantity + "</td>";
-    //                                sTable += "<td style='line-height:0.5;'>" + obj[i].DiscountAmount + "</td>";
-    //                                sTable += "<td style='line-height:0.5;'>" + obj[i].SubTotal + "</td>";
-    //                                sTable += "</tr>";
-    //                                sCount = sCount + 1;
-    //                                $("#tblAllDetailsList_body").append(sTable);
-    //                                if ($('#hdnIsAllProduct').val() == 1) {
-    //                                    $(".Allmodal-title").html("&nbsp;&nbsp; All supplier - " + obj[i].Product.ProductName + " | " + obj[i].Product.SMSCode + " | " + obj[i].Product.ProductCode);
-    //                                    // else
-    //                                    //    $(".modal-title").html("&nbsp;&nbsp; This Customers - " + obj[i].Product.ProductName + " | " + obj[i].Product.SMSCode + " | " + obj[i].Product.ProductCode);
-    //                                    $("#composedetails").modal('hide');
-    //                                    $("#Allcomposedetails").modal({ show: true, backdrop: true });
-    //                                }
-    //                            }
-    //                            RecordAvailable = obj.length;
-
-    //                        }
-    //                        else { $("#divAllDetailsList").empty(); }
-
-    //                        return false;
-    //                    }
-    //                    dProgress(false);
-    //                }
-    //                else if (objResponse.Value == "NoRecord") {
-
-    //                    RecordAvailable = 0;
-    //                    dProgress(false);
-    //                }
-    //                else if (objResponse.Value == "Error") {
-    //                    $.jGrowl("Error", { sticky: false, theme: 'warning', life: jGrowlLife });
-    //                }
-    //            }
-    //            else if (objResponse.Status == "Error") {
-    //                if (objResponse.Value == "0") {
-    //                    window.location("frmLogin.aspx");
-    //                }
-    //                else if (objResponse.Value == "Error") {
-    //                    window.location = "frmErrorPage.aspx";
-    //                }
-    //                else if (objResponse.Value == "NoRecord") {
-    //                    $.jGrowl("No Record", { sticky: false, theme: 'warning', life: jGrowlLife });
-    //                }
-    //            }
-    //        }
-    //        else {
-    //            $.jGrowl("Error  Occured", { sticky: true, theme: 'danger', life: jGrowlLife });
-    //            dProgress(false);
-    //        }
-    //    },
-    //    error: function (e) {
-    //        $.jGrowl("Error  Occured", { sticky: true, theme: 'danger', life: jGrowlLife });
-    //        dProgress(false);
-    //    }
-    //});
-    //dProgress(false);
-    //return false;
-
-}
 
 $("#ddlCategoryName").change(function () {
     GetRecord();
@@ -382,102 +178,15 @@ function GetPassword() {
     return false;
 }
 
-function saveimage(id) {
-    pLoadingSetup(false);
 
-    var images = $("#" + id + "").attr('src');
-    var ImageSave = images.replace("data:image/jpeg;base64,", "");
-    var submitval = JSON.stringify({ data: ImageSave });
 
-    $.ajax({
-        type: "POST",
-        url: pageUrl + "/saveimage",
-        data: submitval,
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function (r) {
-            $get(id).src = "./" + r.d;
-        },
-        failure: function (response) {
-            alert(response.d);
-        }
-    });
-    pLoadingSetup(true);
-}
-
-function GetEmployeeList(ddlname) {
-    var sControlName = "#" + ddlname;
-    dProgress(true);
-    $(sControlName).empty();
-    $.ajax({
-        type: "POST",
-        url: "WebServices/VHMSService.svc/GetUser",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        async: false,
-        success: function (data) {
-            if (data.d != "") {
-                var objResponse = jQuery.parseJSON(data.d);
-                if (objResponse.Status == "Success") {
-                    if (objResponse.Value != null && objResponse.Value != "NoRecord") {
-                        var obj = $.parseJSON(objResponse.Value);
-                        if (obj.length > 0) {
-                            $(sControlName).append("<option value='" + 0 + "'> --Select-- </option>");
-                            for (var index = 0; index < obj.length; index++) {
-                                if (obj[index].IsActive)
-                                    $(sControlName).append("<option value='" + obj[index].UserID + "'>" + obj[index].EmployeeCode + "</option>");
-                            }
-                        }
-                        dProgress(false);
-                    }
-                    else if (objResponse.Value == "NoRecord") {
-                        $(sControlName).append('<option value="' + '0' + '">' + '--No Records--' + '</option>');
-                        dProgress(false);
-                    }
-                }
-                else if (objResponse.Status == "Error") {
-                    if (objResponse.Value == "0") {
-                        $.jGrowl("Error  Occured", { sticky: false, theme: 'danger', life: jGrowlLife });
-                        window.location = "frmLogin.aspx";
-                    }
-                    else if (objResponse.Value == "Error") {
-                        window.location = "frmErrorPage.aspx";
-                    }
-                    dProgress(false);
-                }
-            }
-            else {
-                $(sControlName).append('<option value="' + '0' + '">' + '--No Records--' + '</option>');
-                dProgress(false);
-            }
-        },
-        error: function (e) {
-            $.jGrowl("Error  Occured", { sticky: false, theme: 'danger', life: jGrowlLife });
-            dProgress(false);
-        }
-    });
-    return false;
-}
 
 function Edit_OPBillingDetail(ID) {
     Bind_OPBillingByID(ID, gOPBillingList);
     return false;
 }
 
-$("#btnClearImage1").click(function () {
-    $get("imgUploadPurchase1_view").src = "";
-    $("#imagePurchasefile").val("");
-});
 
-$("#btnClearImage2").click(function () {
-    $get("imgUploadPurchase2_view").src = "";
-    $("#imagePurchasefile2").val("");
-});
-
-$("#btnClearImage3").click(function () {
-    $get("imgUploadPurchase3_view").src = "";
-    $("#imagePurchasefile3").val("");
-});
 
 $("#txtRoundoff").keypress(function (e) {
     if (e.which != 46 && e.which != 45 && e.which != 46 &&
@@ -516,8 +225,8 @@ $("#btnAddNew").click(function () {
     ClearOPBillingTab();
     ClearOPBillingFields();
     $("#divOPBillingList").empty();
-    $("#ddlTaxName").val(2).change();
-    $("#ddlTax").val(2).change();
+    $("#ddlTaxName").val(8).change();
+    $("#ddlTax").val(8).change();
     $("#txtBillDate").focus();
     $("#divOtherPasswordlbl").hide();
     $("#divOtherPassword").hide();
@@ -558,8 +267,6 @@ function ClearOPBillingTab() {
     $("#txtBillDate").val("");
     $("#txtNo").val("");
     $("#txtDate").val("");
-    $("#ddlTaxName").val($("#ddlTaxName option:first").val());
-    $("#chkDC").prop("checked", false);
     $("#txtTotalQuantity").val("0");
     $("#txtName").val("");
     $("#txtPaymentDiscount").val("0");
@@ -567,65 +274,15 @@ function ClearOPBillingTab() {
     gOPBillingList = [];
     ClearOPBillingFields();
     $get("imgUpload1").src = "";
-    $("#ddlTax").val($("#ddlTax option:first").val());
-
-    $("#ddlVerifiedBy").val("1011").change();
-    $("#ddlConfirmedBy").val("1011").change();
-    $("#ddlDis_amt_Typ").val("NetAmount").change();
-    $("#txtPaymentDiscountPercent").val(0);
-    $("#txtOtherCharges").val(0);
-    $("#txtCourierCharges").val(0);
-    $("#txtPaymentDiscount").val(0);
-    GetTaxList("ddlTaxName");
-    $("#txtDiscountPercent").val("0");
-    $("#txtDiscountAmount").val("0");
-    $("#txtTCSPercent").val("0");
-    $("#txtTCSAmount").val("0");
-    $("#chk").prop("checked", false);
     $("#btnSave").show();
     $("#btnUpdate").hide();
-   // GetProductList("ddlProductName");
-    $get("imgUploadPurchase1_view").src = "";
-    $get("imgUploadPurchase2_view").src = "";
-    $get("imgUploadPurchase3_view").src = "";
-    $("[id*=imgUploadPurchase1_view]").css("visibility", "hidden");
-    $("[id*=imgUploadPurchase2_view]").css("visibility", "hidden");
-    $("[id*=imgUploadPurchase3_view]").css("visibility", "hidden");
     $("#ddlProductName").val(null).change();
     $("#txtBillNo").attr("disabled", false);
     return false;
 }
 
 
-//$("#imgUploadPurchase1_view").click(function () {
-//    var $img = $('#imgUploadPurchase1_view'),
-//        imageWidth = $img[0].width, //need the raw width due to a jquery bug that affects chrome
-//        imageHeight = $img[0].height, //need the raw height due to a jquery bug that affects chrome
-//        maxWidth = $(window).width(),
-//        maxHeight = $(window).height(),
-//        widthRatio = maxWidth / imageWidth,
-//        heightRatio = maxHeight / imageHeight;
 
-//    var ratio = widthRatio; //default to the width ratio until proven wrong
-
-//    if (widthRatio * imageHeight > maxHeight) {
-//        ratio = heightRatio;
-//    }
-
-//    //now resize the image relative to the ratio
-//    $img.attr('width', "109%")
-//        .attr('height', imageHeight * ratio);
-
-//    //and center the image vertically and horizontally
-//    $img.css({
-//        margin: 'auto',
-//        position: 'absolute',
-//        top: 0,
-//        bottom: 0,
-//        left: 0,
-//        right: 0
-//    });
-//});
 
 $("#txtCode").blur(function () {
     if ($("#txtCode").val().trim().length > 3) {
@@ -638,11 +295,8 @@ $("#txtCode").blur(function () {
     else if ($("#txtCode").val().length == 0) {
         GetProductList("ddlProductName");
         if ($("#ddlProductName").val() > 0) {
-            //  GetRate();
             GetProductTax();
         }
-
-        //ClearOPBillingFields();
     }
 });
 
@@ -1309,76 +963,19 @@ $("#btnAddMagazine,#btnUpdateMagazine").click(function () {
         $("#divSalesRate").addClass('has-error'); $("#txtSalesRate").focus(); return false;
     } else { $("#divSalesRate").removeClass('has-error'); }
 
-    if ($("#txtDisPer").val() == "" || $("#txtDisPer").val() == undefined || $("#txtDisPer").val() == null) {
-        $.jGrowl("Please enter Disc. Percent", { sticky: false, theme: 'warning', life: jGrowlLife });
-        $("#divDisPer").addClass('has-error'); $("#txtDisPer").focus(); return false;
-    } else { $("#divDisPer").removeClass('has-error'); }
-
-    if ($("#txtDisAmt").val() == "" || $("#txtDisAmt").val() == undefined || $("#txtDisAmt").val() == null) {
-        $.jGrowl("Please enter Disc. Amount", { sticky: false, theme: 'warning', life: jGrowlLife });
-        $("#divDisAmt").addClass('has-error'); $("#txtDisAmt").focus(); return false;
-    } else { $("#divDisAmt").removeClass('has-error'); }
-
-
     var ObjData = new Object();
     ObjData.PurchaseID = 0;
-
     var oProduct = new Object();
-
     oProduct.ProductID = $("#ddlProductName").val();
     oProduct.ProductName = $("#ddlProductName option:selected").text();
-    oProduct.SMSCode = $("#txtSMSCode").val().toUpperCase();
-    oProduct.ProductCode = $("#txtPartyCode").val();
     ObjData.Product = oProduct;
-
-    var oTaxTrans = new Object();
-
-    oTaxTrans.TaxID = 8;
-    oTaxTrans.TaxPercentage = 0;
-
-    if ($("#hdnStateCode").val() == 33) {
-        oTaxTrans.CGSTPercent = 0;
-        oTaxTrans.SGSTPercent = 0;
-        oTaxTrans.IGSTPercent = 0;
-    }
-    else {
-        oTaxTrans.CGSTPercent = 0;
-        oTaxTrans.SGSTPercent = 0;
-        oTaxTrans.IGSTPercent = 0;
-    }
-    ObjData.Tax = oTaxTrans;
-
     ObjData.Quantity = parseFloat($("#txtQuantity").val());
     ObjData.Rate = parseFloat($("#txtRate").val());
     ObjData.SellingRate = parseFloat($("#txtSalesRate").val());
     ObjData.PerviousRate = parseFloat($("#txtPerviousRate").val());
-    ObjData.BatchNo = $("#txtBatchNo").val();
-    ObjData.SerialNo = $("#txtSerialNo").val();
-
-    if (RateCount == 0) {
-        ObjData.RateupdateFlag = false;
-        ObjData.RateDecreaseFlag = false;
-    }
-    else if (RateCount == 1) {
-        ObjData.RateupdateFlag = true;
-        ObjData.RateDecreaseFlag = false;
-    }
-    else {
-        ObjData.RateupdateFlag = false;
-        ObjData.RateDecreaseFlag = true;
-    }
-
-    ObjData.SGSTAmount = $("#hdnTransSGSTAmount").val().trim();
-    ObjData.CGSTAmount = $("#hdnTransCGSTAmount").val().trim();
-    ObjData.IGSTAmount = $("#hdnTransIGSTAmount").val().trim();
-
-    ObjData.TaxAmount = parseFloat($("#txtTaxAmt").val());
-    ObjData.DiscountPercentage = parseFloat($("#txtDisPer").val());
-    ObjData.DiscountAmount = parseFloat($("#txtDisAmt").val());
     ObjData.SubTotal = parseFloat($("#txtSubTotal").val());
     ObjData.Barcode = $("#txtBarcode").val();
-    ObjData.PreviousRate = $("#txtPerviousRate").val();
-    // GetProductDetailsPurchase(ObjData.Product.ProductID, $("#hdnPurchaseID").val(), $("#ddlSupplierName").val());
+    ObjData.PreviousRate = $("#txtPerviousRate").val();  
     if (RecordAvailable == 0)
         ObjData.NewProductFlag = 1;
     else
@@ -1391,30 +988,9 @@ $("#btnAddMagazine,#btnUpdateMagazine").click(function () {
         ObjData.StatusFlag = "I";
         for (var i = 0; i < gOPBillingList.length; i++) {
             if (gOPBillingList[i].StatusFlag != "D") {
-                if ((gOPBillingList[i].Product.ProductID == $("#ddlProductName").val()) && (gOPBillingList[i].Rate == parseFloat($("#txtRate").val())) && (gOPBillingList[i].Tax.TaxID == $("#ddlTax").val()) && (gOPBillingList[i].BatchNo == $("#txtBatchNo").val()) && (gOPBillingList[i].DiscountPercentage == parseFloat($("#txtDisPer").val()))) {
+                if ((gOPBillingList[i].Product.ProductID == $("#ddlProductName").val()) && (gOPBillingList[i].Rate == parseFloat($("#txtRate").val()))) {
                     gOPBillingList[i].Quantity = gOPBillingList[i].Quantity + parseFloat($("#txtQuantity").val());
-                    var iDisPercent = parseFloat(gOPBillingList[i].Quantity) * parseFloat(gOPBillingList[i].Rate) * parseFloat(gOPBillingList[i].DiscountPercentage) / 100;
-                    gOPBillingList[i].DiscountAmount = parseFloat(iDisPercent);
                     gOPBillingList[i].SubTotal = gOPBillingList[i].SubTotal + parseFloat($("#txtSubTotal").val());
-                    if ($("#hdnStateCode").val() == 33) {
-                        gOPBillingList[i].Tax.CGSTPercent = parseFloat($("#hdnTransCGSTPercent").val());
-                        gOPBillingList[i].Tax.SGSTPercent = parseFloat($("#hdnTransSGSTPercent").val());
-                        gOPBillingList[i].Tax.IGSTPercent = 0;
-                        gOPBillingList[i].CGSTAmount = (parseFloat(gOPBillingList[i].SubTotal) * parseFloat(gOPBillingList[i].Tax.CGSTPercent) / 100).toFixed(2);
-                        gOPBillingList[i].SGSTAmount = (parseFloat(gOPBillingList[i].SubTotal) * parseFloat(gOPBillingList[i].Tax.SGSTPercent) / 100).toFixed(2);
-                        gOPBillingList[i].IGSTAmount = 0;
-                    }
-                    else {
-
-                        gOPBillingList[i].Tax.CGSTPercent = 0;
-                        gOPBillingList[i].Tax.SGSTPercent = 0;
-                        gOPBillingList[i].Tax.IGSTPercent = parseFloat($("#hdnTransIGSTPercent").val());
-                        gOPBillingList[i].CGSTAmount = 0;
-                        gOPBillingList[i].SGSTAmount = 0;
-                        gOPBillingList[i].IGSTAmount = (parseFloat(gOPBillingList[i].SubTotal) * parseFloat(gOPBillingList[i].Tax.IGSTPercent) / 100).toFixed(2);
-                    }
-                    gOPBillingList[i].TaxAmount = (parseFloat(gOPBillingList[i].CGSTAmount) + parseFloat(gOPBillingList[i].SGSTAmount) + parseFloat(gOPBillingList[i].IGSTAmount)).toFixed(2);
-
                     Count = 1;
                 }
             }
@@ -1443,7 +1019,6 @@ $("#btnAddMagazine,#btnUpdateMagazine").click(function () {
     var scrollBottom = Math.max($('#tblOPBillingList').height());
     $('#divOPBillingList').scrollTop(scrollBottom);
     RateCount = 0;
- /*   PreviousRate = 0;*/
     CalculateAmount();
     ClearOPBillingFields();
     $("#txtCode").focus();
@@ -1592,38 +1167,17 @@ function Update_OPBilling(oData) {
             var oProduct = new Object();
             oProduct.ProductID = oData.Product.ProductID;
             oProduct.ProductName = oData.Product.ProductName;
-            oProduct.SMSCode = oData.Product.SMSCode;
-            oProduct.ProductCode = oData.Product.ProductCode;
             gOPBillingList[i].Product = oProduct;
-
-            var oTransTax = new Object();
-            oTransTax.TaxID = oData.Tax.TaxID;
-            oTransTax.TaxPercentage = oData.Tax.TaxPercentage;
-            oTransTax.IGSTPercent = oData.Tax.IGSTPercent;
-            oTransTax.SGSTPercent = oData.Tax.SGSTPercent;
-            oTransTax.CGSTPercent = oData.Tax.CGSTPercent;
-            gOPBillingList[i].Tax = oTransTax;
-
             gOPBillingList[i].Quantity = oData.Quantity;
             gOPBillingList[i].Rate = oData.Rate;
             gOPBillingList[i].PreviousRate = oData.PreviousRate;
-            
             gOPBillingList[i].RateupdateFlag = oData.RateupdateFlag;
             gOPBillingList[i].RateDecreaseFlag = oData.RateDecreaseFlag;
             gOPBillingList[i].NewProductFlag = oData.NewProductFlag;
-            gOPBillingList[i].TaxAmount = oData.TaxAmount;
-            gOPBillingList[i].CGSTAmount = oData.CGSTAmount;
-            gOPBillingList[i].SGSTAmount = oData.SGSTAmount;
-            gOPBillingList[i].IGSTAmount = oData.IGSTAmount;
-            gOPBillingList[i].DiscountPercentage = oData.DiscountPercentage;
-            gOPBillingList[i].DiscountAmount = oData.DiscountAmount;
             gOPBillingList[i].SubTotal = oData.SubTotal;
             gOPBillingList[i].Barcode = oData.Barcode;
-
-            gOPBillingList[i].BatchNo = oData.BatchNo;
             gOPBillingList[i].SerialNo = oData.SerialNo;
             gOPBillingList[i].SellingRate = oData.SellingRate;
-
             gOPBillingList[i].StatusFlag = oData.StatusFlag;
         }
     }
@@ -1706,8 +1260,8 @@ function GetRecord() {
                                 var table = "";
                                 if (obj[index].IsCancelled == "0") { TypeStatus = "<span class='label label-success'>Active</span>"; }
                                 else { TypeStatus = "<span class='label label-danger'>Cancelled</span>"; }
-                                if (obj[index].BalanceAmount > 0) { table += "<tr id='" + obj[index].PurchaseID + "'>"; }
-                                else { table +="<tr style='background-color:#f1c6ad;' id='" + obj[index].PurchaseID + "'>"; }
+                               if (obj[index].BalanceAmount > 0) { table += "<tr id='" + obj[index].PurchaseID + "'>"; }
+  else { table +="<tr style='background-color:#f1c6ad;' id='" + obj[index].PurchaseID + "'>"; }
                                 table += "<td>" + (index + 1) + "</td>";
                                 table += "<td>" + obj[index].PurchaseNo + "</td>";
                                 table += "<td>" + obj[index].sPurchaseDate + "</td>";
@@ -2033,39 +1587,15 @@ $("#ddlSupplierName").change(function () {
 });
 
 function CalculateAmountTrans() {
-    var iTax = parseFloat($("#hdnTransTaxPercent").val());
     var iRate = parseFloat($("#txtRate").val());
     var iqty = parseFloat($("#txtQuantity").val());
-    var iCGST = parseFloat($("#hdnTransCGSTPercent").val());
-    var iSGST = parseFloat($("#hdnTransSGSTPercent").val());
-    var iIGST = parseFloat($("#hdnTransIGSTPercent").val());
-
     if (isNaN(iRate)) iRate = 0;
     if (isNaN(iqty)) iqty = 0;
-    if (isNaN(iTax)) iTax = 0;
-    var iTaxPercent = parseFloat(iRate) * parseFloat(iqty) * parseFloat(iTax) / 100;
-    $("#txtTaxAmt").val(parseFloat(iTaxPercent).toFixed(2));
-
-    if ($("#hdnStateCode").val() == 33) {
-        var iCGSTPercent = parseFloat(iRate) * parseFloat(iqty) * parseFloat(iCGST) / 100;
-        var iSGSTPercent = parseFloat(iRate) * parseFloat(iqty) * parseFloat(iSGST) / 100;
-        $("#hdnTransSGSTAmount").val(parseFloat(iSGSTPercent).toFixed(2));
-        $("#hdnTransCGSTAmount").val(parseFloat(iCGSTPercent).toFixed(2));
-        $("#hdnTransIGSTAmount").val(0)
-    }
-    else {
-        var iIGSTPercent = parseFloat(iRate) * parseFloat(iqty) * parseFloat(iIGST) / 100;
-        $("#hdnTransSGSTAmount").val(0);
-        $("#hdnTransCGSTAmount").val(0);
-        $("#hdnTransIGSTAmount").val(parseFloat(iIGSTPercent).toFixed(2))
-    }
     var iSubTotal = (parseFloat(iRate) * parseFloat(iqty));
     $("#txtSubTotal").val(parseFloat(iSubTotal).toFixed(2));
 }
 
-//$("#txtRoundoff").change(function () {
-//    CalculateAmount();
-//});
+
 
 $("#txtDiscountPercent").change(function () {
     var iDisPercent = parseFloat($("#txtDiscountPercent").val());
@@ -2298,45 +1828,27 @@ function GetTaxTransByID(id) {
 }
 
 function CalculateAmount() {
-    var iOPBillingAmount = 0, TotalAmount = 0, iBillingQty = 0, iBillingCGST = 0, iBillingSGST = 0, iBillingIGST = 0, iBillingDiscount = 0, iBillingTaxAmt = 0;
+    var iOPBillingAmount = 0, TotalAmount = 0, iBillingQty = 0;
     for (var i = 0; i < gOPBillingList.length; i++) {
         if (gOPBillingList[i].StatusFlag != "D") {
-            iOPBillingAmount = iOPBillingAmount + parseFloat(gOPBillingList[i].SubTotal);
-            iBillingTaxAmt = iBillingTaxAmt + parseFloat(gOPBillingList[i].TaxAmount);
-            gOPBillingList[i].CGSTAmount = (parseFloat(gOPBillingList[i].SubTotal) * parseFloat(gOPBillingList[i].Tax.CGSTPercent) / 100).toFixed(2);
-            gOPBillingList[i].SGSTAmount = (parseFloat(gOPBillingList[i].SubTotal) * parseFloat(gOPBillingList[i].Tax.SGSTPercent) / 100).toFixed(2);
-            gOPBillingList[i].IGSTAmount = (parseFloat(gOPBillingList[i].SubTotal) * parseFloat(gOPBillingList[i].Tax.IGSTPercent) / 100).toFixed(2);
-            iBillingCGST = iBillingCGST + parseFloat(gOPBillingList[i].CGSTAmount);
-            iBillingSGST = iBillingSGST + parseFloat(gOPBillingList[i].SGSTAmount);
-            iBillingIGST = iBillingIGST + parseFloat(gOPBillingList[i].IGSTAmount);
-            iBillingDiscount = iBillingDiscount + parseFloat(gOPBillingList[i].DiscountAmount);
-            iBillingQty = iBillingQty + parseFloat(gOPBillingList[i].Quantity);
-            TotalAmount = TotalAmount + (parseFloat(gOPBillingList[i].Rate) * parseFloat(gOPBillingList[i].Quantity));
+            iOPBillingAmount += parseFloat(gOPBillingList[i].SubTotal);
+            iBillingQty += parseFloat(gOPBillingList[i].Quantity);
+            TotalAmount += parseFloat(gOPBillingList[i].Rate) * parseFloat(gOPBillingList[i].Quantity);
         }
     }
     $("#txtTotalAmount").val(parseFloat(iOPBillingAmount).toFixed(2));
     $("#txtAmount").val(parseFloat(TotalAmount).toFixed(2));
+    $("#txtTotalQty").val(parseFloat(iBillingQty).toFixed(0));
 
-    $("#txtTaxAmount").val(parseFloat(iBillingTaxAmt).toFixed(2));
-    $("#txtCGST").val(parseFloat(iBillingCGST).toFixed(2));
-    $("#txtSGST").val(parseFloat(iBillingSGST).toFixed(2));
-    $("#txtIGST").val(parseFloat(iBillingIGST).toFixed(2));
-    var DiscountAmt = Math.round(iBillingDiscount);
-
-    $("#txtDiscountAmount").val(parseFloat(DiscountAmt).toFixed(2));
-
-    var iTCS_Amt = parseFloat($("#txtTCSAmount").val());
-    if (isNaN(iTCS_Amt)) iTCS_Amt = 0;
-    $("#txtTotalQty").val((parseFloat(iBillingQty)).toFixed(0));
-
-    var Total_Amount = (parseFloat(iOPBillingAmount) + parseFloat($("#txtTaxAmount").val()) + parseFloat(iTCS_Amt)).toFixed(2);
+    var Total_Amount = parseFloat(iOPBillingAmount);
     var NetAmount = Math.round(Total_Amount);
-    var iround = (parseFloat(NetAmount) - parseFloat(Total_Amount)).toFixed(2);
+    var iround = (NetAmount - Total_Amount).toFixed(2);
     if (isNaN(iround)) iround = 0;
-    $("#txtRoundoff").val(parseFloat(iround));
-    $("#txtNetAmount").val((parseFloat(iOPBillingAmount) + parseFloat($("#txtTaxAmount").val()) + parseFloat(iround) + parseFloat(iTCS_Amt)).toFixed(2));
-
+    $("#txtRoundoff").val(parseFloat(iround).toFixed(2));
+    $("#txtNetAmount").val((Total_Amount + parseFloat(iround)).toFixed(2));
 }
+
+
 $("#btnPurchaseBarcode").click(function () {
     SetSessionValue("BarcodePurchaseID", $("#hdnPurchaseID").val());
     SetSessionValue("ScreenName", "Purchase");
@@ -2404,62 +1916,20 @@ $("#btnSave,#btnUpdate").click(function () {
     ObjOPBilling.sPurchaseDate = $("#txtBillDate").val().trim();
     ObjOPBilling.BillNo = $("#txtNo").val().trim();
     ObjOPBilling.sBillDate = $("#txtDate").val().trim();
-    ObjOPBilling.PurchaseTrans = gOPBillingList;
-
     var ObjSupplier = new Object();
     ObjSupplier.SupplierID = $("#ddlSupplierName").val();
     ObjOPBilling.Supplier = ObjSupplier;
 
-    var ObjPurchaseOrder = new Object();
-    ObjPurchaseOrder.PurchaseOrderID = $("#ddlOrderNo").val();
-    ObjOPBilling.PurchaseOrder = ObjPurchaseOrder;
-
-    var ObjTax = new Object();
-    ObjTax.TaxID = 0;
-    ObjOPBilling.Tax = ObjTax;
-    ObjOPBilling.BillType = true;
-    ObjOPBilling.ConfirmedBy = $("#ddlConfirmedBy").val();
-    ObjOPBilling.VerifiedBy = $("#ddlVerifiedBy").val();
-
-    ObjOPBilling.DocumentPath = $("[id*=imgUpload1]").attr("src");
-
-    ObjOPBilling.ImagePath1 = $("[id*=imgUploadPurchase1_view]").attr("src");
-    ObjOPBilling.ImagePath2 = $("[id*=imgUploadPurchase2_view]").attr("src");
-    ObjOPBilling.ImagePath3 = $("[id*=imgUploadPurchase3_view]").attr("src");
-    ObjOPBilling.SGSTAmount = $("#txtSGST").val().trim();
-    ObjOPBilling.SGSTAmount = $("#txtSGST").val().trim();
-    ObjOPBilling.TaxPercent = $("#hdnTaxPercent").val().trim();
-    ObjOPBilling.CGSTAmount = $("#txtCGST").val().trim();
-    ObjOPBilling.SGSTAmount = $("#txtSGST").val().trim();
-    ObjOPBilling.IGSTAmount = $("#txtIGST").val().trim();
-    ObjOPBilling.PaymentDiscount = $("#txtPaymentDiscount").val();
-    ObjOPBilling.PaymentDiscountPercent = $("#txtPaymentDiscountPercent").val();
-    ObjOPBilling.OtherCharges = $("#txtOtherCharges").val();
-    ObjOPBilling.CourierCharges = $("#txtCourierCharges").val();
-    ObjOPBilling.Dis_amt_Type = $("#ddlDis_amt_Typ").val();
-
-    ObjOPBilling.TaxAmount = $("#txtTaxAmount").val().trim();
     ObjOPBilling.TotalAmount = $("#txtTotalAmount").val().trim();
+
     var Roundoff = parseFloat($("#txtRoundoff").val());
     if (isNaN(Roundoff))
         ObjOPBilling.Roundoff = 0;
     else
         ObjOPBilling.Roundoff = $("#txtRoundoff").val().trim();
-    var DiscountAmount = parseFloat($("#txtDiscountAmount").val());
-    if (isNaN(DiscountAmount))
-        ObjOPBilling.DiscountAmount = 0;
-    else
-        ObjOPBilling.DiscountAmount = $("#txtDiscountAmount").val().trim();
-
-    var DiscountPercent = parseFloat($("#txtDiscountPercent").val());
-    if (isNaN(DiscountPercent))
-        ObjOPBilling.DiscountPercent = 0;
-    else
-        ObjOPBilling.DiscountPercent = $("#txtDiscountPercent").val().trim();
-    ObjOPBilling.TCSPercent = $("#txtTCSPercent").val().trim();
-    ObjOPBilling.TCSAmount = $("#txtTCSAmount").val().trim();
     ObjOPBilling.NetAmount = $("#txtNetAmount").val().trim();
     ObjOPBilling.Comments = $("#txtComments").val().trim();
+    ObjOPBilling.PurchaseTrans = gOPBillingList;
     ObjOPBilling.OPBillingTrans = gOPBillingList;
     ObjOPBilling.IsDC = $("#chkDC").is(':checked') ? "1" : "0";
 
@@ -2476,7 +1946,6 @@ $("#btnSave,#btnUpdate").click(function () {
         ObjOPBilling.PaidAmount = 0;
         ObjOPBilling.BalanceAmount = parseFloat($("#txtNetAmount").val());
     }
-
     SaveandUpdateOPBilling(ObjOPBilling, sMethodName);
 
 });
@@ -2586,24 +2055,9 @@ function EditRecord(id) {
                             $("#txtNetAmount").val(obj.NetAmount);
                             $("#txtComments").val(obj.Comments);
                             $("#ddlSupplierName").val(obj.Supplier.SupplierID).change();
-                            $("#ddlTaxName").val(obj.Tax.TaxID).change();
-                            $("[id*=imgUpload1]").attr("src", obj.DocumentPath);
-                            $("#txtCGST").val(obj.CGSTAmount);
-                            $("#txtSGST").val(obj.SGSTAmount);
-                            $("#txtIGST").val(obj.IGSTAmount);
-                            $("#txtDiscountPercent").val(obj.DiscountPercent);
-                            $("#txtDiscountAmount").val(obj.DiscountAmount);
-                            $("#txtOtherCharges").val(obj.OtherCharges);
-                            $("#txtCourierCharges").val(obj.CourierCharges);
                             $("#hdnPaidAmt").val(obj.PaidAmount);
                             $("#hdnNetAmt").val(obj.NetAmount);
                             $("#hdnBalanceAmt").val(obj.BalanceAmount);
-                            $("[id*=imgUploadPurchase1_view]").css("visibility", "visible");
-                            $("[id*=imgUploadPurchase1_view]").attr("src", obj.ImagePath1);
-                            $("[id*=imgUploadPurchase2_view]").css("visibility", "visible");
-                            $("[id*=imgUploadPurchase2_view]").attr("src", obj.ImagePath2);
-                            $("[id*=imgUploadPurchase3_view]").css("visibility", "visible");
-                            $("[id*=imgUploadPurchase3_view]").attr("src", obj.ImagePath3);
                             $("#chkDC").prop("checked", obj.IsDC ? true : false);
                             gOPBillingList = [];
                             var ObjProduct = obj.PurchaseTrans;
@@ -2616,40 +2070,16 @@ function EditRecord(id) {
                                 var objMagazine = new Object();
                                 objMagazine.ProductID = ObjProduct[index].Product.ProductID;
                                 objMagazine.ProductName = ObjProduct[index].Product.ProductName;
-                                objMagazine.SMSCode = ObjProduct[index].Product.SMSCode;
-                                objMagazine.ProductCode = ObjProduct[index].Product.ProductCode;
                                 objTemp.Product = objMagazine;
-
-                                var objTransTax = new Object();
-                                objTransTax.TaxID = ObjProduct[index].Tax.TaxID;
-                                objTransTax.TaxPercentage = ObjProduct[index].Tax.TaxPercentage;
-                                objTransTax.CGSTPercent = ObjProduct[index].Tax.CGSTPercent;
-                                objTransTax.SGSTPercent = ObjProduct[index].Tax.SGSTPercent;
-                                objTransTax.IGSTPercent = ObjProduct[index].Tax.IGSTPercent;
-                                objTemp.Tax = objTransTax;
-
                                 objTemp.PurchaseTransID = ObjProduct[index].PurchaseTransID;
                                 objTemp.PurchaseID = ObjProduct[index].PurchaseID;
                                 objTemp.ProductID = ObjProduct[index].Product.ProductID;
                                 objTemp.ProductName = ObjProduct[index].Product.ProductName;
-
                                 objTemp.Quantity = ObjProduct[index].Quantity;
                                 objTemp.Rate = ObjProduct[index].Rate;
                                 objTemp.PreviousRate = ObjProduct[index].PreviousRate;
-                                
-                                objTemp.DiscountPercentage = ObjProduct[index].DiscountPercentage;
-                                objTemp.DiscountAmount = ObjProduct[index].DiscountAmount;
                                 objTemp.SubTotal = ObjProduct[index].SubTotal;
                                 objTemp.Barcode = ObjProduct[index].Barcode;
-                                objTemp.RateupdateFlag = ObjProduct[index].RateupdateFlag;
-                                objTemp.RateDecreaseFlag = ObjProduct[index].RateDecreaseFlag;
-                                objTemp.NewProductFlag = ObjProduct[index].NewProductFlag;
-                                objTemp.SGSTAmount = ObjProduct[index].SGSTAmount;
-                                objTemp.IGSTAmount = ObjProduct[index].IGSTAmount;
-                                objTemp.CGSTAmount = ObjProduct[index].CGSTAmount;
-                                objTemp.TaxAmount = ObjProduct[index].TaxAmount;
-                                objTemp.BatchNo = ObjProduct[index].BatchNo;
-                                objTemp.SerialNo = ObjProduct[index].SerialNo;
                                 objTemp.SellingRate = ObjProduct[index].SellingRate;
 
                                 AddOPBillingData(objTemp);

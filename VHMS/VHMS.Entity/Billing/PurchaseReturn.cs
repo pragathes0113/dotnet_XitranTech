@@ -14,15 +14,7 @@ namespace VHMS.Entity.Billing
         public string sReturnDate { get; set; }
         public Supplier Supplier { get; set; }
         public Company Company { get; set; }
-        public Tax Tax { get; set; }
-        public decimal TaxPercent { get; set; }       
-        public decimal CGSTAmount { get; set; }
-        public decimal SGSTAmount { get; set; }
-        public decimal IGSTAmount { get; set; }
-        public decimal TaxAmount { get; set; }
         public decimal TotalAmount { get; set; }
-        public decimal DiscountPercent { get; set; }
-        public decimal DiscountAmount { get; set; }
         public decimal Roundoff { get; set; }
         public decimal NetAmount { get; set; }
         public decimal TotalQty { get; set; }
@@ -31,10 +23,6 @@ namespace VHMS.Entity.Billing
         public DateTime CreatedOn { get; set; }
         public User ModifiedBy { get; set; }
         public DateTime ModifiedOn { get; set; }
-        public string CUserName { get; set; }
-        public string ImagePath1 { get; set; }
-        public string ImagePath2 { get; set; }
-        public string ImagePath3 { get; set; }
         public string Notes { get; set; }
         public Collection<PurchaseReturnTrans> PurchaseReturnTrans { get; set; }
     }
@@ -48,17 +36,11 @@ namespace VHMS.Entity.Billing
         public decimal Rate { get; set; }
         public string Barcode { get; set; }
         public decimal SubTotal { get; set; }
-        public decimal DiscountPercentage { get; set; }
-        public decimal DiscountAmount { get; set; }
         public Master.Product Product { get; set; }
         public string StatusFlag { get; set; }
         public string Notes { get; set; }
         public string BatchNo { get; set; }
-        public Tax Tax { get; set; }
-        public decimal CGSTAmount { get; set; }
-        public decimal SGSTAmount { get; set; }
-        public decimal IGSTAmount { get; set; }
-        public decimal TaxAmount { get; set; }
+     
     }
 
     public class PurchaseReturnFilter

@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Web Live Project\\dotnet_XitranTech\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.web\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6282BB3-4162-4296-BE1B-0DC28375222E}|VHMSReports\\VHMSReports.csproj|e:\\web live project\\dotnet_xitrantech\\vhmsreports\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A6282BB3-4162-4296-BE1B-0DC28375222E}|VHMSReports\\VHMSReports.csproj|solutionrelative:vhmsreports\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "web.config",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\web.config",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\web.config",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\web.config",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\web.config",
+              "ViewState": "AgIAACAAAAAAAAAAAAAowC0AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-07-01T09:26:09.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Web.config",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMSReports\\Web.config",
+              "RelativeDocumentMoniker": "VHMSReports\\Web.config",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMSReports\\Web.config",
+              "RelativeToolTip": "VHMSReports\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-07-01T09:25:42.691Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

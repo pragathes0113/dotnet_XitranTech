@@ -47,7 +47,7 @@
                                                 <th>Supplier</th>
                                                 <th>Bill No</th>
                                                 <th>Total Amount</th>
-                                        <%--        <th>Tax Amount</th>--%>
+                                                <%--        <th>Tax Amount</th>--%>
                                                 <th>Net Amount</th>
                                                 <th>Total Qty</th>
                                                 <th></th>
@@ -83,7 +83,7 @@
                                                 <th>Supplier</th>
                                                 <th>Bill No</th>
                                                 <th>Total Amount</th>
-<%--                                                <th>Tax Amount</th>--%>
+                                                <%--                                                <th>Tax Amount</th>--%>
                                                 <th>Net Amount</th>
                                                 <th>Total Qty</th>
                                                 <th></th>
@@ -176,6 +176,13 @@
                                     <input type="text" class="form-control TRSearch" id="txtCode" placeholder="Code"
                                         maxlength="12" tabindex="5" autocomplete="off" />
                                 </div>
+
+                                <div class="form-group col-md-2" id="divBarcode" style="display:none">
+                                    <label>
+                                        Barcode</label><span class="text-danger">*</span>
+                                    <input type="text" class="form-control TRSearch" id="txtBarcode" placeholder="Barcode"
+                                        maxlength="12" tabindex="-1" onkeypress="return IsNumeric(event)" />
+                                </div>
                                 <div class="form-group col-md-3" id="divProductName">
                                     <label>
                                         Product</label><span class="text-danger">*</span>
@@ -183,7 +190,7 @@
                                         <select id="ddlProductName" class="form-control select2" data-placeholder="Select Product Name" tabindex="6"></select>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-1" id="divBatchNo" style="display:none">
+                                <div class="form-group col-md-1" id="divBatchNo" style="display: none">
                                     <label>
                                         Batch No</label>
                                     <input type="text" class="form-control TRSearch" id="txtBatchNo" placeholder="BatchNo"
@@ -219,24 +226,24 @@
                                     <input type="text" class="form-control TRSearch" id="txtRate" placeholder="Rate"
                                         maxlength="12" tabindex="8" onkeypress="return IsNumeric(event)" />
                                 </div>
-                                <div class="form-group col-md-1" id="divDisPer" style="display:none">
+                                <div class="form-group col-md-1" id="divDisPer" style="display: none">
                                     <label>
                                         Disc %</label>
                                     <input type="text" class="form-control TRSearch" id="txtDisPer" placeholder="Discount %"
                                         maxlength="12" tabindex="9" onkeypress="return IsNumeric(event)" />
                                 </div>
-                                <div class="form-group col-md-1" id="divDisAmt" style="display:none">
+                                <div class="form-group col-md-1" id="divDisAmt" style="display: none">
                                     <label>
                                         Disc. Amt</label>
                                     <input type="text" class="form-control TRSearch" id="txtDisAmt" placeholder="Disc. Amt"
                                         maxlength="12" tabindex="-1" onkeypress="return IsNumeric(event)" readonly="true" />
                                 </div>
-                                <div class="form-group col-md-1" id="divTaxTrans" style="display:none">
+                                <div class="form-group col-md-1" id="divTaxTrans" style="display: none">
                                     <label>
                                         Tax</label><span class="text-danger">*</span>
                                     <select id="ddlTax" class="form-control select2" data-placeholder="Select Tax" disabled="disabled" tabindex="10"></select>
                                 </div>
-                                <div class="form-group col-md-1" id="divTaxAmt" style="display:none">
+                                <div class="form-group col-md-1" id="divTaxAmt" style="display: none">
                                     <label>
                                         Tax Amt</label>
                                     <input type="text" class="form-control TRSearch" id="txtTaxAmt" placeholder="Tax. Amt"
@@ -249,10 +256,7 @@
                                     <input type="text" class="form-control TRSearch" id="txtSubTotal" placeholder="Subtotal"
                                         maxlength="12" tabindex="-1" onkeypress="return IsNumeric(event)" readonly="true" />
                                 </div>
-                                <div class="form-group col-md-2" id="divBarcode" style="display: none">
-                                    <input type="text" class="form-control TRSearch" id="txtBarcode" placeholder="Subtotal"
-                                        maxlength="12" tabindex="-1" onkeypress="return IsNumeric(event)" readonly="true" />
-                                </div>
+
                                 <div class="form-group col-md-2" id="divNotes" style="display: none;">
                                     <label>
                                         Notes</label><span class="text-danger">*</span>
@@ -274,7 +278,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row" style="display:none">
+                    <div class="row" style="display: none">
                         <div class="form-group col-md-7"></div>
                         <div class="form-group col-md-1">
                             <label>
@@ -294,7 +298,7 @@
                                 maxlength="15" tabindex="14" readonly="true" value="0" onkeypress="return IsNumeric(event)" />
                         </div>
                     </div>
-                    <div class="row" style="display:none">
+                    <div class="row" style="display: none">
                         <div class="form-group col-md-7"></div>
                         <div class="form-group col-md-1">
                             <label>
@@ -313,7 +317,7 @@
                                 maxlength="15" tabindex="-1" value="0" onkeypress="return IsNumeric(event)" readonly="true" />
                         </div>
                     </div>
-                    <div class="row" style="display:none">
+                    <div class="row" style="display: none">
                         <div class="form-group col-md-7"></div>
                         <div class="form-group col-md-1">
                             <label>
@@ -332,7 +336,7 @@
                                 maxlength="15" tabindex="-1" readonly="true" value="0" onkeypress="return IsNumeric(event)" />
                         </div>
                     </div>
-                    <div class="row" style="display:none">
+                    <div class="row" style="display: none">
                         <div class="form-group col-md-7"></div>
                         <div class="form-group col-md-1">
                             <label>

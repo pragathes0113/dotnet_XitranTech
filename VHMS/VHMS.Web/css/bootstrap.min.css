@@ -3476,7 +3476,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 .btn-primary {
     color: #fff;
-    background-color: #337ab7;
+    background: linear-gradient(90deg, #185a9d, #43cea2);
     border-color: #2e6da4
 }
 
@@ -3652,7 +3652,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 .btn-danger {
     color: #fff;
-    background-color: #d9534f;
+    background: linear-gradient(90deg, #d9534f, #f06d6d);
     border-color: #d43f3a
 }
 
@@ -5134,7 +5134,7 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
         z-index: 2;
         color: #fff;
         cursor: default;
-        background-color: #337ab7;
+        background: linear-gradient(90deg, #185a9d, #43cea2);
         border-color: #337ab7
     }
 

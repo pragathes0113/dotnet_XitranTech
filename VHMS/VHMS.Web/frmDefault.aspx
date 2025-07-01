@@ -1,10 +1,94 @@
 ﻿<%@ Page Title="Dashboard" Language="C#" MasterPageFile="~/VHMSMasterPage.master" AutoEventWireup="true" CodeFile="frmDefault.aspx.cs" Inherits="frmDefault" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="VHMSWebHead" runat="Server">
+    <style>
+        .mt-custom {
+            margin-top: 10px; /* Or any value you prefer */
+        }
+
+        .table td, .table th {
+            padding: 0.7rem 1rem;
+        }
+    </style>
+    <style>
+        .blink-heading {
+            animation: blink 1s infinite;
+            font-weight: bold;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <style>
+        .small-box {
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #fff;
+        }
+
+            .small-box:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .small-box .inner h4 {
+                font-size: 2rem;
+                font-weight: bold;
+            }
+
+            .small-box .inner p {
+                margin: 0;
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            .small-box .icon {
+                position: absolute;
+                top: -10px;
+                right: 10px;
+                font-size: 4rem;
+                opacity: 0.15;
+            }
+
+        .small-box-footer {
+            display: block;
+            padding: 0.5rem;
+            background-color: rgba(0, 0, 0, 0.15);
+            text-align: center;
+            font-weight: 500;
+            text-decoration: none;
+            color: #fff;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            transition: background 0.3s ease;
+        }
+
+            .small-box-footer:hover {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+    </style>
+
+
+
+
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
     <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css" />
     <%--<link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css" />--%>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
     <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css" />
     <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css" />
     <link rel="stylesheet" href="css/adminlte.min.css" />
@@ -28,684 +112,217 @@
     <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
     <script src="plugins/sparklines/sparkline.js"></script>
     <script src="plugins/moment/moment.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         $.widget.bridge('uibutton', $.ui.button)
     </script>
 
-</asp:Content>
-<asp:Content ID="Cokntent2" ContentPlaceHolderID="VHMSWebContent" runat="Server">
+    <div class="container-fluid mt-4 position-relative">
+        <div style="position: absolute; left: -30px; top: 10px;">
+            <i class="fas fa-bell fa-2x text-warning swing-animation"></i>
+        </div>
+        <div style="position: absolute; right: -30px; top: 10px;">
+            <i class="fas fa-bell fa-2x text-warning swing-animation"></i>
+        </div>
+        <div class="row g-3">
+        </div>
+    </div>
 
-    <div class="container-wrapper hidden">
+
+</asp:Content>
+
+<asp:Content ID="Cokntent2" ContentPlaceHolderID="VHMSWebContent" runat="Server">
+    <div class="container-fluid mt-4">
         <section class="content-header" id="secHeader">
         </section>
-        <section class="content">
-            <div class="container-fluid">
-                <div class="row" style="display: none;">
-                    <button type="button" class="btn btn-success pull-right" id="btnClear" tabindex="18">
-                        <i class="fa fa-success"></i>&nbsp;&nbsp;
-                                clear bill</button>
-                    <!-- Info boxes -->
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="small-box" style="background: linear-gradient(90deg, #ff6a00, #ee0979);">
+                    <div class="inner">
+                        <h4 id="lblTotalProduct">0</h4>
+                        <p>Total Pooja Products</p>
+                    </div>
+                    <div class="icon"><i class="fas fa-praying-hands"></i></div>
+                    <a href="frmProduct.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
-                <div class="row">
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box" style="background-color: #a2bbbf!important;">
-                            <div class="inner">
-                                <h3>
-                                    <label id="lblTotalProduct"></label>
-                                </h3>
-                                <p>Products</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-ios-cart"></i>
-                            </div>
-                            <a href="frmProduct.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box" style="background-color: #8092d3!important;">
-                            <div class="inner">
-                                <h3>
-                                    <label id="lblTotalCustomer"></label>
-                                </h3>
-                                <p>Customer</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-bag"></i>
-                            </div>
-                            <a href="frmCustomer.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box" style="background-color: #ffc107!important;">
-                            <div class="inner">
-                                <h3>
-                                    <label id="lblTotalSupplier"></label>
-                                </h3>
-                                <p>Supplier</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-pie-graph"></i>
-                            </div>
-                            <a href="frmBSupplier.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box" style="background-color: #cb5965!important;">
-                            <div class="inner">
-                                <h3>
-                                    <label id="lblTotalSales"></label>
-                                </h3>
-                                <p>Sales Entry</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-ios-cog"></i>
-                            </div>
-                            <a href="frmSalesEntry.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box" style="background-color: #cb5965!important;">
-                            <div class="inner">
-                                <h3>
-                                    <label id="lblTotalPurchase"></label>
-                                </h3>
-                                <p>Purchase Entry</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-ios-cog"></i>
-                            </div>
-                            <a href="frmPurchase.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-3 col-6" style="display: none">
-                        <!-- small box -->
-                        <div class="small-box" style="background-color: #ffc189!important;">
-                            <div class="inner">
-                                <h3>
-                                    <label id="lblTotalCash-In-Hand"></label>
-                                </h3>
-                                <p>Cash-In-Hand</p>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-paw"></i>
-                            </div>
-                            <%--   <a href="frmLedgerType.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>--%>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6" style="display: none">
-                        <!-- small box -->
-                        <div class="small-box" style="background-color: #14f6b1!important;">
-                            <div class="inner">
-                                <h3>
-                                    <label id="lblTotalBankAccounts"></label>
-                                </h3>
-                                <p>Bank Accounts</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-star"></i>
-                            </div>
-                            <%--  <a href="frmLedgerType.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>--%>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6" style="display: none">
-                        <!-- small box -->
-                        <div class="small-box" style="background-color: #f70add!important;">
-                            <div class="inner">
-                                <h3>
-                                    <label id="lblTotalInvestments"></label>
-                                </h3>
-                                <p>Investments</p>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-apple-alt"></i>
-                            </div>
-                            <%-- <a href="frmExpense.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>--%>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                </div>
-
-                <!-- /.row -->
-                <div class="modal fade" id="compose-modal1" role="dialog" aria-hidden="true" style="display: none;">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content" style="height: 900px;">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                    &times;</button>
-                                <h4 class="modal-title"></h4>
-                            </div>
-                            <div class="modal-body" style="padding: 0px !important;">
-                                <div class="box box-primary box-solid">
-                                    <div class="box-header">
-                                        Pending Bills
-                                    </div>
-                                    <div class="box-body">
-                                        <div class="table-responsive" style="min-height: 247px !important">
-                                            <div id="divPendingBillList">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="modal-footer clearfix">
-                                <button type="submit" class="btn btn-info pull-left" id="btnBillSave" tabindex="16">
-                                    <i class="fa fa-save"></i>&nbsp;&nbsp;
-                                update</button>
-                                <button type="button" class="btn btn-danger pull-right" id="btnBillClose" tabindex="18">
-                                    <i class="fa fa-close"></i>&nbsp;&nbsp;
-                                Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" style="display: none;">
-                    <div class="col-md-8">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title" style="font-size: 1.75rem;">Monthly Recap Report</h3>
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <p class="text-center">
-                                            <strong>
-                                                <label id="lblSaleDuration"></label>
-                                            </strong>
-                                        </p>
-
-                                        <div class="chart">
-                                            <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                    </div>
-                                </div>
-                                <!-- /.row -->
-                            </div>
-                        </div>
-                        <!-- /.card -->
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title" style="font-size: 1.75rem;">Customer details</h3>
-
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <div class="chart-responsive">
-                                            <canvas id="pieChart" height="150"></canvas>
-                                        </div>
-                                        <!-- ./chart-responsive -->
-                                    </div>
-                                    <!-- /.col -->
-                                    <div class="col-md-4">
-                                        <ul class="chart-legend clearfix">
-                                            <li><i class="far fa-circle text-danger"></i>New Customers</li>
-                                            <li><i class="far fa-circle text-success"></i>Old Customers</li>
-                                            <li><i class="far fa-circle text-warning"></i>VIP Customers</li>
-                                            <li><i class="far fa-circle text-info"></i>Wholesale Customers</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-                <div class="row" style="display: none;">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header border-0">
-                                <div class="d-flex justify-content-between">
-                                    <h3 class="card-title" style="font-size: 1.75rem;">Weekly Sales </h3>
-
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="d-flex">
-
-                                    <p class="ml-auto d-flex flex-column text-right">
-                                        <span class="text-success">
-                                            <i id="PercentageImage" class="fas fa-arrow-down"></i>
-                                            <label id="lblPercentage"></label>
-                                        </span>
-                                        <span class="text-muted">Since last week</span>
-                                    </p>
-                                </div>
-                                <!-- /.d-flex -->
-
-                                <div class="position-relative mb-4">
-                                    <canvas id="visitors-chart" height="200"></canvas>
-                                </div>
-
-                                <div class="d-flex flex-row justify-content-end">
-                                    <span class="mr-2">
-                                        <i class="fas fa-square text-primary"></i>This Week
-                                    </span>
-
-                                    <span>
-                                        <i class="fas fa-square text-gray"></i>Last Week
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card bg-gradient-info">
-                            <div class="card-header border-0">
-                                <h3 class="card-title" style="font-size: 1.75rem;">Sales Graph</h3>
-
-                                <div class="card-tools">
-                                    <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                    <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <canvas class="chart" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                            </div>
-                            <!-- /.card-body -->
-                            <%-- <div class="card-footer bg-transparent">
-                                <div class="row">
-                                    <div class="col-4 text-center">
-                                        <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
-                                            data-fgcolor="#39CCCC">
-
-                                        <div class="text-white">Mail-Orders</div>
-                                    </div>
-                                    <!-- ./col -->
-                                    <div class="col-4 text-center">
-                                        <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
-                                            data-fgcolor="#39CCCC">
-
-                                        <div class="text-white">Online</div>
-                                    </div>
-                                    <!-- ./col -->
-                                    <div class="col-4 text-center">
-                                        <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
-                                            data-fgcolor="#39CCCC">
-
-                                        <div class="text-white">In-Store</div>
-                                    </div>
-                                    <!-- ./col -->
-                                </div>
-                                <!-- /.row -->
-                            </div>--%>
-                            <!-- /.card-footer -->
-                        </div>
-                    </div>
-                </div>
-
             </div>
-            <!--/. container-fluid -->
+
+            <div class="col-lg-3 col-md-6">
+                <div class="small-box" style="background: linear-gradient(90deg, #00c6ff, #0072ff);">
+                    <div class="inner">
+                        <h4 id="lblTotalCustomer">0</h4>
+                        <p>Total Customers</p>
+                    </div>
+                    <div class="icon"><i class="fas fa-users"></i></div>
+                    <a href="frmCustomer.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="small-box" style="background: linear-gradient(90deg, #f7971e, #ffd200); color: #000;">
+                    <div class="inner">
+                        <h4 id="lblTotalSupplier">0</h4>
+                        <p>Total Suppliers</p>
+                    </div>
+                    <div class="icon"><i class="fas fa-truck-loading"></i></div>
+                    <a href="frmBSupplier.aspx" class="small-box-footer" style="color: #000;">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="small-box" style="background: linear-gradient(90deg, #8e2de2, #4a00e0);">
+                    <div class="inner">
+                        <h4 id="lblTotalSales">0</h4>
+                        <p>Sales Entries</p>
+                    </div>
+                    <div class="icon"><i class="fas fa-cash-register"></i></div>
+                    <a href="frmSalesEntry.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-3">
+            <div class="col-lg-3 col-md-6">
+                <div class="small-box" style="background: linear-gradient(90deg, #43cea2, #185a9d);">
+                    <div class="inner">
+                        <h4 id="lblTotalPurchase">0</h4>
+                        <p>Purchase Entries</p>
+                    </div>
+                    <div class="icon"><i class="fas fa-shopping-basket"></i></div>
+                    <a href="frmPurchase.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="small-box" style="background: linear-gradient(90deg, #fc6076, #ff9a44);">
+                    <div class="inner">
+                        <h4 id="lblTodayOrders">0</h4>
+                        <p>Today’s Pooja Orders</p>
+                    </div>
+                    <div class="icon"><i class="fas fa-calendar-check"></i></div>
+                    <a href="frmOrders.aspx" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="small-box" style="background: linear-gradient(90deg, #fda085, #f6d365); color: #333;">
+                    <div class="inner">
+                        <h4 id="lblLowStock">0</h4>
+                        <p>Low Stock Items</p>
+                    </div>
+                    <div class="icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <a href="frmInventory.aspx" class="small-box-footer" style="color: #333;">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="small-box" style="background: linear-gradient(90deg, #16a085, #f4d03f); color: #000;">
+                    <div class="inner">
+                        <h4 id="lblTopItem">Kumkum</h4>
+                        <p>Top Selling Item</p>
+                    </div>
+                    <div class="icon"><i class="fas fa-star"></i></div>
+                    <a href="frmReports.aspx" class="small-box-footer" style="color: #000;">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="content">
+            <div class="row text-center mb-3">
+                <div class="col-12">
+                    <div class="d-flex justify-content-center flex-wrap gap-2" id="monthButtonsContainer">
+                    </div>
+                </div>
+            </div>
+            <div class="row g-3 mt-3" style="margin-top: 1%;">
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-2">
+                        <canvas id="purchaseSalesStockChart" style="height: 300px;"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-2">
+                        <canvas id="financialChart" style="height: 300px;"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-2">
+                        <canvas id="topSellingChart" style="height: 300px;"></canvas>
+                    </div>
+                </div>
+            </div>
         </section>
         <section class="content">
-            <div class="nav-tabs-custom" style="display: none">
-                <ul class="nav nav-tabs">
-                    <li class="active"><a id="aGeneral" href="#General" data-toggle="tab">Reorder Stock</a></li>
-                    <li><a id="aSearchResult" href="#SearchResult" style="display: none;" data-toggle="tab">LR Details</a></li>
-                    <li><a id="aBookingBill" href="#BookingBill" style="display: none;" data-toggle="tab">Retails Booking Bill</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane active" id="General" style="display: none">
-                        <div class="box box-warning">
-                            <div class="box-body">
-                                <div class="table-responsive">
-                                    <table id="tblRecord" class="table table-striped table-bordered bg-info" width="100%">
-                                        <thead>
-                                            <tr>
-                                                <th>S.No</th>
-                                                <th>CategoryName</th>
-                                                <th>ProductName</th>
-                                                <th>ProductCode</th>
-                                                <th>MinimumStock</th>
-                                                <th>AvailableQty</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="tblRecord_tbody">
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card shadow border-0 rounded-4 overflow-hidden h-100">
+                        <div class="card-header bg-white border-bottom text-center py-4">
+                            <h4 class="text-danger fw-bold mb-0">
+                                <i class="fas fa-exclamation-circle me-2"></i>Product Expiry Summary
+                            </h4>
+                            <p class="text-muted mb-0 small">Stay ahead by tracking items nearing expiry</p>
                         </div>
-                    </div>
-                    <div class="tab-pane" id="SearchResult">
-                        <div class="box box-warning">
-                            <div class="box-body">
-                                <div class="form-group col-md-12">
-                                    <div class="table-responsive">
-                                        <table id="tblSearchResult" class="table table-striped table-bordered bg-info" width="100%">
-                                            <thead>
-                                                <tr>
-                                                    <th>S.No</th>
-                                                    <th>LR #</th>
-                                                    <th>Date</th>
-                                                    <th>Customer</th>
-                                                    <th>Invoice No</th>
-                                                    <th>Status</th>
-                                                    <th>Delivered</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="tblSearchResult_tbody">
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="BookingBill">
-                        <div class="box box-warning">
-                            <div class="box-body">
-                                <div class="form-group col-md-12">
-                                    <div class="table-responsive">
-                                        <table id="tblBookingBill" class="table table-striped table-bordered bg-info" width="100%">
-                                            <thead>
-                                                <tr>
-                                                    <th>S.No</th>
-                                                    <th>Booking No</th>
-                                                    <th>Booking Date</th>
-                                                    <th>Customer</th>
-                                                    <th>Mobile No</th>
-                                                    <th>Total Qty</th>
-                                                    <th>Total Amount</th>
-                                                    <th>Delivery Date</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="tblBookingBill_tbody">
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                        <div class="card-body px-0">
+                            <div class="table-responsive px-3" style="max-height: 320px; overflow-y: auto;">
+                                <table id="tblRecord" class="table table-hover align-middle mb-0">
+                                    <thead class="bg-gradient text-white" style="background: linear-gradient(90deg, #ff416c, #ff4b2b);">
+                                        <tr>
+                                            <th class="text-center">#</th>
+                                            <th>Product</th>
+                                            <th>Unit</th>
+                                            <th>Supplier</th>
+                                            <th class="text-center">Available Qty</th>
+                                            <th class="text-center">Expiry Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tblRecord_tbody" class="table-light">
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal fade" id="compose-modal" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                &times;</button>
-                            <h4 class="modal-title"></h4>
+                <div class="col-md-6">
+                    <div class="card shadow border-0 rounded-4 overflow-hidden h-100">
+                        <div class="card-header bg-white border-bottom text-center py-4">
+                            <h4 class="text-danger fw-bold mb-0">
+                                <i class="fas fa-boxes me-2"></i>Stock Summary
+                            </h4>
+                            <p class="text-muted mb-0 small">Check real-time stock availability</p>
                         </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="form-group col-md-4" id="divVoucherNo">
-                                    <label>
-                                        Voucher No</label><span class="text-danger">*</span>
-                                    <input type="text" class="form-control" id="txtVoucherNo" placeholder="Voucher No."
-                                        maxlength="150" tabindex="1" readonly="true" />
-                                </div>
-                                <div class="form-group col-md-4" id="divVoucherDate">
-                                    <label>
-                                        Date</label><span class="text-danger">*</span>
-                                    <div class="input-group date form_date" data-date-format="dd/MM/yyyy HH:ii P" data-link-field="txtVoucherDate" data-link-format="dd/MM/yyyy">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                        </div>
-                                        <input class="form-control pull-right" tabindex="2" id="txtVoucherDate" data-link-format="dd/MM/yyyy HH:ii P" type="text" disabled="disabled" />
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-4" id="divCustomer">
-                                    <label>
-                                        Customer</label>
-                                    <span class="text-danger">*</span>
-                                    <select id="ddlCustomer" class="form-control select2" data-placeholder="Select Customer" tabindex="3" disabled="disabled">
-                                    </select>
-                                </div>
+                        <div class="card-body px-0">
+                            <div class="table-responsive px-3" style="max-height: 320px; overflow-y: auto;">
+                                <table id="tblstock" class="table table-hover align-middle mb-0">
+                                    <thead class="bg-gradient text-white" style="background: linear-gradient(90deg, #ff416c, #ff4b2b);">
+                                        <tr>
+                                            <th class="text-center">#</th>
+                                            <th>Product</th>
+                                            <th>Unit</th>
+                                            <th>Supplier</th>
+                                            <th class="text-center">Quantity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tblstock_tbody" class="table-light">
+                                        <!-- rows here -->
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="row">
-                                <div class="form-group col-md-4" id="divBank">
-                                    <label>
-                                        Select A/c</label>
-                                    <span class="text-danger">*</span>
-                                    <select id="ddlBank" class="form-control select2" data-placeholder="Select Account" tabindex="4" disabled="disabled">
-                                    </select>
-                                </div>
-                                <div class="form-group col-md-4" id="divReceiptMode">
-                                    <label>
-                                        Receipt Mode</label>
-                                    <span class="text-danger">*</span>
-                                    <select id="ddlReceiptMode" class="form-control" tabindex="5" disabled="disabled">
-                                        <option value="0" selected="selected">--Select--</option>
-                                        <option value="3">NEFT/RTGS</option>
-                                        <option value="5">IMPS</option>
-                                        <option value="1">Cash</option>
-                                        <option value="2">Cheque</option>
-                                        <option value="4">Others</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-md-4" id="divAmount">
-                                    <label>Amount</label>
-                                    <span class="text-danger">*</span>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-rupee"></i></div>
-                                        <input type="text" class="form-control decimal" id="txtAmount" placeholder="Amount"
-                                            maxlength="15" tabindex="6" readonly="true" />
-                                        <span class="input-group-addon">.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row" id="divChequeDetails">
-                                <div class="form-group col-md-4" id="divChequeNo">
-                                    <label>
-                                        Cheque/DD #</label><span class="text-danger">*</span>
-                                    <input type="text" class="form-control" id="txtChequeNo" placeholder="Cheque/DD No."
-                                        maxlength="150" tabindex="7" readonly="true" />
-                                </div>
-                                <div class="form-group col-md-4" id="divIssueDate">
-                                    <label>
-                                        Issued Date</label><span class="text-danger">*</span>
-                                    <div class="input-group date form_date" data-date-format="dd/MM/yyyy HH:ii P" data-link-field="txtIssueDate" data-link-format="dd/MM/yyyy">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                        </div>
-                                        <input class="form-control pull-right" tabindex="8" id="txtIssueDate" data-link-format="dd/MM/yyyy HH:ii P" type="text" disabled="disabled" />
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-4" id="divCollectionDate">
-                                    <label>
-                                        Collection Date</label><span class="text-danger">*</span>
-                                    <div class="input-group date form_date" data-date-format="dd/MM/yyyy HH:ii P" data-link-field="txtCollectionDate" data-link-format="dd/MM/yyyy">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                        </div>
-                                        <input class="form-control pull-right" tabindex="9" id="txtCollectionDate" data-link-format="dd/MM/yyyy HH:ii P" type="text" readonly />
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-4" id="divIssuedBy">
-                                    <label>
-                                        Issued By</label>
-                                    <input type="text" class="form-control" id="txtIssuedBy" placeholder="Issued By"
-                                        maxlength="150" tabindex="10" readonly="true" />
-                                </div>
-                                <div class="form-group col-md-4" id="divBankName">
-                                    <label>
-                                        Bank Name</label>
-                                    <input type="text" class="form-control" id="txtBankName" placeholder="Bank Name"
-                                        maxlength="150" tabindex="10" readonly="true" />
-                                </div>
-                                <div class="form-group col-md-4" id="divStatus">
-                                    <label>
-                                        Payment Status</label>
-                                    <span class="text-danger">*</span>
-                                    <select id="ddlPaymentStatus" class="form-control" tabindex="5">
-                                        <option value="Cleared" selected="selected">Cleared</option>
-                                        <option value="Bounced">Bounced</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group" id="divDescription">
-                                <label>
-                                    Description</label>
-                                <textarea id="txtDescription" class="form-control" maxlength="250" tabindex="11" rows="3"></textarea>
-                            </div>
-                        </div>
-                        <div class="modal-footer clearfix">
-                            <button type="button" class="btn btn-danger pull-left" id="btnClose" tabindex="14">
-                                <i class="fa fa-close"></i>&nbsp;&nbsp;
-                                Close</button>
-                            <button type="submit" class="btn btn-info pull-right" id="btnSave" tabindex="12">
-                                <i class="fa fa-save"></i>&nbsp;&nbsp;
-                                Save</button>
-                            <button type="submit" class="btn btn-info pull-right" id="btnUpdate" tabindex="13">
-                                <i class="fa fa-edit"></i>&nbsp;&nbsp;
-                                Update</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
-    <input type="hidden" id="hdnID" />
-    <input type="hidden" id="hdRS" />
-    <input type="hidden" id="hdnOpeningDate" />
-    <input type="hidden" id="SdSMS" />
-    <input type="hidden" id="SMSsendername" />
-    <input type="hidden" id="SMSpassword" />
-    <input type="hidden" id="SMSurl" />
-    <input type="hidden" id="SMSusername" />
-    <input type="hidden" id="RoleID" />
-    <input type="hidden" id="NewCustomer" />
-    <input type="hidden" id="RetailCustomer" />
-    <input type="hidden" id="WholeSaleCustomer" />
-    <input type="hidden" id="VIPCustomer" />
-    <input type="hidden" id="Day1OldValue" />
-    <input type="hidden" id="Day2OldValue" />
-    <input type="hidden" id="Day3OldValue" />
-    <input type="hidden" id="Day4OldValue" />
-    <input type="hidden" id="Day5OldValue" />
-    <input type="hidden" id="Day6OldValue" />
-    <input type="hidden" id="Day7OldValue" />
-    <input type="hidden" id="Day1Value" />
-    <input type="hidden" id="Day2Value" />
-    <input type="hidden" id="Day3Value" />
-    <input type="hidden" id="Day4Value" />
-    <input type="hidden" id="Day5Value" />
-    <input type="hidden" id="Day6Value" />
-    <input type="hidden" id="Day7Value" />
-    <input type="hidden" id="Day1" />
-    <input type="hidden" id="Day2" />
-    <input type="hidden" id="Day3" />
-    <input type="hidden" id="Day4" />
-    <input type="hidden" id="Day5" />
-    <input type="hidden" id="Day6" />
-    <input type="hidden" id="Day7" />
-    <input type="hidden" id="Q1Value" />
-    <input type="hidden" id="Q2Value" />
-    <input type="hidden" id="Q3Value" />
-    <input type="hidden" id="Q4Value" />
-    <input type="hidden" id="Q5Value" />
-    <input type="hidden" id="Q6Value" />
-    <input type="hidden" id="Q7Value" />
-    <input type="hidden" id="Q8Value" />
-    <input type="hidden" id="Q9Value" />
-    <input type="hidden" id="Q10Value" />
-    <input type="hidden" id="Q11Value" />
-    <input type="hidden" id="Q12Value" />
-    <input type="hidden" id="Q1" />
-    <input type="hidden" id="Q2" />
-    <input type="hidden" id="Q3" />
-    <input type="hidden" id="Q4" />
-    <input type="hidden" id="Q5" />
-    <input type="hidden" id="Q6" />
-    <input type="hidden" id="Q7" />
-    <input type="hidden" id="Q8" />
-    <input type="hidden" id="Q9" />
-    <input type="hidden" id="Q10" />
-    <input type="hidden" id="Q11" />
-    <input type="hidden" id="Q12" />
-    <input type="hidden" id="Month1" />
-    <input type="hidden" id="Month2" />
-    <input type="hidden" id="Month3" />
-    <input type="hidden" id="Month4" />
-    <input type="hidden" id="Month5" />
-    <input type="hidden" id="Month6" />
-    <input type="hidden" id="Month7" />
-    <input type="hidden" id="Month8" />
-    <input type="hidden" id="Month9" />
-    <input type="hidden" id="Month10" />
-    <input type="hidden" id="Month11" />
-    <input type="hidden" id="Month12" />
-    <input type="hidden" id="Silk1Value" />
-    <input type="hidden" id="Silk2Value" />
-    <input type="hidden" id="Silk3Value" />
-    <input type="hidden" id="Silk4Value" />
-    <input type="hidden" id="Silk5Value" />
-    <input type="hidden" id="Silk6Value" />
-    <input type="hidden" id="Silk7Value" />
-    <input type="hidden" id="Silk8Value" />
-    <input type="hidden" id="Silk9Value" />
-    <input type="hidden" id="Silk10Value" />
-    <input type="hidden" id="Silk11Value" />
-    <input type="hidden" id="Silk12Value" />
-    <input type="hidden" id="Cotton1Value" />
-    <input type="hidden" id="Cotton2Value" />
-    <input type="hidden" id="Cotton3Value" />
-    <input type="hidden" id="Cotton4Value" />
-    <input type="hidden" id="Cotton5Value" />
-    <input type="hidden" id="Cotton6Value" />
-    <input type="hidden" id="Cotton7Value" />
-    <input type="hidden" id="Cotton8Value" />
-    <input type="hidden" id="Cotton9Value" />
-    <input type="hidden" id="Cotton10Value" />
-    <input type="hidden" id="Cotton11Value" />
-    <input type="hidden" id="Cotton12Value" />
-    <input type="hidden" id="PercentageValue" />
 
+    <input type="hidden" id="hdnID" />
+    <input type="hidden" id="RoleID" />
     <script type="text/javascript">
         $(document).ready(function () {
             ActionAdd = '<%=Session["ActionAdd"]%>';
             ActionUpdate = '<%=Session["ActionUpdate"]%>';
             ActionDelete = '<%=Session["ActionDelete"]%>';
             ActionView = '<%=Session["ActionView"]%>';
-
-            var _SendSMS = '<%=Session["SendSMS"]%>';
-            var _SMSpassword = '<%=Session["SMSPassword"]%>';
-            var _SMSsendername = '<%=Session["SenderName"]%>';
-            var _SMSurl = '<%=Session["APILink"]%>';
-            var _SMSusername = '<%=Session["SMSUsername"]%>';
             var _RoleID = '<%=Session["RoleID"]%>';
             $("#SdSMS").val(_SendSMS);
             $("#SMSsendername").val(_SMSsendername);
@@ -720,12 +337,6 @@
                 useCurrent: true,
                 format: 'DD/MM/YYYY'
             });
-            //GetRecord();
-            //GetBankList();
-            //GetCustomerList();
-            GetDashboardCount();
-            //GetLRRecord("Pending");
-            //  GetSalesEntryBookingBill();
             pLoadingSetup(false);
             pLoadingSetup(true);
             $("#divTab").hide();
@@ -733,233 +344,6 @@
             $("#divTabNotification").hide();
             $("#btnSendNotification").hide();
             $("#ContainerID1").hide();
-
-            var ticksStyle = {
-                fontColor: '#495057',
-                fontStyle: 'bold'
-            }
-
-            var mode = 'index'
-            var intersect = true
-
-            var salesChartCanvas = $('#salesChart').get(0).getContext('2d')
-
-            var salesChartData = {
-                labels: [$("#Month1").val(), $("#Month2").val(), $("#Month3").val(), $("#Month4").val(), $("#Month5").val(), $("#Month6").val(), $("#Month7").val(), $("#Month8").val(), $("#Month9").val(), $("#Month10").val(), $("#Month11").val(), $("#Month12").val()],
-                datasets: [
-                    {
-                        label: 'Retail Sales',
-                        backgroundColor: 'rgba(60,141,188,0.9)',
-                        borderColor: 'rgba(60,141,188,0.8)',
-                        pointRadius: false,
-                        pointColor: '#3b8bba',
-                        pointStrokeColor: 'rgba(60,141,188,1)',
-                        pointHighlightFill: '#fff',
-                        pointHighlightStroke: 'rgba(60,141,188,1)',
-                        data: [$("#Silk1Value").val(), $("#Silk2Value").val(), $("#Silk3Value").val(), $("#Silk4Value").val(), $("#Silk5Value").val(), $("#Silk6Value").val(), $("#Silk7Value").val(), $("#Silk8Value").val(), $("#Silk9Value").val(), $("#Silk10Value").val(), $("#Silk11Value").val(), $("#Silk12Value").val()]
-                    },
-                    {
-                        label: 'Wholesale',
-                        backgroundColor: 'rgba(210, 214, 222, 1)',
-                        borderColor: 'rgba(210, 214, 222, 1)',
-                        pointRadius: false,
-                        pointColor: 'rgba(210, 214, 222, 1)',
-                        pointStrokeColor: '#c1c7d1',
-                        pointHighlightFill: '#fff',
-                        pointHighlightStroke: 'rgba(220,220,220,1)',
-                        data: [$("#Cotton1Value").val(), $("#Cotton2Value").val(), $("#Cotton3Value").val(), $("#Cotton4Value").val(), $("#Cotton5Value").val(), $("#Cotton6Value").val(), $("#Cotton7Value").val(), $("#Cotton8Value").val(), $("#Cotton9Value").val(), $("#Cotton10Value").val(), $("#Cotton11Value").val(), $("#Cotton12Value").val()]
-                    },
-                ]
-            }
-
-            var salesChartOptions = {
-                maintainAspectRatio: false,
-                responsive: true,
-                legend: {
-                    display: false
-                },
-                scales: {
-                    xAxes: [{
-                        gridLines: {
-                            display: false,
-                        }
-                    }],
-                    yAxes: [{
-                        gridLines: {
-                            display: false,
-                        }
-                    }]
-                }
-            }
-
-            // This will get the first returned node in the jQuery collection.
-            var salesChart = new Chart(salesChartCanvas, {
-                type: 'line',
-                data: salesChartData,
-                options: salesChartOptions
-            }
-            )
-
-            //---------------------------
-            //- END MONTHLY SALES CHART -
-            //---------------------------
-
-
-            //-------------
-            //- PIE CHART -
-            //-------------
-            // Get context with jQuery - using jQuery's .get() method.
-            var salesGraphChartCanvas = $('#line-chart').get(0).getContext('2d');
-            //$('#revenue-chart').get(0).getContext('2d');
-
-            var salesGraphChartData = {
-                labels: [$("#Q1").val(), $("#Q2").val(), $("#Q3").val(), $("#Q4").val(), $("#Q5").val(), $("#Q6").val(), $("#Q7").val(), $("#Q8").val(), $("#Q9").val(), $("#Q10").val(), $("#Q11").val(), $("#Q12").val()],
-                datasets: [
-                    {
-                        label: 'Sales Value',
-                        fill: false,
-                        borderWidth: 2,
-                        lineTension: 0,
-                        spanGaps: true,
-                        borderColor: '#efefef',
-                        pointRadius: 3,
-                        pointHoverRadius: 7,
-                        pointColor: '#efefef',
-                        pointBackgroundColor: '#efefef',
-                        data: [$("#Q1Value").val(), $("#Q2Value").val(), $("#Q3Value").val(), $("#Q4Value").val(), $("#Q5Value").val(), $("#Q6Value").val(), $("#Q7Value").val(), $("#Q8Value").val(), $("#Q9Value").val(), $("#Q10Value").val(), $("#Q11Value").val(), $("#Q12Value").val()]
-                    }
-                ]
-            }
-
-            var salesGraphChartOptions = {
-                maintainAspectRatio: false,
-                responsive: true,
-                legend: {
-                    display: false,
-                },
-                scales: {
-                    xAxes: [{
-                        ticks: {
-                            fontColor: '#efefef',
-                        },
-                        gridLines: {
-                            display: false,
-                            color: '#efefef',
-                            drawBorder: false,
-                        }
-                    }],
-                    yAxes: [{
-                        ticks: {
-                            stepSize: 5000,
-                            fontColor: '#efefef',
-                        },
-                        gridLines: {
-                            display: true,
-                            color: '#efefef',
-                            drawBorder: false,
-                        }
-                    }]
-                }
-            }
-
-            // This will get the first returned node in the jQuery collection.
-            var salesGraphChart = new Chart(salesGraphChartCanvas, {
-                type: 'line',
-                data: salesGraphChartData,
-                options: salesGraphChartOptions
-            })
-
-            var $visitorsChart = $('#visitors-chart')
-            var visitorsChart = new Chart($visitorsChart, {
-                data: {
-                    labels: [$("#Day1").val(), $("#Day2").val(), $("#Day3").val(), $("#Day4").val(), $("#Day5").val(), $("#Day6").val(), $("#Day7").val()],
-                    datasets: [{
-                        type: 'line',
-                        data: [$("#Day1Value").val(), $("#Day2Value").val(), $("#Day3Value").val(), $("#Day4Value").val(), $("#Day5Value").val(), $("#Day6Value").val(), $("#Day7Value").val()],
-                        backgroundColor: 'transparent',
-                        borderColor: '#007bff',
-                        pointBorderColor: '#007bff',
-                        pointBackgroundColor: '#007bff',
-                        fill: false
-                        // pointHoverBackgroundColor: '#007bff',
-                        // pointHoverBorderColor    : '#007bff'
-                    },
-                    {
-                        type: 'line',
-                        data: [$("#Day1OldValue").val(), $("#Day2OldValue").val(), $("#Day3OldValue").val(), $("#Day4OldValue").val(), $("#Day5OldValue").val(), $("#Day6OldValue").val(), $("#Day7OldValue").val()],
-                        backgroundColor: 'tansparent',
-                        borderColor: '#ced4da',
-                        pointBorderColor: '#ced4da',
-                        pointBackgroundColor: '#ced4da',
-                        fill: false
-                        // pointHoverBackgroundColor: '#ced4da',
-                        // pointHoverBorderColor    : '#ced4da'
-                    }]
-                },
-                options: {
-                    maintainAspectRatio: false,
-                    tooltips: {
-                        mode: mode,
-                        intersect: intersect
-                    },
-                    hover: {
-                        mode: mode,
-                        intersect: intersect
-                    },
-                    legend: {
-                        display: false
-                    },
-                    scales: {
-                        yAxes: [{
-                            // display: false,
-                            gridLines: {
-                                display: true,
-                                lineWidth: '4px',
-                                color: 'rgba(0, 0, 0, .2)',
-                                zeroLineColor: 'transparent'
-                            },
-                            ticks: $.extend({
-                                beginAtZero: true,
-                                suggestedMax: 200
-                            }, ticksStyle)
-                        }],
-                        xAxes: [{
-                            display: true,
-                            gridLines: {
-                                display: false
-                            },
-                            ticks: ticksStyle
-                        }]
-                    }
-                }
-            })
-
-
-            var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
-            var pieData = {
-                labels: [
-                    'New Customers',
-                    'Old Customers',
-                    'VIP Customers',
-                    'Wholesale Customers',
-                ],
-                datasets: [
-                    {
-                        data: [$("#NewCustomer").val(), $("#RetailCustomer").val(), $("#WholeSaleCustomer").val(), $("#VIPCustomer").val()],
-                        backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef'],
-                    }
-                ]
-            }
-            var pieOptions = {
-                legend: {
-                    display: false
-                }
-            }
-            var pieChart = new Chart(pieChartCanvas, {
-                type: 'doughnut',
-                data: pieData,
-                options: pieOptions
-            })
         });
 
 
@@ -2112,4 +1496,174 @@
         });
 
     </script>
+
+    <canvas id="purchaseSalesStockChart" style="height: 300px;"></canvas>
+    <script>
+        const doughnutCtx = document.getElementById('purchaseSalesStockChart').getContext('2d');
+        const purchaseSalesStockChart = new Chart(doughnutCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Purchase', 'Sales', 'Stock'],
+                datasets: [{
+                    label: 'Store Summary',
+                    data: [40, 30, 30],
+                    backgroundColor: ['#4e73df', '#1cc88a', '#f6c23e'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                    animateScale: true,
+                    animateRotate: true,
+                    duration: 1500,
+                    easing: 'easeOutBounce'
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    },
+                    title: {
+                        display: true,
+                        text: 'Purchase vs Sales vs Stock'
+                    }
+                }
+            }
+        });
+    </script>
+    <canvas id="financialChart" style="height: 300px;"></canvas>
+    <script>
+        const barCtx = document.getElementById('financialChart').getContext('2d');
+        const financialChart = new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Purchase', 'Sales', 'Purchase Return', 'Sales Return', 'Expense'],
+                datasets: [{
+                    label: '₹ Amount',
+                    data: [10000, 15000, 2000, 1000, 5000],
+                    backgroundColor: [
+                        '#ff0000',
+                        '#00b0f0',
+                        '#92d050',
+                        '#ffd966',
+                        '#ff99ff'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                    duration: 1200,
+                    easing: 'easeOutQuart'
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Financial Overview'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: '₹ Amount'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Category'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+    <canvas id="topSellingChart" style="height: 300px;"></canvas>
+    <script>
+        const ctx = document.getElementById('topSellingChart').getContext('2d');
+        const topSellingChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Product A', 'Product B', 'Product C', 'Product D', 'Product E'],
+                datasets: [{
+                    label: 'Units Sold',
+                    data: [120, 150, 100, 80, 170], // Sample data
+                    borderColor: '#ff5722',
+                    backgroundColor: '#ff5722',
+                    borderWidth: 2,
+                    fill: false,
+                    pointBackgroundColor: '#ff5722',
+                    pointRadius: 6,
+                    borderDash: [5, 5], // Dashed line
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                    duration: 1000,
+                    easing: 'easeOutCubic'
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Top 5 Selling Products'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Units Sold'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Products'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+    <script>
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const currentMonth = new Date().getMonth();
+        let selectedMonth = currentMonth;
+
+        function renderMonthButtons() {
+            const container = document.getElementById('monthButtonsContainer');
+            container.innerHTML = monthNames.map((month, index) => `
+        <button type="button" 
+            class="btn ${index === selectedMonth ? 'btn-primary text-white' : 'btn-light text-dark border'} fw-semibold rounded-pill px-4 py-2 shadow-sm"
+            style="border: 1px solid #ccc;" 
+            onclick="selectMonth(${index})">
+            ${month}
+        </button>
+    `).join('');
+        }
+
+
+        function selectMonth(index) {
+            selectedMonth = index;
+            renderMonthButtons();
+            console.log("Selected Month:", monthNames[selectedMonth]);
+        }
+        renderMonthButtons();
+    </script>
+
 </asp:Content>

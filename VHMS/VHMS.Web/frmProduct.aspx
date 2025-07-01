@@ -91,7 +91,7 @@
                                                     <th>Category</th>
                                                     <th>Supplier</th>
                                                     <th>Product Name</th>
-                                                     <th>Unit</th>
+                                                    <th>Unit</th>
                                                     <th>Status</th>
                                                     <th>View</th>
                                                     <th>Edit</th>
@@ -139,7 +139,7 @@
                                         <input type="text" class="form-control" id="txtProductCode" placeholder="Please enter HSN Code"
                                             maxlength="10" tabindex="3" autocomplete="off" />
                                     </div>
-                                    <div class="form-group col-md-3" id="divSalesMargin" style="display:none">
+                                    <div class="form-group col-md-3" id="divSalesMargin" style="display: none">
                                         <label>
                                             Sales Margin</label><span class="text-danger">*</span>
                                         <input type="text" class="form-control" id="txtSalesPercent" placeholder="Please enter Sales Margin"
@@ -160,25 +160,39 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="form-group  col-md-5" id="divSupplier">
+                                    <div class="form-group  col-md-4" id="divSupplier">
                                         <label>
                                             Supplier</label><span class="text-danger">*</span>
                                         <select id="ddlSupplier" class="form-control select2" data-placeholder="Select Supplier" tabindex="6">
                                         </select>
                                     </div>
-                                    <div class="form-group  col-md-5" id="divUnit">
+                                    <div class="form-group  col-md-4" id="divUnit">
                                         <label>
                                             Unit</label><span class="text-danger">*</span>
                                         <select id="ddlUnit" class="form-control select2" data-placeholder="Select Unit" tabindex="7">
                                         </select>
                                     </div>
-                                    <div class="checkbox col-md-1 ">
+
+                                    <div class="form-group  col-md-4" id="divExpiry">
                                         <label>
-                                            <input type="checkbox" id="chkStatus" checked="checked" tabindex="8" />Active
-                                        </label>
+                                            Expiry Type</label><span class="text-danger">*</span>
+                                        <select id="ddlExpiry" class="form-control" tabindex="-1">
+                                            <option value="" selected="selected">Selected</option>
+                                            <option value="Expiry Notification">Expiry Notification</option>
+                                            <option value="No Expiry">No Expiry</option>
+                                        </select>
                                     </div>
-                                </div>
-                                <div class="row" style="display:none">
+                                    <div class="form-group col-md-3" id="divExpiryDate">
+                                        <label>
+                                            Expiry Date</label><span class="text-danger">*</span>
+                                        <div class="input-group date form_date" data-date-format="dd/MM/yyyy HH:ii P" data-link-field="txtExpirDate"
+                                            data-link-format="dd/MM/yyyy">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-calendar glyphicon glyphicon-calendar"></i>
+                                            </div>
+                                            <input type="text" class="form-control pull-right" tabindex="2" id="txtExpiryDate" readonly="true" />
+                                        </div>
+                                    </div>
                                     <div class="form-group col-md-3" id="divStockQuantity">
                                         <label>
                                             Stock Quantity</label><span class="text-danger">*</span>
@@ -197,6 +211,13 @@
                                         <input type="text" class="form-control" id="txtSellingRate" placeholder="Please enter Selling Rate"
                                             maxlength="10" tabindex="4" onkeypress="return IsNumeric(event)" autocomplete="off" />
                                     </div>
+                                    <div class="checkbox col-md-1 ">
+                                        <label>
+                                            <input type="checkbox" id="chkStatus" checked="checked" tabindex="8" />Active
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row">
                                 </div>
                                 <div class="row" style="display: none">
                                     <div class="form-group col-md-4">
@@ -374,6 +395,17 @@
                 e.stopPropagation();
             });
         });
+        $(document).ready(function () {
+            $('#ddlExpiry').change(function () {
+                var selectedValue = $(this).val();
+                if (selectedValue === 'Expiry Notification') {
+                    $('#divExpiryDate').show();
+                } else {
+                    $('#divExpiryDate').hide();
+                }
+            });
+            $('#ddlExpiry').trigger('change');
+        });
 
         $(document).ready(function () {
             ActionAdd = '<%=Session["ActionAdd"]%>';
@@ -399,10 +431,17 @@
             GetCategoryList();
             GetUnitList();
             GetSupplier("ddlSupplier");
-            GetTaxList("ddlTaxName");
             $("#divSupplierinfo").hide();
+            $("#txtExpiryDate").attr("data-link-format", "dd/MM/yyyy");
+            $("#txtExpiryDate").datetimepicker({
+                pickTime: false,
+                useCurrent: true,
+                maxDate: moment(),
+                format: 'DD/MM/YYYY'
+            });
             GetRecord();
         });
+
         $("#btnSupplierAdd").click(function () {
             GetStateList();
             $("#btnClose").click();
@@ -801,7 +840,7 @@
             $(sControlName).empty();
             $.ajax({
                 type: "POST",
-                url: "WebServices/VHMSService.svc/GetProductList",
+                url: "WebServices/VHMSService.svc/GetProduct",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 async: false,
@@ -939,34 +978,6 @@
                 $("#divName").addClass('has-error'); $("#txtName").focus(); return false;
             } else { $("#divName").removeClass('has-error'); }
 
-            //if ($("#txtSalesPercent").val().trim() == "" || $("#txtSalesPercent").val().trim() == undefined) {
-            //    $.jGrowl("Please enter Sales Margin", { sticky: false, theme: 'warning', life: jGrowlLife });
-            //    $("#divSalesMargin").addClass('has-error'); $("#txtSalesPercent").focus(); return false;
-            //} else { $("#divSalesMargin").removeClass('has-error'); }
-
-            //if (!$("#txtPurchaseRate").val().trim() || $("#txtPurchaseRate").val().trim() == "0") {
-            //    $.jGrowl("Please enter Purchase Rate", { sticky: false, theme: 'warning', life: jGrowlLife });
-            //    $("#divPurchaseRate").addClass('has-error');
-            //    $("#txtPurchaseRate").focus();
-            //    return false;} else { $("#divPurchaseRate").removeClass('has-error');}
-
-            //if (!$("#txtSellingRate").val().trim() || $("#txtSellingRate").val().trim() == "0") {
-            //    $.jGrowl("Please enter Sales Margin", { sticky: false, theme: 'warning', life: jGrowlLife });
-            //    $("#divSellingRate").addClass('has-error');
-            //    $("#txtSellingRate").focus();
-            //    return false; } else { $("#divSellingRate").removeClass('has-error');}
-
-            //if (!$("#txtStockQuantity").val().trim() || $("#txtStockQuantity").val().trim() == "0") {
-            //    $.jGrowl("Please enter Stock Quantity", { sticky: false, theme: 'warning', life: jGrowlLife });
-            //    $("#divStockQuantity").addClass('has-error');
-            //    $("#txtStockQuantity").focus();
-            //    return false;} else {$("#divStockQuantity").removeClass('has-error');}
-
-            if ($("#ddlTaxName").val() == "0" || $("#ddlTaxName").val() == undefined) {
-                $.jGrowl("Please Select Tax", { sticky: false, theme: 'warning', life: jGrowlLife });
-                $("#divTax").addClass('has-error'); $("#ddlTaxName").focus(); return false;
-            } else { $("#divTax").removeClass('has-error'); }
-
             if ($("#ddlSupplier").val() == "0" || $("#ddlSupplier").val() == undefined) {
                 $.jGrowl("Please Select Supplier", { sticky: false, theme: 'warning', life: jGrowlLife });
                 $("#divSupplier").addClass('has-error'); $("#ddlSupplier").focus(); return false;
@@ -976,6 +987,16 @@
                 $.jGrowl("Please Select Unit", { sticky: false, theme: 'warning', life: jGrowlLife });
                 $("#divUnit").addClass('has-error'); $("#ddlUnit").focus(); return false;
             } else { $("#divUnit").removeClass('has-error'); }
+            if ($("#ddlExpiry").val() === "Expiry Notification") {
+                if ($("#txtExpiryDate").val().trim() === "" || $("#txtExpiryDate").val().trim() === undefined) {
+                    $.jGrowl("Please select Expiry Date", { sticky: false, theme: 'warning', life: jGrowlLife });
+                    $("#divExpiryDate").addClass('has-error');
+                    $("#txtExpiryDate").focus();
+                    return false;
+                } else {
+                    $("#divExpiryDate").removeClass('has-error');
+                }
+            }
             var Obj = new Object();
             Obj.ProductID = 0;
             var ObjCategory = new Object();
@@ -997,9 +1018,14 @@
             Obj.ProductImage2 = $("[id*=imgUpload2_view]").attr("src");
             Obj.ProductImage3 = $("[id*=imgUpload3_view]").attr("src");
             Obj.IsActive = $("#chkStatus").is(':checked') ? "1" : "0";
-            Obj.Quantity = 0;
-            Obj.PurchaseRate = 0;
-            Obj.SellingRate = 0;
+            Obj.Quantity = $("#txtStockQuantity").val();
+            Obj.PurchaseRate = $("#txtPurchaseRate").val();
+            Obj.SellingRate = $("#txtSellingRate").val();
+            Obj.ExpiryType = $("#ddlExpiry").val();
+            if ($("#ddlExpiry").val() == "Expiry Notification")
+                Obj.sExpiryDate = $("#txtExpiryDate").val();
+            else
+                Obj.sExpiryDate = "01-01-1999";
             var sMethodName;
             if ($("#hdnID").val() > 0) {
                 Obj.ProductID = $("#hdnID").val();
@@ -1022,6 +1048,8 @@
             $("#txtPurchaseRate").val("0");
             $("#txtSellingRate").val("0");
             $("#txtName").val("");
+            $("#ddlExpiry").val("");
+            $("#txtExpiryDate").val("");
             $("#txtProductCode").val("");
             $("#txtSalesPercent").val("0");
             $("#chkStatus").prop("checked", true);
@@ -1353,25 +1381,18 @@
                                         }
                                     });
                                     $("#hdnID").val(obj.ProductID);
-                                    //$("#txtStockQuantity").val(obj.Quantity);
-                                    //$("#txtPurchaseRate").val(obj.PurchaseRate);
-                                    //$("#txtSellingRate").val(obj.SellingRate);
+                                    $("#txtStockQuantity").val(obj.Quantity);
+                                    $("#txtPurchaseRate").val(obj.PurchaseRate);
+                                    $("#txtSellingRate").val(obj.SellingRate);
                                     $("#txtName").val(obj.ProductName);
                                     $("#txtProductCode").val(obj.ProductCode);
+                                    $("#txtExpiryDate").val(obj.sExpiryDate);
+                                    $("#ddlExpiry").val(obj.ExpiryType).change();
                                     $("#ddlCategory").val(obj.Category.CategoryID).change();
                                     $("#ddlSupplier").val(obj.Supplier.SupplierID).change();
-                                    $("#ddlTaxName").val(obj.Tax.TaxID).change();
                                     $("#ddlUnit").val(obj.Unit.UnitID).change();
-                                    $("[id*=imgUpload1_view]").css("visibility", "visible");
-                                    $("[id*=imgUpload1_view]").attr("src", obj.ProductImage1);
-                                    $("[id*=imgUpload2_view]").css("visibility", "visible");
-                                    $("[id*=imgUpload2_view]").attr("src", obj.ProductImage2);
-                                    $("[id*=imgUpload3_view]").css("visibility", "visible");
-                                    $("[id*=imgUpload3_view]").attr("src", obj.ProductImage3);
-                                    $("#chkStatus").prop("checked", obj.IsActive ? true : false);
-                                    $("#chkPricingA").prop("checked", obj.PricingA ? true : false);
-                                    $("#chkPricingB").prop("checked", obj.PricingB ? true : false);
-                                    $("#chkPricingC").prop("checked", obj.PricingC ? true : false);
+
+
 
                                     $('#compose-modal').modal({ show: true, backdrop: true });
                                     $(".modal-title").html("<i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Product");
@@ -1482,6 +1503,7 @@
             var ObjState = new Object();
             ObjState.StateID = $("#ddlState").val();
             Obj.State = ObjState;
+
             Obj.AccountNo = $("#txtAccountNo").val();
             Obj.BankName = $("#txtBankName").val();
             Obj.BranchName = $("#txtBranchName").val();

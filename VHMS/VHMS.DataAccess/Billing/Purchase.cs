@@ -48,18 +48,7 @@ namespace VHMS.DataAccess.Billing
                         objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
                         objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
                         objPurchase.Supplier = objSupplier;
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objPurchase.Tax = objTax;
-                        objPurchase.TaxPercent = Convert.ToDecimal(drData["TaxPercent"]);
-                        objPurchase.CGSTAmount = Convert.ToDecimal(drData["CGSTAmount"]);
-                        objPurchase.SGSTAmount = Convert.ToDecimal(drData["SGSTAmount"]);
-                        objPurchase.IGSTAmount = Convert.ToDecimal(drData["IGSTAmount"]);
-                        objPurchase.TaxAmount = Convert.ToDecimal(drData["TaxAmount"]);
-                        objPurchase.TotalAmount = Convert.ToDecimal(drData["TotalAmount"]);
-                        objPurchase.DiscountPercent = Convert.ToDecimal(drData["DiscountPercent"]);
-                        objPurchase.DiscountAmount = Convert.ToDecimal(drData["DiscountAmount"]);
-                        objPurchase.OtherCharges = Convert.ToDecimal(drData["OtherCharges"]);
-                        objPurchase.CourierCharges = Convert.ToDecimal(drData["CourierCharges"]);
+                     
                         objPurchase.Roundoff = Convert.ToDecimal(drData["Roundoff"]);
                         objPurchase.NetAmount = Convert.ToDecimal(drData["NetAmount"]);
                         objPurchase.PaidAmount = Convert.ToDecimal(drData["PaidAmount"]);
@@ -68,11 +57,7 @@ namespace VHMS.DataAccess.Billing
                         objPurchase.sPurchaseDate = objPurchase.PurchaseDate.ToString("dd/MM/yyyy") + " " + objPurchase.CreatedOn.ToString("h:mm");
                         objPurchase.sBillDate = objPurchase.BillDate.ToString("dd/MM/yyyy");
                         objPurchase.Comments = Convert.ToString(drData["Comments"]);
-                        objPurchase.Status = Convert.ToString(drData["Status"]);
-                        objPurchase.DocumentPath = Convert.ToString(drData["DocumentPath"]);
-                        objPurchase.ImagePath1 = Convert.ToString(drData["ImagePath1"]);
-                        objPurchase.ImagePath2 = Convert.ToString(drData["ImagePath2"]);
-                        objPurchase.ImagePath3 = Convert.ToString(drData["ImagePath3"]);
+                       
 
                         objList.Add(objPurchase);
                     }
@@ -122,18 +107,7 @@ namespace VHMS.DataAccess.Billing
                         objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
                         objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
                         objPurchase.Supplier = objSupplier;
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objPurchase.Tax = objTax;
-                        objPurchase.TaxPercent = Convert.ToDecimal(drData["TaxPercent"]);
-                        objPurchase.CGSTAmount = Convert.ToDecimal(drData["CGSTAmount"]);
-                        objPurchase.SGSTAmount = Convert.ToDecimal(drData["SGSTAmount"]);
-                        objPurchase.IGSTAmount = Convert.ToDecimal(drData["IGSTAmount"]);
-                        objPurchase.TaxAmount = Convert.ToDecimal(drData["TaxAmount"]);
-                        objPurchase.TotalAmount = Convert.ToDecimal(drData["TotalAmount"]);
-                        objPurchase.DiscountPercent = Convert.ToDecimal(drData["DiscountPercent"]);
-                        objPurchase.DiscountAmount = Convert.ToDecimal(drData["DiscountAmount"]);
-                        objPurchase.OtherCharges = Convert.ToDecimal(drData["OtherCharges"]);
-                        objPurchase.CourierCharges = Convert.ToDecimal(drData["CourierCharges"]);
+                       
                         objPurchase.Roundoff = Convert.ToDecimal(drData["Roundoff"]);
                         objPurchase.NetAmount = Convert.ToDecimal(drData["NetAmount"]);
                         objPurchase.PaidAmount = Convert.ToDecimal(drData["PaidAmount"]);
@@ -142,9 +116,7 @@ namespace VHMS.DataAccess.Billing
                         objPurchase.sPurchaseDate = objPurchase.PurchaseDate.ToString("dd/MM/yyyy") + " " + objPurchase.CreatedOn.ToString("h:mm");
                         objPurchase.sBillDate = objPurchase.BillDate.ToString("dd/MM/yyyy");
                         objPurchase.Comments = Convert.ToString(drData["Comments"]);
-                        objPurchase.ImagePath1 = Convert.ToString(drData["ImagePath1"]);
-                        objPurchase.ImagePath2 = Convert.ToString(drData["ImagePath2"]);
-                        objPurchase.ImagePath3 = Convert.ToString(drData["ImagePath3"]);
+                       
                         objPurchase.PurchaseTrans = PurchaseTrans.GetPurchaseTransByPurchaseID(objPurchase.PurchaseID);
                         objList.Add(objPurchase);
                     }
@@ -194,21 +166,6 @@ namespace VHMS.DataAccess.Billing
                         objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
                         objSupplier.Days = Convert.ToInt32(drData["Days"]);
                         objPurchase.Supplier = objSupplier;
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objPurchase.Tax = objTax;
-                       
-                        objPurchase.TaxPercent = Convert.ToDecimal(drData["TaxPercent"]);
-                        objPurchase.CGSTAmount = Convert.ToDecimal(drData["CGSTAmount"]);
-                       
-                        objPurchase.SGSTAmount = Convert.ToDecimal(drData["SGSTAmount"]);
-                        objPurchase.IGSTAmount = Convert.ToDecimal(drData["IGSTAmount"]);
-                        objPurchase.TaxAmount = Convert.ToDecimal(drData["TaxAmount"]);
-                        objPurchase.OtherCharges = Convert.ToDecimal(drData["OtherCharges"]);
-                        objPurchase.CourierCharges = Convert.ToDecimal(drData["CourierCharges"]);
-                        objPurchase.TotalAmount = Convert.ToDecimal(drData["TotalAmount"]);
-                        objPurchase.DiscountPercent = Convert.ToDecimal(drData["DiscountPercent"]);
-                        objPurchase.DiscountAmount = Convert.ToDecimal(drData["DiscountAmount"]);
-                        
                         objPurchase.Roundoff = Convert.ToDecimal(drData["Roundoff"]);
                         objPurchase.NetAmount = Convert.ToDecimal(drData["NetAmount"]);
                         objPurchase.TotalQty = Convert.ToDecimal(drData["TotalQty"]);
@@ -217,13 +174,8 @@ namespace VHMS.DataAccess.Billing
                         objPurchase.CreatedOn = Convert.ToDateTime(drData["CreatedOn"]);
                         objPurchase.sPurchaseDate = objPurchase.PurchaseDate.ToString("dd/MM/yyyy") + " " + objPurchase.CreatedOn.ToString("h:mm");
                         objPurchase.sBillDate = objPurchase.BillDate.ToString("dd/MM/yyyy");
-                        
                         objPurchase.Comments = Convert.ToString(drData["Comments"]);
-                        objPurchase.Status = Convert.ToString(drData["Status"]);
-                        objPurchase.DocumentPath = Convert.ToString(drData["DocumentPath"]);
-                        objPurchase.ImagePath1 = Convert.ToString(drData["ImagePath1"]);
-                        objPurchase.ImagePath2 = Convert.ToString(drData["ImagePath2"]);
-                        objPurchase.ImagePath3 = Convert.ToString(drData["ImagePath3"]);
+                       
 
                         objList.Add(objPurchase);
                     }
@@ -368,21 +320,12 @@ namespace VHMS.DataAccess.Billing
                         objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
                         objSupplier.Days = Convert.ToInt32(drData["Days"]);
                         objPurchase.Supplier = objSupplier;
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objPurchase.Tax = objTax;
-                        objPurchase.TaxPercent = Convert.ToDecimal(drData["TaxPercent"]);
-                        objPurchase.TaxPercent = Convert.ToDecimal(drData["TaxPercent"]);
-                        objPurchase.CGSTAmount = Convert.ToDecimal(drData["CGSTAmount"]);
-                        objPurchase.SGSTAmount = Convert.ToDecimal(drData["SGSTAmount"]);
-                        objPurchase.IGSTAmount = Convert.ToDecimal(drData["IGSTAmount"]);
-                        objPurchase.TaxAmount = Convert.ToDecimal(drData["TaxAmount"]);
+                        
                         objPurchase.TotalAmount = Convert.ToDecimal(drData["TotalAmount"]);
-                        objPurchase.DiscountPercent = Convert.ToDecimal(drData["DiscountPercent"]);
-                        objPurchase.DiscountAmount = Convert.ToDecimal(drData["DiscountAmount"]);
+                       
                         objPurchase.Roundoff = Convert.ToDecimal(drData["Roundoff"]);
                         objPurchase.NetAmount = Convert.ToDecimal(drData["NetAmount"]);
-                        objPurchase.OtherCharges = Convert.ToDecimal(drData["OtherCharges"]);
-                        objPurchase.CourierCharges = Convert.ToDecimal(drData["CourierCharges"]);
+                    
                         objPurchase.TotalQty = Convert.ToDecimal(drData["TotalQty"]);
                         objPurchase.PaidAmount = Convert.ToDecimal(drData["PaidAmount"]);
                         objPurchase.BalanceAmount = Convert.ToDecimal(drData["BalanceAmount"]);
@@ -390,9 +333,7 @@ namespace VHMS.DataAccess.Billing
                         objPurchase.sPurchaseDate = objPurchase.PurchaseDate.ToString("dd/MM/yyyy") + " " + objPurchase.CreatedOn.ToString("h:mm");
                         objPurchase.sBillDate = objPurchase.BillDate.ToString("dd/MM/yyyy");
                         objPurchase.Comments = Convert.ToString(drData["Comments"]);
-                        objPurchase.ImagePath1 = Convert.ToString(drData["ImagePath1"]);
-                        objPurchase.ImagePath2 = Convert.ToString(drData["ImagePath2"]);
-                        objPurchase.ImagePath3 = Convert.ToString(drData["ImagePath3"]);
+                     
 
                         objList.Add(objPurchase);
                     }
@@ -440,18 +381,9 @@ namespace VHMS.DataAccess.Billing
                         objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
                         objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
                         objPurchase.Supplier = objSupplier;
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objPurchase.Tax = objTax;
-                        objPurchase.TaxPercent = Convert.ToDecimal(drData["TaxPercent"]);
-                        objPurchase.CGSTAmount = Convert.ToDecimal(drData["CGSTAmount"]);
-                        objPurchase.SGSTAmount = Convert.ToDecimal(drData["SGSTAmount"]);
-                        objPurchase.IGSTAmount = Convert.ToDecimal(drData["IGSTAmount"]);
-                        objPurchase.OtherCharges = Convert.ToDecimal(drData["OtherCharges"]);
-                        objPurchase.CourierCharges = Convert.ToDecimal(drData["CourierCharges"]);
-                        objPurchase.TaxAmount = Convert.ToDecimal(drData["TaxAmount"]);
+                       
                         objPurchase.TotalAmount = Convert.ToDecimal(drData["TotalAmount"]);
-                        objPurchase.DiscountPercent = Convert.ToDecimal(drData["DiscountPercent"]);
-                        objPurchase.DiscountAmount = Convert.ToDecimal(drData["DiscountAmount"]);
+                        
                         objPurchase.Roundoff = Convert.ToDecimal(drData["Roundoff"]);
                         objPurchase.NetAmount = Convert.ToDecimal(drData["NetAmount"]);
                         objPurchase.TotalQty = Convert.ToDecimal(drData["TotalQty"]);
@@ -461,11 +393,7 @@ namespace VHMS.DataAccess.Billing
                         objPurchase.sPurchaseDate = objPurchase.PurchaseDate.ToString("dd/MM/yyyy") + " " + objPurchase.CreatedOn.ToString("h:mm");
                         objPurchase.sBillDate = objPurchase.BillDate.ToString("dd/MM/yyyy");
                         objPurchase.Comments = Convert.ToString(drData["Comments"]);
-                        objPurchase.Status = Convert.ToString(drData["Status"]);
-                        objPurchase.DocumentPath = Convert.ToString(drData["DocumentPath"]);
-                        objPurchase.ImagePath1 = Convert.ToString(drData["ImagePath1"]);
-                        objPurchase.ImagePath2 = Convert.ToString(drData["ImagePath2"]);
-                        objPurchase.ImagePath3 = Convert.ToString(drData["ImagePath3"]);
+                        
 
                         objList.Add(objPurchase);
                     }
@@ -514,34 +442,20 @@ namespace VHMS.DataAccess.Billing
                         objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
                         objPurchase.Supplier = objSupplier;
 
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objPurchase.Tax = objTax;
-
-                        
                        
-                        
-                        objPurchase.TaxPercent = Convert.ToDecimal(drData["TaxPercent"]);
-                        objPurchase.CGSTAmount = Convert.ToDecimal(drData["CGSTAmount"]);
-                        objPurchase.SGSTAmount = Convert.ToDecimal(drData["SGSTAmount"]);
-                        objPurchase.IGSTAmount = Convert.ToDecimal(drData["IGSTAmount"]);
-                        objPurchase.TaxAmount = Convert.ToDecimal(drData["TaxAmount"]);
                         objPurchase.TotalAmount = Convert.ToDecimal(drData["TotalAmount"]);
-                        objPurchase.DiscountPercent = Convert.ToDecimal(drData["DiscountPercent"]);
-                        objPurchase.DiscountAmount = Convert.ToDecimal(drData["DiscountAmount"]);
+                       
                         objPurchase.Roundoff = Convert.ToDecimal(drData["Roundoff"]);
                         objPurchase.NetAmount = Convert.ToDecimal(drData["NetAmount"]);
                         objPurchase.PaidAmount = Convert.ToDecimal(drData["PaidAmount"]);
-                        objPurchase.OtherCharges = Convert.ToDecimal(drData["OtherCharges"]);
-                        objPurchase.CourierCharges = Convert.ToDecimal(drData["CourierCharges"]);
+                       
                         objPurchase.BalanceAmount = Convert.ToDecimal(drData["BalanceAmount"]);
-                        objPurchase.ReturnAmount = Convert.ToDecimal(drData["ReturnAmount"]);
+                       
                         objPurchase.CreatedOn = Convert.ToDateTime(drData["CreatedOn"]);
                         objPurchase.sPurchaseDate = objPurchase.PurchaseDate.ToString("dd/MM/yyyy") + " " + objPurchase.CreatedOn.ToString("h:mm");
                         objPurchase.sBillDate = objPurchase.BillDate.ToString("dd/MM/yyyy");
                         objPurchase.Comments = Convert.ToString(drData["Comments"]);
-                        objPurchase.ImagePath1 = Convert.ToString(drData["ImagePath1"]);
-                        objPurchase.ImagePath2 = Convert.ToString(drData["ImagePath2"]);
-                        objPurchase.ImagePath3 = Convert.ToString(drData["ImagePath3"]);
+                       
 
                         objList.Add(objPurchase);
                     }
@@ -633,18 +547,7 @@ namespace VHMS.DataAccess.Billing
                         objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
                         objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
                         objPurchase.Supplier = objSupplier;
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objPurchase.Tax = objTax;
-                        objPurchase.TaxPercent = Convert.ToDecimal(drData["TaxPercent"]);
-                        objPurchase.CGSTAmount = Convert.ToDecimal(drData["CGSTAmount"]);
-                        objPurchase.SGSTAmount = Convert.ToDecimal(drData["SGSTAmount"]);
-                        objPurchase.IGSTAmount = Convert.ToDecimal(drData["IGSTAmount"]);
-                        objPurchase.TaxAmount = Convert.ToDecimal(drData["TaxAmount"]);
-                        objPurchase.TotalAmount = Convert.ToDecimal(drData["TotalAmount"]);
-                        objPurchase.OtherCharges = Convert.ToDecimal(drData["OtherCharges"]);
-                        objPurchase.CourierCharges = Convert.ToDecimal(drData["CourierCharges"]);
-                        objPurchase.DiscountPercent = Convert.ToDecimal(drData["DiscountPercent"]);
-                        objPurchase.DiscountAmount = Convert.ToDecimal(drData["DiscountAmount"]);
+
                         objPurchase.Roundoff = Convert.ToDecimal(drData["Roundoff"]);
                         objPurchase.NetAmount = Convert.ToDecimal(drData["NetAmount"]);
                         objPurchase.PaidAmount = Convert.ToDecimal(drData["PaidAmount"]);
@@ -654,11 +557,7 @@ namespace VHMS.DataAccess.Billing
                         objPurchase.sPurchaseDate = objPurchase.PurchaseDate.ToString("dd/MM/yyyy") + " " + objPurchase.CreatedOn.ToString("h:mm");
                         objPurchase.sBillDate = objPurchase.BillDate.ToString("dd/MM/yyyy");
                         objPurchase.Comments = Convert.ToString(drData["Comments"]);
-                        objPurchase.Status = Convert.ToString(drData["Status"]);
-                        objPurchase.DocumentPath = Convert.ToString(drData["DocumentPath"]);
-                        objPurchase.ImagePath1 = Convert.ToString(drData["ImagePath1"]);
-                        objPurchase.ImagePath2 = Convert.ToString(drData["ImagePath2"]);
-                        objPurchase.ImagePath3 = Convert.ToString(drData["ImagePath3"]);
+                      
 
                         objList.Add(objPurchase);
                     }
@@ -707,18 +606,9 @@ namespace VHMS.DataAccess.Billing
                         objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
                         objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
                         objPurchase.Supplier = objSupplier;
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objPurchase.Tax = objTax;
-                        objPurchase.TaxPercent = Convert.ToDecimal(drData["TaxPercent"]);
-                        objPurchase.CGSTAmount = Convert.ToDecimal(drData["CGSTAmount"]);
-                        objPurchase.SGSTAmount = Convert.ToDecimal(drData["SGSTAmount"]);
-                        objPurchase.IGSTAmount = Convert.ToDecimal(drData["IGSTAmount"]);
-                        objPurchase.TaxAmount = Convert.ToDecimal(drData["TaxAmount"]);
+
                         objPurchase.TotalAmount = Convert.ToDecimal(drData["TotalAmount"]);
-                        objPurchase.OtherCharges = Convert.ToDecimal(drData["OtherCharges"]);
-                        objPurchase.CourierCharges = Convert.ToDecimal(drData["CourierCharges"]);
-                        objPurchase.DiscountPercent = Convert.ToDecimal(drData["DiscountPercent"]);
-                        objPurchase.DiscountAmount = Convert.ToDecimal(drData["DiscountAmount"]);
+                      
                         objPurchase.Roundoff = Convert.ToDecimal(drData["Roundoff"]);
                         objPurchase.NetAmount = Convert.ToDecimal(drData["NetAmount"]);
                         objPurchase.PaidAmount = Convert.ToDecimal(drData["PaidAmount"]);
@@ -728,11 +618,7 @@ namespace VHMS.DataAccess.Billing
                         objPurchase.sPurchaseDate = objPurchase.PurchaseDate.ToString("dd/MM/yyyy") + " " + objPurchase.CreatedOn.ToString("h:mm");
                         objPurchase.sBillDate = objPurchase.BillDate.ToString("dd/MM/yyyy");
                         objPurchase.Comments = Convert.ToString(drData["Comments"]);
-                        objPurchase.Status = Convert.ToString(drData["Status"]);
-                        objPurchase.DocumentPath = Convert.ToString(drData["DocumentPath"]);
-                        objPurchase.ImagePath1 = Convert.ToString(drData["ImagePath1"]);
-                        objPurchase.ImagePath2 = Convert.ToString(drData["ImagePath2"]);
-                        objPurchase.ImagePath3 = Convert.ToString(drData["ImagePath3"]);
+                       
 
                         objList.Add(objPurchase);
                     }
@@ -780,26 +666,16 @@ namespace VHMS.DataAccess.Billing
                         objSupplier.SupplierID = Convert.ToInt32(drData["FK_SupplierID"]);
                         objSupplier.SupplierName = Convert.ToString(drData["SupplierName"]);
                         objPurchase.Supplier = objSupplier;
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objPurchase.Tax = objTax;
-                        objPurchase.TaxPercent = Convert.ToDecimal(drData["TaxPercent"]);
-                        objPurchase.CGSTAmount = Convert.ToDecimal(drData["CGSTAmount"]);
-                        objPurchase.SGSTAmount = Convert.ToDecimal(drData["SGSTAmount"]);
-                        objPurchase.IGSTAmount = Convert.ToDecimal(drData["IGSTAmount"]);
-                        objPurchase.TaxAmount = Convert.ToDecimal(drData["TaxAmount"]);
+                       
                         objPurchase.TotalAmount = Convert.ToDecimal(drData["TotalAmount"]);
-                        objPurchase.DiscountPercent = Convert.ToDecimal(drData["DiscountPercent"]);
-                        objPurchase.DiscountAmount = Convert.ToDecimal(drData["DiscountAmount"]);
+                       
                         objPurchase.Roundoff = Convert.ToDecimal(drData["Roundoff"]);
                         objPurchase.NetAmount = Convert.ToDecimal(drData["NetAmount"]);
                         objPurchase.PaidAmount = Convert.ToDecimal(drData["PaidAmount"]);
-                        objPurchase.OtherCharges = Convert.ToDecimal(drData["OtherCharges"]);
-                        objPurchase.CourierCharges = Convert.ToDecimal(drData["CourierCharges"]);
+                    
                         objPurchase.Comments = Convert.ToString(drData["Comments"]);
                         objPurchase.BalanceAmount = Convert.ToDecimal(drData["BalanceAmount"]);
-                        objPurchase.ImagePath1 = Convert.ToString(drData["ImagePath1"]);
-                        objPurchase.ImagePath2 = Convert.ToString(drData["ImagePath2"]);
-                        objPurchase.ImagePath3 = Convert.ToString(drData["ImagePath3"]);
+                      
                         objPurchase.PurchaseTrans = PurchaseTrans.GetPurchaseTransByPurchaseID(objPurchase.PurchaseID);
                     }
                 }
@@ -827,18 +703,8 @@ namespace VHMS.DataAccess.Billing
                 db.AddInParameter(cmd, "@PurchaseNo", DbType.String, objPurchase.PurchaseNo);
                 db.AddInParameter(cmd, "@PurchaseDate", DbType.String, objPurchase.sPurchaseDate);
                 db.AddInParameter(cmd, "@FK_SupplierID", DbType.Int32, objPurchase.Supplier.SupplierID);
-                db.AddInParameter(cmd, "@FK_TaxID", DbType.Int32, objPurchase.Tax.TaxID);
                 db.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, objPurchase.Company.CompanyID);
-                db.AddInParameter(cmd, "@TaxPercent", DbType.Decimal, objPurchase.TaxPercent);
-                db.AddInParameter(cmd, "@CGSTAmount", DbType.Decimal, objPurchase.CGSTAmount);
-                db.AddInParameter(cmd, "@SGSTAmount", DbType.Decimal, objPurchase.SGSTAmount);
-                db.AddInParameter(cmd, "@IGSTAmount", DbType.Decimal, objPurchase.IGSTAmount);
-                db.AddInParameter(cmd, "@TaxAmount", DbType.Decimal, objPurchase.TaxAmount);
                 db.AddInParameter(cmd, "@TotalAmount", DbType.Decimal, objPurchase.TotalAmount);
-                db.AddInParameter(cmd, "@DiscountPercent", DbType.Decimal, objPurchase.DiscountPercent);
-                db.AddInParameter(cmd, "@OtherCharges", DbType.Decimal, objPurchase.OtherCharges);
-                db.AddInParameter(cmd, "@CourierCharges", DbType.Decimal, objPurchase.CourierCharges);
-                db.AddInParameter(cmd, "@DiscountAmount", DbType.Decimal, objPurchase.DiscountAmount);
                 db.AddInParameter(cmd, "@Roundoff", DbType.Decimal, objPurchase.Roundoff);
                 db.AddInParameter(cmd, "@NetAmount", DbType.Decimal, objPurchase.NetAmount);
                 db.AddInParameter(cmd, "@PaidAmount", DbType.Decimal, objPurchase.PaidAmount);
@@ -846,9 +712,6 @@ namespace VHMS.DataAccess.Billing
                 db.AddInParameter(cmd, "@BillNo", DbType.String, objPurchase.BillNo);
                 db.AddInParameter(cmd, "@BillDate", DbType.String, objPurchase.sBillDate);
                 db.AddInParameter(cmd, "@Comments", DbType.String, objPurchase.Comments);
-                db.AddInParameter(cmd, "@ImagePath1", DbType.String, objPurchase.ImagePath1);
-                db.AddInParameter(cmd, "@ImagePath2", DbType.String, objPurchase.ImagePath2);
-                db.AddInParameter(cmd, "@ImagePath3", DbType.String, objPurchase.ImagePath3);
                 db.AddInParameter(cmd, "@FK_CreatedBy", DbType.Int32, objPurchase.CreatedBy.UserID);
                 iID = db.ExecuteNonQuery(cmd);
                 if (iID != 0) iID = Convert.ToInt32(db.GetParameterValue(cmd, "@PK_PurchaseID"));
@@ -881,27 +744,14 @@ namespace VHMS.DataAccess.Billing
                 db.AddInParameter(cmd, "@PurchaseDate", DbType.String, objPurchase.sPurchaseDate);
                 db.AddInParameter(cmd, "@FK_SupplierID", DbType.Int32, objPurchase.Supplier.SupplierID);
                 db.AddInParameter(cmd, "@FK_CompanyID", DbType.Int32, objPurchase.Company.CompanyID);
-                db.AddInParameter(cmd, "@FK_TaxID", DbType.Int32, objPurchase.Tax.TaxID);
-                db.AddInParameter(cmd, "@TaxPercent", DbType.Decimal, objPurchase.TaxPercent);
-                db.AddInParameter(cmd, "@CGSTAmount", DbType.Decimal, objPurchase.CGSTAmount);
-                db.AddInParameter(cmd, "@SGSTAmount", DbType.Decimal, objPurchase.SGSTAmount);
-                db.AddInParameter(cmd, "@IGSTAmount", DbType.Decimal, objPurchase.IGSTAmount);
-                db.AddInParameter(cmd, "@TaxAmount", DbType.Decimal, objPurchase.TaxAmount);
                 db.AddInParameter(cmd, "@TotalAmount", DbType.Decimal, objPurchase.TotalAmount);
-                db.AddInParameter(cmd, "@DiscountPercent", DbType.Decimal, objPurchase.DiscountPercent);
-                db.AddInParameter(cmd, "@DiscountAmount", DbType.Decimal, objPurchase.DiscountAmount);
                 db.AddInParameter(cmd, "@Roundoff", DbType.Decimal, objPurchase.Roundoff);
                 db.AddInParameter(cmd, "@NetAmount", DbType.Decimal, objPurchase.NetAmount);
                 db.AddInParameter(cmd, "@PaidAmount", DbType.Decimal, objPurchase.PaidAmount);
                 db.AddInParameter(cmd, "@BalanceAmount", DbType.Decimal, objPurchase.BalanceAmount);
                 db.AddInParameter(cmd, "@BillNo", DbType.String, objPurchase.BillNo);
                 db.AddInParameter(cmd, "@BillDate", DbType.String, objPurchase.sBillDate);
-                db.AddInParameter(cmd, "@OtherCharges", DbType.Decimal, objPurchase.OtherCharges);
-                db.AddInParameter(cmd, "@CourierCharges", DbType.Decimal, objPurchase.CourierCharges);
                 db.AddInParameter(cmd, "@Comments", DbType.String, objPurchase.Comments);
-                db.AddInParameter(cmd, "@ImagePath1", DbType.String, objPurchase.ImagePath1);
-                db.AddInParameter(cmd, "@ImagePath2", DbType.String, objPurchase.ImagePath2);
-                db.AddInParameter(cmd, "@ImagePath3", DbType.String, objPurchase.ImagePath3);
                 db.AddInParameter(cmd, "@FK_ModifiedBy", DbType.Int32, objPurchase.ModifiedBy.UserID);
                 foreach (Entity.Billing.PurchaseTrans ObjPurchaseTrans in objPurchase.PurchaseTrans)
                     ObjPurchaseTrans.PurchaseID = objPurchase.PurchaseID;
@@ -1123,28 +973,13 @@ namespace VHMS.DataAccess.Billing
 
                         objPurchaseTrans.PurchaseTransID = Convert.ToInt32(drData["PK_PurchaseTransID"]);
                         objPurchaseTrans.PurchaseID = Convert.ToInt32(drData["FK_PurchaseID"]);
-
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objTax.TaxPercentage = Convert.ToDecimal(drData["TaxPercent"]);
-                        objTax.SGSTPercent = Convert.ToDecimal(drData["SGSTPercent"]);
-                        objTax.IGSTPercent = Convert.ToDecimal(drData["IGSTPercent"]);
-                        objTax.CGSTPercent = Convert.ToDecimal(drData["CGSTPercent"]);
-                        objPurchaseTrans.Tax = objTax;
-                        objPurchaseTrans.SGSTAmount = Convert.ToDecimal(drData["SGSTAmount"]);
-                        objPurchaseTrans.IGSTAmount = Convert.ToDecimal(drData["IGSTAmount"]);
-                        objPurchaseTrans.TaxAmount = Convert.ToDecimal(drData["TaxAmount"]);
-                        objPurchaseTrans.CGSTAmount = Convert.ToDecimal(drData["CGSTAmount"]);
                         objPurchaseTrans.Quantity = Convert.ToDecimal(drData["Quantity"]);
                         objPurchaseTrans.Rate = Convert.ToDecimal(drData["Rate"]);
                         objPurchaseTrans.SubTotal = Convert.ToDecimal(drData["SubTotal"]);
                         objPurchaseTrans.Barcode = Convert.ToString(drData["Barcode"]);
-                        objPurchaseTrans.DiscountPercentage = Convert.ToDecimal(drData["DiscountPercentage"]);
-                        objPurchaseTrans.DiscountAmount = Convert.ToDecimal(drData["DiscountAmount"]);
-                        objProduct.ProductCode = Convert.ToString(drData["ProductCode"]);
                         objProduct.ProductName = Convert.ToString(drData["ProductName"]);
                         objProduct.ProductID = Convert.ToInt32(drData["FK_ProductID"]);
                         objPurchaseTrans.Product = objProduct;
-                        objPurchaseTrans.BatchNo = Convert.ToString(drData["BatchNo"]);
                         objPurchaseTrans.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
                         objPurchaseTrans.PreviousRate = Convert.ToDecimal(drData["PreviousRate"]);
                         objPurchaseTrans.PurchaseBatchDate = Convert.ToDateTime(drData["PurchaseBatchDate"]);
@@ -1161,7 +996,57 @@ namespace VHMS.DataAccess.Billing
             }
             return objList;
         }
+        public static Entity.Billing.PurchaseTrans GetPurchaseTransBarcodeByID(int iPurchaseID = 0, int ProductId = 0, string Barcode = "")
+        {
+            string sException = string.Empty;
+            Database db;
+            Entity.Billing.PurchaseTrans objPurchaseTrans = new Entity.Billing.PurchaseTrans();
+            Entity.Master.Product objProduct;
+            Entity.Billing.Tax objTax; ;
 
+            try
+            {
+                db = Entity.DBConnection.dbCon;
+                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_PURCHASETRANS);
+                db.AddInParameter(cmd, "@PK_PurchaseTransID", DbType.Int32, iPurchaseID);
+                db.AddInParameter(cmd, "@FK_ProductID", DbType.Int32, ProductId);
+                db.AddInParameter(cmd, "@Barcode", DbType.String, Barcode);
+                DataSet dsList = db.ExecuteDataSet(cmd);
+
+                if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow drData in dsList.Tables[0].Rows)
+                    {
+                        objPurchaseTrans = new Entity.Billing.PurchaseTrans();
+                        objProduct = new Entity.Master.Product();
+                        objTax = new Entity.Billing.Tax();
+
+                        objPurchaseTrans.PurchaseTransID = Convert.ToInt32(drData["PK_PurchaseTransID"]);
+                        objPurchaseTrans.PurchaseID = Convert.ToInt32(drData["FK_PurchaseID"]);
+                        objPurchaseTrans.Quantity = Convert.ToDecimal(drData["Quantity"]);
+                        objPurchaseTrans.Rate = Convert.ToDecimal(drData["Rate"]);
+                        objPurchaseTrans.SubTotal = Convert.ToDecimal(drData["SubTotal"]);
+                        objPurchaseTrans.Barcode = Convert.ToString(drData["Barcode"]);
+                        objProduct.ProductCode = Convert.ToString(drData["ProductCode"]);
+                        objProduct.ProductName = Convert.ToString(drData["ProductName"]);
+                        objProduct.ProductID = Convert.ToInt32(drData["FK_ProductID"]);
+                        objPurchaseTrans.Product = objProduct;
+                        objPurchaseTrans.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
+                        objPurchaseTrans.PreviousRate = Convert.ToDecimal(drData["PreviousRate"]);
+                        objPurchaseTrans.PurchaseBatchDate = Convert.ToDateTime(drData["PurchaseBatchDate"]);
+                        objPurchaseTrans.sPurchaseBatchDate = objPurchaseTrans.PurchaseBatchDate.ToString("dd/MM/yyyy");
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                sException = "Purchase GetPurchaseByID | " + ex.ToString();
+                Log.Write(sException);
+                throw;
+            }
+            return objPurchaseTrans;
+        }
         public static Entity.Billing.PurchaseTrans GetPurchaseTransByID(int iPurchaseID = 0)
         {
             string sException = string.Empty;
@@ -1187,33 +1072,18 @@ namespace VHMS.DataAccess.Billing
 
                         objPurchaseTrans.PurchaseTransID = Convert.ToInt32(drData["PK_PurchaseTransID"]);
                         objPurchaseTrans.PurchaseID = Convert.ToInt32(drData["FK_PurchaseID"]);
-
-                        objTax.TaxID = Convert.ToInt32(drData["FK_TaxID"]);
-                        objTax.TaxPercentage = Convert.ToDecimal(drData["TaxPercent"]);
-                        objTax.SGSTPercent = Convert.ToDecimal(drData["SGSTPercent"]);
-                        objTax.IGSTPercent = Convert.ToDecimal(drData["IGSTPercent"]);
-                        objTax.CGSTPercent = Convert.ToDecimal(drData["CGSTPercent"]);
-                        objPurchaseTrans.Tax = objTax;
-                        objPurchaseTrans.SGSTAmount = Convert.ToDecimal(drData["SGSTAmount"]);
-                        objPurchaseTrans.IGSTAmount = Convert.ToDecimal(drData["IGSTAmount"]);
-                        objPurchaseTrans.TaxAmount = Convert.ToDecimal(drData["TaxAmount"]);
-                        objPurchaseTrans.CGSTAmount = Convert.ToDecimal(drData["CGSTAmount"]);
                         objPurchaseTrans.Quantity = Convert.ToDecimal(drData["Quantity"]);
                         objPurchaseTrans.Rate = Convert.ToDecimal(drData["Rate"]);
                         objPurchaseTrans.SubTotal = Convert.ToDecimal(drData["SubTotal"]);
                         objPurchaseTrans.Barcode = Convert.ToString(drData["Barcode"]);
-                        objPurchaseTrans.DiscountPercentage = Convert.ToDecimal(drData["DiscountPercentage"]);
-                        objPurchaseTrans.DiscountAmount = Convert.ToDecimal(drData["DiscountAmount"]);
                         objProduct.ProductCode = Convert.ToString(drData["ProductCode"]);
                         objProduct.ProductName = Convert.ToString(drData["ProductName"]);
                         objProduct.ProductID = Convert.ToInt32(drData["FK_ProductID"]);
                         objPurchaseTrans.Product = objProduct;
-                        objPurchaseTrans.BatchNo = Convert.ToString(drData["BatchNo"]);
                         objPurchaseTrans.SellingRate = Convert.ToDecimal(drData["SellingRate"]);
                         objPurchaseTrans.PreviousRate = Convert.ToDecimal(drData["PreviousRate"]);
                         objPurchaseTrans.PurchaseBatchDate = Convert.ToDateTime(drData["PurchaseBatchDate"]);
                         objPurchaseTrans.sPurchaseBatchDate = objPurchaseTrans.PurchaseBatchDate.ToString("dd/MM/yyyy");
-
                     }
                 }
             }
@@ -1254,20 +1124,8 @@ namespace VHMS.DataAccess.Billing
                 db.AddInParameter(cmd, "@FK_ProductID", DbType.String, objPurchaseTrans.Product.ProductID);
                 db.AddInParameter(cmd, "@Quantity", DbType.Decimal, objPurchaseTrans.Quantity);
                 db.AddInParameter(cmd, "@Rate", DbType.Decimal, objPurchaseTrans.Rate);
-                db.AddInParameter(cmd, "@DiscountPercentage", DbType.Decimal, objPurchaseTrans.DiscountPercentage);
-                db.AddInParameter(cmd, "@DiscountAmount", DbType.Decimal, objPurchaseTrans.DiscountAmount);
                 db.AddInParameter(cmd, "@SubTotal", DbType.Decimal, objPurchaseTrans.SubTotal);
-                db.AddInParameter(cmd, "@Barcode", DbType.String, objPurchaseTrans.Barcode);
-                db.AddInParameter(cmd, "@FK_TaxID", DbType.String, objPurchaseTrans.Tax.TaxID);
-                db.AddInParameter(cmd, "@TaxPercent", DbType.Decimal, objPurchaseTrans.Tax.TaxPercentage);
-                db.AddInParameter(cmd, "@IGSTPercent", DbType.Decimal, objPurchaseTrans.Tax.IGSTPercent);
-                db.AddInParameter(cmd, "@SGSTPercent", DbType.Decimal, objPurchaseTrans.Tax.SGSTPercent);
-                db.AddInParameter(cmd, "@CGSTPercent", DbType.Decimal, objPurchaseTrans.Tax.CGSTPercent);
-                db.AddInParameter(cmd, "@CGSTAmount", DbType.Decimal, objPurchaseTrans.CGSTAmount);
-                db.AddInParameter(cmd, "@SGSTAmount", DbType.Decimal, objPurchaseTrans.SGSTAmount);
-                db.AddInParameter(cmd, "@IGSTAmount", DbType.Decimal, objPurchaseTrans.IGSTAmount);
-                db.AddInParameter(cmd, "@TaxAmount", DbType.Decimal, objPurchaseTrans.TaxAmount);
-                db.AddInParameter(cmd, "@BatchNo", DbType.String, objPurchaseTrans.BatchNo);
+                
                 db.AddInParameter(cmd, "@SellingRate", DbType.Decimal, objPurchaseTrans.SellingRate);
 
 
@@ -1297,20 +1155,8 @@ namespace VHMS.DataAccess.Billing
                 db.AddInParameter(cmd, "@FK_ProductID", DbType.String, objPurchaseTrans.Product.ProductID);
                 db.AddInParameter(cmd, "@Quantity", DbType.Decimal, objPurchaseTrans.Quantity);
                 db.AddInParameter(cmd, "@Rate", DbType.Decimal, objPurchaseTrans.Rate);
-                db.AddInParameter(cmd, "@DiscountPercentage", DbType.Decimal, objPurchaseTrans.DiscountPercentage);
-                db.AddInParameter(cmd, "@DiscountAmount", DbType.Decimal, objPurchaseTrans.DiscountAmount);
                 db.AddInParameter(cmd, "@SubTotal", DbType.Decimal, objPurchaseTrans.SubTotal);
-                db.AddInParameter(cmd, "@Barcode", DbType.String, objPurchaseTrans.Barcode);
-                db.AddInParameter(cmd, "@FK_TaxID", DbType.String, objPurchaseTrans.Tax.TaxID);
-                db.AddInParameter(cmd, "@TaxPercent", DbType.Decimal, objPurchaseTrans.Tax.TaxPercentage);
-                db.AddInParameter(cmd, "@IGSTPercent", DbType.Decimal, objPurchaseTrans.Tax.IGSTPercent);
-                db.AddInParameter(cmd, "@SGSTPercent", DbType.Decimal, objPurchaseTrans.Tax.SGSTPercent);
-                db.AddInParameter(cmd, "@CGSTPercent", DbType.Decimal, objPurchaseTrans.Tax.CGSTPercent);
-                db.AddInParameter(cmd, "@CGSTAmount", DbType.Decimal, objPurchaseTrans.CGSTAmount);
-                db.AddInParameter(cmd, "@SGSTAmount", DbType.Decimal, objPurchaseTrans.SGSTAmount);
-                db.AddInParameter(cmd, "@IGSTAmount", DbType.Decimal, objPurchaseTrans.IGSTAmount);
-                db.AddInParameter(cmd, "@TaxAmount", DbType.Decimal, objPurchaseTrans.TaxAmount);
-                db.AddInParameter(cmd, "@BatchNo", DbType.String, objPurchaseTrans.BatchNo);
+              
                 db.AddInParameter(cmd, "@SellingRate", DbType.Decimal, objPurchaseTrans.SellingRate);
 
                 iID = db.ExecuteNonQuery(cmd);

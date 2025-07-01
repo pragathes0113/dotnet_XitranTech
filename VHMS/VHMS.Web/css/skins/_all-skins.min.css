@@ -1,6 +1,7 @@
 .skin-blue .main-header .navbar {
-    background-color: #196fb8
+   background: linear-gradient(to bottom, #7f92c2, #5e76b2, #264796);;
 }
+
 
     .skin-blue .main-header .navbar .nav > li > a {
         color: #fff
