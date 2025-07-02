@@ -1039,7 +1039,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Category" msprop:Generator_ColumnVarNameInTable="columnCategory" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_UserColumnName="Category" minOccurs="0">
+              <xs:element name="HouseType" msprop:Generator_ColumnVarNameInTable="columnHouseType" msprop:Generator_ColumnPropNameInRow="HouseType" msprop:Generator_ColumnPropNameInTable="HouseTypeColumn" msprop:Generator_UserColumnName="HouseType" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />

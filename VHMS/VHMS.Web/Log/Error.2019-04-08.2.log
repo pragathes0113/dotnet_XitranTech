@@ -1,7 +1,7 @@
 ----------------------------------------
 Timestamp local:F Monday, April 8, 2019 1:36:57 PM
 Message: BaseConfigPage_Load | UserID Session Expired|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -28,7 +28,7 @@ Extended Properties: BaseConfigPage_Load | UserID Session Expired
 ----------------------------------------
 Timestamp local:F Monday, April 8, 2019 1:40:06 PM
 Message: JobCard GetJobCard |Error during serialization or deserialization using the JSON JavaScriptSerializer. The length of the string exceeds the value set on the maxJsonLength property.|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -65,7 +65,7 @@ Message: Application_Error | System.Web.HttpException (0x80004005): The file '/f
    at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -102,7 +102,7 @@ Extended Properties: Application_Error | System.Web.HttpException (0x80004005): 
 ----------------------------------------
 Timestamp local:F Monday, April 8, 2019 1:44:48 PM
 Message: JobCard GetJobCard |Error during serialization or deserialization using the JSON JavaScriptSerializer. The length of the string exceeds the value set on the maxJsonLength property.|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -139,7 +139,7 @@ Message: Application_Error | System.Web.HttpException (0x80004005): The file '/f
    at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -176,7 +176,7 @@ Extended Properties: Application_Error | System.Web.HttpException (0x80004005): 
 ----------------------------------------
 Timestamp local:F Monday, April 8, 2019 1:46:39 PM
 Message: JobCard GetJobCard |Error during serialization or deserialization using the JSON JavaScriptSerializer. The length of the string exceeds the value set on the maxJsonLength property.|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -213,7 +213,7 @@ Message: Application_Error | System.Web.HttpException (0x80004005): The file '/f
    at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 

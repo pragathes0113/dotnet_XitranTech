@@ -61,7 +61,7 @@ public partial class VHMSMasterPage : System.Web.UI.MasterPage
     {
         string sPath = string.Empty;
         StringBuilder sbTopMenuBar = new StringBuilder();
-        int Company_MenuID = 1;
+        //int Company_MenuID = 1;
         try
         {
             int RoleID = Convert.ToInt32(Session["RoleID"]);
@@ -91,11 +91,11 @@ public partial class VHMSMasterPage : System.Web.UI.MasterPage
                     if ((from t in qPrivilege where t.fd_menu_id == 6 select t).Count() > 0) //Company Menu
                         sbTopMenuBar.Append("<li class='dropdown'><a href='frmCompany.aspx'>Company</a></li>");
 
-                    if ((from t in qPrivilege where t.fd_menu_id == 4 select t).Count() > 0) //Master
+                    if ((from t in qPrivilege where t.fd_menu_id == 2 select t).Count() > 0) //Master
                     {
                         sbTopMenuBar.Append("<li class='dropdown'><a href='#' class='dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>Master<span class='caret'></span></a>");
                         sbTopMenuBar.Append("<ul class='dropdown-menu' role='menu'>");
-                        var qMasterMenu = (from t in qPrivilege where t.fd_menu_id == 4 select t).OrderBy(o => o.fd_OrderNo);
+                        var qMasterMenu = (from t in qPrivilege where t.fd_menu_id == 2 select t).OrderBy(o => o.fd_OrderNo);
                         int MenuItemCount = qMasterMenu.Count();
                         foreach (var qMenuItem in qMasterMenu)
                         {
@@ -120,11 +120,11 @@ public partial class VHMSMasterPage : System.Web.UI.MasterPage
                     //    sbTopMenuBar.Append("</ul>");
                     //}
 
-                    if ((from t in qPrivilege where t.fd_menu_id == 8 select t).Count() > 0) //Master
+                    if ((from t in qPrivilege where t.fd_menu_id == 4 select t).Count() > 0) //Master
                     {
-                        sbTopMenuBar.Append("<li class='dropdown'><a href='#' class='dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>Billing<span class='caret'></span></a>");
+                        sbTopMenuBar.Append("<li class='dropdown'><a href='#' class='dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>New Entry<span class='caret'></span></a>");
                         sbTopMenuBar.Append("<ul class='dropdown-menu' role='menu'>");
-                        var qMasterMenu = (from t in qPrivilege where t.fd_menu_id == 8 select t).OrderBy(o => o.fd_OrderNo);
+                        var qMasterMenu = (from t in qPrivilege where t.fd_menu_id == 4 select t).OrderBy(o => o.fd_OrderNo);
                         int MenuItemCount = qMasterMenu.Count();
                         foreach (var qMenuItem in qMasterMenu)
                             if (qMenuItem.fd_OrderNo > 0)
@@ -295,7 +295,7 @@ public partial class VHMSMasterPage : System.Web.UI.MasterPage
                     //    sbTopMenuBar.Append("</ul>");
                     //}
 
-                    //Added on 22-10-2017
+                    //Added on 22-10-2025
                     //if ((from t in qPrivilege where t.fd_menu_id == 2 select t).Count() > 0) //Discharge Top Level Menu
                     //{
                     //    var qDischargeMenu = (from t in qPrivilege where t.fd_menu_id == 2 && t.fd_modulename == "Discharge Entry" select t).OrderBy(o => o.fd_modulename).SingleOrDefault();

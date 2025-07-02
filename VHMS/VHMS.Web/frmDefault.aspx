@@ -248,11 +248,6 @@
             ActionDelete = '<%=Session["ActionDelete"]%>';
             ActionView = '<%=Session["ActionView"]%>';
             var _RoleID = '<%=Session["RoleID"]%>';
-            $("#SdSMS").val(_SendSMS);
-            $("#SMSsendername").val(_SMSsendername);
-            $("#SMSpassword").val(_SMSpassword);
-            $("#SMSurl").val(_SMSurl);
-            $("#SMSusername").val(_SMSusername);
             $("#RoleID").val(_RoleID);
             $("#divMobileNo").hide();
             $("#txtVoucherDate,#txtIssueDate,#txtCollectionDate").attr("data-link-format", "dd/MM/yyyy");
@@ -577,7 +572,7 @@
 
                                         var table = "<tr id='" + obj[index].ProductID + "'>";
                                         table += "<td>" + (index + 1) + "</td>";
-                                        table += "<td>" + obj[index].Category.CategoryName + "</td>";
+                                        table += "<td>" + obj[index].HouseType.HouseTypeName + "</td>";
                                         table += "<td class='hidden-xs'>" + obj[index].ProductName + "</td>";
                                         table += "<td class='hidden-xs'>" + obj[index].ProductCode + "</td>";
                                         table += "<td class='hidden-xs'>" + obj[index].MinimumStock + "</td>";

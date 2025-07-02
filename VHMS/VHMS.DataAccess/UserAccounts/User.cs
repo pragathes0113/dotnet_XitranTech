@@ -76,8 +76,6 @@ namespace VHMS.DataAccess
             string sException = string.Empty;
             Database db;
             Entity.User ObjUser = new Entity.User();
-            Entity.Company ObjCompany = new Entity.Company();
-            Entity.Settings ObjSettings;
             try
             {
                 db = Entity.DBConnection.dbCon;
@@ -90,8 +88,6 @@ namespace VHMS.DataAccess
                     foreach (DataRow drrow in dsList.Tables[0].Rows)
                     {
                         ObjUser = new Entity.User();
-                        ObjCompany = new Entity.Company();
-                        ObjSettings = new Entity.Settings();
                         ObjUser.UserID = Convert.ToInt32(drrow["PK_UserID"]);
                         ObjUser.UserName = drrow["UserName"].ToString();
                         ObjUser.Password = CommonMethods.Security.Decrypt(drrow["Password"].ToString(), true);
@@ -117,7 +113,7 @@ namespace VHMS.DataAccess
             DataSet dsList = null;
             Collection<Entity.User> objList = new Collection<Entity.User>();
             Entity.User objUser = new Entity.User();
-            Entity.Company ObjCompany = new Entity.Company();
+           
 
             try
             {
@@ -130,7 +126,7 @@ namespace VHMS.DataAccess
                     foreach (DataRow drData in dsList.Tables[0].Rows)
                     {
                         objUser = new Entity.User();
-                        ObjCompany = new Entity.Company();
+                       
                         objUser.UserID = Convert.ToInt32(drData["PK_UserID"]);
                         objUser.UserName = Convert.ToString(drData["UserName"]);
                         objUser.Email = Convert.ToString(drData["Email"]);
@@ -219,7 +215,7 @@ namespace VHMS.DataAccess
             string sException = string.Empty;
             Database db;
             Entity.User objUser = new Entity.User();
-            Entity.Company ObjCompany = new Entity.Company();
+           
 
             try
             {
@@ -560,7 +556,7 @@ namespace VHMS.DataAccess
             }
             return objList;
         }
-        //Added on 25-10-2017
+        //Added on 25-10-2025
         public static bool ResetPassword(int UserID, string sPassword)
         {
             string sException = string.Empty;

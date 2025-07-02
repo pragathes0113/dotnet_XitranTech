@@ -59,7 +59,7 @@ public partial class VHMSReportPage : System.Web.UI.MasterPage
     {
         string sPath = string.Empty;
         StringBuilder sbTopMenuBar = new StringBuilder();
-        int Company_MenuID = 1;
+        //int Company_MenuID = 1;
         try
         {
             int RoleID = Convert.ToInt32(Session["RoleID"]);
@@ -293,7 +293,7 @@ public partial class VHMSReportPage : System.Web.UI.MasterPage
                     //    sbTopMenuBar.Append("</ul>");
                     //}
 
-                    //Added on 22-10-2017
+                    //Added on 22-10-2025
                     //if ((from t in qPrivilege where t.fd_menu_id == 2 select t).Count() > 0) //Discharge Top Level Menu
                     //{
                     //    var qDischargeMenu = (from t in qPrivilege where t.fd_menu_id == 2 && t.fd_modulename == "Discharge Entry" select t).OrderBy(o => o.fd_modulename).SingleOrDefault();

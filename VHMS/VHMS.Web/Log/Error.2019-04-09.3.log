@@ -7,7 +7,7 @@ Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exc
    at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
    at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
    at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
-   at frmPatientDetailsReport.btnAddNew_Click(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 54
+   at frmPatientDetailsReport.btnAddNew_Click(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 54
    at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
    at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
    at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
@@ -24,7 +24,7 @@ Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exc
    at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -53,7 +53,7 @@ Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80
    at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
    at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
    at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
-   at frmPatientDetailsReport.btnAddNew_Click(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 54
+   at frmPatientDetailsReport.btnAddNew_Click(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 54
    at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
    at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
    at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
@@ -74,8 +74,8 @@ Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80
 ----------------------------------------
 Timestamp local:F Tuesday, April 9, 2019 11:01:55 AM
 Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -90,7 +90,7 @@ Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exc
    at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -113,8 +113,8 @@ Thread Name:
 Win32 ThreadId:6740
 
 Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -133,8 +133,8 @@ Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80
 ----------------------------------------
 Timestamp local:F Tuesday, April 9, 2019 11:16:07 AM
 Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -149,7 +149,7 @@ Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exc
    at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -172,8 +172,8 @@ Thread Name:
 Win32 ThreadId:13420
 
 Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -192,8 +192,8 @@ Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80
 ----------------------------------------
 Timestamp local:F Tuesday, April 9, 2019 11:16:42 AM
 Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -208,7 +208,7 @@ Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exc
    at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -231,8 +231,8 @@ Thread Name:
 Win32 ThreadId:1316
 
 Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -251,8 +251,8 @@ Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80
 ----------------------------------------
 Timestamp local:F Tuesday, April 9, 2019 11:20:04 AM
 Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -267,7 +267,7 @@ Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exc
    at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -290,8 +290,8 @@ Thread Name:
 Win32 ThreadId:6824
 
 Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -310,8 +310,8 @@ Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80
 ----------------------------------------
 Timestamp local:F Tuesday, April 9, 2019 11:24:01 AM
 Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -326,7 +326,7 @@ Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exc
    at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -349,8 +349,8 @@ Thread Name:
 Win32 ThreadId:14688
 
 Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -369,8 +369,8 @@ Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80
 ----------------------------------------
 Timestamp local:F Tuesday, April 9, 2019 11:26:50 AM
 Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -385,7 +385,7 @@ Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exc
    at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -408,8 +408,8 @@ Thread Name:
 Win32 ThreadId:14688
 
 Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -438,7 +438,7 @@ Message: Application_Error | System.Web.HttpException (0x80004005): The file '/C
    at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -485,7 +485,7 @@ Message: Application_Error | System.Web.HttpException (0x80004005): The file '/C
    at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -522,8 +522,8 @@ Extended Properties: Application_Error | System.Web.HttpException (0x80004005): 
 ----------------------------------------
 Timestamp local:F Tuesday, April 9, 2019 11:30:18 AM
 Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -538,7 +538,7 @@ Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exc
    at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -561,8 +561,8 @@ Thread Name:
 Win32 ThreadId:7476
 
 Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -581,8 +581,8 @@ Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80
 ----------------------------------------
 Timestamp local:F Tuesday, April 9, 2019 11:43:54 AM
 Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -597,7 +597,7 @@ Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exc
    at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -620,8 +620,8 @@ Thread Name:
 Win32 ThreadId:14688
 
 Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -640,8 +640,8 @@ Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80
 ----------------------------------------
 Timestamp local:F Tuesday, April 9, 2019 11:45:32 AM
 Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -656,7 +656,7 @@ Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exc
    at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -679,8 +679,8 @@ Thread Name:
 Win32 ThreadId:14688
 
 Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()

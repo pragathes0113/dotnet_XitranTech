@@ -1,7 +1,7 @@
 ----------------------------------------
 Timestamp local:F Friday, February 23, 2018 4:50:53 PM
 Message: BaseConfigPage_Load | UserID Session Expired|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -28,7 +28,7 @@ Extended Properties: BaseConfigPage_Load | UserID Session Expired
 ----------------------------------------
 Timestamp local:F Friday, February 23, 2018 4:55:52 PM
 Message: BaseConfigPage_Load | UserID Session Expired|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -55,7 +55,7 @@ Extended Properties: BaseConfigPage_Load | UserID Session Expired
 ----------------------------------------
 Timestamp local:F Friday, February 23, 2018 5:03:39 PM
 Message: BaseConfigPage_Load | UserID Session Expired|
-Category: General
+HouseType: General
 
 Priority: -1
 

@@ -7,11 +7,11 @@ var _CMDeleteError = 'Since this record is referred somewhere else you cannot de
 var _CMAlreadyExits = 'Name already exists';
 var _CMAccessDeined = "You don't have permission. Please contact Administrator";
 
-//Added on 21-06-2017
+//Added on 21-06-2025
 var _PrimaryConsultantID = 1;
 var _CoConsultantID = 2;
 var _RegistrarID = 3;
-//Added on 22-09-2017
+//Added on 22-09-2025
 var _CheckedBy = 4;
 
 var tableOpts25 = {

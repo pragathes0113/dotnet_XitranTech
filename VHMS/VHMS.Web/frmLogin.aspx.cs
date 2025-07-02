@@ -35,7 +35,6 @@ public partial class frmLogin : System.Web.UI.Page
         {
             string sIPAddress = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
             string clientIp = string.Empty;
-            int ComID = 0;
             if (System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList.Length > 2)
                 clientIp = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[2].ToString();  // (HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] ?? HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]).Split(',')[0].Trim();
             else

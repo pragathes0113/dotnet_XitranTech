@@ -1,7 +1,7 @@
 ----------------------------------------
-Timestamp local:F Wednesday, October 25, 2017 8:37:39 AM
+Timestamp local:F Wednesday, October 25, 2025 8:37:39 AM
 Message: BaseConfigPage_Load | UserID Session Expired|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -26,9 +26,9 @@ Win32 ThreadId:6908
 Extended Properties: BaseConfigPage_Load | UserID Session Expired
 ----------------------------------------
 ----------------------------------------
-Timestamp local:F Wednesday, October 25, 2017 8:43:14 AM
+Timestamp local:F Wednesday, October 25, 2025 8:43:14 AM
 Message: BaseConfigPage_Load | UserID Session Expired|
-Category: General
+HouseType: General
 
 Priority: -1
 

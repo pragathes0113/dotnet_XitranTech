@@ -17,7 +17,7 @@ namespace VHMSReports {
     ///Represents a strongly typed in-memory cache of data.
     ///</summary>
     [global::System.Serializable()]
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    //[global::System.ComponentModel.DesignerHouseTypeAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
     [global::System.Xml.Serialization.XmlRootAttribute("ReportDataSet")]
@@ -7549,7 +7549,7 @@ namespace VHMSReports {
             
             private global::System.Data.DataColumn columnWImage;
             
-            private global::System.Data.DataColumn columnCategory;
+            private global::System.Data.DataColumn columnHouseType;
             
             private global::System.Data.DataColumn columnHIDProof;
             
@@ -7846,9 +7846,9 @@ namespace VHMSReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CategoryColumn {
+            public global::System.Data.DataColumn HouseTypeColumn {
                 get {
-                    return this.columnCategory;
+                    return this.columnHouseType;
                 }
             }
             
@@ -7968,7 +7968,7 @@ namespace VHMSReports {
                         string OPDNo, 
                         string HImage, 
                         string WImage, 
-                        string Category, 
+                        string HouseType, 
                         string HIDProof, 
                         string WIDProof, 
                         string HReferredDetails, 
@@ -8008,7 +8008,7 @@ namespace VHMSReports {
                         OPDNo,
                         HImage,
                         WImage,
-                        Category,
+                        HouseType,
                         HIDProof,
                         WIDProof,
                         HReferredDetails,
@@ -8075,7 +8075,7 @@ namespace VHMSReports {
                 this.columnOPDNo = base.Columns["OPDNo"];
                 this.columnHImage = base.Columns["HImage"];
                 this.columnWImage = base.Columns["WImage"];
-                this.columnCategory = base.Columns["Category"];
+                this.columnHouseType = base.Columns["HouseType"];
                 this.columnHIDProof = base.Columns["HIDProof"];
                 this.columnWIDProof = base.Columns["WIDProof"];
                 this.columnHReferredDetails = base.Columns["HReferredDetails"];
@@ -8149,8 +8149,8 @@ namespace VHMSReports {
                 base.Columns.Add(this.columnHImage);
                 this.columnWImage = new global::System.Data.DataColumn("WImage", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnWImage);
-                this.columnCategory = new global::System.Data.DataColumn("Category", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCategory);
+                this.columnHouseType = new global::System.Data.DataColumn("HouseType", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHouseType);
                 this.columnHIDProof = new global::System.Data.DataColumn("HIDProof", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHIDProof);
                 this.columnWIDProof = new global::System.Data.DataColumn("WIDProof", typeof(string), null, global::System.Data.MappingType.Element);
@@ -8197,7 +8197,7 @@ namespace VHMSReports {
                 this.columnOPDNo.MaxLength = 50;
                 this.columnHImage.MaxLength = 1000;
                 this.columnWImage.MaxLength = 1000;
-                this.columnCategory.MaxLength = 50;
+                this.columnHouseType.MaxLength = 50;
                 this.columnHIDProof.MaxLength = 1000;
                 this.columnWIDProof.MaxLength = 1000;
                 this.columnHReferredDetails.MaxLength = 500;
@@ -15244,17 +15244,17 @@ namespace VHMSReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Category {
+            public string HouseType {
                 get {
                     try {
-                        return ((string)(this[this.tabletPatient.CategoryColumn]));
+                        return ((string)(this[this.tabletPatient.HouseTypeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Category\' in table \'tPatient\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'HouseType\' in table \'tPatient\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletPatient.CategoryColumn] = value;
+                    this[this.tabletPatient.HouseTypeColumn] = value;
                 }
             }
             
@@ -15680,14 +15680,14 @@ namespace VHMSReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCategoryNull() {
-                return this.IsNull(this.tabletPatient.CategoryColumn);
+            public bool IsHouseTypeNull() {
+                return this.IsNull(this.tabletPatient.HouseTypeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCategoryNull() {
-                this[this.tabletPatient.CategoryColumn] = global::System.Convert.DBNull;
+            public void SetHouseTypeNull() {
+                this[this.tabletPatient.HouseTypeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

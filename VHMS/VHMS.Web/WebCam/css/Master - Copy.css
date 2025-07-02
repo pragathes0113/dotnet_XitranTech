@@ -591,7 +591,7 @@ filter:alpha(opacity=40); height:855px;}
 
 
 
-.WlcomeDashboarSecondOpinionList01 a:hover, .WlcomeDashboarSecondOpinionList02 a:hover, .WlcomeDashboarSecondOpinionList03 a:hover, .WlcomeDashboarSecondOpinionList04 a:hover, .WlcomeDashboarSecondOpinionList05 a:hover, .WlcomeDashboarSecondOpinionList06 a:hover, .SecondOptionNav ul li a:hover, .CleckHere a:hover, .CategoryList01 a:hover, .CategoryList02 a:hover{ text-decoration:underline;}
+.WlcomeDashboarSecondOpinionList01 a:hover, .WlcomeDashboarSecondOpinionList02 a:hover, .WlcomeDashboarSecondOpinionList03 a:hover, .WlcomeDashboarSecondOpinionList04 a:hover, .WlcomeDashboarSecondOpinionList05 a:hover, .WlcomeDashboarSecondOpinionList06 a:hover, .SecondOptionNav ul li a:hover, .CleckHere a:hover, .HouseTypeList01 a:hover, .HouseTypeList02 a:hover{ text-decoration:underline;}
 
 
 .SecondOptionNav {width:990px; margin:0px auto;}
@@ -635,15 +635,15 @@ filter:alpha(opacity=40); height:855px;}
 
 .CleckHere a{ float:left; font-family:Verdana, Geneva, sans-serif; font-size:12px; color:#333333; margin-top:8px;}
 
-.CategoryList01{ background:url(../images/catorgybg01.png) no-repeat left top; height:38px; padding-left:13px; line-height:36px; width:156px; float:left;}
+.HouseTypeList01{ background:url(../images/catorgybg01.png) no-repeat left top; height:38px; padding-left:13px; line-height:36px; width:156px; float:left;}
 
-.CategoryList02{ background:url(../images/catorgybg02.png) no-repeat left top; height:38px; line-height:36px; width:157px; float:left;}
+.HouseTypeList02{ background:url(../images/catorgybg02.png) no-repeat left top; height:38px; line-height:36px; width:157px; float:left;}
 
-.CategoryList03{ background:url(../images/catorgybg03.png) no-repeat left top; height:33px; width:144px; padding-top:5px; float:left; text-align:center;}
+.HouseTypeList03{ background:url(../images/catorgybg03.png) no-repeat left top; height:33px; width:144px; padding-top:5px; float:left; text-align:center;}
 
-.CategoryList03 a img{ padding:0px; margin:0px; border:none;}
+.HouseTypeList03 a img{ padding:0px; margin:0px; border:none;}
 
-.CategoryList01 a, .CategoryList02 a, .CategoryList03 a{ font-family:Verdana, Geneva, sans-serif; font-size:12px; color:#333333;}
+.HouseTypeList01 a, .HouseTypeList02 a, .HouseTypeList03 a{ font-family:Verdana, Geneva, sans-serif; font-size:12px; color:#333333;}
 
 
 .place-a-new-query-popupPane{ width:975px; margin:0px auto; overflow:auto; background:#FFF; margin-bottom:37px; margin-top:15px;}

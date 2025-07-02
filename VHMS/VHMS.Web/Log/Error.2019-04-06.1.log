@@ -1,7 +1,7 @@
 ----------------------------------------
 Timestamp local:F Monday, April 1, 2019 12:51:44 PM
 Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at ASP.vhmsmasterpage_master.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\VHMSMasterPage.master:line 72
+   at ASP.vhmsmasterpage_master.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\VHMSMasterPage.master:line 72
    at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
    at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
    at System.Web.UI.Control.Render(HtmlTextWriter writer)
@@ -25,7 +25,7 @@ Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exc
    at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -48,7 +48,7 @@ Thread Name:
 Win32 ThreadId:6748
 
 Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at ASP.vhmsmasterpage_master.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\VHMSMasterPage.master:line 72
+   at ASP.vhmsmasterpage_master.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\VHMSMasterPage.master:line 72
    at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
    at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
    at System.Web.UI.Control.Render(HtmlTextWriter writer)

@@ -1,7 +1,7 @@
 ----------------------------------------
 Timestamp local:F Friday, March 1, 2019 10:39:22 AM
 Message: BaseConfigPage_Load | UserID Session Expired|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -40,10 +40,10 @@ The statement has been terminated.
    at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
    at Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
    at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(DbCommand command)
-   at VHMS.DataAccess.Billing.OPBillingMaster.AddOPBilling(OPBillingMaster objOPBilling) in D:\Mani\JS Hospital\Source Code\VHMS\VHMS.DataAccess\Billing\OPBillingMaster.cs:line 322
+   at VHMS.DataAccess.Billing.OPBillingMaster.AddOPBilling(OPBillingMaster objOPBilling) in D:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.DataAccess\Billing\OPBillingMaster.cs:line 322
 ClientConnectionId:7e9edc29-3a63-4cda-be9c-e8aacb0a8643
 Error Number:547,State:0,Class:16|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -78,7 +78,7 @@ The statement has been terminated.
    at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
    at Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
    at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(DbCommand command)
-   at VHMS.DataAccess.Billing.OPBillingMaster.AddOPBilling(OPBillingMaster objOPBilling) in D:\Mani\JS Hospital\Source Code\VHMS\VHMS.DataAccess\Billing\OPBillingMaster.cs:line 322
+   at VHMS.DataAccess.Billing.OPBillingMaster.AddOPBilling(OPBillingMaster objOPBilling) in D:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.DataAccess\Billing\OPBillingMaster.cs:line 322
 ClientConnectionId:7e9edc29-3a63-4cda-be9c-e8aacb0a8643
 Error Number:547,State:0,Class:16
 ----------------------------------------
@@ -86,7 +86,7 @@ Error Number:547,State:0,Class:16
 Timestamp local:F Friday, March 1, 2019 10:45:54 AM
 Message: OPBilling AddOPBilling |The INSERT statement conflicted with the FOREIGN KEY constraint "FK_tOPBillingMaster_tPatient_PatientID". The conflict occurred in database "AKS", table "dbo.tPatient", column 'PK_PatientID'.
 The statement has been terminated.|
-Category: General
+HouseType: General
 
 Priority: -1
 

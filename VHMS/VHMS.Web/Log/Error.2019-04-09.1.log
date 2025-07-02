@@ -1,8 +1,8 @@
 ----------------------------------------
 Timestamp local:F Monday, April 8, 2019 6:53:57 PM
 Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -17,7 +17,7 @@ Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exc
    at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -40,8 +40,8 @@ Thread Name:
 Win32 ThreadId:13656
 
 Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at VHMSService.AddPageVisitLog() in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
-   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
+   at VHMSService.AddPageVisitLog() in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\App_Code\VHMSService.cs:line 114
+   at frmPatientDetailsReport.Page_Load(Object sender, EventArgs e) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\frmPatientDetailsReport.aspx.cs:line 19
    at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
    at System.Web.UI.Control.OnLoad(EventArgs e)
    at System.Web.UI.Control.LoadRecursive()
@@ -60,7 +60,7 @@ Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80
 ----------------------------------------
 Timestamp local:F Monday, April 8, 2019 7:02:49 PM
 Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at ASP.vhmsmasterpage_master.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\VHMSMasterPage.master:line 72
+   at ASP.vhmsmasterpage_master.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\VHMSMasterPage.master:line 72
    at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
    at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
    at System.Web.UI.Control.Render(HtmlTextWriter writer)
@@ -84,7 +84,7 @@ Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exc
    at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -107,7 +107,7 @@ Thread Name:
 Win32 ThreadId:13416
 
 Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at ASP.vhmsmasterpage_master.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\VHMSMasterPage.master:line 72
+   at ASP.vhmsmasterpage_master.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\VHMSMasterPage.master:line 72
    at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
    at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
    at System.Web.UI.Control.Render(HtmlTextWriter writer)
@@ -135,7 +135,7 @@ Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80
 ----------------------------------------
 Timestamp local:F Monday, April 8, 2019 7:06:05 PM
 Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at ASP.vhmsmasterpage_master.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\VHMSMasterPage.master:line 72
+   at ASP.vhmsmasterpage_master.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\VHMSMasterPage.master:line 72
    at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
    at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
    at System.Web.UI.Control.Render(HtmlTextWriter writer)
@@ -159,7 +159,7 @@ Message: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exc
    at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -182,7 +182,7 @@ Thread Name:
 Win32 ThreadId:6796
 
 Extended Properties: Application_Error | System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
-   at ASP.vhmsmasterpage_master.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in d:\Mani\JS Hospital\Source Code\VHMS\VHMS.Web\VHMSMasterPage.master:line 72
+   at ASP.vhmsmasterpage_master.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in d:\Mani\Xitran Technologies \Source Code\VHMS\VHMS.Web\VHMSMasterPage.master:line 72
    at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
    at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
    at System.Web.UI.Control.Render(HtmlTextWriter writer)

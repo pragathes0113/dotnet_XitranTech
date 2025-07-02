@@ -37,7 +37,6 @@ namespace VHMS.Entity
        
         public string IDProof { get; set; }
         public string MobileNo { get; set; }
-        public Settings Settings { get; set; }
     }
     public class VisitLog
     {

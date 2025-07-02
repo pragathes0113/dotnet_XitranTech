@@ -4736,7 +4736,7 @@ core_defaults._set('bar', {
 
 	scales: {
 		xAxes: [{
-			type: 'category',
+			type: 'HouseType',
 			offset: true,
 			gridLines: {
 				offsetGridLines: true
@@ -4752,7 +4752,7 @@ core_defaults._set('bar', {
 core_defaults._set('global', {
 	datasets: {
 		bar: {
-			categoryPercentage: 0.8,
+			HouseTypePercentage: 0.8,
 			barPercentage: 0.9
 		}
 	}
@@ -4780,12 +4780,12 @@ function computeMinSampleSize(scale, pixels) {
 }
 
 /**
- * Computes an "ideal" category based on the absolute bar thickness or, if undefined or null,
+ * Computes an "ideal" HouseType based on the absolute bar thickness or, if undefined or null,
  * uses the smallest interval (see computeMinSampleSize) that prevents bar overlapping. This
  * mode currently always generates bars equally sized (until we introduce scriptable options?).
  * @private
  */
-function computeFitCategoryTraits(index, ruler, options) {
+function computeFitHouseTypeTraits(index, ruler, options) {
 	var thickness = options.barThickness;
 	var count = ruler.stackCount;
 	var curr = ruler.pixels[index];
@@ -4795,10 +4795,10 @@ function computeFitCategoryTraits(index, ruler, options) {
 	var size, ratio;
 
 	if (helpers$1.isNullOrUndef(thickness)) {
-		size = min * options.categoryPercentage;
+		size = min * options.HouseTypePercentage;
 		ratio = options.barPercentage;
 	} else {
-		// When bar thickness is enforced, category and bar percentages are ignored.
+		// When bar thickness is enforced, HouseType and bar percentages are ignored.
 		// Note(SB): we could add support for relative bar thickness (e.g. barThickness: '50%')
 		// and deprecate barPercentage since this value is ignored when thickness is absolute.
 		size = thickness * count;
@@ -4813,17 +4813,17 @@ function computeFitCategoryTraits(index, ruler, options) {
 }
 
 /**
- * Computes an "optimal" category that globally arranges bars side by side (no gap when
+ * Computes an "optimal" HouseType that globally arranges bars side by side (no gap when
  * percentage options are 1), based on the previous and following categories. This mode
  * generates bars with different widths when data are not evenly spaced.
  * @private
  */
-function computeFlexCategoryTraits(index, ruler, options) {
+function computeFlexHouseTypeTraits(index, ruler, options) {
 	var pixels = ruler.pixels;
 	var curr = pixels[index];
 	var prev = index > 0 ? pixels[index - 1] : null;
 	var next = index < pixels.length - 1 ? pixels[index + 1] : null;
-	var percent = options.categoryPercentage;
+	var percent = options.HouseTypePercentage;
 	var start, size;
 
 	if (prev === null) {
@@ -4861,7 +4861,7 @@ var controller_bar = core_datasetController.extend({
 		'borderWidth',
 		'barPercentage',
 		'barThickness',
-		'categoryPercentage',
+		'HouseTypePercentage',
 		'maxBarThickness',
 		'minBarLength'
 	],
@@ -4879,7 +4879,7 @@ var controller_bar = core_datasetController.extend({
 		scaleOpts = me._getIndexScale().options;
 		deprecated('bar chart', scaleOpts.barPercentage, 'scales.[x/y]Axes.barPercentage', 'dataset.barPercentage');
 		deprecated('bar chart', scaleOpts.barThickness, 'scales.[x/y]Axes.barThickness', 'dataset.barThickness');
-		deprecated('bar chart', scaleOpts.categoryPercentage, 'scales.[x/y]Axes.categoryPercentage', 'dataset.categoryPercentage');
+		deprecated('bar chart', scaleOpts.HouseTypePercentage, 'scales.[x/y]Axes.HouseTypePercentage', 'dataset.HouseTypePercentage');
 		deprecated('bar chart', me._getValueScale().options.minBarLength, 'scales.[x/y]Axes.minBarLength', 'dataset.minBarLength');
 		deprecated('bar chart', scaleOpts.maxBarThickness, 'scales.[x/y]Axes.maxBarThickness', 'dataset.maxBarThickness');
 	},
@@ -5093,8 +5093,8 @@ var controller_bar = core_datasetController.extend({
 	calculateBarIndexPixels: function(datasetIndex, index, ruler, options) {
 		var me = this;
 		var range = options.barThickness === 'flex'
-			? computeFlexCategoryTraits(index, ruler, options)
-			: computeFitCategoryTraits(index, ruler, options);
+			? computeFlexHouseTypeTraits(index, ruler, options)
+			: computeFitHouseTypeTraits(index, ruler, options);
 
 		var stackIndex = me.getStackIndex(datasetIndex, me.getMeta().stack);
 		var center = range.start + (range.chunk * stackIndex) + (range.chunk / 2);
@@ -5142,7 +5142,7 @@ var controller_bar = core_datasetController.extend({
 
 		values.barPercentage = valueOrDefault$3(indexOpts.barPercentage, values.barPercentage);
 		values.barThickness = valueOrDefault$3(indexOpts.barThickness, values.barThickness);
-		values.categoryPercentage = valueOrDefault$3(indexOpts.categoryPercentage, values.categoryPercentage);
+		values.HouseTypePercentage = valueOrDefault$3(indexOpts.HouseTypePercentage, values.HouseTypePercentage);
 		values.maxBarThickness = valueOrDefault$3(indexOpts.maxBarThickness, values.maxBarThickness);
 		values.minBarLength = valueOrDefault$3(valueOpts.minBarLength, values.minBarLength);
 
@@ -5714,7 +5714,7 @@ core_defaults._set('horizontalBar', {
 		}],
 
 		yAxes: [{
-			type: 'category',
+			type: 'HouseType',
 			position: 'left',
 			offset: true,
 			gridLines: {
@@ -5738,7 +5738,7 @@ core_defaults._set('horizontalBar', {
 core_defaults._set('global', {
 	datasets: {
 		horizontalBar: {
-			categoryPercentage: 0.8,
+			HouseTypePercentage: 0.8,
 			barPercentage: 0.9
 		}
 	}
@@ -5774,7 +5774,7 @@ core_defaults._set('line', {
 
 	scales: {
 		xAxes: [{
-			type: 'category',
+			type: 'HouseType',
 			id: 'x-axis-0'
 		}],
 		yAxes: [{
@@ -6637,7 +6637,7 @@ core_defaults._set('scatter', {
 	scales: {
 		xAxes: [{
 			id: 'x-axis-1',    // need an ID so datasets can reference the scale
-			type: 'linear',    // scatter should not use a category axis
+			type: 'linear',    // scatter should not use a HouseType axis
 			position: 'bottom'
 		}],
 		yAxes: [{
@@ -9181,7 +9181,7 @@ function mergeScaleConfig(/* config objects ... */) {
 
 				for (i = 0; i < slen; ++i) {
 					scale = source[key][i];
-					type = valueOrDefault$9(scale.type, key === 'xAxes' ? 'category' : 'linear');
+					type = valueOrDefault$9(scale.type, key === 'xAxes' ? 'HouseType' : 'linear');
 
 					if (i >= target[key].length) {
 						target[key].push({});
@@ -9473,7 +9473,7 @@ helpers$1.extend(Chart.prototype, /** @lends Chart */ {
 		if (options.scales) {
 			items = items.concat(
 				(options.scales.xAxes || []).map(function(xAxisOptions) {
-					return {options: xAxisOptions, dtype: 'category', dposition: 'bottom'};
+					return {options: xAxisOptions, dtype: 'HouseType', dposition: 'bottom'};
 				}),
 				(options.scales.yAxes || []).map(function(yAxisOptions) {
 					return {options: yAxisOptions, dtype: 'linear', dposition: 'left'};
@@ -12527,7 +12527,7 @@ var defaultConfig = {
 	position: 'bottom'
 };
 
-var scale_category = core_scale.extend({
+var scale_HouseType = core_scale.extend({
 	determineDataLimits: function() {
 		var me = this;
 		var labels = me._getLabels();
@@ -12589,7 +12589,7 @@ var scale_category = core_scale.extend({
 		core_scale.prototype._configure.call(me);
 
 		if (!me.isHorizontal()) {
-			// For backward compatibility, vertical category scale reverse is inverted.
+			// For backward compatibility, vertical HouseType scale reverse is inverted.
 			me._reversePixels = !me._reversePixels;
 		}
 
@@ -12604,7 +12604,7 @@ var scale_category = core_scale.extend({
 	// Used to get data value locations.  Value can either be an index or a numerical value
 	getPixelForValue: function(value, index, datasetIndex) {
 		var me = this;
-		var valueCategory, labels, idx;
+		var valueHouseType, labels, idx;
 
 		if (!isNullOrUndef$1(index) && !isNullOrUndef$1(datasetIndex)) {
 			value = me.chart.data.datasets[datasetIndex].data[index];
@@ -12613,11 +12613,11 @@ var scale_category = core_scale.extend({
 		// If value is a data object, then index is the index in the data array,
 		// not the index of the scale. We need to change that.
 		if (!isNullOrUndef$1(value)) {
-			valueCategory = me.isHorizontal() ? value.x : value.y;
+			valueHouseType = me.isHorizontal() ? value.x : value.y;
 		}
-		if (valueCategory !== undefined || (value !== undefined && isNaN(index))) {
+		if (valueHouseType !== undefined || (value !== undefined && isNaN(index))) {
 			labels = me._getLabels();
-			value = helpers$1.valueOrDefault(valueCategory, value);
+			value = helpers$1.valueOrDefault(valueHouseType, value);
 			idx = labels.indexOf(value);
 			index = idx !== -1 ? idx : index;
 			if (isNaN(index)) {
@@ -12647,7 +12647,7 @@ var scale_category = core_scale.extend({
 
 // INTERNAL: static default options, registered in src/index.js
 var _defaults = defaultConfig;
-scale_category._defaults = _defaults;
+scale_HouseType._defaults = _defaults;
 
 var noop = helpers$1.noop;
 var isNullOrUndef$2 = helpers$1.isNullOrUndef;
@@ -14678,7 +14678,7 @@ var _defaults$4 = defaultConfig$4;
 scale_time._defaults = _defaults$4;
 
 var scales = {
-	category: scale_category,
+	HouseType: scale_HouseType,
 	linear: scale_linear,
 	logarithmic: scale_logarithmic,
 	radialLinear: scale_radialLinear,

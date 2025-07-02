@@ -207,9 +207,9 @@ class JPGEncoder
 	}
 
 	private var bitcode:Array = new Array(65535);
-	private var category:Array = new Array(65535);
+	private var HouseType:Array = new Array(65535);
 
-	private function initCategoryNumber():Void
+	private function initHouseTypeNumber():Void
 	{
 		var nrlower:Number = 1;
 		var nrupper:Number = 2;
@@ -217,14 +217,14 @@ class JPGEncoder
 		for (var cat:Number=1; cat<=15; cat++) {
 			//Positive numbers
 			for (nr=nrlower; nr<nrupper; nr++) {
-				category[32767+nr] = cat;
+				HouseType[32767+nr] = cat;
 				bitcode[32767+nr] = new BitString();
 				bitcode[32767+nr].len = cat;
 				bitcode[32767+nr].val = nr;
 			}
 			//Negative numbers
 			for (nr=-(nrupper-1); nr<=-nrlower; nr++) {
-				category[32767+nr] = cat;
+				HouseType[32767+nr] = cat;
 				bitcode[32767+nr] = new BitString();
 				bitcode[32767+nr].len = cat;
 				bitcode[32767+nr].val = nrupper-1+nr;
@@ -521,7 +521,7 @@ class JPGEncoder
 		if (Diff==0) {
 			writeBits(HTDC[0]); // Diff might be 0
 		} else {
-			writeBits(HTDC[category[32767+Diff]]);
+			writeBits(HTDC[HouseType[32767+Diff]]);
 			writeBits(bitcode[32767+Diff]);
 		}
 		//Encode ACs
@@ -545,7 +545,7 @@ class JPGEncoder
 				}
 				nrzeroes = int(nrzeroes&0xF);
 			}
-			writeBits(HTAC[nrzeroes*16+category[32767+DU[i]]]);
+			writeBits(HTAC[nrzeroes*16+HouseType[32767+DU[i]]]);
 			writeBits(bitcode[32767+DU[i]]);
 			i++;
 		}
@@ -605,7 +605,7 @@ class JPGEncoder
 		}
 		// Create tables
 		initHuffmanTbl();
-		initCategoryNumber();
+		initHouseTypeNumber();
 		initQuantTables(sf);
 	}
 

@@ -85,7 +85,7 @@
                 <div id="divLatestUpdate" class="pull-right hidden-xs" runat="server">
                 </div>
                 <div id="divFooterLeft" runat="server">
-                    Copyright &copy; 2017, <strong>JS Hospital v 1.0.0</strong>
+                    Copyright &copy; 2025, <strong>Xitran Technologies  v 1.0.0</strong>
                 </div>
             </footer>
         </div>

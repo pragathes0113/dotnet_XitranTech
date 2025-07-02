@@ -1,7 +1,7 @@
 ----------------------------------------
 Timestamp local:F Tuesday, April 3, 2018 6:41:14 AM
 Message: BaseConfigPage_Load | UserID Session Expired|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -42,7 +42,7 @@ Message: VHMS.DataAccess.Admission AddAdmission | System.Data.SqlClient.SqlExcep
    at VHMS.DataAccess.Discharge.Admission.AddAdmission(Database oDb, Admission objAdmission, DbTransaction oTrans) in g:\Projects\Vijaya HMS\Source Code\VHMS\VHMS.DataAccess\Discharge\Admission.cs:line 176
 ClientConnectionId:4666e6e5-7316-4149-8cfb-1a430e1fe3c8
 Error Number:50000,State:1,Class:16|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -83,7 +83,7 @@ Error Number:50000,State:1,Class:16
 ----------------------------------------
 Timestamp local:F Tuesday, April 3, 2018 6:54:40 AM
 Message: VHMSService.DischargeEntry AddDischargeEntry |Admission_A_01|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -124,7 +124,7 @@ Message: VHMS.DataAccess.Admission AddAdmission | System.Data.SqlClient.SqlExcep
    at VHMS.DataAccess.Discharge.Admission.AddAdmission(Database oDb, Admission objAdmission, DbTransaction oTrans) in g:\Projects\Vijaya HMS\Source Code\VHMS\VHMS.DataAccess\Discharge\Admission.cs:line 176
 ClientConnectionId:4666e6e5-7316-4149-8cfb-1a430e1fe3c8
 Error Number:50000,State:1,Class:16|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -165,7 +165,7 @@ Error Number:50000,State:1,Class:16
 ----------------------------------------
 Timestamp local:F Tuesday, April 3, 2018 6:54:44 AM
 Message: VHMSService.DischargeEntry AddDischargeEntry |Admission_A_01|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -206,7 +206,7 @@ Message: VHMS.DataAccess.Admission UpdateAdmission | System.Data.SqlClient.SqlEx
    at VHMS.DataAccess.Discharge.Admission.UpdateAdmission(Database oDb, Admission objAdmission, DbTransaction oTrans) in g:\Projects\Vijaya HMS\Source Code\VHMS\VHMS.DataAccess\Discharge\Admission.cs:line 240
 ClientConnectionId:eb41ff21-f979-4529-8e04-72b5d414dcd8
 Error Number:50000,State:1,Class:16|
-Category: General
+HouseType: General
 
 Priority: -1
 
@@ -247,7 +247,7 @@ Error Number:50000,State:1,Class:16
 ----------------------------------------
 Timestamp local:F Tuesday, April 3, 2018 6:57:16 AM
 Message: VHMSService.DischargeEntry UpdateDischargeEntry |Admission_U_01|
-Category: General
+HouseType: General
 
 Priority: -1
 

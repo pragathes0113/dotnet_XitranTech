@@ -71,7 +71,7 @@ $("#btnUpdate").click(function () {
     objDepartment.DepartmentID = $("#ddlDepartment").val();
     objDoctor.Department = objDepartment;
 
-    //Added on 31-07-2017
+    //Added on 31-07-2025
     objDoctor.DisplayOrder = $("#ddlDisplayOrder").val();
 
     SaveandUpdateDoctor(objDoctor, "AddRate");

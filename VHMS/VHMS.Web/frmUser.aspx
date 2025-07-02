@@ -497,7 +497,7 @@
             return false;
         });
 
-        //Added on 25-10-2017
+        //Added on 25-10-2025
         $("#btnCloseResetWindow").click(function () {
             $('#divResetPassword').modal('hide');
             return false;
@@ -781,7 +781,7 @@
                                             table += "<td>" + obj[index].UserName + "</td>";
                                             table += "<td>" + obj[index].Password + "</td>";
                                             table += "<td>" + TypeStatus + "</td>";
-                                            //Added on 25-10-2017
+                                            //Added on 25-10-2025
                                             table += "<td><a href='#' id=" + obj[index].UserID + " class='ResetPassword'><i class='fa fa-lg fa-unlock text-maroon'/></a></td>";
                                             if (ActionUpdate == "1") { table += "<td><a href='#' id=" + obj[index].UserID + " class=\"Edit\"><i class='fa fa-lg fa-edit'/></a></td>"; }
                                             else { table += "<td></td>"; }
@@ -800,7 +800,7 @@
                                             table += "<td>" + obj[index].UserName + "</td>";
                                             table += "<td>" + obj[index].Password + "</td>";
                                             table += "<td>" + TypeStatus + "</td>";
-                                            //Added on 25-10-2017
+                                            //Added on 25-10-2025
                                             table += "<td><a href='#' id=" + obj[index].UserID + " class='ResetPassword'><i class='fa fa-lg fa-unlock text-maroon'/></a></td>";
                                             if (ActionUpdate == "1") { table += "<td><a href='#' id=" + obj[index].UserID + " class=\"Edit\"><i class='fa fa-lg fa-edit'/></a></td>"; }
                                             else { table += "<td></td>"; }
@@ -826,7 +826,7 @@
                                             return false;
                                         }
                                     });
-                                    //Added on 25-10-2017
+                                    //Added on 25-10-2025
                                     $(".ResetPassword").click(function () {
                                         var UserID = $(this).parent().parent()[0].id;
                                         $("#hdnID").val(UserID);
@@ -964,20 +964,14 @@
 
                                         }
                                     });
-
                                     $("#hdnID").val(obj.UserID);
                                     $("#txtUserName").val(obj.UserName);
                                     $("#txtPassword").val(obj.Password);
                                     $("#txtConfirmPassword").val(obj.Password);
                                     $("#txtEmail").val(obj.Email);
                                     $("#ddlUserRole").val(obj.RoleID).change();
-                                    $("#ddlCompany").val(obj.Company.CompanyID).change();
-                                    //$("#ddlZone").val(obj.Zone.ZoneID);
-                                    //$("#ddlRegion").val(obj.Region.RegionID);
-                                    //$("#ddlDesignation").val(obj.Designation.DesignationID);
                                     $("#txtEmployeename").val(obj.EmployeeName);
                                     $("#txtEmployeecode").val(obj.EmployeeCode);
-
                                     $("#txtmoblieno").val(obj.MobileNo);
                                     $("#txtDOB").val(obj.sDOB);
                                     $("#txtDOJ").val(obj.sDOJ);

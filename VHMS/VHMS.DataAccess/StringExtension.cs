@@ -5,7 +5,7 @@ using System.Text;
 
 namespace VHMS.DataAccess
 {
-    //Added on 20-10-2017
+    //Added on 20-10-2025
     public static class StringExtension
     {
         public static string CapitalizeFirst(this string s)
