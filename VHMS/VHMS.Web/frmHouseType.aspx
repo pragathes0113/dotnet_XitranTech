@@ -158,8 +158,6 @@
             else { sMethodName = "AddHouseType"; }
 
             SaveandUpdateHouseType(Obj, sMethodName);
-
-            return false;
         });
 
         $("#btnClose").click(function () {

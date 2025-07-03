@@ -17,7 +17,13 @@ public partial interface IVHMSService
     [OperationContract]
     [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
     string GetAllCustomer();
+    [OperationContract]
+    [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
+    string GetTopCustomer(string CallStatus="");
 
+    [OperationContract]
+    [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
+    string GetCancelCustomer(string CallStatus = "");
     [OperationContract]
     [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
     string GetNewCustomerByID(int ID);

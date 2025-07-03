@@ -12,6 +12,195 @@ namespace VHMS.DataAccess.Billing
 {
     public class NewCustomer
     {
+        public static Collection<Entity.Billing.NewCustomer> GetTopCustomer(string CallStatus="")
+        {
+            string sException = string.Empty;
+            Database db;
+            DataSet dsList = null;
+            Collection<Entity.Billing.NewCustomer> objList = new Collection<Entity.Billing.NewCustomer>();
+            Entity.Billing.HouseType ObjHouseType = new Entity.Billing.HouseType();
+
+            try
+            {
+                db = Entity.DBConnection.dbCon;
+                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_TOPNEWCUSTOMER);
+                db.AddInParameter(cmd, "@CallStatus", DbType.String, CallStatus);
+                dsList = db.ExecuteDataSet(cmd);
+
+                if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dsList.Tables[0].Rows)
+                    {
+                        Entity.Billing.NewCustomer obj = new Entity.Billing.NewCustomer();
+                        ObjHouseType = new Entity.Billing.HouseType();
+
+
+                        obj.CustomerID = Convert.ToInt32(dr["PK_CustomerNameID"]);
+                        obj.CustomerName = Convert.ToString(dr["CustomerName"]);
+                        obj.MobileNo = Convert.ToString(dr["MobileNo"]);
+                        obj.AltMobileNo = Convert.ToString(dr["AltMobileNo"]);
+                        ObjHouseType.HouseTypeID = Convert.ToInt32(dr["FK_HouseTypeID"]);
+                        ObjHouseType.HouseTypeName = Convert.ToString(dr["HouseTypeName"]);
+                        obj.HouseType = ObjHouseType;
+                        obj.CurrentAddress = Convert.ToString(dr["CurrentAddress"]);
+                        obj.ShiftingAddress = Convert.ToString(dr["ShiftingAddress"]);
+                        obj.PackingDate = Convert.ToDateTime(dr["PackingDate"]);
+                        obj.sPackingDate = obj.PackingDate.ToString("dd/MM/yyyy");
+                        obj.ReachingDate = Convert.ToDateTime(dr["ReachingDate"]);
+                        obj.sReachingDate = obj.ReachingDate.ToString("dd/MM/yyyy");
+                        obj.Kms = Convert.ToString(dr["Kms"]);
+                        obj.TypeofMove = Convert.ToString(dr["TypeofMove"]);
+                        obj.RequiresMoreThanTwoPersons = Convert.ToString(dr["RequiresMoreThanTwoPersons"]);
+                        obj.RequiresMoreThanTwoPersonsRate = Convert.ToDecimal(dr["RequiresMoreThanTwoPersonsRate"]);
+                        obj.HasStaircase = Convert.ToString(dr["HasStaircase"]);
+                        obj.HasStaircaseRate = Convert.ToDecimal(dr["HasStaircaseRate"]);
+                        obj.HasServiceElevator = Convert.ToString(dr["HasServiceElevator"]);
+                        obj.HasServiceElevatorRate = Convert.ToDecimal(dr["HasServiceElevatorRate"]);
+                        obj.HasProperParking = Convert.ToString(dr["HasProperParking"]);
+                        obj.HasProperParkingRate = Convert.ToDecimal(dr["HasProperParkingRate"]);
+                        obj.AdditionalChargeForLongWalks = Convert.ToString(dr["AdditionalChargeForLongWalks"]);
+                        obj.AdditionalChargeForLongWalksRate = Convert.ToDecimal(dr["AdditionalChargeForLongWalksRate"]);
+                        obj.WantsPackingHelp = Convert.ToString(dr["WantsPackingHelp"]);
+                        obj.WantsPackingHelpRate = Convert.ToDecimal(dr["WantsPackingHelpRate"]);
+                        obj.PackingHandledByTeam = Convert.ToString(dr["PackingHandledByTeam"]);
+                        obj.PackingHandledByTeamRate = Convert.ToDecimal(dr["PackingHandledByTeamRate"]);
+                        obj.NeedsPackingMaterials = Convert.ToString(dr["NeedsPackingMaterials"]);
+                        obj.NeedsPackingMaterialsRate = Convert.ToDecimal(dr["NeedsPackingMaterialsRate"]);
+                        obj.HasFragileItems = Convert.ToString(dr["HasFragileItems"]);
+                        obj.HasFragileItemsRate = Convert.ToDecimal(dr["HasFragileItemsRate"]);
+                        obj.HasHazardousItems = Convert.ToString(dr["HasHazardousItems"]);
+                        obj.HasHazardousItemsRate = Convert.ToDecimal(dr["HasHazardousItemsRate"]);
+                        obj.HasInventoryList = Convert.ToString(dr["HasInventoryList"]);
+                        obj.HasInventoryListRate = Convert.ToDecimal(dr["HasInventoryListRate"]);
+                        obj.InventoryListNote = Convert.ToString(dr["InventoryListNote"]);
+                        obj.InventoryListNoteRate = Convert.ToDecimal(dr["InventoryListNoteRate"]);
+                        obj.HasPiano = Convert.ToString(dr["HasPiano"]);
+                        obj.HasPianoRate = Convert.ToDecimal(dr["HasPianoRate"]);
+                        obj.AdditionalChargeForPiano = Convert.ToString(dr["AdditionalChargeForPiano"]);
+                        obj.AdditionalChargeForPianoRate = Convert.ToDecimal(dr["AdditionalChargeForPianoRate"]);
+                        obj.HasVehicleToMove = Convert.ToString(dr["HasVehicleToMove"]);
+                        obj.HasVehicleToMoveRate = Convert.ToDecimal(dr["HasVehicleToMoveRate"]);
+                        obj.VehicleType = Convert.ToString(dr["VehicleType"]);
+                        obj.VehicleTypeRate = Convert.ToDecimal(dr["VehicleTypeRate"]);
+                        obj.NeedsTowVanOrDriver = Convert.ToString(dr["NeedsTowVanOrDriver"]);
+                        obj.NeedsTowVanOrDriverRate = Convert.ToDecimal(dr["NeedsTowVanOrDriverRate"]);
+                        obj.NeedsJunkRemoval = Convert.ToString(dr["NeedsJunkRemoval"]);
+                        obj.NeedsJunkRemovalRate = Convert.ToDecimal(dr["NeedsJunkRemovalRate"]);
+                        obj.RequiresOvernightStop = Convert.ToString(dr["RequiresOvernightStop"]);
+                        obj.RequiresOvernightStopRate = Convert.ToDecimal(dr["RequiresOvernightStopRate"]);
+                        obj.CallStatus = Convert.ToString(dr["CallStatus"]);
+                        obj.Note = Convert.ToString(dr["Note"]);
+                        obj.WeekType = Convert.ToString(dr["WeekType"]);
+                        obj.GSTAmount = Convert.ToDecimal(dr["GSTAmount"]);
+                        obj.NetAmount = Convert.ToDecimal(dr["NetAmount"]);
+
+                        objList.Add(obj);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                sException = "VHMS.DataAccess.Billing.NewCustomer GetAll | " + ex.ToString();
+                Log.Write(sException);
+                throw;
+            }
+            return objList;
+        }
+
+        public static Collection<Entity.Billing.NewCustomer> GetCancelCustomer(string CallStatus = "")
+        {
+            string sException = string.Empty;
+            Database db;
+            DataSet dsList = null;
+            Collection<Entity.Billing.NewCustomer> objList = new Collection<Entity.Billing.NewCustomer>();
+            Entity.Billing.HouseType ObjHouseType = new Entity.Billing.HouseType();
+
+            try
+            {
+                db = Entity.DBConnection.dbCon;
+                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_CANCELNEWCUSTOMER);
+                db.AddInParameter(cmd, "@CallStatus", DbType.String, CallStatus);
+                dsList = db.ExecuteDataSet(cmd);
+
+                if (dsList.Tables.Count > 0 && dsList.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dsList.Tables[0].Rows)
+                    {
+                        Entity.Billing.NewCustomer obj = new Entity.Billing.NewCustomer();
+                        ObjHouseType = new Entity.Billing.HouseType();
+
+
+                        obj.CustomerID = Convert.ToInt32(dr["PK_CustomerNameID"]);
+                        obj.CustomerName = Convert.ToString(dr["CustomerName"]);
+                        obj.MobileNo = Convert.ToString(dr["MobileNo"]);
+                        obj.AltMobileNo = Convert.ToString(dr["AltMobileNo"]);
+                        ObjHouseType.HouseTypeID = Convert.ToInt32(dr["FK_HouseTypeID"]);
+                        ObjHouseType.HouseTypeName = Convert.ToString(dr["HouseTypeName"]);
+                        obj.HouseType = ObjHouseType;
+                        obj.CurrentAddress = Convert.ToString(dr["CurrentAddress"]);
+                        obj.ShiftingAddress = Convert.ToString(dr["ShiftingAddress"]);
+                        obj.PackingDate = Convert.ToDateTime(dr["PackingDate"]);
+                        obj.sPackingDate = obj.PackingDate.ToString("dd/MM/yyyy");
+                        obj.ReachingDate = Convert.ToDateTime(dr["ReachingDate"]);
+                        obj.sReachingDate = obj.ReachingDate.ToString("dd/MM/yyyy");
+                        obj.Kms = Convert.ToString(dr["Kms"]);
+                        obj.TypeofMove = Convert.ToString(dr["TypeofMove"]);
+                        obj.RequiresMoreThanTwoPersons = Convert.ToString(dr["RequiresMoreThanTwoPersons"]);
+                        obj.RequiresMoreThanTwoPersonsRate = Convert.ToDecimal(dr["RequiresMoreThanTwoPersonsRate"]);
+                        obj.HasStaircase = Convert.ToString(dr["HasStaircase"]);
+                        obj.HasStaircaseRate = Convert.ToDecimal(dr["HasStaircaseRate"]);
+                        obj.HasServiceElevator = Convert.ToString(dr["HasServiceElevator"]);
+                        obj.HasServiceElevatorRate = Convert.ToDecimal(dr["HasServiceElevatorRate"]);
+                        obj.HasProperParking = Convert.ToString(dr["HasProperParking"]);
+                        obj.HasProperParkingRate = Convert.ToDecimal(dr["HasProperParkingRate"]);
+                        obj.AdditionalChargeForLongWalks = Convert.ToString(dr["AdditionalChargeForLongWalks"]);
+                        obj.AdditionalChargeForLongWalksRate = Convert.ToDecimal(dr["AdditionalChargeForLongWalksRate"]);
+                        obj.WantsPackingHelp = Convert.ToString(dr["WantsPackingHelp"]);
+                        obj.WantsPackingHelpRate = Convert.ToDecimal(dr["WantsPackingHelpRate"]);
+                        obj.PackingHandledByTeam = Convert.ToString(dr["PackingHandledByTeam"]);
+                        obj.PackingHandledByTeamRate = Convert.ToDecimal(dr["PackingHandledByTeamRate"]);
+                        obj.NeedsPackingMaterials = Convert.ToString(dr["NeedsPackingMaterials"]);
+                        obj.NeedsPackingMaterialsRate = Convert.ToDecimal(dr["NeedsPackingMaterialsRate"]);
+                        obj.HasFragileItems = Convert.ToString(dr["HasFragileItems"]);
+                        obj.HasFragileItemsRate = Convert.ToDecimal(dr["HasFragileItemsRate"]);
+                        obj.HasHazardousItems = Convert.ToString(dr["HasHazardousItems"]);
+                        obj.HasHazardousItemsRate = Convert.ToDecimal(dr["HasHazardousItemsRate"]);
+                        obj.HasInventoryList = Convert.ToString(dr["HasInventoryList"]);
+                        obj.HasInventoryListRate = Convert.ToDecimal(dr["HasInventoryListRate"]);
+                        obj.InventoryListNote = Convert.ToString(dr["InventoryListNote"]);
+                        obj.InventoryListNoteRate = Convert.ToDecimal(dr["InventoryListNoteRate"]);
+                        obj.HasPiano = Convert.ToString(dr["HasPiano"]);
+                        obj.HasPianoRate = Convert.ToDecimal(dr["HasPianoRate"]);
+                        obj.AdditionalChargeForPiano = Convert.ToString(dr["AdditionalChargeForPiano"]);
+                        obj.AdditionalChargeForPianoRate = Convert.ToDecimal(dr["AdditionalChargeForPianoRate"]);
+                        obj.HasVehicleToMove = Convert.ToString(dr["HasVehicleToMove"]);
+                        obj.HasVehicleToMoveRate = Convert.ToDecimal(dr["HasVehicleToMoveRate"]);
+                        obj.VehicleType = Convert.ToString(dr["VehicleType"]);
+                        obj.VehicleTypeRate = Convert.ToDecimal(dr["VehicleTypeRate"]);
+                        obj.NeedsTowVanOrDriver = Convert.ToString(dr["NeedsTowVanOrDriver"]);
+                        obj.NeedsTowVanOrDriverRate = Convert.ToDecimal(dr["NeedsTowVanOrDriverRate"]);
+                        obj.NeedsJunkRemoval = Convert.ToString(dr["NeedsJunkRemoval"]);
+                        obj.NeedsJunkRemovalRate = Convert.ToDecimal(dr["NeedsJunkRemovalRate"]);
+                        obj.RequiresOvernightStop = Convert.ToString(dr["RequiresOvernightStop"]);
+                        obj.RequiresOvernightStopRate = Convert.ToDecimal(dr["RequiresOvernightStopRate"]);
+                        obj.CallStatus = Convert.ToString(dr["CallStatus"]);
+                        obj.Note = Convert.ToString(dr["Note"]);
+                        obj.WeekType = Convert.ToString(dr["WeekType"]);
+                        obj.GSTAmount = Convert.ToDecimal(dr["GSTAmount"]);
+                        obj.NetAmount = Convert.ToDecimal(dr["NetAmount"]);
+
+                        objList.Add(obj);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                sException = "VHMS.DataAccess.Billing.NewCustomer GetAll | " + ex.ToString();
+                Log.Write(sException);
+                throw;
+            }
+            return objList;
+        }
         public static Collection<Entity.Billing.NewCustomer> GetAllCustomer()
         {
             string sException = string.Empty;
@@ -34,58 +223,62 @@ namespace VHMS.DataAccess.Billing
                         ObjHouseType = new Entity.Billing.HouseType();
 
 
-                        obj.CustomerID = Convert.ToInt32(dr["CustomerID"]);
+                        obj.CustomerID = Convert.ToInt32(dr["PK_CustomerNameID"]);
                         obj.CustomerName = Convert.ToString(dr["CustomerName"]);
                         obj.MobileNo = Convert.ToString(dr["MobileNo"]);
+                        obj.AltMobileNo = Convert.ToString(dr["AltMobileNo"]);
                         ObjHouseType.HouseTypeID = Convert.ToInt32(dr["FK_HouseTypeID"]);
                         ObjHouseType.HouseTypeName = Convert.ToString(dr["HouseTypeName"]);
                         obj.HouseType = ObjHouseType;
-
                         obj.CurrentAddress = Convert.ToString(dr["CurrentAddress"]);
                         obj.ShiftingAddress = Convert.ToString(dr["ShiftingAddress"]);
                         obj.PackingDate = Convert.ToDateTime(dr["PackingDate"]);
+                        obj.sPackingDate = obj.PackingDate.ToString("dd/MM/yyyy");
                         obj.ReachingDate = Convert.ToDateTime(dr["ReachingDate"]);
+                        obj.sReachingDate = obj.ReachingDate.ToString("dd/MM/yyyy");
                         obj.Kms = Convert.ToString(dr["Kms"]);
                         obj.TypeofMove = Convert.ToString(dr["TypeofMove"]);
-
-                        obj.RequiresMoreThanTwoPersons = Convert.ToBoolean(dr["RequiresMoreThanTwoPersons"]);
+                        obj.RequiresMoreThanTwoPersons = Convert.ToString(dr["RequiresMoreThanTwoPersons"]);
                         obj.RequiresMoreThanTwoPersonsRate = Convert.ToDecimal(dr["RequiresMoreThanTwoPersonsRate"]);
-                        obj.HasStaircase = Convert.ToBoolean(dr["HasStaircase"]);
+                        obj.HasStaircase = Convert.ToString(dr["HasStaircase"]);
                         obj.HasStaircaseRate = Convert.ToDecimal(dr["HasStaircaseRate"]);
-                        obj.HasServiceElevator = Convert.ToBoolean(dr["HasServiceElevator"]);
+                        obj.HasServiceElevator = Convert.ToString(dr["HasServiceElevator"]);
                         obj.HasServiceElevatorRate = Convert.ToDecimal(dr["HasServiceElevatorRate"]);
-                        obj.HasProperParking = Convert.ToBoolean(dr["HasProperParking"]);
+                        obj.HasProperParking = Convert.ToString(dr["HasProperParking"]);
                         obj.HasProperParkingRate = Convert.ToDecimal(dr["HasProperParkingRate"]);
-                        obj.AdditionalChargeForLongWalks = Convert.ToBoolean(dr["AdditionalChargeForLongWalks"]);
+                        obj.AdditionalChargeForLongWalks = Convert.ToString(dr["AdditionalChargeForLongWalks"]);
                         obj.AdditionalChargeForLongWalksRate = Convert.ToDecimal(dr["AdditionalChargeForLongWalksRate"]);
-                        obj.WantsPackingHelp = Convert.ToBoolean(dr["WantsPackingHelp"]);
+                        obj.WantsPackingHelp = Convert.ToString(dr["WantsPackingHelp"]);
                         obj.WantsPackingHelpRate = Convert.ToDecimal(dr["WantsPackingHelpRate"]);
-                        obj.PackingHandledByTeam = Convert.ToBoolean(dr["PackingHandledByTeam"]);
+                        obj.PackingHandledByTeam = Convert.ToString(dr["PackingHandledByTeam"]);
                         obj.PackingHandledByTeamRate = Convert.ToDecimal(dr["PackingHandledByTeamRate"]);
-                        obj.NeedsPackingMaterials = Convert.ToBoolean(dr["NeedsPackingMaterials"]);
+                        obj.NeedsPackingMaterials = Convert.ToString(dr["NeedsPackingMaterials"]);
                         obj.NeedsPackingMaterialsRate = Convert.ToDecimal(dr["NeedsPackingMaterialsRate"]);
-                        obj.HasFragileItems = Convert.ToBoolean(dr["HasFragileItems"]);
+                        obj.HasFragileItems = Convert.ToString(dr["HasFragileItems"]);
                         obj.HasFragileItemsRate = Convert.ToDecimal(dr["HasFragileItemsRate"]);
-                        obj.HasHazardousItems = Convert.ToBoolean(dr["HasHazardousItems"]);
+                        obj.HasHazardousItems = Convert.ToString(dr["HasHazardousItems"]);
                         obj.HasHazardousItemsRate = Convert.ToDecimal(dr["HasHazardousItemsRate"]);
-                        obj.HasInventoryList = Convert.ToBoolean(dr["HasInventoryList"]);
+                        obj.HasInventoryList = Convert.ToString(dr["HasInventoryList"]);
                         obj.HasInventoryListRate = Convert.ToDecimal(dr["HasInventoryListRate"]);
-                        obj.InventoryListNote = Convert.ToBoolean(dr["InventoryListNote"]);
+                        obj.InventoryListNote = Convert.ToString(dr["InventoryListNote"]);
                         obj.InventoryListNoteRate = Convert.ToDecimal(dr["InventoryListNoteRate"]);
-                        obj.HasPiano = Convert.ToBoolean(dr["HasPiano"]);
+                        obj.HasPiano = Convert.ToString(dr["HasPiano"]);
                         obj.HasPianoRate = Convert.ToDecimal(dr["HasPianoRate"]);
-                        obj.AdditionalChargeForPiano = Convert.ToBoolean(dr["AdditionalChargeForPiano"]);
+                        obj.AdditionalChargeForPiano = Convert.ToString(dr["AdditionalChargeForPiano"]);
                         obj.AdditionalChargeForPianoRate = Convert.ToDecimal(dr["AdditionalChargeForPianoRate"]);
-                        obj.HasVehicleToMove = Convert.ToBoolean(dr["HasVehicleToMove"]);
+                        obj.HasVehicleToMove = Convert.ToString(dr["HasVehicleToMove"]);
                         obj.HasVehicleToMoveRate = Convert.ToDecimal(dr["HasVehicleToMoveRate"]);
-                        obj.VehicleType = Convert.ToBoolean(dr["VehicleType"]);
+                        obj.VehicleType = Convert.ToString(dr["VehicleType"]);
                         obj.VehicleTypeRate = Convert.ToDecimal(dr["VehicleTypeRate"]);
-                        obj.NeedsTowVanOrDriver = Convert.ToBoolean(dr["NeedsTowVanOrDriver"]);
+                        obj.NeedsTowVanOrDriver = Convert.ToString(dr["NeedsTowVanOrDriver"]);
                         obj.NeedsTowVanOrDriverRate = Convert.ToDecimal(dr["NeedsTowVanOrDriverRate"]);
-                        obj.NeedsJunkRemoval = Convert.ToBoolean(dr["NeedsJunkRemoval"]);
+                        obj.NeedsJunkRemoval = Convert.ToString(dr["NeedsJunkRemoval"]);
                         obj.NeedsJunkRemovalRate = Convert.ToDecimal(dr["NeedsJunkRemovalRate"]);
-                        obj.RequiresOvernightStop = Convert.ToBoolean(dr["RequiresOvernightStop"]);
+                        obj.RequiresOvernightStop = Convert.ToString(dr["RequiresOvernightStop"]);
                         obj.RequiresOvernightStopRate = Convert.ToDecimal(dr["RequiresOvernightStopRate"]);
+                        obj.CallStatus = Convert.ToString(dr["CallStatus"]);
+                        obj.GSTAmount = Convert.ToDecimal(dr["GSTAmount"]);
+                        obj.NetAmount=Convert.ToDecimal(dr["NetAmount"]);
 
                         objList.Add(obj);
                     }
@@ -108,7 +301,7 @@ namespace VHMS.DataAccess.Billing
             try
             {
                 db = Entity.DBConnection.dbCon;
-                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_HOUSETYPE);
+                DbCommand cmd = db.GetStoredProcCommand(constants.StoredProcedures.USP_SELECT_NEWCUSTOMER);
                 db.AddInParameter(cmd, "@PK_CustomerNameID", DbType.Int32, iNewCustomerID);
                 DataSet dsList = db.ExecuteDataSet(cmd);
 
@@ -119,59 +312,65 @@ namespace VHMS.DataAccess.Billing
                         obj = new Entity.Billing.NewCustomer();
                         ObjHouseType = new Entity.Billing.HouseType();
 
-
-                        obj.CustomerID = Convert.ToInt32(dr["CustomerID"]);
+                        obj.CustomerID = Convert.ToInt32(dr["PK_CustomerNameID"]);
                         obj.CustomerName = Convert.ToString(dr["CustomerName"]);
                         obj.MobileNo = Convert.ToString(dr["MobileNo"]);
+                        obj.AltMobileNo = Convert.ToString(dr["AltMobileNo"]);
                         ObjHouseType.HouseTypeID = Convert.ToInt32(dr["FK_HouseTypeID"]);
                         ObjHouseType.HouseTypeName = Convert.ToString(dr["HouseTypeName"]);
                         obj.HouseType = ObjHouseType;
-
                         obj.CurrentAddress = Convert.ToString(dr["CurrentAddress"]);
                         obj.ShiftingAddress = Convert.ToString(dr["ShiftingAddress"]);
                         obj.PackingDate = Convert.ToDateTime(dr["PackingDate"]);
+                        obj.sPackingDate = obj.PackingDate.ToString("dd/MM/yyyy");
                         obj.ReachingDate = Convert.ToDateTime(dr["ReachingDate"]);
+                        obj.sReachingDate = obj.ReachingDate.ToString("dd/MM/yyyy");
                         obj.Kms = Convert.ToString(dr["Kms"]);
                         obj.TypeofMove = Convert.ToString(dr["TypeofMove"]);
-
-                        obj.RequiresMoreThanTwoPersons = Convert.ToBoolean(dr["RequiresMoreThanTwoPersons"]);
+                        obj.RequiresMoreThanTwoPersons = Convert.ToString(dr["RequiresMoreThanTwoPersons"]);
                         obj.RequiresMoreThanTwoPersonsRate = Convert.ToDecimal(dr["RequiresMoreThanTwoPersonsRate"]);
-                        obj.HasStaircase = Convert.ToBoolean(dr["HasStaircase"]);
+                        obj.HasStaircase = Convert.ToString(dr["HasStaircase"]);
                         obj.HasStaircaseRate = Convert.ToDecimal(dr["HasStaircaseRate"]);
-                        obj.HasServiceElevator = Convert.ToBoolean(dr["HasServiceElevator"]);
+                        obj.HasServiceElevator = Convert.ToString(dr["HasServiceElevator"]);
                         obj.HasServiceElevatorRate = Convert.ToDecimal(dr["HasServiceElevatorRate"]);
-                        obj.HasProperParking = Convert.ToBoolean(dr["HasProperParking"]);
+                        obj.HasProperParking = Convert.ToString(dr["HasProperParking"]);
                         obj.HasProperParkingRate = Convert.ToDecimal(dr["HasProperParkingRate"]);
-                        obj.AdditionalChargeForLongWalks = Convert.ToBoolean(dr["AdditionalChargeForLongWalks"]);
+                        obj.AdditionalChargeForLongWalks = Convert.ToString(dr["AdditionalChargeForLongWalks"]);
                         obj.AdditionalChargeForLongWalksRate = Convert.ToDecimal(dr["AdditionalChargeForLongWalksRate"]);
-                        obj.WantsPackingHelp = Convert.ToBoolean(dr["WantsPackingHelp"]);
+                        obj.WantsPackingHelp = Convert.ToString(dr["WantsPackingHelp"]);
                         obj.WantsPackingHelpRate = Convert.ToDecimal(dr["WantsPackingHelpRate"]);
-                        obj.PackingHandledByTeam = Convert.ToBoolean(dr["PackingHandledByTeam"]);
+                        obj.PackingHandledByTeam = Convert.ToString(dr["PackingHandledByTeam"]);
                         obj.PackingHandledByTeamRate = Convert.ToDecimal(dr["PackingHandledByTeamRate"]);
-                        obj.NeedsPackingMaterials = Convert.ToBoolean(dr["NeedsPackingMaterials"]);
+                        obj.NeedsPackingMaterials = Convert.ToString(dr["NeedsPackingMaterials"]);
                         obj.NeedsPackingMaterialsRate = Convert.ToDecimal(dr["NeedsPackingMaterialsRate"]);
-                        obj.HasFragileItems = Convert.ToBoolean(dr["HasFragileItems"]);
+                        obj.HasFragileItems = Convert.ToString(dr["HasFragileItems"]);
                         obj.HasFragileItemsRate = Convert.ToDecimal(dr["HasFragileItemsRate"]);
-                        obj.HasHazardousItems = Convert.ToBoolean(dr["HasHazardousItems"]);
+                        obj.HasHazardousItems = Convert.ToString(dr["HasHazardousItems"]);
                         obj.HasHazardousItemsRate = Convert.ToDecimal(dr["HasHazardousItemsRate"]);
-                        obj.HasInventoryList = Convert.ToBoolean(dr["HasInventoryList"]);
+                        obj.HasInventoryList = Convert.ToString(dr["HasInventoryList"]);
                         obj.HasInventoryListRate = Convert.ToDecimal(dr["HasInventoryListRate"]);
-                        obj.InventoryListNote = Convert.ToBoolean(dr["InventoryListNote"]);
+                        obj.InventoryListNote = Convert.ToString(dr["InventoryListNote"]);
                         obj.InventoryListNoteRate = Convert.ToDecimal(dr["InventoryListNoteRate"]);
-                        obj.HasPiano = Convert.ToBoolean(dr["HasPiano"]);
+                        obj.HasPiano = Convert.ToString(dr["HasPiano"]);
                         obj.HasPianoRate = Convert.ToDecimal(dr["HasPianoRate"]);
-                        obj.AdditionalChargeForPiano = Convert.ToBoolean(dr["AdditionalChargeForPiano"]);
+                        obj.AdditionalChargeForPiano = Convert.ToString(dr["AdditionalChargeForPiano"]);
                         obj.AdditionalChargeForPianoRate = Convert.ToDecimal(dr["AdditionalChargeForPianoRate"]);
-                        obj.HasVehicleToMove = Convert.ToBoolean(dr["HasVehicleToMove"]);
+                        obj.HasVehicleToMove = Convert.ToString(dr["HasVehicleToMove"]);
                         obj.HasVehicleToMoveRate = Convert.ToDecimal(dr["HasVehicleToMoveRate"]);
-                        obj.VehicleType = Convert.ToBoolean(dr["VehicleType"]);
+                        obj.VehicleType = Convert.ToString(dr["VehicleType"]);
                         obj.VehicleTypeRate = Convert.ToDecimal(dr["VehicleTypeRate"]);
-                        obj.NeedsTowVanOrDriver = Convert.ToBoolean(dr["NeedsTowVanOrDriver"]);
+                        obj.NeedsTowVanOrDriver = Convert.ToString(dr["NeedsTowVanOrDriver"]);
                         obj.NeedsTowVanOrDriverRate = Convert.ToDecimal(dr["NeedsTowVanOrDriverRate"]);
-                        obj.NeedsJunkRemoval = Convert.ToBoolean(dr["NeedsJunkRemoval"]);
+                        obj.NeedsJunkRemoval = Convert.ToString(dr["NeedsJunkRemoval"]);
                         obj.NeedsJunkRemovalRate = Convert.ToDecimal(dr["NeedsJunkRemovalRate"]);
-                        obj.RequiresOvernightStop = Convert.ToBoolean(dr["RequiresOvernightStop"]);
+                        obj.RequiresOvernightStop = Convert.ToString(dr["RequiresOvernightStop"]);
                         obj.RequiresOvernightStopRate = Convert.ToDecimal(dr["RequiresOvernightStopRate"]);
+                        obj.CallStatus = Convert.ToString(dr["CallStatus"]);
+                        obj.GSTAmount = Convert.ToDecimal(dr["GSTAmount"]);
+                        obj.NetAmount = Convert.ToDecimal(dr["NetAmount"]);
+                        obj.Note = Convert.ToString(dr["Note"]);
+                        obj.WeekType = Convert.ToString(dr["WeekType"]);
+
                     }
                 }
             }
@@ -196,7 +395,7 @@ namespace VHMS.DataAccess.Billing
                     ID = AddNewCustomer(oDb, objCustomer, oTrans);
                     oTrans.Commit();
                     if (ID > 0)
-                        Framework.InsertAuditLog("tNewCustomer", "CustomerID", ID.ToString(), (char)Entity.Common.DatabaseAction.INSERT, objCustomer.CreatedBy.UserID);
+                        Framework.InsertAuditLog("tNewCustomer", "PK_CustomerNameID", ID.ToString(), (char)Entity.Common.DatabaseAction.INSERT, objCustomer.CreatedBy.UserID);
                 }
                 catch (Exception ex)
                 {
@@ -223,50 +422,53 @@ namespace VHMS.DataAccess.Billing
                 oDb.AddInParameter(cmd, "@FK_HouseTypeID", DbType.Int32, objCustomer.HouseType.HouseTypeID);
                 oDb.AddInParameter(cmd, "@CurrentAddress", DbType.String, objCustomer.CurrentAddress);
                 oDb.AddInParameter(cmd, "@ShiftingAddress", DbType.String, objCustomer.ShiftingAddress);
-                oDb.AddInParameter(cmd, "@PackingDate", DbType.DateTime, objCustomer.PackingDate);
-                oDb.AddInParameter(cmd, "@ReachingDate", DbType.DateTime, objCustomer.ReachingDate);
+                oDb.AddInParameter(cmd, "@PackingDate", DbType.String, objCustomer.sPackingDate);
+                oDb.AddInParameter(cmd, "@ReachingDate", DbType.String, objCustomer.sReachingDate);
                 oDb.AddInParameter(cmd, "@Kms", DbType.String, objCustomer.Kms);
                 oDb.AddInParameter(cmd, "@TypeofMove", DbType.String, objCustomer.TypeofMove);
-                oDb.AddInParameter(cmd, "@RequiresMoreThanTwoPersons", DbType.Boolean, objCustomer.RequiresMoreThanTwoPersons);
+                oDb.AddInParameter(cmd, "@RequiresMoreThanTwoPersons", DbType.String, objCustomer.RequiresMoreThanTwoPersons);
                 oDb.AddInParameter(cmd, "@RequiresMoreThanTwoPersonsRate", DbType.Decimal, objCustomer.RequiresMoreThanTwoPersonsRate);
-                oDb.AddInParameter(cmd, "@HasStaircase", DbType.Boolean, objCustomer.HasStaircase);
+                oDb.AddInParameter(cmd, "@HasStaircase", DbType.String, objCustomer.HasStaircase);
                 oDb.AddInParameter(cmd, "@HasStaircaseRate", DbType.Decimal, objCustomer.HasStaircaseRate);
-                oDb.AddInParameter(cmd, "@HasServiceElevator", DbType.Boolean, objCustomer.HasServiceElevator);
+                oDb.AddInParameter(cmd, "@HasServiceElevator", DbType.String, objCustomer.HasServiceElevator);
                 oDb.AddInParameter(cmd, "@HasServiceElevatorRate", DbType.Decimal, objCustomer.HasServiceElevatorRate);
-                oDb.AddInParameter(cmd, "@HasProperParking", DbType.Boolean, objCustomer.HasProperParking);
+                oDb.AddInParameter(cmd, "@HasProperParking", DbType.String, objCustomer.HasProperParking);
                 oDb.AddInParameter(cmd, "@HasProperParkingRate", DbType.Decimal, objCustomer.HasProperParkingRate);
-                oDb.AddInParameter(cmd, "@AdditionalChargeForLongWalks", DbType.Boolean, objCustomer.AdditionalChargeForLongWalks);
+                oDb.AddInParameter(cmd, "@AdditionalChargeForLongWalks", DbType.String, objCustomer.AdditionalChargeForLongWalks);
                 oDb.AddInParameter(cmd, "@AdditionalChargeForLongWalksRate", DbType.Decimal, objCustomer.AdditionalChargeForLongWalksRate);
-                oDb.AddInParameter(cmd, "@WantsPackingHelp", DbType.Boolean, objCustomer.WantsPackingHelp);
+                oDb.AddInParameter(cmd, "@WantsPackingHelp", DbType.String, objCustomer.WantsPackingHelp);
                 oDb.AddInParameter(cmd, "@WantsPackingHelpRate", DbType.Decimal, objCustomer.WantsPackingHelpRate);
-                oDb.AddInParameter(cmd, "@PackingHandledByTeam", DbType.Boolean, objCustomer.PackingHandledByTeam);
+                oDb.AddInParameter(cmd, "@PackingHandledByTeam", DbType.String, objCustomer.PackingHandledByTeam);
                 oDb.AddInParameter(cmd, "@PackingHandledByTeamRate", DbType.Decimal, objCustomer.PackingHandledByTeamRate);
-                oDb.AddInParameter(cmd, "@NeedsPackingMaterials", DbType.Boolean, objCustomer.NeedsPackingMaterials);
+                oDb.AddInParameter(cmd, "@NeedsPackingMaterials", DbType.String, objCustomer.NeedsPackingMaterials);
                 oDb.AddInParameter(cmd, "@NeedsPackingMaterialsRate", DbType.Decimal, objCustomer.NeedsPackingMaterialsRate);
-                oDb.AddInParameter(cmd, "@HasFragileItems", DbType.Boolean, objCustomer.HasFragileItems);
+                oDb.AddInParameter(cmd, "@HasFragileItems", DbType.String, objCustomer.HasFragileItems);
                 oDb.AddInParameter(cmd, "@HasFragileItemsRate", DbType.Decimal, objCustomer.HasFragileItemsRate);
-                oDb.AddInParameter(cmd, "@HasHazardousItems", DbType.Boolean, objCustomer.HasHazardousItems);
+                oDb.AddInParameter(cmd, "@HasHazardousItems", DbType.String, objCustomer.HasHazardousItems);
                 oDb.AddInParameter(cmd, "@HasHazardousItemsRate", DbType.Decimal, objCustomer.HasHazardousItemsRate);
-                oDb.AddInParameter(cmd, "@HasInventoryList", DbType.Boolean, objCustomer.HasInventoryList);
+                oDb.AddInParameter(cmd, "@HasInventoryList", DbType.String, objCustomer.HasInventoryList);
                 oDb.AddInParameter(cmd, "@HasInventoryListRate", DbType.Decimal, objCustomer.HasInventoryListRate);
-                oDb.AddInParameter(cmd, "@InventoryListNote", DbType.Boolean, objCustomer.InventoryListNote);
+                oDb.AddInParameter(cmd, "@InventoryListNote", DbType.String, objCustomer.InventoryListNote);
                 oDb.AddInParameter(cmd, "@InventoryListNoteRate", DbType.Decimal, objCustomer.InventoryListNoteRate);
-                oDb.AddInParameter(cmd, "@HasPiano", DbType.Boolean, objCustomer.HasPiano);
+                oDb.AddInParameter(cmd, "@HasPiano", DbType.String, objCustomer.HasPiano);
                 oDb.AddInParameter(cmd, "@HasPianoRate", DbType.Decimal, objCustomer.HasPianoRate);
-                oDb.AddInParameter(cmd, "@AdditionalChargeForPiano", DbType.Boolean, objCustomer.AdditionalChargeForPiano);
+                oDb.AddInParameter(cmd, "@AdditionalChargeForPiano", DbType.String, objCustomer.AdditionalChargeForPiano);
                 oDb.AddInParameter(cmd, "@AdditionalChargeForPianoRate", DbType.Decimal, objCustomer.AdditionalChargeForPianoRate);
-                oDb.AddInParameter(cmd, "@HasVehicleToMove", DbType.Boolean, objCustomer.HasVehicleToMove);
+                oDb.AddInParameter(cmd, "@HasVehicleToMove", DbType.String, objCustomer.HasVehicleToMove);
                 oDb.AddInParameter(cmd, "@HasVehicleToMoveRate", DbType.Decimal, objCustomer.HasVehicleToMoveRate);
-                oDb.AddInParameter(cmd, "@VehicleType", DbType.Boolean, objCustomer.VehicleType);
+                oDb.AddInParameter(cmd, "@VehicleType", DbType.String, objCustomer.VehicleType);
                 oDb.AddInParameter(cmd, "@VehicleTypeRate", DbType.Decimal, objCustomer.VehicleTypeRate);
-                oDb.AddInParameter(cmd, "@NeedsTowVanOrDriver", DbType.Boolean, objCustomer.NeedsTowVanOrDriver);
+                oDb.AddInParameter(cmd, "@NeedsTowVanOrDriver", DbType.String, objCustomer.NeedsTowVanOrDriver);
                 oDb.AddInParameter(cmd, "@NeedsTowVanOrDriverRate", DbType.Decimal, objCustomer.NeedsTowVanOrDriverRate);
-                oDb.AddInParameter(cmd, "@NeedsJunkRemoval", DbType.Boolean, objCustomer.NeedsJunkRemoval);
+                oDb.AddInParameter(cmd, "@NeedsJunkRemoval", DbType.String, objCustomer.NeedsJunkRemoval);
                 oDb.AddInParameter(cmd, "@NeedsJunkRemovalRate", DbType.Decimal, objCustomer.NeedsJunkRemovalRate);
-                oDb.AddInParameter(cmd, "@RequiresOvernightStop", DbType.Boolean, objCustomer.RequiresOvernightStop);
+                oDb.AddInParameter(cmd, "@RequiresOvernightStop", DbType.String, objCustomer.RequiresOvernightStop);
                 oDb.AddInParameter(cmd, "@RequiresOvernightStopRate", DbType.Decimal, objCustomer.RequiresOvernightStopRate);
+                oDb.AddInParameter(cmd, "@CallStatus", DbType.String, objCustomer.CallStatus);
+                oDb.AddInParameter(cmd, "@AltMobileNo", DbType.String, objCustomer.AltMobileNo);
+                oDb.AddInParameter(cmd, "@GSTAmount", DbType.Decimal, objCustomer.GSTAmount);
+                oDb.AddInParameter(cmd, "@NetAmount", DbType.Decimal, objCustomer.NetAmount);
                 oDb.AddInParameter(cmd, "@FK_CreatedBy", DbType.Int32, objCustomer.CreatedBy.UserID);
-
                 iID = oDb.ExecuteNonQuery(cmd, oTrans);
                 if (iID != 0)
                 {
@@ -295,7 +497,7 @@ namespace VHMS.DataAccess.Billing
                     IsUpdated = UpdateNewCustomer(oDb, objCustomer, oTrans);
                     oTrans.Commit();
                     if (IsUpdated)
-                        Framework.InsertAuditLog("tNewCustomer", "CustomerID", objCustomer.CustomerID.ToString(), (char)Entity.Common.DatabaseAction.UPDATE, objCustomer.ModifiedBy.UserID);
+                        Framework.InsertAuditLog("tNewCustomer", "PK_CustomerNameID", objCustomer.CustomerID.ToString(), (char)Entity.Common.DatabaseAction.UPDATE, objCustomer.ModifiedBy.UserID);
                 }
                 catch (Exception ex)
                 {
@@ -320,7 +522,56 @@ namespace VHMS.DataAccess.Billing
                 oDb.AddInParameter(cmd, "@CustomerName", DbType.String, objCustomer.CustomerName);
                 oDb.AddInParameter(cmd, "@MobileNo", DbType.String, objCustomer.MobileNo);
                 oDb.AddInParameter(cmd, "@FK_HouseTypeID", DbType.Int32, objCustomer.HouseType.HouseTypeID);
-                // Add all other parameters...
+                oDb.AddInParameter(cmd, "@CurrentAddress", DbType.String, objCustomer.CurrentAddress);
+                oDb.AddInParameter(cmd, "@ShiftingAddress", DbType.String, objCustomer.ShiftingAddress);
+                oDb.AddInParameter(cmd, "@PackingDate", DbType.String, objCustomer.sPackingDate);
+                oDb.AddInParameter(cmd, "@ReachingDate", DbType.String, objCustomer.sReachingDate);
+                oDb.AddInParameter(cmd, "@Kms", DbType.String, objCustomer.Kms);
+                oDb.AddInParameter(cmd, "@TypeofMove", DbType.String, objCustomer.TypeofMove);
+                oDb.AddInParameter(cmd, "@RequiresMoreThanTwoPersons", DbType.String, objCustomer.RequiresMoreThanTwoPersons);
+                oDb.AddInParameter(cmd, "@RequiresMoreThanTwoPersonsRate", DbType.Decimal, objCustomer.RequiresMoreThanTwoPersonsRate);
+                oDb.AddInParameter(cmd, "@HasStaircase", DbType.String, objCustomer.HasStaircase);
+                oDb.AddInParameter(cmd, "@HasStaircaseRate", DbType.Decimal, objCustomer.HasStaircaseRate);
+                oDb.AddInParameter(cmd, "@HasServiceElevator", DbType.String, objCustomer.HasServiceElevator);
+                oDb.AddInParameter(cmd, "@HasServiceElevatorRate", DbType.Decimal, objCustomer.HasServiceElevatorRate);
+                oDb.AddInParameter(cmd, "@HasProperParking", DbType.String, objCustomer.HasProperParking);
+                oDb.AddInParameter(cmd, "@HasProperParkingRate", DbType.Decimal, objCustomer.HasProperParkingRate);
+                oDb.AddInParameter(cmd, "@AdditionalChargeForLongWalks", DbType.String, objCustomer.AdditionalChargeForLongWalks);
+                oDb.AddInParameter(cmd, "@AdditionalChargeForLongWalksRate", DbType.Decimal, objCustomer.AdditionalChargeForLongWalksRate);
+                oDb.AddInParameter(cmd, "@WantsPackingHelp", DbType.String, objCustomer.WantsPackingHelp);
+                oDb.AddInParameter(cmd, "@WantsPackingHelpRate", DbType.Decimal, objCustomer.WantsPackingHelpRate);
+                oDb.AddInParameter(cmd, "@PackingHandledByTeam", DbType.String, objCustomer.PackingHandledByTeam);
+                oDb.AddInParameter(cmd, "@PackingHandledByTeamRate", DbType.Decimal, objCustomer.PackingHandledByTeamRate);
+                oDb.AddInParameter(cmd, "@NeedsPackingMaterials", DbType.String, objCustomer.NeedsPackingMaterials);
+                oDb.AddInParameter(cmd, "@NeedsPackingMaterialsRate", DbType.Decimal, objCustomer.NeedsPackingMaterialsRate);
+                oDb.AddInParameter(cmd, "@HasFragileItems", DbType.String, objCustomer.HasFragileItems);
+                oDb.AddInParameter(cmd, "@HasFragileItemsRate", DbType.Decimal, objCustomer.HasFragileItemsRate);
+                oDb.AddInParameter(cmd, "@HasHazardousItems", DbType.String, objCustomer.HasHazardousItems);
+                oDb.AddInParameter(cmd, "@HasHazardousItemsRate", DbType.Decimal, objCustomer.HasHazardousItemsRate);
+                oDb.AddInParameter(cmd, "@HasInventoryList", DbType.String, objCustomer.HasInventoryList);
+                oDb.AddInParameter(cmd, "@HasInventoryListRate", DbType.Decimal, objCustomer.HasInventoryListRate);
+                oDb.AddInParameter(cmd, "@InventoryListNote", DbType.String, objCustomer.InventoryListNote);
+                oDb.AddInParameter(cmd, "@InventoryListNoteRate", DbType.Decimal, objCustomer.InventoryListNoteRate);
+                oDb.AddInParameter(cmd, "@HasPiano", DbType.String, objCustomer.HasPiano);
+                oDb.AddInParameter(cmd, "@HasPianoRate", DbType.Decimal, objCustomer.HasPianoRate);
+                oDb.AddInParameter(cmd, "@AdditionalChargeForPiano", DbType.String, objCustomer.AdditionalChargeForPiano);
+                oDb.AddInParameter(cmd, "@AdditionalChargeForPianoRate", DbType.Decimal, objCustomer.AdditionalChargeForPianoRate);
+                oDb.AddInParameter(cmd, "@HasVehicleToMove", DbType.String, objCustomer.HasVehicleToMove);
+                oDb.AddInParameter(cmd, "@HasVehicleToMoveRate", DbType.Decimal, objCustomer.HasVehicleToMoveRate);
+                oDb.AddInParameter(cmd, "@VehicleType", DbType.String, objCustomer.VehicleType);
+                oDb.AddInParameter(cmd, "@VehicleTypeRate", DbType.Decimal, objCustomer.VehicleTypeRate);
+                oDb.AddInParameter(cmd, "@NeedsTowVanOrDriver", DbType.String, objCustomer.NeedsTowVanOrDriver);
+                oDb.AddInParameter(cmd, "@NeedsTowVanOrDriverRate", DbType.Decimal, objCustomer.NeedsTowVanOrDriverRate);
+                oDb.AddInParameter(cmd, "@NeedsJunkRemoval", DbType.String, objCustomer.NeedsJunkRemoval);
+                oDb.AddInParameter(cmd, "@NeedsJunkRemovalRate", DbType.Decimal, objCustomer.NeedsJunkRemovalRate);
+                oDb.AddInParameter(cmd, "@RequiresOvernightStop", DbType.String, objCustomer.RequiresOvernightStop);
+                oDb.AddInParameter(cmd, "@RequiresOvernightStopRate", DbType.Decimal, objCustomer.RequiresOvernightStopRate);
+                oDb.AddInParameter(cmd, "@CallStatus", DbType.String, objCustomer.CallStatus);
+                oDb.AddInParameter(cmd, "@AltMobileNo", DbType.String, objCustomer.AltMobileNo);
+                oDb.AddInParameter(cmd, "@GSTAmount", DbType.Decimal, objCustomer.GSTAmount);
+                oDb.AddInParameter(cmd, "@NetAmount", DbType.Decimal, objCustomer.NetAmount);
+                oDb.AddInParameter(cmd, "@WeekType", DbType.String, objCustomer.WeekType);
+                oDb.AddInParameter(cmd, "@Note", DbType.String, objCustomer.Note);
                 oDb.AddInParameter(cmd, "@FK_ModifiedBy", DbType.Int32, objCustomer.ModifiedBy.UserID);
 
                 int iID = oDb.ExecuteNonQuery(cmd);

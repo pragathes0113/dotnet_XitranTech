@@ -45,7 +45,7 @@ namespace constants
         public const string USP_UPDATE_NEWCUSTOMER = "usp_Update_NewCustomer";
         public const string USP_DELETE_NEWCUSTOMER = "usp_Delete_NewCustomer";
         public const string USP_SELECT_NEWCUSTOMER = "usp_Select_NewCustomer";
-
-
+        public const string USP_SELECT_TOPNEWCUSTOMER = "usp_Select_TopNewCustomer";
+        public const string USP_SELECT_CANCELNEWCUSTOMER = "usp_Select_CancelNewCustomer";
     }
 }

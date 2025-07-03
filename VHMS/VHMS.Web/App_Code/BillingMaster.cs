@@ -51,6 +51,69 @@ public partial class VHMSService : IVHMSService
         }
         return jsObject.Serialize(objResponse);
     }
+
+    public string GetTopCustomer(string CallStatus = "")
+    {
+        string sException = string.Empty;
+        string sFileNames = string.Empty;
+        JavaScriptSerializer jsObject = new JavaScriptSerializer();
+        VHMS.Entity.Response objResponse = new VHMS.Entity.Response();
+        try
+        {
+            if (ValidateSession())
+            {
+                Collection<VHMS.Entity.Billing.NewCustomer> ObjList = new Collection<VHMS.Entity.Billing.NewCustomer>();
+                ObjList = VHMS.DataAccess.Billing.NewCustomer.GetTopCustomer(CallStatus);
+                objResponse.Status = "Success";
+                objResponse.Value = ObjList.Count > 0 ? jsObject.Serialize(ObjList) : "NoRecord";
+            }
+            else
+            {
+                objResponse.Status = "Error";
+                objResponse.Value = "0";
+            }
+        }
+        catch (Exception ex)
+        {
+            sException = "VHMSService.Billing.NewCustomer GetNewCustomer |" + ex.Message.ToString();
+            Log.Write(sException);
+            objResponse.Status = "Error";
+            objResponse.Value = "Error";
+        }
+        return jsObject.Serialize(objResponse);
+    }
+
+
+    public string GetCancelCustomer(string CallStatus = "")
+    {
+        string sException = string.Empty;
+        string sFileNames = string.Empty;
+        JavaScriptSerializer jsObject = new JavaScriptSerializer();
+        VHMS.Entity.Response objResponse = new VHMS.Entity.Response();
+        try
+        {
+            if (ValidateSession())
+            {
+                Collection<VHMS.Entity.Billing.NewCustomer> ObjList = new Collection<VHMS.Entity.Billing.NewCustomer>();
+                ObjList = VHMS.DataAccess.Billing.NewCustomer.GetCancelCustomer(CallStatus);
+                objResponse.Status = "Success";
+                objResponse.Value = ObjList.Count > 0 ? jsObject.Serialize(ObjList) : "NoRecord";
+            }
+            else
+            {
+                objResponse.Status = "Error";
+                objResponse.Value = "0";
+            }
+        }
+        catch (Exception ex)
+        {
+            sException = "VHMSService.Billing.NewCustomer GetNewCustomer |" + ex.Message.ToString();
+            Log.Write(sException);
+            objResponse.Status = "Error";
+            objResponse.Value = "Error";
+        }
+        return jsObject.Serialize(objResponse);
+    }
     public string GetNewCustomerByID(int ID)
     {
         string sException = string.Empty;

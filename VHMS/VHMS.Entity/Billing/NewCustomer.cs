@@ -10,6 +10,7 @@ namespace VHMS.Entity.Billing
         public int CustomerID { get; set; }
         public string CustomerName { get; set; }
         public string MobileNo { get; set; }
+        public string AltMobileNo { get; set; }
         public int HouseTypeID { get; set; }
         public string CurrentAddress { get; set; }
         public string ShiftingAddress { get; set; }
@@ -22,49 +23,57 @@ namespace VHMS.Entity.Billing
         public string Kms { get; set; }
         public string TypeofMove { get; set; }
 
-        public bool RequiresMoreThanTwoPersons { get; set; }
+        public string RequiresMoreThanTwoPersons { get; set; }
         public decimal RequiresMoreThanTwoPersonsRate { get; set; }
-        public bool HasStaircase { get; set; }
+        public string HasStaircase { get; set; }
         public decimal HasStaircaseRate { get; set; }
-        public bool HasServiceElevator { get; set; }
+        public string HasServiceElevator { get; set; }
         public decimal HasServiceElevatorRate { get; set; }
-        public bool HasProperParking { get; set; }
+        public string HasProperParking { get; set; }
         public decimal HasProperParkingRate { get; set; }
-        public bool AdditionalChargeForLongWalks { get; set; }
+        public string AdditionalChargeForLongWalks { get; set; }
         public decimal AdditionalChargeForLongWalksRate { get; set; }
 
-        public bool WantsPackingHelp { get; set; }
+        public string WantsPackingHelp { get; set; }
         public decimal WantsPackingHelpRate { get; set; }
-        public bool PackingHandledByTeam { get; set; }
+        public string PackingHandledByTeam { get; set; }
         public decimal PackingHandledByTeamRate { get; set; }
-        public bool NeedsPackingMaterials { get; set; }
+        public string NeedsPackingMaterials { get; set; }
         public decimal NeedsPackingMaterialsRate { get; set; }
 
-        public bool HasFragileItems { get; set; }
+        public string HasFragileItems { get; set; }
         public decimal HasFragileItemsRate { get; set; }
-        public bool HasHazardousItems { get; set; }
+        public string HasHazardousItems { get; set; }
         public decimal HasHazardousItemsRate { get; set; }
-        public bool HasInventoryList { get; set; }
+        public string HasInventoryList { get; set; }
         public decimal HasInventoryListRate { get; set; }
-        public bool InventoryListNote { get; set; }
+        public string InventoryListNote { get; set; }
         public decimal InventoryListNoteRate { get; set; }
 
-        public bool HasPiano { get; set; }
+        public string HasPiano { get; set; }
         public decimal HasPianoRate { get; set; }
-        public bool AdditionalChargeForPiano { get; set; }
+        public string AdditionalChargeForPiano { get; set; }
         public decimal AdditionalChargeForPianoRate { get; set; }
 
-        public bool HasVehicleToMove { get; set; }
+        public string HasVehicleToMove { get; set; }
         public decimal HasVehicleToMoveRate { get; set; }
-        public bool VehicleType { get; set; }
+        public string VehicleType { get; set; }
         public decimal VehicleTypeRate { get; set; }
-        public bool NeedsTowVanOrDriver { get; set; }
+        public string NeedsTowVanOrDriver { get; set; }
         public decimal NeedsTowVanOrDriverRate { get; set; }
 
-        public bool NeedsJunkRemoval { get; set; }
+        public string NeedsJunkRemoval { get; set; }
         public decimal NeedsJunkRemovalRate { get; set; }
-        public bool RequiresOvernightStop { get; set; }
+        public string RequiresOvernightStop { get; set; }
         public decimal RequiresOvernightStopRate { get; set; }
+
+        public string CallStatus { get; set; }
+
+        public string WeekType { get; set; }
+        public string Note { get; set; }
+
+        public decimal GSTAmount { get; set; }
+        public decimal NetAmount { get; set; }
 
         public User CreatedBy { get; set; }
         public DateTime CreatedOn { get; set; }

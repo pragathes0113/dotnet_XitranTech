@@ -3,92 +3,68 @@
   "WorkspaceRootPath": "E:\\Web Live Project\\dotnet_XitranTech\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.web\\frmnewcustomer.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmnewcustomer.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.web\\userdefined_js\\jnewcustomer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\userdefined_js\\jnewcustomer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.dataaccess\\billing\\housetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|solutionrelative:vhms\\vhms.dataaccess\\billing\\housetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.dataaccess\\useraccounts\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|solutionrelative:vhms\\vhms.dataaccess\\useraccounts\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.web\\frmdefault.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmdefault.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.web\\frmhousetype.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmhousetype.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCC9F862-A6E4-4188-9793-95219643C283}|VHMS\\VHMS.Entity\\VHMS.Entity.csproj|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.entity\\settings\\storedprocedures.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCC9F862-A6E4-4188-9793-95219643C283}|VHMS\\VHMS.Entity\\VHMS.Entity.csproj|solutionrelative:vhms\\vhms.entity\\settings\\storedprocedures.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.dataaccess\\master\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|solutionrelative:vhms\\vhms.dataaccess\\master\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.dataaccess\\framework.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|solutionrelative:vhms\\vhms.dataaccess\\framework.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|e:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\App_Code\\Billing\\IBillingMaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:VHMS\\VHMS.Web\\App_Code\\Billing\\IBillingMaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.web\\app_code\\ibillingmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\app_code\\ibillingmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.web\\app_code\\billingmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\app_code\\billingmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.web\\app_code\\vhmsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\app_code\\vhmsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCC9F862-A6E4-4188-9793-95219643C283}|VHMS\\VHMS.Entity\\VHMS.Entity.csproj|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.entity\\useraccounts\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCC9F862-A6E4-4188-9793-95219643C283}|VHMS\\VHMS.Entity\\VHMS.Entity.csproj|solutionrelative:vhms\\vhms.entity\\useraccounts\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.dataaccess\\billing\\newcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|E:\\Web Live Project\\dotnet_XitranTech\\vhms\\vhms.dataaccess\\billing\\newcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|solutionrelative:vhms\\vhms.dataaccess\\billing\\newcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCC9F862-A6E4-4188-9793-95219643C283}|VHMS\\VHMS.Entity\\VHMS.Entity.csproj|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.entity\\settings\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCC9F862-A6E4-4188-9793-95219643C283}|VHMS\\VHMS.Entity\\VHMS.Entity.csproj|solutionrelative:vhms\\vhms.entity\\settings\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.web\\frmhistoryofcancel.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmhistoryofcancel.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCC9F862-A6E4-4188-9793-95219643C283}|VHMS\\VHMS.Entity\\VHMS.Entity.csproj|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.entity\\billing\\housetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCC9F862-A6E4-4188-9793-95219643C283}|VHMS\\VHMS.Entity\\VHMS.Entity.csproj|solutionrelative:vhms\\vhms.entity\\billing\\housetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_XitranTech\\vhms\\vhms.web\\app_code\\ibillingmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\app_code\\ibillingmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.web\\app_code\\ivhmsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\app_code\\ivhmsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_XitranTech\\vhms\\vhms.web\\app_code\\billingmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\app_code\\billingmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.dataaccess\\useraccounts\\smslog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|solutionrelative:vhms\\vhms.dataaccess\\useraccounts\\smslog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCC9F862-A6E4-4188-9793-95219643C283}|VHMS\\VHMS.Entity\\VHMS.Entity.csproj|E:\\Web Live Project\\dotnet_XitranTech\\vhms\\vhms.entity\\settings\\storedprocedures.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCC9F862-A6E4-4188-9793-95219643C283}|VHMS\\VHMS.Entity\\VHMS.Entity.csproj|solutionrelative:vhms\\vhms.entity\\settings\\storedprocedures.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.dataaccess\\vhmsreports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DCD1A71-81AE-40C2-90B8-5B73887C2A98}|VHMS\\VHMS.DataAccess\\VHMS.DataAccess.csproj|solutionrelative:vhms\\vhms.dataaccess\\vhmsreports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_XitranTech\\vhms\\vhms.web\\userdefined_js\\jhistoryofcancel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\userdefined_js\\jhistoryofcancel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCC9F862-A6E4-4188-9793-95219643C283}|VHMS\\VHMS.Entity\\VHMS.Entity.csproj|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.entity\\billing\\newcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_XitranTech\\vhms\\vhms.web\\frmfollowup.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmfollowup.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_XitranTech\\vhms\\vhms.web\\userdefined_js\\jfollowup.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\userdefined_js\\jfollowup.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCC9F862-A6E4-4188-9793-95219643C283}|VHMS\\VHMS.Entity\\VHMS.Entity.csproj|E:\\Web Live Project\\dotnet_XitranTech\\vhms\\vhms.entity\\billing\\newcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCC9F862-A6E4-4188-9793-95219643C283}|VHMS\\VHMS.Entity\\VHMS.Entity.csproj|solutionrelative:vhms\\vhms.entity\\billing\\newcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|e:\\web live project\\dotnet_xitrantech\\vhms\\vhms.web\\frmnewcustomer.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmnewcustomer.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_XitranTech\\vhms\\vhms.web\\userdefined_js\\jnewcustomer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\userdefined_js\\jnewcustomer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_XitranTech\\vhms\\vhms.web\\vhmsmasterpage.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\vhmsmasterpage.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_XitranTech\\vhms\\vhms.web\\frmhistoryofcancel.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmhistoryofcancel.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_XitranTech\\vhms\\vhms.web\\frmnewcustomer.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmnewcustomer.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_XitranTech\\vhms\\vhms.web\\frmfollowup.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmfollowup.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_XitranTech\\vhms\\vhms.web\\vhmsmasterpage.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\vhmsmasterpage.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|E:\\Web Live Project\\dotnet_XitranTech\\vhms\\vhms.web\\frmhousetype.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{DEA8C4A4-DDFD-42F8-8FB1-B60B690BD69B}|E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web|solutionrelative:vhms\\vhms.web\\frmhousetype.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -110,59 +86,162 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BillingMaster.cs",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\App_Code\\BillingMaster.cs",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\App_Code\\BillingMaster.cs",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\App_Code\\BillingMaster.cs",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\App_Code\\BillingMaster.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAmwGEAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T07:28:55.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StoredProcedures.cs",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Entity\\Settings\\StoredProcedures.cs",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Entity\\Settings\\StoredProcedures.cs",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Entity\\Settings\\StoredProcedures.cs",
+              "RelativeToolTip": "VHMS\\VHMS.Entity\\Settings\\StoredProcedures.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAvwDAAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T09:51:06.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IBillingMaster.cs",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\App_Code\\IBillingMaster.cs",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\App_Code\\IBillingMaster.cs",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\App_Code\\IBillingMaster.cs",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\App_Code\\IBillingMaster.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAswBkAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T08:09:27.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "frmHistoryOfCancel.aspx",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmHistoryOfCancel.aspx",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmHistoryOfCancel.aspx",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmHistoryOfCancel.aspx",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\frmHistoryOfCancel.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-07-03T10:42:31.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NewCustomer.cs",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\Billing\\NewCustomer.cs",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.DataAccess\\Billing\\NewCustomer.cs",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\Billing\\NewCustomer.cs",
+              "RelativeToolTip": "VHMS\\VHMS.DataAccess\\Billing\\NewCustomer.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAjwC4BAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T08:54:32.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "jHistoryOfCancel.js",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\UserDefined_Js\\jHistoryOfCancel.js",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\UserDefined_Js\\jHistoryOfCancel.js",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\UserDefined_Js\\jHistoryOfCancel.js",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\UserDefined_Js\\jHistoryOfCancel.js",
+              "ViewState": "AgIAANoBAAAAAAAAAADwv+ABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-07-03T10:44:20.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmFollowUp.aspx",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmFollowUp.aspx",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmFollowUp.aspx",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmFollowUp.aspx",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\frmFollowUp.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-07-03T08:11:38.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "jFollowUp.js",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\UserDefined_Js\\jFollowUp.js",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\UserDefined_Js\\jFollowUp.js",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\UserDefined_Js\\jFollowUp.js",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\UserDefined_Js\\jFollowUp.js",
+              "ViewState": "AgIAAB4BAAAAAAAAAAAQwDQBAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-07-03T08:27:28.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NewCustomer.cs",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Entity\\Billing\\NewCustomer.cs",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Entity\\Billing\\NewCustomer.cs",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Entity\\Billing\\NewCustomer.cs",
+              "RelativeToolTip": "VHMS\\VHMS.Entity\\Billing\\NewCustomer.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAA7wEgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T08:54:49.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "jNewCustomer.js",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\UserDefined_Js\\jNewCustomer.js",
               "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\UserDefined_Js\\jNewCustomer.js",
               "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\UserDefined_Js\\jNewCustomer.js",
               "RelativeToolTip": "VHMS\\VHMS.Web\\UserDefined_Js\\jNewCustomer.js",
-              "ViewState": "AgIAAEMBAAAAAAAAAAArwF8BAAADAAAAAAAAAA==",
+              "ViewState": "AgIAALMBAAAAAAAAAAAgwNQBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-07-02T10:30:26.406Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Dashboard.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\Master\\Dashboard.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.DataAccess\\Master\\Dashboard.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\Master\\Dashboard.cs",
-              "RelativeToolTip": "VHMS\\VHMS.DataAccess\\Master\\Dashboard.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA3wBcAAABsAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "VHMSMasterPage.master.cs",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\VHMSMasterPage.master.cs",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\VHMSMasterPage.master.cs",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\VHMSMasterPage.master.cs",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\VHMSMasterPage.master.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAAAHIAAABvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T09:58:13.695Z",
+              "WhenOpened": "2025-07-03T08:13:51.98Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IBillingMaster.cs",
-              "DocumentMoniker": "e:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\App_Code\\Billing\\IBillingMaster.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\App_Code\\Billing\\IBillingMaster.cs",
-              "ToolTip": "e:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\App_Code\\Billing\\IBillingMaster.cs",
-              "RelativeToolTip": "VHMS\\VHMS.Web\\App_Code\\Billing\\IBillingMaster.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "frmHistoryOfCancel.aspx.cs",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmHistoryOfCancel.aspx.cs",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmHistoryOfCancel.aspx.cs",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmHistoryOfCancel.aspx.cs",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\frmHistoryOfCancel.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T09:57:19.235Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-03T10:43:01.017Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "User.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Entity\\UserAccounts\\User.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.Entity\\UserAccounts\\User.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Entity\\UserAccounts\\User.cs",
-              "RelativeToolTip": "VHMS\\VHMS.Entity\\UserAccounts\\User.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAwwCYAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T09:55:48.988Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 12,
               "Title": "frmNewCustomer.aspx",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmNewCustomer.aspx",
               "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmNewCustomer.aspx",
@@ -170,64 +249,36 @@
               "RelativeToolTip": "VHMS\\VHMS.Web\\frmNewCustomer.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-07-02T07:13:47.064Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-03T07:25:39.158Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HouseType.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\Billing\\HouseType.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.DataAccess\\Billing\\HouseType.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\Billing\\HouseType.cs",
-              "RelativeToolTip": "VHMS\\VHMS.DataAccess\\Billing\\HouseType.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACMAAAAyAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "frmFollowUp.aspx.cs",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmFollowUp.aspx.cs",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmFollowUp.aspx.cs",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmFollowUp.aspx.cs",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\frmFollowUp.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T09:40:34.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-03T08:11:39.799Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmDefault.aspx",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmDefault.aspx",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmDefault.aspx",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmDefault.aspx",
-              "RelativeToolTip": "VHMS\\VHMS.Web\\frmDefault.aspx",
+              "DocumentIndex": 14,
+              "Title": "VHMSMasterPage.master",
+              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\VHMSMasterPage.master",
+              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\VHMSMasterPage.master",
+              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\VHMSMasterPage.master",
+              "RelativeToolTip": "VHMS\\VHMS.Web\\VHMSMasterPage.master",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-07-02T09:58:02.963Z",
+              "WhenOpened": "2025-07-03T08:13:49.9Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Framework.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\Framework.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.DataAccess\\Framework.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\Framework.cs",
-              "RelativeToolTip": "VHMS\\VHMS.DataAccess\\Framework.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAIwEcAAABtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T10:00:46.793Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "User.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\UserAccounts\\User.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.DataAccess\\UserAccounts\\User.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\UserAccounts\\User.cs",
-              "RelativeToolTip": "VHMS\\VHMS.DataAccess\\UserAccounts\\User.cs",
-              "ViewState": "AgIAAPABAAAAAAAAAAAQwDgCAABlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T09:00:27.024Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 15,
               "Title": "frmHouseType.aspx",
               "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmHouseType.aspx",
               "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmHouseType.aspx",
@@ -235,164 +286,7 @@
               "RelativeToolTip": "VHMS\\VHMS.Web\\frmHouseType.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-07-02T10:18:58.905Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "StoredProcedures.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Entity\\Settings\\StoredProcedures.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.Entity\\Settings\\StoredProcedures.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Entity\\Settings\\StoredProcedures.cs",
-              "RelativeToolTip": "VHMS\\VHMS.Entity\\Settings\\StoredProcedures.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T09:51:06.952Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "BillingMaster.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\App_Code\\BillingMaster.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\App_Code\\BillingMaster.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\App_Code\\BillingMaster.cs",
-              "RelativeToolTip": "VHMS\\VHMS.Web\\App_Code\\BillingMaster.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAL4BAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T09:44:35.713Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "VHMSService.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\App_Code\\VHMSService.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\App_Code\\VHMSService.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\App_Code\\VHMSService.cs",
-              "RelativeToolTip": "VHMS\\VHMS.Web\\App_Code\\VHMSService.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAHgCAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T09:30:59.988Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "NewCustomer.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\Billing\\NewCustomer.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.DataAccess\\Billing\\NewCustomer.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\Billing\\NewCustomer.cs",
-              "RelativeToolTip": "VHMS\\VHMS.DataAccess\\Billing\\NewCustomer.cs",
-              "ViewState": "AgIAALgAAAAAAAAAAAAYwNgAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T08:54:32.748Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IBillingMaster.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\App_Code\\IBillingMaster.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\App_Code\\IBillingMaster.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\App_Code\\IBillingMaster.cs",
-              "RelativeToolTip": "VHMS\\VHMS.Web\\App_Code\\IBillingMaster.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T09:44:55.969Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "DBConnection.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Entity\\Settings\\DBConnection.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.Entity\\Settings\\DBConnection.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Entity\\Settings\\DBConnection.cs",
-              "RelativeToolTip": "VHMS\\VHMS.Entity\\Settings\\DBConnection.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA0AAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T09:49:57.353Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "HouseType.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Entity\\Billing\\HouseType.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.Entity\\Billing\\HouseType.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Entity\\Billing\\HouseType.cs",
-              "RelativeToolTip": "VHMS\\VHMS.Entity\\Billing\\HouseType.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T08:53:21.356Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "IVHMSService.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\App_Code\\IVHMSService.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\App_Code\\IVHMSService.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\App_Code\\IVHMSService.cs",
-              "RelativeToolTip": "VHMS\\VHMS.Web\\App_Code\\IVHMSService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAqwHMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T09:31:32.708Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "SMSLog.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\UserAccounts\\SMSLog.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.DataAccess\\UserAccounts\\SMSLog.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\UserAccounts\\SMSLog.cs",
-              "RelativeToolTip": "VHMS\\VHMS.DataAccess\\UserAccounts\\SMSLog.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T09:30:29.298Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "VHMSReports.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\VHMSReports.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.DataAccess\\VHMSReports.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.DataAccess\\VHMSReports.cs",
-              "RelativeToolTip": "VHMS\\VHMS.DataAccess\\VHMSReports.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T09:27:35.395Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "NewCustomer.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Entity\\Billing\\NewCustomer.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.Entity\\Billing\\NewCustomer.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Entity\\Billing\\NewCustomer.cs",
-              "RelativeToolTip": "VHMS\\VHMS.Entity\\Billing\\NewCustomer.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAwwEwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T08:54:49.74Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "frmNewCustomer.aspx.cs",
-              "DocumentMoniker": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmNewCustomer.aspx.cs",
-              "RelativeDocumentMoniker": "VHMS\\VHMS.Web\\frmNewCustomer.aspx.cs",
-              "ToolTip": "E:\\Web Live Project\\dotnet_XitranTech\\VHMS\\VHMS.Web\\frmNewCustomer.aspx.cs",
-              "RelativeToolTip": "VHMS\\VHMS.Web\\frmNewCustomer.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T07:09:39.28Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-02T10:18:58.905Z"
             }
           ]
         }
